@@ -1,0 +1,912 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "1.1",
+  "items": [
+    {
+      "id": "aif-c01-1.1-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A new team member asks for a short definition of machine learning (ML). Which statement is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ML is a set of hand-written if-then rules that a developer updates manually for every new case.",
+          "correct": false,
+          "rationale": "Hand-coded rules are traditional programming, not ML, because the system does not learn from data."
+        },
+        {
+          "id": "b",
+          "text": "ML is a hardware technology that speeds up database queries by caching results.",
+          "correct": false,
+          "rationale": "Query caching is a performance technique and has nothing to do with learning from data."
+        },
+        {
+          "id": "c",
+          "text": "ML is a branch of AI in which algorithms learn patterns from data to make predictions or decisions.",
+          "correct": true,
+          "rationale": "Correct. ML systems learn patterns from data instead of following explicitly programmed rules."
+        },
+        {
+          "id": "d",
+          "text": "ML is a storage format that compresses large datasets for faster transfer.",
+          "correct": false,
+          "rationale": "Compression formats reduce data size; they do not learn or predict anything."
+        }
+      ],
+      "explanation": "Machine learning is a subset of artificial intelligence. Instead of a developer writing explicit rules, an ML algorithm is given data and finds patterns in it. The result is a model that can make predictions or decisions on new data. This ability to learn from examples is what separates ML from traditional rule-based programming, and it underpins deep learning and generative AI.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement best describes deep learning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A technique that uses neural networks with many layers to learn complex patterns from large amounts of data.",
+          "correct": true,
+          "rationale": "Correct. Deep learning relies on multi-layer neural networks that learn features automatically."
+        },
+        {
+          "id": "b",
+          "text": "A method that stores data in a deep archive tier to lower storage cost.",
+          "correct": false,
+          "rationale": "Archive storage tiers concern data retention cost, not a learning technique."
+        },
+        {
+          "id": "c",
+          "text": "A rule-based system in which experts write every decision path in advance.",
+          "correct": false,
+          "rationale": "Rule-based systems are not learned from data, so they are not deep learning."
+        },
+        {
+          "id": "d",
+          "text": "A statistical report that summarizes historical data in a dashboard.",
+          "correct": false,
+          "rationale": "Dashboards describe past data; deep learning trains neural networks to make predictions or generate output."
+        }
+      ],
+      "explanation": "Deep learning is a subset of machine learning built on artificial neural networks. A neural network is made of layers of connected nodes that loosely mimic the way neurons work. Networks with many layers can learn very complex patterns, such as objects in images or meaning in text, without engineers hand-crafting features. Deep learning generally needs large datasets and substantial compute.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A retailer wants software that can identify products in photos taken by shoppers. Which field of AI does this task belong to?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Natural language processing",
+          "correct": false,
+          "rationale": "NLP deals with human language in text or speech, not the pixels in photos."
+        },
+        {
+          "id": "b",
+          "text": "Computer vision",
+          "correct": true,
+          "rationale": "Correct. Computer vision lets systems interpret and understand images and video."
+        },
+        {
+          "id": "c",
+          "text": "Time-series forecasting",
+          "correct": false,
+          "rationale": "Forecasting predicts future values from data ordered in time, not image content."
+        },
+        {
+          "id": "d",
+          "text": "Reinforcement learning",
+          "correct": false,
+          "rationale": "Reinforcement learning is a learning method based on rewards, not a field defined by image data."
+        }
+      ],
+      "explanation": "Computer vision is the field of AI that enables machines to extract meaning from visual input such as images and video. Typical tasks include image classification, object detection and facial analysis. It is distinct from natural language processing, which works with text and speech. Note that computer vision describes the problem area, while supervised or reinforcement learning describe how a model learns.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/computer-vision/",
+          "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to analyze thousands of customer emails to detect whether each message is positive or negative. Which AI field is MOST directly involved?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Computer vision",
+          "correct": false,
+          "rationale": "Computer vision interprets images and video rather than written messages."
+        },
+        {
+          "id": "b",
+          "text": "Robotics process control",
+          "correct": false,
+          "rationale": "Robotic control concerns physical movement and sensors, not understanding written text."
+        },
+        {
+          "id": "c",
+          "text": "Anomaly detection in sensor data",
+          "correct": false,
+          "rationale": "Anomaly detection looks for unusual numeric patterns, not the sentiment of language."
+        },
+        {
+          "id": "d",
+          "text": "Natural language processing (NLP)",
+          "correct": true,
+          "rationale": "Correct. NLP enables computers to understand, interpret and analyze human language, including sentiment."
+        }
+      ],
+      "explanation": "Natural language processing (NLP) is the field of AI that lets computers work with human language in text or speech form. Common NLP tasks include sentiment analysis, entity extraction, translation and summarization. Because the input in this scenario is written email text and the goal is understanding its tone, NLP is the matching field.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/nlp/",
+          "title": "What is Natural Language Processing? - NLP Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is a large language model (LLM)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A relational database engine built to store very large text tables.",
+          "correct": false,
+          "rationale": "A database stores data; it does not learn language patterns or generate text."
+        },
+        {
+          "id": "b",
+          "text": "A foundation model trained on vast amounts of text that can understand and generate human-like language.",
+          "correct": true,
+          "rationale": "Correct. LLMs are very large models trained on huge text corpora to understand and produce language."
+        },
+        {
+          "id": "c",
+          "text": "A rule engine that matches keywords against a fixed list of responses.",
+          "correct": false,
+          "rationale": "Keyword matching is fixed logic and is not a trained neural network."
+        },
+        {
+          "id": "d",
+          "text": "A compression algorithm that shrinks documents before storage.",
+          "correct": false,
+          "rationale": "Compression reduces file size and does not generate or understand language."
+        }
+      ],
+      "explanation": "A large language model is a type of foundation model, based on deep neural networks and trained on enormous amounts of text. Because it learns statistical patterns of language, an LLM can perform many tasks such as summarizing, answering questions, translating and drafting content. LLMs are a major kind of generative AI, because they generate new text in response to a prompt.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/large-language-model/",
+          "title": "What is LLM? - Large Language Models Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "In the machine learning lifecycle, what happens during training?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A deployed model returns a prediction for a new input.",
+          "correct": false,
+          "rationale": "That describes inference, which uses an already trained model."
+        },
+        {
+          "id": "b",
+          "text": "An algorithm learns patterns from data and produces a model.",
+          "correct": true,
+          "rationale": "Correct. Training is the step where the algorithm fits a model to the data."
+        },
+        {
+          "id": "c",
+          "text": "An endpoint scales out to handle more requests.",
+          "correct": false,
+          "rationale": "Scaling an endpoint is an operational task of serving a model, not training."
+        },
+        {
+          "id": "d",
+          "text": "A model is retired after its accuracy drops.",
+          "correct": false,
+          "rationale": "Retiring a model is lifecycle management and is not training."
+        }
+      ],
+      "explanation": "Training and inference are the two basic phases of using a model. During training, an algorithm processes data and adjusts the model's internal parameters so that it captures patterns. The output is a trained model. During inference, that trained model receives new, unseen input and produces a prediction or generated output. Training is usually compute-heavy and occasional, while inference may happen continuously.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A bank trains a loan-approval model on historical data in which one demographic group was approved far less often for reasons unrelated to creditworthiness. The model now denies similar applicants from that group. Which concept does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Underfitting caused by too few training iterations",
+          "correct": false,
+          "rationale": "Underfitting means poor performance on all data, not systematically different outcomes for one group."
+        },
+        {
+          "id": "b",
+          "text": "Model drift caused by changing market conditions",
+          "correct": false,
+          "rationale": "Drift refers to performance degrading over time, and the scenario describes unfair patterns inherited from the data."
+        },
+        {
+          "id": "c",
+          "text": "Bias that leads to unfair outcomes for a group",
+          "correct": true,
+          "rationale": "Correct. Skewed training data can cause biased predictions, which undermines fairness."
+        },
+        {
+          "id": "d",
+          "text": "Inference latency caused by an undersized endpoint",
+          "correct": false,
+          "rationale": "Latency affects response time, not whether decisions are fair."
+        }
+      ],
+      "explanation": "Bias in AI occurs when a model produces systematically skewed results, often because the training data reflects historical prejudice or underrepresents some groups. Fairness is the goal of ensuring a model's outcomes do not unjustifiably disadvantage particular groups. Here the model learned the unfair historical pattern. Reviewing data representation and evaluating outcomes across groups helps detect and reduce this problem.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A model scores 99 percent accuracy on its training data but performs poorly on new data it has never seen. Which term describes this condition?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Underfitting",
+          "correct": false,
+          "rationale": "Underfitting shows poor performance on training data as well as new data."
+        },
+        {
+          "id": "b",
+          "text": "Overfitting",
+          "correct": true,
+          "rationale": "Correct. The model memorized training data, including noise, and does not generalize."
+        },
+        {
+          "id": "c",
+          "text": "Reinforcement",
+          "correct": false,
+          "rationale": "Reinforcement is a learning approach and not a description of model fit."
+        },
+        {
+          "id": "d",
+          "text": "Federated inference",
+          "correct": false,
+          "rationale": "This is not a standard fit term and does not describe the accuracy gap."
+        }
+      ],
+      "explanation": "Fit describes how well a model captures the true pattern in data. An overfit model learns the training data too closely, including its noise, so it scores very well in training but poorly on unseen data. An underfit model is too simple and performs poorly on both. The aim is a well-fit model that generalizes. Evaluating on held-out data reveals overfitting.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company wants software that receives a high-level goal such as resolving a customer's billing problem. The software should then plan steps, call internal tools, and adjust its actions with little human guidance. Which type of AI does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Agentic AI",
+          "correct": true,
+          "rationale": "Correct. Agentic AI acts autonomously toward goals, planning and using tools with limited step-by-step guidance."
+        },
+        {
+          "id": "b",
+          "text": "A single-turn generative chatbot",
+          "correct": false,
+          "rationale": "A chatbot that only answers each prompt does not plan or take actions toward a goal."
+        },
+        {
+          "id": "c",
+          "text": "Supervised classification",
+          "correct": false,
+          "rationale": "Classification assigns labels to inputs and does not plan multi-step actions."
+        },
+        {
+          "id": "d",
+          "text": "Batch inference",
+          "correct": false,
+          "rationale": "Batch inference is a way of running predictions on many records, not a type of AI behavior."
+        }
+      ],
+      "explanation": "Agentic AI refers to autonomous systems that pursue predefined goals with little human oversight. They can plan, decide, call tools or other software and adapt as conditions change. Generative AI on its own produces content in response to a prompt, whereas agentic AI uses such capabilities to carry out multi-step work. Traditional AI typically requires prompting and step-by-step guidance for each action.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "Which statement correctly describes the relationship between AI, machine learning, and deep learning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deep learning is the broadest field, and AI is a subset of it.",
+          "correct": false,
+          "rationale": "This reverses the hierarchy; AI is the broadest term."
+        },
+        {
+          "id": "b",
+          "text": "AI and deep learning are unrelated fields that share no techniques.",
+          "correct": false,
+          "rationale": "Deep learning is one of the main techniques used within AI."
+        },
+        {
+          "id": "c",
+          "text": "Machine learning contains AI, and AI contains deep learning.",
+          "correct": false,
+          "rationale": "ML does not contain AI; AI is the larger field containing ML."
+        },
+        {
+          "id": "d",
+          "text": "Machine learning is a subset of AI, and deep learning is a subset of machine learning.",
+          "correct": true,
+          "rationale": "Correct. AI is the broadest field, ML sits inside it, and deep learning sits inside ML."
+        }
+      ],
+      "explanation": "The terms are nested. Artificial intelligence is the broad goal of systems that perform tasks associated with human intelligence. Machine learning is an approach within AI where systems learn from data. Deep learning is a subset of ML that uses multi-layer neural networks. Generative AI, which uses deep learning foundation models, is a further specialization, and agentic AI builds on these capabilities to act autonomously.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A mobile app sends a user's question to a model and must show an answer within a second, while the user waits. Which type of inferencing fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Batch inference",
+          "correct": false,
+          "rationale": "Batch inference processes large sets of records offline and does not meet interactive latency needs."
+        },
+        {
+          "id": "b",
+          "text": "Offline training",
+          "correct": false,
+          "rationale": "Training builds a model and does not return answers to live user requests."
+        },
+        {
+          "id": "c",
+          "text": "Manual labeling",
+          "correct": false,
+          "rationale": "Labeling prepares training data and does not serve predictions."
+        },
+        {
+          "id": "d",
+          "text": "Real-time inference",
+          "correct": true,
+          "rationale": "Correct. A persistent endpoint returns low-latency responses to individual requests as they arrive."
+        }
+      ],
+      "explanation": "Real-time inference serves predictions with low latency for interactive workloads, typically through a hosted endpoint that is always available. It fits chat, recommendations or fraud checks during a transaction, where a user or system is waiting. Batch inference suits large volumes processed together when immediate answers are not needed.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html",
+          "title": "Real-time inference - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company must run a model on video files up to 500 MB each. Processing takes several minutes per file, and results are needed soon after upload but not instantly. Which inference option fits BEST?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Real-time inference with a synchronous request",
+          "correct": false,
+          "rationale": "Synchronous real-time endpoints suit small, fast requests rather than large payloads with long processing."
+        },
+        {
+          "id": "b",
+          "text": "Asynchronous inference that queues requests",
+          "correct": true,
+          "rationale": "Correct. Asynchronous inference handles large payloads and long processing times by queuing requests."
+        },
+        {
+          "id": "c",
+          "text": "Manual inference run on a developer laptop",
+          "correct": false,
+          "rationale": "This does not scale or integrate with an automated pipeline."
+        },
+        {
+          "id": "d",
+          "text": "Reinforcement learning from rewards",
+          "correct": false,
+          "rationale": "This is a learning method, not an inference deployment option."
+        }
+      ],
+      "explanation": "Asynchronous inference queues incoming requests and processes them in the background. Amazon SageMaker AI documentation describes it as ideal for large payloads (up to 1 GB), long processing times (up to one hour) and near real-time latency needs. Callers do not wait on an open connection; they pick up results when ready. Real-time endpoints are designed for small payloads that need immediate responses.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html",
+          "title": "Real-time inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company has a model that receives traffic only a few times per day, with long idle gaps. The team accepts a delay on the first request after idle time and wants no infrastructure to manage. Which inference type fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Always-on real-time endpoint with large instances",
+          "correct": false,
+          "rationale": "Always-on instances incur cost during idle periods, which the company wants to avoid."
+        },
+        {
+          "id": "b",
+          "text": "Self-managed servers running around the clock",
+          "correct": false,
+          "rationale": "This adds management work and cost while idle."
+        },
+        {
+          "id": "c",
+          "text": "Serverless inference",
+          "correct": true,
+          "rationale": "Correct. Serverless inference removes infrastructure management and suits intermittent traffic that can tolerate cold starts."
+        },
+        {
+          "id": "d",
+          "text": "Model retraining on a schedule",
+          "correct": false,
+          "rationale": "Retraining updates a model and does not serve predictions."
+        }
+      ],
+      "explanation": "Serverless inference deploys a model without configuring or managing the underlying infrastructure and scales with traffic. It suits workloads with idle periods between bursts that can tolerate cold starts, the added delay when capacity must spin up for a request after inactivity. For steady, latency-sensitive traffic, an always-on real-time endpoint is usually the better match.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A data scientist has a dataset of customer records in rows and columns, with fields like age, plan type, and monthly spend. How is this data BEST described?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unstructured data",
+          "correct": false,
+          "rationale": "Unstructured data lacks a predefined schema, such as free text or images."
+        },
+        {
+          "id": "b",
+          "text": "Image data",
+          "correct": false,
+          "rationale": "The records contain numeric and categorical fields, not pixels."
+        },
+        {
+          "id": "c",
+          "text": "Structured tabular data",
+          "correct": true,
+          "rationale": "Correct. Rows and columns with defined fields make up structured, tabular data."
+        },
+        {
+          "id": "d",
+          "text": "Audio data",
+          "correct": false,
+          "rationale": "There is no sound signal in this dataset."
+        }
+      ],
+      "explanation": "Structured data follows a predefined schema, so each record has the same fields. Tabular data organizes this structure as rows and columns, like a spreadsheet or relational table. Unstructured data, such as text, images, audio and video, lacks that fixed layout. Data type matters because it influences which algorithms and preprocessing steps are appropriate.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team trains a model to predict whether an email is spam using thousands of emails that people have already marked as spam or not spam. Which type of learning is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Supervised learning",
+          "correct": true,
+          "rationale": "Correct. The model learns from labeled examples that map inputs to known outputs."
+        },
+        {
+          "id": "b",
+          "text": "Unsupervised learning",
+          "correct": false,
+          "rationale": "Unsupervised learning works without known labels, but these emails are labeled."
+        },
+        {
+          "id": "c",
+          "text": "Reinforcement learning",
+          "correct": false,
+          "rationale": "Reinforcement learning uses rewards from an environment rather than labeled examples."
+        },
+        {
+          "id": "d",
+          "text": "Clustering",
+          "correct": false,
+          "rationale": "Clustering groups unlabeled data and would not use the spam labels."
+        }
+      ],
+      "explanation": "Supervised learning trains on labeled data, where each example includes the correct answer. The model learns the mapping from inputs to labels, then predicts labels for new inputs. Classification, such as spam or not spam, and regression, such as predicting a price, are the two main supervised tasks. Unsupervised learning finds structure in unlabeled data instead.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to program a warehouse robot to improve its route by trial and error, receiving positive feedback for fast deliveries and penalties for collisions. Which learning approach fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Supervised learning",
+          "correct": false,
+          "rationale": "Supervised learning needs labeled examples of correct answers rather than reward signals."
+        },
+        {
+          "id": "b",
+          "text": "Reinforcement learning",
+          "correct": true,
+          "rationale": "Correct. An agent learns by taking actions and receiving rewards or penalties."
+        },
+        {
+          "id": "c",
+          "text": "Unsupervised learning",
+          "correct": false,
+          "rationale": "Unsupervised learning finds structure in unlabeled data and has no reward feedback."
+        },
+        {
+          "id": "d",
+          "text": "Transfer learning",
+          "correct": false,
+          "rationale": "Transfer learning reuses a pretrained model and does not define trial-and-error reward learning."
+        }
+      ],
+      "explanation": "In reinforcement learning, an agent interacts with an environment, takes actions and receives rewards or penalties. Over many attempts it learns a policy that maximizes cumulative reward. This fits robotics, game playing and navigation. Supervised learning needs labeled correct answers, and unsupervised learning discovers patterns in unlabeled data without any feedback signal.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A data team has unlabeled customer purchase records. Which TWO tasks are examples of unsupervised learning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Grouping customers into segments with similar behavior",
+          "correct": true,
+          "rationale": "Correct. Clustering finds natural groups in unlabeled data."
+        },
+        {
+          "id": "b",
+          "text": "Predicting whether a customer will churn using past churn labels",
+          "correct": false,
+          "rationale": "This uses labeled outcomes, so it is supervised classification."
+        },
+        {
+          "id": "c",
+          "text": "Forecasting next month's sales from labeled historical targets",
+          "correct": false,
+          "rationale": "Learning from known target values is supervised regression."
+        },
+        {
+          "id": "d",
+          "text": "Finding unusual purchases that differ from typical patterns",
+          "correct": true,
+          "rationale": "Correct. Anomaly detection can identify outliers without labels."
+        },
+        {
+          "id": "e",
+          "text": "Training an agent from reward signals",
+          "correct": false,
+          "rationale": "Reward-based learning is reinforcement learning, not unsupervised."
+        }
+      ],
+      "explanation": "Unsupervised learning finds structure in data that has no labels. Common tasks are clustering, which groups similar items, and anomaly detection, which highlights data points that differ from the norm. Tasks that rely on known outcomes, such as predicting churn or sales, are supervised. Learning from rewards is reinforcement learning.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/unsupervised-learning/",
+          "title": "What Is Unsupervised Learning? - Unsupervised Machine Learning Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO examples are unstructured data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A relational table of order IDs and totals",
+          "correct": false,
+          "rationale": "Rows and columns with fixed fields are structured data."
+        },
+        {
+          "id": "b",
+          "text": "Customer support call recordings",
+          "correct": true,
+          "rationale": "Correct. Audio has no predefined tabular schema, so it is unstructured."
+        },
+        {
+          "id": "c",
+          "text": "A CSV file of daily temperatures",
+          "correct": false,
+          "rationale": "A CSV with defined columns is structured data."
+        },
+        {
+          "id": "d",
+          "text": "A spreadsheet of employee salaries",
+          "correct": false,
+          "rationale": "Spreadsheets with defined fields are structured data."
+        },
+        {
+          "id": "e",
+          "text": "Scanned product photographs",
+          "correct": true,
+          "rationale": "Correct. Images are unstructured data."
+        }
+      ],
+      "explanation": "Structured data follows a fixed schema of rows and columns, such as database tables, spreadsheets and CSV files. Unstructured data has no predefined format and includes images, audio, video and free text. Most of the world's data is unstructured, and deep learning is especially effective at extracting meaning from it. Time-series data is a distinct category that is ordered by time and may be structured or not.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/computer-vision/",
+          "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which THREE statements describe agentic AI?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It works toward predefined goals with limited human oversight.",
+          "correct": true,
+          "rationale": "Correct. Goal-driven autonomy is a core trait."
+        },
+        {
+          "id": "b",
+          "text": "It requires a human to prompt every individual step.",
+          "correct": false,
+          "rationale": "Needing step-by-step prompting describes traditional AI more than agentic AI."
+        },
+        {
+          "id": "c",
+          "text": "It can adapt its actions as conditions change.",
+          "correct": true,
+          "rationale": "Correct. Agentic systems adjust to new context and input."
+        },
+        {
+          "id": "d",
+          "text": "It only classifies images into fixed categories.",
+          "correct": false,
+          "rationale": "Image classification is a narrow computer vision task and not agentic AI."
+        },
+        {
+          "id": "e",
+          "text": "It can coordinate with other agents and software tools.",
+          "correct": true,
+          "rationale": "Correct. Agents collaborate and hand off tasks to other agents and systems."
+        },
+        {
+          "id": "f",
+          "text": "It cannot take any action beyond returning text.",
+          "correct": false,
+          "rationale": "Agents act, for example by calling tools, so this is incorrect."
+        }
+      ],
+      "explanation": "Agentic AI describes autonomous systems that pursue goals with little human oversight. According to AWS, they are proactive, adaptable and collaborative, and are often built from several specialized agents that share information and hand off tasks. Traditional AI typically needs prompting and step-by-step guidance. An agent therefore goes beyond producing a response: it decides and acts.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "A company needs to score 5 million stored customer records overnight with a trained model. Results are reviewed the next morning, and no user is waiting. Which TWO statements about the right approach are correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use real-time inference with an always-on endpoint for lowest latency.",
+          "correct": false,
+          "rationale": "Low latency is unnecessary and an always-on endpoint adds cost for an overnight job."
+        },
+        {
+          "id": "b",
+          "text": "Use batch inference to process the whole dataset at once.",
+          "correct": true,
+          "rationale": "Correct. Batch inference processes large sets of inputs together when immediate responses are not needed."
+        },
+        {
+          "id": "c",
+          "text": "Latency per record is unimportant because results are not needed immediately.",
+          "correct": true,
+          "rationale": "Correct. Throughput and cost matter more than per-request latency here."
+        },
+        {
+          "id": "d",
+          "text": "Retrain the model for every record.",
+          "correct": false,
+          "rationale": "Training per record is unnecessary and costly; the model is already trained."
+        },
+        {
+          "id": "e",
+          "text": "Ask each customer to submit records through an interactive chat.",
+          "correct": false,
+          "rationale": "Interactive entry does not suit a bulk job on existing stored data."
+        }
+      ],
+      "explanation": "Batch inference runs a trained model over many inputs together, typically reading from storage and writing results back, as in Amazon Bedrock batch inference for multiple prompts. It suits workloads where results are not needed instantly. Because no user waits, throughput and cost matter more than per-request latency. Real-time endpoints are meant for interactive requests.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html",
+          "title": "Process multiple prompts with batch inference - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    }
+  ]
+}
