@@ -63,6 +63,8 @@ export function getAttempt(id) {
  */
 export async function saveResponse(attemptId, itemId, response, currentIndex) {
   // modify() rather than update(): item ids contain dots, which update() would read as a key path.
+  // Do not "simplify" this back to db.attempts.update(attemptId, { [`responses.${itemId}`]: response }) -
+  // see the regression test in attempts.test.js named for this exact guard.
   const count = await db.attempts
     .where('id')
     .equals(attemptId)

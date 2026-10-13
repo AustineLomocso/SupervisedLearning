@@ -77,6 +77,17 @@ describe('saveResponse', () => {
     expect(stored?.currentIndex).toBe(1)
   })
 
+  it('round-trips a dotted item id (regression guard: must use modify(), not update(), or dots would be read as a nested key path)', async () => {
+    const { id } = await createAttempt(newAttempt())
+    await saveResponse(id, ITEM_1, response, 1)
+    const stored = await getAttempt(id)
+    // If saveResponse ever reverts to db.attempts.update(attemptId, { [`responses.${itemId}`]: response }),
+    // Dexie reads the dotted item id as a nested path (responses -> clf-c02-1 -> 1 -> ...) instead of a
+    // literal key, so this flat lookup would fail.
+    expect(stored?.responses[ITEM_1]).toEqual(response)
+    expect(Object.keys(stored?.responses ?? {})).toEqual([ITEM_1])
+  })
+
   it('throws for an unknown attempt', async () => {
     await expect(saveResponse('missing', ITEM_1, response, 0)).rejects.toThrow(
       'Attempt not found: missing',
