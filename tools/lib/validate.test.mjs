@@ -9,6 +9,7 @@ import {
   makeOptions,
   makeShard,
   REF_URL,
+  REF_URL_2,
   STEMS,
 } from '../__fixtures__/contentBuilders.mjs'
 import { formatIssue, validateContent } from './validate.mjs'
@@ -52,6 +53,13 @@ describe('validateContent', () => {
       expectMessage(
         run((c) => (c.blueprint.domains[0].weight = 0.5)).errors,
         'weights must sum to 1',
+      )
+    })
+
+    it('rejects a seed target above the full target', () => {
+      expectMessage(
+        run((c) => (c.blueprint.itemTargets = { seed: 10, full: 5 })).errors,
+        'itemTargets.seed (10) must not exceed itemTargets.full (5)',
       )
     })
 
@@ -168,6 +176,47 @@ describe('validateContent', () => {
       expectMessage(run((c) => (firstItem(c).stem += ' (Select TWO.)')).errors, 'remove "(Select')
     })
 
+    it.each([
+      '(Select all that apply)',
+      '(Select the TWO best)',
+      '(Pick two)',
+      '(Choose six.)',
+      'Select TWO.',
+      'Choose THREE.',
+      'Pick 2',
+    ])('flags select-count text "%s" in the stem', (suffix) => {
+      expectMessage(run((c) => (firstItem(c).stem += ` ${suffix}`)).errors, 'remove "(Select')
+    })
+
+    it.each(['(select an option from the list)', 'Select the service that stores objects.'])(
+      'does not flag "%s" in the stem',
+      (suffix) => {
+        const { errors } = run((c) => (firstItem(c).stem += ` ${suffix}`))
+        expect(errors.filter((e) => e.includes('remove "(Select'))).toEqual([])
+      },
+    )
+
+    it('does not flag a stem that starts with "Select the service"', () => {
+      const { errors } = run((c) => (firstItem(c).stem = 'Select the service that stores objects?'))
+      expect(errors.filter((e) => e.includes('remove "(Select'))).toEqual([])
+    })
+
+    it.each([
+      'All of these',
+      'None of these',
+      'All of the answers',
+      'None of the choices',
+      'A and B',
+      'Both A and C.',
+    ])('bans option "%s"', (text) => {
+      expectMessage(run((c) => (firstItem(c).options[3].text = text)).errors, 'banned phrase')
+    })
+
+    it('does not ban ordinary options containing "and"', () => {
+      const { errors } = run((c) => (firstItem(c).options[3].text = 'Amazon S3 and Amazon EBS'))
+      expect(errors.filter((e) => e.includes('banned phrase'))).toEqual([])
+    })
+
     it('only allows curated references', () => {
       const ref = { url: 'https://docs.aws.amazon.com/other.html', title: 'Other' }
       expectMessage(
@@ -200,6 +249,25 @@ describe('validateContent', () => {
         ).errors,
         'link https://docs.aws.amazon.com/nope.html',
       )
+    })
+
+    it.each([
+      '[x](https://docs.aws.amazon.com/nope.html "Title")',
+      '<https://docs.aws.amazon.com/nope.html>',
+      '[ref]: https://docs.aws.amazon.com/nope.html',
+      '<a href="https://docs.aws.amazon.com/nope.html">x</a>',
+      'See HTTPS://docs.aws.amazon.com/nope.html.',
+    ])('checks every URL form: %s', (extra) => {
+      expectMessage(run((c) => (c.lessons[0].text = makeLesson('T', extra))).errors, 'link ')
+    })
+
+    it('accepts anchored and slash-variant links to curated pages', () => {
+      const extra = `[a](${REF_URL}#intro "T")\n\n<${REF_URL_2.replace(/\/$/, '')}>\n\n[b](${REF_URL_2}).`
+      expect(run((c) => (c.lessons[0].text = makeLesson('T', extra))).errors).toEqual([])
+    })
+
+    it('ignores a leading BOM before the heading', () => {
+      expect(run((c) => (c.lessons[0].text = `﻿${makeLesson()}`)).errors).toEqual([])
     })
 
     it('accepts curated links and closed diagrams', () => {

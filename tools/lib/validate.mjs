@@ -19,9 +19,32 @@ import { jaccard, NEAR_DUPLICATE_THRESHOLD, trigrams } from './similarity.mjs'
 export const MR_SHARE_RANGE = [0.15, 0.3]
 export const LESSON_WORD_RANGE = [400, 1200]
 
-const BANNED_OPTION = /\b(all|none|both|neither) of the (above|options)\b/i
-const SELECT_COUNT_IN_STEM = /\((?:select|choose)\s+(?:one|two|three|four|five|\d)\b[^)]*\)/i
-const MARKDOWN_LINK = /\]\((https?:\/\/[^)\s]+)\)/g
+const BANNED_OPTION =
+  /\b(?:(?:all|none|both|neither) of the (?:above|options|answers|choices)|(?:all|none) of these)\b|^(?:both\s+)?[a-f]\s+and\s+[a-f]\.?$/i
+const SELECT_COUNT_IN_STEM = new RegExp(
+  [
+    /\((?:select|choose|pick)\s+(?:all|the|one|two|three|four|five|six|\d)\b[^)]*\)/.source,
+    /(?:^|[.?!]\s+)(?:select|choose|pick)\s+(?:one|two|three|four|five|six|\d)\.?\s*$/.source,
+  ].join('|'),
+  'i',
+)
+const URL_IN_TEXT = /https?:\/\/[^\s<>"'`]+/gi
+
+/**
+ * Strips trailing punctuation from a URL found in prose.
+ * @param {string} url
+ */
+function trimUrl(url) {
+  return url.replace(/[.,;:)"'>\]]+$/, '')
+}
+
+/**
+ * Drops a trailing #fragment and trailing slash so equivalent URLs compare equal.
+ * @param {string} url
+ */
+function normalizeUrl(url) {
+  return url.replace(/#.*$/, '').replace(/\/$/, '')
+}
 
 /** @param {Issue} issue */
 export function formatIssue(issue) {
@@ -98,6 +121,12 @@ function checkBlueprint(cert, error) {
   const totalWeight = blueprint.domains.reduce((sum, domain) => sum + domain.weight, 0)
   if (Math.abs(totalWeight - 1) > 0.001) {
     error('blueprint.json', `domain weights must sum to 1 (got ${totalWeight.toFixed(3)})`)
+  }
+  if (blueprint.itemTargets.seed > blueprint.itemTargets.full) {
+    error(
+      'blueprint.json',
+      `itemTargets.seed (${blueprint.itemTargets.seed}) must not exceed itemTargets.full (${blueprint.itemTargets.full})`,
+    )
   }
   blueprint.domains.forEach((domain, d) => {
     if (domain.no !== d + 1) {
@@ -235,6 +264,7 @@ function checkItem(item, idPrefix, curated, say) {
  */
 function checkLessons(cert, taskCodes, curated, error, warn) {
   const lessonTasks = new Set()
+  const curatedNormalized = new Set([...curated].map(normalizeUrl))
   const [minWords, maxWords] = LESSON_WORD_RANGE
   for (const lesson of cert.lessons) {
     const file = `review/${lesson.task}.md`
@@ -243,15 +273,19 @@ function checkLessons(cert, taskCodes, curated, error, warn) {
       continue
     }
     lessonTasks.add(lesson.task)
-    const lines = lesson.text.split(/\r?\n/)
+    const text = lesson.text.replace(/^﻿/, '')
+    const lines = text.split(/\r?\n/)
     const firstLine = lines.find((line) => line.trim() !== '') ?? ''
     if (!firstLine.startsWith('# ')) error(file, 'must start with a level-1 heading ("# Title")')
     const fences = lines.filter((line) => line.trimStart().startsWith('```')).length
     if (fences % 2 !== 0) error(file, 'has an unclosed ``` code fence')
-    for (const [, url] of lesson.text.matchAll(MARKDOWN_LINK)) {
-      if (!curated.has(url)) error(file, `link ${url} is not in references.json`)
+    for (const [match] of text.matchAll(URL_IN_TEXT)) {
+      const url = trimUrl(match)
+      if (!curatedNormalized.has(normalizeUrl(url))) {
+        error(file, `link ${url} is not in references.json`)
+      }
     }
-    const words = lesson.text.split(/\s+/).filter(Boolean).length
+    const words = text.split(/\s+/).filter(Boolean).length
     if (words < minWords || words > maxWords) {
       warn(file, `has ${words} words; aim for ${minWords}–${maxWords}`)
     }
