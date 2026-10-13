@@ -1,0 +1,948 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "1.1",
+  "items": [
+    {
+      "id": "clf-c02-1.1-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A startup wants to avoid buying servers up front and instead pay only for the computing resources it consumes. Which cloud advantage does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stopping guessing about capacity",
+          "correct": false,
+          "rationale": "Capacity guessing concerns forecasting demand; the scenario is about how the company pays, not how it sizes resources."
+        },
+        {
+          "id": "b",
+          "text": "Trading fixed expense for variable expense",
+          "correct": true,
+          "rationale": "Correct. Instead of large upfront investments in hardware, the company pays only for what it uses, when it uses it."
+        },
+        {
+          "id": "c",
+          "text": "Benefiting from massive economies of scale",
+          "correct": false,
+          "rationale": "Economies of scale lower per-unit prices through aggregated usage; it does not describe replacing upfront purchases with usage-based payment."
+        },
+        {
+          "id": "d",
+          "text": "Going global in minutes",
+          "correct": false,
+          "rationale": "Global deployment is about reach, not about changing the payment model from capital to operating expense."
+        }
+      ],
+      "explanation": "One of the six advantages of cloud computing is trading fixed expense for variable expense. On premises, a company invests heavily in data centers and servers before knowing how much it will use. With AWS, it consumes resources as needed and pays only for what it uses. This lowers the barrier to starting new projects, because there is no large capital outlay and no unused hardware to carry when demand is lower than expected.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "AWS aggregates usage from a very large number of customers. Which benefit can customers get as a result?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Guaranteed zero downtime for every workload",
+          "correct": false,
+          "rationale": "AWS does not promise zero downtime; customers design for availability across Availability Zones and Regions."
+        },
+        {
+          "id": "b",
+          "text": "Ownership of the physical AWS data centers",
+          "correct": false,
+          "rationale": "Customers do not own AWS facilities; AWS owns and operates them."
+        },
+        {
+          "id": "c",
+          "text": "Dedicated hardware reserved for each customer",
+          "correct": false,
+          "rationale": "Most AWS services run on shared infrastructure; aggregation does not mean dedicated hardware per customer."
+        },
+        {
+          "id": "d",
+          "text": "Lower pay-as-you-go prices over time",
+          "correct": true,
+          "rationale": "Correct. Aggregated usage lets AWS achieve higher economies of scale and pass savings on as lower prices."
+        }
+      ],
+      "explanation": "Benefiting from massive economies of scale is another advantage of cloud computing. Because AWS serves a very large number of customers, it can buy hardware, power, and network capacity at volume and run it efficiently. These lower costs let AWS offer lower pay-as-you-go prices than most organizations could achieve by operating their own data centers. The benefit is price, not a service level guarantee or a change in who owns the facilities.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A retailer bought servers sized for its holiday peak, and they sat mostly idle the rest of the year. Which cloud advantage addresses this problem?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Locking in a multi-year hardware purchase",
+          "correct": false,
+          "rationale": "This repeats the problem: fixed hardware cannot follow demand and stays idle between peaks."
+        },
+        {
+          "id": "b",
+          "text": "Replicating data to a second Region",
+          "correct": false,
+          "rationale": "Replication supports resilience and recovery, but does not match capacity to demand."
+        },
+        {
+          "id": "c",
+          "text": "Scaling capacity up and down to match actual demand",
+          "correct": true,
+          "rationale": "Correct. Stopping guessing about capacity means resources are added when needed and released when demand drops."
+        },
+        {
+          "id": "d",
+          "text": "Moving the servers to a colocation facility",
+          "correct": false,
+          "rationale": "Colocation changes where the hardware sits, but the company still must buy capacity for the peak."
+        }
+      ],
+      "explanation": "Stop guessing capacity is a core advantage of the cloud. On premises, teams must forecast demand and buy hardware in advance, which leads to idle resources if they overestimate or poor performance if they underestimate. In the AWS Cloud, you can provision as much or as little capacity as you need and adjust it within minutes as demand changes. This avoids both waste and shortages.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An IT team spends most of its time racking servers, managing cooling, and replacing failed disks. Which cloud benefit lets the team focus on business projects instead?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Not having to run and maintain data centers",
+          "correct": true,
+          "rationale": "Correct. AWS operates and maintains the physical facilities and hardware, freeing staff for differentiating work."
+        },
+        {
+          "id": "b",
+          "text": "Trading fixed expense for variable expense",
+          "correct": false,
+          "rationale": "This changes how the company pays, but does not remove the physical maintenance workload itself."
+        },
+        {
+          "id": "c",
+          "text": "Going global in minutes",
+          "correct": false,
+          "rationale": "This relates to reaching users in more geographies, not to reducing hardware upkeep."
+        },
+        {
+          "id": "d",
+          "text": "Stopping guessing about capacity",
+          "correct": false,
+          "rationale": "This concerns forecasting demand, not the physical work of operating facilities."
+        }
+      ],
+      "explanation": "Stop spending money running and maintaining data centers is one of the six advantages of cloud computing. With AWS, the provider handles the physical security, power, cooling, networking, and hardware replacement of its facilities under the shared responsibility model. Customers can then spend effort on applications and business value instead of undifferentiated heavy lifting such as racking and stacking servers.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0005",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is preparing to migrate from on premises. Which statements describe advantages of the AWS Cloud for this company?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It increases speed and agility by letting teams provision resources in minutes.",
+          "correct": true,
+          "rationale": "Correct. Provisioning takes minutes instead of weeks, so teams can experiment and deliver faster."
+        },
+        {
+          "id": "b",
+          "text": "It requires the company to forecast hardware needs several years ahead.",
+          "correct": false,
+          "rationale": "Forecasting years ahead is the on-premises burden that the cloud removes."
+        },
+        {
+          "id": "c",
+          "text": "It requires large upfront capital spending for each new workload.",
+          "correct": false,
+          "rationale": "Cloud use shifts capital expense to variable expense; workloads do not require upfront hardware purchases."
+        },
+        {
+          "id": "d",
+          "text": "It provides economies of scale that can lower prices for customers.",
+          "correct": true,
+          "rationale": "Correct. AWS aggregates usage across many customers and can pass lower costs on."
+        },
+        {
+          "id": "e",
+          "text": "It makes the company responsible for maintaining AWS data centers.",
+          "correct": false,
+          "rationale": "AWS, not the customer, maintains the data centers."
+        }
+      ],
+      "explanation": "The AWS Cloud offers six advantages: variable expense instead of fixed expense, massive economies of scale, no capacity guessing, increased speed and agility, no spending on running data centers, and the ability to go global in minutes. Faster provisioning and lower prices from scale are two of them. The distractors describe the traditional on-premises model, where capital spending, long forecasts, and facility maintenance fall on the customer.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company is deciding between building a new data center and moving a workload to AWS. Leadership wants low upfront cost, quick experimentation, and no long-term capacity forecasting. Which approach best meets these needs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fixed monthly pricing with hardware ordered in advance",
+          "correct": false,
+          "rationale": "Fixed pricing and advance hardware orders keep the forecasting burden and slow experimentation."
+        },
+        {
+          "id": "b",
+          "text": "Usage-based pricing with resources provisioned in minutes",
+          "correct": true,
+          "rationale": "Correct. Pay-as-you-go cost, fast provisioning, and adjustable capacity match all three stated needs."
+        },
+        {
+          "id": "c",
+          "text": "Low upfront cost with a long hardware procurement cycle",
+          "correct": false,
+          "rationale": "A long procurement cycle blocks quick experimentation, even if initial cost looks low."
+        },
+        {
+          "id": "d",
+          "text": "A smaller on-premises data center sized for average load",
+          "correct": false,
+          "rationale": "Sizing for average load still needs forecasting and cannot absorb peaks or support quick experiments."
+        }
+      ],
+      "explanation": "The value proposition of the AWS Cloud combines several advantages at once: variable expense, no capacity guessing, and speed and agility. Usage-based pricing removes upfront capital, and provisioning resources in minutes lets teams try ideas and discard them cheaply. Capacity can be adjusted as the workload grows or shrinks, so no multi-year forecast is needed. Options that keep fixed pricing, long procurement, or on-premises sizing retain the problems the company wants to leave behind.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which term describes a physical location in the world where AWS clusters multiple data center groups?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Region",
+          "correct": true,
+          "rationale": "Correct. A Region is a separate geographic area that contains multiple, isolated Availability Zones."
+        },
+        {
+          "id": "b",
+          "text": "Availability Zone",
+          "correct": false,
+          "rationale": "An Availability Zone is a group of data centers within a Region, not the worldwide location itself."
+        },
+        {
+          "id": "c",
+          "text": "Edge location",
+          "correct": false,
+          "rationale": "Edge locations cache content close to users and are not full Regions of compute and storage."
+        },
+        {
+          "id": "d",
+          "text": "AWS Outposts rack",
+          "correct": false,
+          "rationale": "Outposts brings AWS infrastructure to a customer's own site; it is not a geographic AWS location."
+        }
+      ],
+      "explanation": "The AWS Global Infrastructure is built around Regions, which are physical locations around the world. Each Region is a separate geographic area containing multiple Availability Zones, so a failure in one Region does not affect others. Customers choose the Region where they run workloads, which lets them place resources near users, meet data residency needs, and design for resilience.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is an Availability Zone in AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A content caching site close to end users",
+          "correct": false,
+          "rationale": "That describes an edge location, which is used to deliver content with low latency."
+        },
+        {
+          "id": "b",
+          "text": "A geographic area containing many Regions",
+          "correct": false,
+          "rationale": "The relationship is reversed: a Region contains multiple Availability Zones."
+        },
+        {
+          "id": "c",
+          "text": "One or more discrete data centers with redundant power and networking in a Region",
+          "correct": true,
+          "rationale": "Correct. Availability Zones are isolated from each other yet connected by low-latency links."
+        },
+        {
+          "id": "d",
+          "text": "A virtual network that spans several AWS accounts",
+          "correct": false,
+          "rationale": "That does not describe an Availability Zone, which is physical infrastructure, not a network construct."
+        }
+      ],
+      "explanation": "An Availability Zone (AZ) consists of one or more discrete data centers, each with redundant power, networking, and connectivity, housed in separate facilities within an AWS Region. AZs are physically separated so that a single event such as a power failure is unlikely to affect more than one. They are connected by low-latency links, which makes it practical to run applications across several AZs for high availability.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company has customers in Europe and in Asia and wants each group to experience low latency. How can the company use the AWS global infrastructure to achieve this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Run a larger instance type in a single Region",
+          "correct": false,
+          "rationale": "A bigger instance adds compute power but does not shorten the network distance to users."
+        },
+        {
+          "id": "b",
+          "text": "Add Availability Zones in the home Region only",
+          "correct": false,
+          "rationale": "Extra AZs in one Region improve availability, but users far from that Region still see high latency."
+        },
+        {
+          "id": "c",
+          "text": "Increase the number of users in AWS Identity and Access Management",
+          "correct": false,
+          "rationale": "IAM users control access and have no effect on network latency."
+        },
+        {
+          "id": "d",
+          "text": "Deploy the application in Regions close to each group of users",
+          "correct": true,
+          "rationale": "Correct. Placing resources in Regions near users reduces network latency and improves responsiveness."
+        }
+      ],
+      "explanation": "A key benefit of the AWS global infrastructure is global reach. Because AWS operates many Regions worldwide, a company can deploy an application close to its users and reduce the network distance that data has to travel. Adding Availability Zones within a single Region improves fault tolerance, but it does not move the workload closer to distant customers. Choosing Regions that match user locations is the direct way to cut latency.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must launch a pilot of its application for customers in a new country next week. Which benefit of the AWS global infrastructure helps most?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Building and staffing a local data center quickly",
+          "correct": false,
+          "rationale": "Building a facility cannot be finished in a week, and AWS removes the need to do so."
+        },
+        {
+          "id": "b",
+          "text": "Deploying resources in an AWS Region closer to those customers within minutes",
+          "correct": true,
+          "rationale": "Correct. The company can use an existing Region and start resources immediately without new facilities."
+        },
+        {
+          "id": "c",
+          "text": "Waiting for a hardware vendor to ship servers",
+          "correct": false,
+          "rationale": "Hardware shipment is slow and is the on-premises approach the cloud avoids."
+        },
+        {
+          "id": "d",
+          "text": "Negotiating a long-term contract with a local data center operator",
+          "correct": false,
+          "rationale": "Long-term contracts add commitment and delay, the opposite of fast deployment."
+        }
+      ],
+      "explanation": "Going global in minutes is one of the six advantages of cloud computing. AWS has already built and operates its global footprint of Regions, so a company can deploy applications in multiple geographies with a few clicks or API calls. There is no need to buy land, build facilities, or ship hardware, which greatly shortens the time to reach customers in a new market.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0011",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which statements describe benefits of the AWS global infrastructure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data is automatically copied to every Region at no cost.",
+          "correct": false,
+          "rationale": "AWS does not replicate customer data to all Regions automatically; customers control replication and may pay for it."
+        },
+        {
+          "id": "b",
+          "text": "Customers can place workloads near users to reduce latency.",
+          "correct": true,
+          "rationale": "Correct. Choosing Regions close to users lowers latency."
+        },
+        {
+          "id": "c",
+          "text": "Customers no longer need to design their applications for failure.",
+          "correct": false,
+          "rationale": "Customers still must architect for resilience, for example across Availability Zones."
+        },
+        {
+          "id": "d",
+          "text": "All Regions share one set of Availability Zones.",
+          "correct": false,
+          "rationale": "Each Region has its own isolated Availability Zones."
+        },
+        {
+          "id": "e",
+          "text": "Customers can choose a Region to help meet data residency requirements.",
+          "correct": true,
+          "rationale": "Correct. Data stays in the chosen Region unless the customer moves it."
+        }
+      ],
+      "explanation": "The AWS global infrastructure gives customers control over where their workloads run. Selecting a Region near users reduces latency, and selecting a Region in a particular country helps meet data residency or compliance requirements, because customer content stays in the chosen Region unless the customer decides to move it. AWS does not copy data between Regions on its own, and resilience remains a design responsibility for customers.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS infrastructure component is used to deliver cached content to end users with low latency?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Edge locations",
+          "correct": true,
+          "rationale": "Correct. Edge locations cache content nearer to users so it loads faster."
+        },
+        {
+          "id": "b",
+          "text": "Availability Zones",
+          "correct": false,
+          "rationale": "Availability Zones host workloads within a Region and are not a global caching network."
+        },
+        {
+          "id": "c",
+          "text": "AWS Regions",
+          "correct": false,
+          "rationale": "Regions host services and data in a geographic area, and are far fewer than edge locations."
+        },
+        {
+          "id": "d",
+          "text": "AWS Outposts racks",
+          "correct": false,
+          "rationale": "Outposts places AWS infrastructure on premises for local processing, not for caching content globally."
+        }
+      ],
+      "explanation": "Beyond Regions and Availability Zones, AWS operates a network of edge locations around the world. These sites cache copies of content, such as web pages and media, close to end users so it can be delivered with lower latency. Edge locations complement Regions: the application runs in a Region, while the edge network speeds up delivery to users far away from that Region.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company must keep customer data in Germany to meet legal requirements and must continue operating if one data center fails. Which design meets both requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use one Availability Zone in a German Region and back up data to a Region in another country",
+          "correct": false,
+          "rationale": "Backing up to another country violates the requirement to keep data in Germany."
+        },
+        {
+          "id": "b",
+          "text": "Deploy in two Regions in different countries for resilience",
+          "correct": false,
+          "rationale": "Using a Region outside Germany would place customer data outside the country."
+        },
+        {
+          "id": "c",
+          "text": "Use multiple Availability Zones within a Region located in Germany",
+          "correct": true,
+          "rationale": "Correct. Data remains in Germany, and separate AZs let the workload survive the failure of one data center."
+        },
+        {
+          "id": "d",
+          "text": "Use multiple Availability Zones in the nearest Region regardless of country",
+          "correct": false,
+          "rationale": "The nearest Region might not be in Germany, so data residency is not guaranteed."
+        }
+      ],
+      "explanation": "Two requirements decide this design. Data residency means the data must stay in a Region in the required country, so every copy must be placed in that Region. Fault tolerance for a data center failure is addressed by spreading resources across multiple Availability Zones, which are physically separate. Combining a Region in Germany with several AZs satisfies both, whereas multi-country designs or single-AZ designs fail one requirement.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which term describes designing a system so that it keeps operating with minimal downtime when components fail?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Elasticity",
+          "correct": false,
+          "rationale": "Elasticity is about adjusting resources to demand, not about surviving component failure."
+        },
+        {
+          "id": "b",
+          "text": "Agility",
+          "correct": false,
+          "rationale": "Agility is about speed of provisioning and experimentation."
+        },
+        {
+          "id": "c",
+          "text": "Economies of scale",
+          "correct": false,
+          "rationale": "Economies of scale refer to lower costs from aggregated usage, not to uptime."
+        },
+        {
+          "id": "d",
+          "text": "High availability",
+          "correct": true,
+          "rationale": "Correct. High availability keeps a workload accessible and functioning despite failures of individual components."
+        }
+      ],
+      "explanation": "High availability means a system remains operational and accessible for a very high percentage of time, even when individual components fail. It is achieved by removing single points of failure, using redundant components, and spreading workloads across multiple Availability Zones. It is distinct from elasticity, which matches capacity to demand, and from agility, which is about how quickly teams can provision and change resources.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants its application to add instances automatically when load increases and remove them when load decreases. Which cloud characteristic does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High availability",
+          "correct": false,
+          "rationale": "High availability concerns surviving failures, not adjusting capacity to load."
+        },
+        {
+          "id": "b",
+          "text": "Elasticity",
+          "correct": true,
+          "rationale": "Correct. Elasticity is the ability to acquire resources as you need them and release them when you do not."
+        },
+        {
+          "id": "c",
+          "text": "Durability",
+          "correct": false,
+          "rationale": "Durability describes how well stored data is protected against loss."
+        },
+        {
+          "id": "d",
+          "text": "Economies of scale",
+          "correct": false,
+          "rationale": "Economies of scale describe lower unit prices from aggregated usage."
+        }
+      ],
+      "explanation": "Elasticity is the ability of a system to grow and shrink resources automatically in response to demand. On AWS, Amazon EC2 Auto Scaling launches instances when load rises and terminates them when load falls, so capacity follows the workload. Customers therefore avoid paying for idle capacity and avoid performance problems during spikes. It differs from high availability, which focuses on staying up during failures.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
+          "title": "What is Amazon EC2 Auto Scaling? - Amazon EC2 Auto Scaling"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0016",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A web application has unpredictable traffic. Which actions provide elasticity for this workload?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use Amazon EC2 Auto Scaling to launch instances when load rises.",
+          "correct": true,
+          "rationale": "Correct. Scaling out adds capacity automatically when demand increases."
+        },
+        {
+          "id": "b",
+          "text": "Buy enough servers to handle the highest traffic of the year.",
+          "correct": false,
+          "rationale": "Fixed peak capacity is not elastic and leaves resources idle most of the time."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon EC2 Auto Scaling to terminate instances when load falls.",
+          "correct": true,
+          "rationale": "Correct. Scaling in releases unused capacity so the company stops paying for it."
+        },
+        {
+          "id": "d",
+          "text": "Order additional hardware manually each quarter.",
+          "correct": false,
+          "rationale": "Manual quarterly ordering cannot react to unpredictable traffic."
+        },
+        {
+          "id": "e",
+          "text": "Keep a fixed number of instances running at all times.",
+          "correct": false,
+          "rationale": "A fixed fleet does not adjust to changes in demand."
+        }
+      ],
+      "explanation": "Elasticity has two sides: scaling out to add capacity when demand rises and scaling in to remove capacity when demand falls. Amazon EC2 Auto Scaling does both automatically based on scaling policies, keeping performance steady while costs follow actual use. Approaches that rely on fixed capacity or manual hardware purchases cannot respond quickly enough to unpredictable traffic.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
+          "title": "What is Amazon EC2 Auto Scaling? - Amazon EC2 Auto Scaling"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A development team wants to provision a test environment in minutes, try a new idea, and delete the environment afterward. Which cloud benefit is the team using?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Agility",
+          "correct": true,
+          "rationale": "Correct. Agility is the ability to experiment quickly because resources are available on demand."
+        },
+        {
+          "id": "b",
+          "text": "High availability",
+          "correct": false,
+          "rationale": "High availability keeps a running workload accessible during failures and does not describe fast experimentation."
+        },
+        {
+          "id": "c",
+          "text": "Elasticity",
+          "correct": false,
+          "rationale": "Elasticity adjusts capacity of a running workload to demand; the scenario is about speed of creating environments."
+        },
+        {
+          "id": "d",
+          "text": "Economies of scale",
+          "correct": false,
+          "rationale": "Economies of scale lower unit prices and do not describe provisioning speed."
+        }
+      ],
+      "explanation": "Agility means that new resources are only a few clicks or API calls away, so the time to make them available drops from weeks to minutes. Teams can experiment, test, and discard environments at low cost, which lowers the cost of failure and speeds up innovation. Elasticity is a related idea, but it focuses on adjusting capacity of a running workload to meet changing demand.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "An application runs on a single Amazon EC2 instance in one Availability Zone. A power failure in that zone caused an outage. Which change best improves availability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Move to a larger instance type in the same zone",
+          "correct": false,
+          "rationale": "A larger instance adds capacity but the application still depends on one instance and one zone."
+        },
+        {
+          "id": "b",
+          "text": "Place the instance in an Auto Scaling group limited to the same zone",
+          "correct": false,
+          "rationale": "Auto Scaling can replace a failed instance, but a zone-wide failure still takes the whole application down."
+        },
+        {
+          "id": "c",
+          "text": "Run instances in multiple Availability Zones behind a load balancer",
+          "correct": true,
+          "rationale": "Correct. Redundancy across zones removes the single point of failure, and traffic can shift to healthy instances."
+        },
+        {
+          "id": "d",
+          "text": "Take regular snapshots of the instance volume",
+          "correct": false,
+          "rationale": "Snapshots help recovery but do not keep the application running during a zone outage."
+        }
+      ],
+      "explanation": "High availability depends on removing single points of failure. Because Availability Zones are physically separate, running redundant instances in more than one AZ and distributing traffic with a load balancer lets the application keep serving requests when one zone fails. Larger instances and same-zone Auto Scaling improve capacity or instance replacement but share the same zone risk. Snapshots support recovery, not continuous availability.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
+          "title": "What is Amazon EC2 Auto Scaling? - Amazon EC2 Auto Scaling"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 2,
+      "stem": "Which design practices improve the high availability of a workload?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deploy resources across multiple Availability Zones.",
+          "correct": true,
+          "rationale": "Correct. Separate zones keep the workload running if one zone fails."
+        },
+        {
+          "id": "b",
+          "text": "Run the entire workload on one large instance.",
+          "correct": false,
+          "rationale": "A single instance is a single point of failure."
+        },
+        {
+          "id": "c",
+          "text": "Use redundant components so that no single failure stops the service.",
+          "correct": true,
+          "rationale": "Correct. Redundancy removes single points of failure."
+        },
+        {
+          "id": "d",
+          "text": "Depend on manual recovery steps after a failure.",
+          "correct": false,
+          "rationale": "Manual recovery increases downtime compared with automated failover."
+        },
+        {
+          "id": "e",
+          "text": "Use health checks to route traffic away from failed resources.",
+          "correct": true,
+          "rationale": "Correct. Health checks detect failures so traffic goes only to healthy resources."
+        },
+        {
+          "id": "f",
+          "text": "Keep all resources in one zone for simplicity.",
+          "correct": false,
+          "rationale": "Concentrating resources in one zone creates a shared failure point."
+        }
+      ],
+      "explanation": "Highly available systems are designed to tolerate failures. Common practices include spreading resources across multiple Availability Zones, building in redundancy so that no single component can take the service down, and using health checks with automatic failover so that traffic avoids unhealthy resources. Single large instances, manual recovery, and keeping everything in one zone all increase the risk and the duration of outages.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0020",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A media site receives ten times its normal traffic during live events and very little otherwise. It wants to stay responsive during events while paying only for capacity that is needed. Which approach best meets these requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Provision enough instances for event peaks and keep them running",
+          "correct": false,
+          "rationale": "This stays responsive but pays for idle capacity most of the time."
+        },
+        {
+          "id": "b",
+          "text": "Provision instances for average traffic only",
+          "correct": false,
+          "rationale": "This is cheaper, but would be slow or fail during events."
+        },
+        {
+          "id": "c",
+          "text": "Manually resize to a larger instance type before every event",
+          "correct": false,
+          "rationale": "Manual changes are slow, error-prone, and cannot track traffic that changes during an event."
+        },
+        {
+          "id": "d",
+          "text": "Use EC2 Auto Scaling policies that add and remove instances with demand",
+          "correct": true,
+          "rationale": "Correct. Capacity rises for events and falls afterward, meeting both responsiveness and cost goals."
+        }
+      ],
+      "explanation": "The requirements pull in opposite directions: responsiveness during spikes suggests large capacity, while cost control suggests small capacity. Elasticity resolves this. Amazon EC2 Auto Scaling adds instances as load increases and removes them as it falls, so the application stays responsive during events and the company is not charged for idle servers afterward. Fixed provisioning, whether for peak or average, sacrifices one of the two goals.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
+          "title": "What is Amazon EC2 Auto Scaling? - Amazon EC2 Auto Scaling"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    }
+  ]
+}
