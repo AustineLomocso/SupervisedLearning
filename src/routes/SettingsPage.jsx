@@ -16,7 +16,7 @@ const STORAGE_STATUS_TEXT = {
   persisted: 'Protected. Your browser won’t clear your progress to free up space.',
   'best-effort':
     'Not protected. Your browser may clear your progress if the device runs low on storage.',
-  unsupported: 'This browser can’t protect stored progress. Export backups regularly.',
+  unsupported: 'This browser can’t protect stored progress.',
 }
 
 export default function SettingsPage() {
