@@ -21,7 +21,9 @@
     "predev": "npm run build:index",
     "prebuild": "npm run build:index",
     "pretest": "npm run build:index",
-    "pretypecheck": "npm run build:index"
+    "pretypecheck": "npm run build:index",
+    "validate:content": "node tools/validate-content.mjs",
+    "content:stats": "node tools/content-stats.mjs"
   },
   "dependencies": {
     "dexie": "^4.4.6",
