@@ -3,3 +3,4 @@ docs
 playwright-report
 test-results
 package-lock.json
+src/generated

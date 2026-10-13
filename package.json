@@ -16,7 +16,12 @@
     "lint": "oxlint --deny-warnings",
     "typecheck": "tsc -p jsconfig.json",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "build:index": "node tools/build-index.mjs",
+    "predev": "npm run build:index",
+    "prebuild": "npm run build:index",
+    "pretest": "npm run build:index",
+    "pretypecheck": "npm run build:index"
   },
   "dependencies": {
     "dexie": "^4.4.6",

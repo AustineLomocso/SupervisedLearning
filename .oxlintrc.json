@@ -12,5 +12,5 @@
       "rules": { "react/only-export-components": "off" }
     }
   ],
-  "ignorePatterns": ["dist", "playwright-report", "test-results"]
+  "ignorePatterns": ["dist", "playwright-report", "test-results", "src/generated"]
 }
