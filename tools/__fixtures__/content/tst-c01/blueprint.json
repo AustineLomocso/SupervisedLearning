@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "certId": "tst-c01",
+  "code": "TST-C01",
+  "title": "Test Certification",
+  "displayOrder": 1,
+  "source": {
+    "url": "https://docs.aws.amazon.com/aws-certification/latest/examples/test.html",
+    "retrievedOn": "2026-10-14"
+  },
+  "exam": { "questions": 65, "scored": 50, "minutes": 90, "passScaled": 700 },
+  "itemTargets": { "seed": 2, "full": 4 },
+  "domains": [
+    {
+      "no": 1,
+      "title": "Domain One",
+      "weight": 1,
+      "subdomains": [{ "code": "1.1", "title": "Task one.", "objectives": ["Objective A"] }]
+    }
+  ]
+}
