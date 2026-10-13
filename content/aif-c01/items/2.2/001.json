@@ -1,0 +1,940 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "2.2",
+  "items": [
+    {
+      "id": "aif-c01-2.2-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which characteristic of generative AI lets a single foundation model support many tasks, such as summarizing, translating, and answering questions, without building a separate model for each?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Guaranteed deterministic output",
+          "correct": false,
+          "rationale": "Generative models can produce different outputs for the same prompt, so determinism is not a general characteristic."
+        },
+        {
+          "id": "b",
+          "text": "Adaptability across tasks",
+          "correct": true,
+          "rationale": "Foundation models are trained on broad data, so one model can be adapted to many tasks through prompting or customization."
+        },
+        {
+          "id": "c",
+          "text": "Built-in explainability of results",
+          "correct": false,
+          "rationale": "Foundation models are often described as black boxes, so explainability is a challenge rather than an advantage."
+        },
+        {
+          "id": "d",
+          "text": "Elimination of all compute cost",
+          "correct": false,
+          "rationale": "Training and running large models needs substantial compute, so cost is not removed."
+        }
+      ],
+      "explanation": "Foundation models are trained on very large, broad datasets, which makes them adaptable. Instead of training a new model for each use case, a team can prompt, customize, or build on the same model for summarization, translation, question answering, and content generation. This adaptability is one of the main business advantages of generative AI, together with conversational interfaces and the ability to create new content. Limits such as nondeterminism, cost, and low explainability still apply, so adaptability does not remove the need to evaluate a model for each use case.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is the term for a generative AI model producing fluent output that sounds confident but is factually incorrect or not based on the provided source information?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Overfitting",
+          "correct": false,
+          "rationale": "Overfitting describes a model that fits its training data too closely and generalizes poorly, which is a different problem."
+        },
+        {
+          "id": "b",
+          "text": "Tokenization",
+          "correct": false,
+          "rationale": "Tokenization splits text into units a model processes and is not a model error."
+        },
+        {
+          "id": "c",
+          "text": "Hallucination",
+          "correct": true,
+          "rationale": "A hallucination is plausible-sounding output that is inaccurate or unsupported by facts or by the supplied source."
+        },
+        {
+          "id": "d",
+          "text": "Quantization",
+          "correct": false,
+          "rationale": "Quantization reduces the numeric precision of model weights to shrink size and is not an output error."
+        }
+      ],
+      "explanation": "Generative models predict likely content, not verified truth, so they can produce statements that read well but are wrong or unsupported. This is called a hallucination and is one of the main disadvantages of GenAI solutions. Mitigations include grounding responses in trusted data with retrieval, adding human review for high-stakes output, and using safeguards such as the contextual grounding check in Amazon Bedrock Guardrails. Hallucination is a direct risk to accuracy, so applications where correctness matters need explicit controls.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html",
+          "title": "Use contextual grounding check to filter hallucinations in responses - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A team sends the same prompt to a foundation model twice and receives two differently worded responses. Which GenAI limitation does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nondeterminism",
+          "correct": true,
+          "rationale": "Generative models sample from probabilities, so identical prompts can produce different outputs."
+        },
+        {
+          "id": "b",
+          "text": "Data residency",
+          "correct": false,
+          "rationale": "Data residency concerns where data is stored and processed, not variation in responses."
+        },
+        {
+          "id": "c",
+          "text": "Model drift",
+          "correct": false,
+          "rationale": "Drift refers to performance changing over time as data shifts, not variation between two immediate calls."
+        },
+        {
+          "id": "d",
+          "text": "Underfitting",
+          "correct": false,
+          "rationale": "Underfitting means a model is too simple to learn patterns during training, which does not explain varied wording."
+        }
+      ],
+      "explanation": "Generative models produce output by sampling from probability distributions over possible next tokens. Because of this, the same input can yield differently worded or even differently reasoned answers. This nondeterminism is helpful for creative tasks but is a disadvantage when a workflow needs identical, repeatable results, such as strict compliance wording. Teams manage it with clear prompts, inference settings that reduce randomness, testing, and validation of outputs before they are used downstream.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/large-language-model/",
+          "title": "What is LLM? - Large Language Models Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "An online retailer wants a metric that estimates the total revenue a customer is expected to generate over the whole relationship with the company. Which business metric is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Conversion rate",
+          "correct": false,
+          "rationale": "Conversion rate is the share of visitors who complete a desired action, not total expected value."
+        },
+        {
+          "id": "b",
+          "text": "Average revenue per user",
+          "correct": false,
+          "rationale": "Average revenue per user measures revenue per user in a period, not the full relationship value."
+        },
+        {
+          "id": "c",
+          "text": "Time to first token",
+          "correct": false,
+          "rationale": "Time to first token is a technical latency measure, not a business value metric."
+        },
+        {
+          "id": "d",
+          "text": "Customer lifetime value",
+          "correct": true,
+          "rationale": "Customer lifetime value estimates total expected revenue or profit from a customer over the relationship."
+        }
+      ],
+      "explanation": "Business value metrics connect a generative AI application to outcomes the organization cares about. Customer lifetime value estimates the total value a customer brings over time, so personalization or better support that keeps customers longer can raise it. Conversion rate measures how many users complete an action, and average revenue per user measures revenue per user in a given period. Technical measures such as latency or accuracy describe model behavior, but they must be linked to these business metrics to show return on investment.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "When choosing a foundation model for an interactive application, what does latency measure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The number of languages a model supports",
+          "correct": false,
+          "rationale": "Language coverage is a capability factor, not latency."
+        },
+        {
+          "id": "b",
+          "text": "The time the model takes to return a response",
+          "correct": true,
+          "rationale": "Latency is how long a user waits for the model to respond, which matters for interactive applications."
+        },
+        {
+          "id": "c",
+          "text": "The size of the data used for training",
+          "correct": false,
+          "rationale": "Training data size describes how the model was built, not how fast it responds."
+        },
+        {
+          "id": "d",
+          "text": "The percentage of correct answers",
+          "correct": false,
+          "rationale": "That describes accuracy, which is a different performance requirement from speed."
+        }
+      ],
+      "explanation": "Latency is the delay between sending a request and receiving the response. It is a key performance requirement when users interact in real time, as in chat or voice assistants. Larger and more complex models often deliver better quality but can respond more slowly and cost more, so teams balance latency against accuracy and cost. Other selection factors include model type and modality, capabilities, constraints such as context length, compliance needs, and cost, which are all weighed against the use case.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0006",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 1,
+      "stem": "Which TWO are advantages of using generative AI for business applications?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Guaranteed factual accuracy",
+          "correct": false,
+          "rationale": "Generative models can hallucinate, so accuracy is never guaranteed."
+        },
+        {
+          "id": "b",
+          "text": "Fully transparent decision logic",
+          "correct": false,
+          "rationale": "Models are often black boxes, so their reasoning is hard to inspect."
+        },
+        {
+          "id": "c",
+          "text": "Conversational interaction in natural language",
+          "correct": true,
+          "rationale": "Generative models can hold natural-language conversations, which makes assistants and chatbots easier to use."
+        },
+        {
+          "id": "d",
+          "text": "Identical output for identical input",
+          "correct": false,
+          "rationale": "Output is often nondeterministic, so identical input can give different results."
+        },
+        {
+          "id": "e",
+          "text": "Ability to generate new content",
+          "correct": true,
+          "rationale": "Generative AI can create text, images, code, and other content, which speeds up drafting and prototyping."
+        }
+      ],
+      "explanation": "Two clear advantages of generative AI are its conversational capabilities and its ability to generate content. Users can ask questions or give instructions in plain language, and the model can draft text, summarize documents, suggest code, or create images. Other advantages include adaptability across many tasks and quick responsiveness to changing needs. The disadvantages include hallucinations, limited interpretability, possible inaccuracy, and nondeterminism, so an application must be designed to manage them.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants a support assistant that answers customers at any hour and adjusts its replies to each customer wording and situation. Which GenAI advantage does this scenario mainly show?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Interpretability of model internals",
+          "correct": false,
+          "rationale": "Nothing in the scenario concerns explaining how the model works internally."
+        },
+        {
+          "id": "b",
+          "text": "Reduced need for any data governance",
+          "correct": false,
+          "rationale": "Customer interactions still require data governance, so this is not an advantage."
+        },
+        {
+          "id": "c",
+          "text": "Responsiveness and conversational capability",
+          "correct": true,
+          "rationale": "The assistant answers immediately in natural language and tailors replies to each customer input."
+        },
+        {
+          "id": "d",
+          "text": "Deterministic scripted answers",
+          "correct": false,
+          "rationale": "Scripted answers describe rule-based bots, not a flexible generative assistant."
+        }
+      ],
+      "explanation": "Generative AI assistants respond immediately and can handle varied phrasing, unlike rule-based bots that follow fixed scripts. This responsiveness and conversational capability lets a company serve customers around the clock and personalize replies. The assistant adapts to the wording and context of each customer rather than matching keywords to canned answers. Teams still need guardrails and testing for accuracy, and may hand complex cases to a human agent, but the core advantage in this scenario is fast, natural, adaptive interaction.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A bank uses a GenAI model to help draft credit decisions, and a regulator asks the bank to explain how the model reached specific outputs. Which GenAI disadvantage does this situation highlight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Limited interpretability",
+          "correct": true,
+          "rationale": "Large models act as black boxes, so explaining how a specific output was produced is difficult."
+        },
+        {
+          "id": "b",
+          "text": "High responsiveness",
+          "correct": false,
+          "rationale": "Fast responses are an advantage and do not create an explanation problem."
+        },
+        {
+          "id": "c",
+          "text": "Broad adaptability",
+          "correct": false,
+          "rationale": "Adaptability across tasks is a strength and is unrelated to explaining decisions."
+        },
+        {
+          "id": "d",
+          "text": "Content generation ability",
+          "correct": false,
+          "rationale": "Generating content is a capability, not the cause of the regulator concern."
+        }
+      ],
+      "explanation": "Foundation models contain billions of parameters, and their internal reasoning is difficult to inspect. This limited interpretability becomes a serious issue in regulated areas such as lending, healthcare, and insurance, where decisions may need to be justified. Organizations respond by keeping humans in the loop, documenting the data and prompts used, logging outputs, and choosing simpler or more transparent approaches when explanation is mandatory. Interpretability should therefore be a selection factor whenever auditability matters.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company builds a question-answering application over its policy documents and must reduce the chance that the model states facts that are not in those documents. Which Amazon Bedrock capability directly addresses this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sensitive information filters in Amazon Bedrock Guardrails",
+          "correct": false,
+          "rationale": "These detect and mask personal data and do not check whether answers match source documents."
+        },
+        {
+          "id": "b",
+          "text": "Cross-Region inference",
+          "correct": false,
+          "rationale": "This routes requests across Regions for capacity and does not check factual grounding."
+        },
+        {
+          "id": "c",
+          "text": "Provisioned Throughput",
+          "correct": false,
+          "rationale": "This reserves model capacity and does not influence whether responses are factual."
+        },
+        {
+          "id": "d",
+          "text": "Contextual grounding check in Amazon Bedrock Guardrails",
+          "correct": true,
+          "rationale": "It compares responses with the supplied source and query and filters responses that are ungrounded or irrelevant."
+        }
+      ],
+      "explanation": "The contextual grounding check in Amazon Bedrock Guardrails helps detect and filter hallucinations when a reference source and a user query are provided. It scores whether the response is grounded in the source and whether it is relevant to the query, and blocks responses below the configured thresholds. It suits summarization, paraphrasing, and question answering over documents. Other Bedrock features address different needs, such as privacy, capacity, or routing, and do not verify that an answer is supported by the source material.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html",
+          "title": "Use contextual grounding check to filter hallucinations in responses - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A healthcare company must show auditors that its GenAI application meets regulatory requirements before it can be deployed. Which factor should be evaluated when selecting a foundation model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The length of the model name",
+          "correct": false,
+          "rationale": "Model naming has no bearing on regulatory suitability."
+        },
+        {
+          "id": "b",
+          "text": "Compliance and data handling constraints",
+          "correct": true,
+          "rationale": "Regulated workloads require models and providers whose data handling and compliance posture meet the requirements."
+        },
+        {
+          "id": "c",
+          "text": "The number of marketing slogans generated",
+          "correct": false,
+          "rationale": "Output volume does not show that regulatory requirements are met."
+        },
+        {
+          "id": "d",
+          "text": "The color scheme of the user interface",
+          "correct": false,
+          "rationale": "Interface appearance is unrelated to the compliance of the underlying model."
+        }
+      ],
+      "explanation": "Compliance is a major model selection factor for regulated industries. Organizations need to understand how a model and its provider handle data, where processing occurs, and which controls and certifications apply, then compare that with their own obligations. Compliance sits next to model type, performance requirements, capabilities, constraints such as context length, cost, latency, and model complexity. A model that is technically strong but cannot meet regulatory requirements is not suitable for the workload.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/generative-ai-lens.html",
+          "title": "Generative AI Lens - AWS Well-Architected Framework - Generative AI Lens"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must classify millions of short support tickets each day, and a simple, well-defined task needs fast, low-cost responses. Which model choice best fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The largest model available regardless of cost",
+          "correct": false,
+          "rationale": "The largest model raises cost and latency at high volume without need for this simple task."
+        },
+        {
+          "id": "b",
+          "text": "A model chosen only for its creative writing quality",
+          "correct": false,
+          "rationale": "Creative quality is not the requirement for ticket classification."
+        },
+        {
+          "id": "c",
+          "text": "A smaller, less complex model that meets the accuracy needs",
+          "correct": true,
+          "rationale": "A smaller model usually costs less and responds faster, which fits a simple high-volume task."
+        },
+        {
+          "id": "d",
+          "text": "Any model, because cost is identical across models",
+          "correct": false,
+          "rationale": "Pricing varies by model, modality, and provider, so cost differs across models."
+        }
+      ],
+      "explanation": "Model complexity affects cost, latency, and quality. Larger models are generally more capable but can be slower and more expensive, and Amazon Bedrock pricing depends on modality, provider, and model, with usage mostly metered by input and output tokens. For a simple classification task at high volume, a smaller model that meets the accuracy requirement is usually the better trade-off. The team should test candidates on its own data, then choose the lowest-cost model that satisfies accuracy and latency requirements.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A marketing team uses generative AI to draft campaign copy and wants to show business value from efficiency. Which metric best demonstrates this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduction in the time needed to produce each piece of content",
+          "correct": true,
+          "rationale": "It directly measures the efficiency gain from faster content creation."
+        },
+        {
+          "id": "b",
+          "text": "Number of model parameters used",
+          "correct": false,
+          "rationale": "Parameter count describes the model, not the business benefit achieved."
+        },
+        {
+          "id": "c",
+          "text": "Number of Regions where the model is available",
+          "correct": false,
+          "rationale": "Regional availability is a deployment consideration, not a measure of efficiency gain."
+        },
+        {
+          "id": "d",
+          "text": "Length of the longest generated paragraph",
+          "correct": false,
+          "rationale": "Output length says nothing about time or cost saved."
+        }
+      ],
+      "explanation": "To show return on investment, teams link a generative AI application to measurable outcomes. For content creation, efficiency metrics such as time saved per asset, output per employee, or cost per piece show productivity gains. Other business metrics include conversion rate, average revenue per user, customer lifetime value, and accuracy of results. Technical characteristics such as parameter count or output length do not by themselves demonstrate value, so they should not be reported as the primary business result.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An e-commerce company adds GenAI-generated personalized product descriptions and wants to know whether they persuade more visitors to buy. Which metric should it track?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Average handle time",
+          "correct": false,
+          "rationale": "This measures how long support contacts take and does not show whether visitors buy."
+        },
+        {
+          "id": "b",
+          "text": "Training dataset size",
+          "correct": false,
+          "rationale": "Dataset size describes model development and is not a customer outcome."
+        },
+        {
+          "id": "c",
+          "text": "Number of tokens generated",
+          "correct": false,
+          "rationale": "Token volume affects cost but does not indicate whether visitors buy."
+        },
+        {
+          "id": "d",
+          "text": "Conversion rate",
+          "correct": true,
+          "rationale": "Conversion rate shows the share of visitors who complete a purchase, so it reveals persuasion effects."
+        }
+      ],
+      "explanation": "Conversion rate measures the proportion of visitors who complete a desired action, such as purchasing. When GenAI personalizes content, an A/B test comparing conversion rate with and without the generated content shows whether it persuades customers. Related business metrics include average revenue per user and customer lifetime value. Token counts and dataset size describe cost and model construction, and handle time belongs to support operations, so they cannot answer whether generated descriptions increase sales.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0014",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO are disadvantages of GenAI solutions that a company should plan for?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Inability to process natural language",
+          "correct": false,
+          "rationale": "Natural language processing is a core strength of large language models."
+        },
+        {
+          "id": "b",
+          "text": "Hallucinated or inaccurate responses",
+          "correct": true,
+          "rationale": "Models can generate confident but incorrect content, which requires validation and safeguards."
+        },
+        {
+          "id": "c",
+          "text": "Support for only one task per model",
+          "correct": false,
+          "rationale": "Foundation models are adaptable to many tasks rather than limited to one."
+        },
+        {
+          "id": "d",
+          "text": "Outputs that are hard to interpret",
+          "correct": true,
+          "rationale": "Model reasoning is difficult to inspect, which complicates explaining or auditing results."
+        },
+        {
+          "id": "e",
+          "text": "Inability to generate new content",
+          "correct": false,
+          "rationale": "Generating new content is the defining capability of generative AI."
+        }
+      ],
+      "explanation": "Generative AI brings real limits. Hallucinations and inaccuracy mean outputs can be wrong or unsupported, and limited interpretability makes it hard to explain how a result was produced. Nondeterminism can also make results vary between calls. These issues are managed with grounding in trusted data, guardrails, human review, testing, and monitoring. The strengths of the technology, such as natural language processing, adaptability, and content generation, are advantages and not limitations.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0015",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company is selecting a foundation model for a customer-facing assistant with strict response time, budget, and data handling requirements. Which THREE factors should it evaluate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Latency against the response time requirement",
+          "correct": true,
+          "rationale": "Interactive assistants need fast responses, and model size and type influence latency."
+        },
+        {
+          "id": "b",
+          "text": "Popularity of the model name on social media",
+          "correct": false,
+          "rationale": "Popularity does not show that a model meets performance, cost, or compliance needs."
+        },
+        {
+          "id": "c",
+          "text": "Cost per request at expected usage volume",
+          "correct": true,
+          "rationale": "Usage-based pricing means per-request cost affects the budget at scale."
+        },
+        {
+          "id": "d",
+          "text": "Color theme of the vendor website",
+          "correct": false,
+          "rationale": "Website design has no bearing on model suitability."
+        },
+        {
+          "id": "e",
+          "text": "Number of employees at the model provider",
+          "correct": false,
+          "rationale": "Company headcount does not indicate whether the model fits the requirements."
+        },
+        {
+          "id": "f",
+          "text": "Compliance and data handling constraints",
+          "correct": true,
+          "rationale": "Data handling requirements can rule out models or providers regardless of quality."
+        }
+      ],
+      "explanation": "Selecting a model means matching its characteristics to the use case. For an interactive assistant, latency determines how responsive the experience feels, cost determines whether the budget holds at expected volume, and compliance and data handling determine whether the model can be used at all. Other factors include model type and modality, capabilities, constraints such as context length, and model complexity, which usually trades quality against speed and cost. Popularity and vendor characteristics are not selection criteria without evidence that requirements are met.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/generative-ai-lens.html",
+          "title": "Generative AI Lens - AWS Well-Architected Framework - Generative AI Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0016",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company deploys a GenAI support chatbot and wants to evaluate its business value. Which TWO metrics are the most relevant?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Customer satisfaction and customer lifetime value",
+          "correct": true,
+          "rationale": "These connect the chatbot to outcomes such as retention and long-term revenue."
+        },
+        {
+          "id": "b",
+          "text": "Number of GPUs in the data center",
+          "correct": false,
+          "rationale": "Hardware counts describe infrastructure and do not show business value."
+        },
+        {
+          "id": "c",
+          "text": "Total characters in the training corpus",
+          "correct": false,
+          "rationale": "Corpus size describes model construction, not value delivered to the business."
+        },
+        {
+          "id": "d",
+          "text": "Cost savings per resolved support contact",
+          "correct": true,
+          "rationale": "This shows efficiency and return on investment against the cost of running the chatbot."
+        },
+        {
+          "id": "e",
+          "text": "Count of model parameters",
+          "correct": false,
+          "rationale": "Parameter count describes the model, not business results."
+        }
+      ],
+      "explanation": "Business value for a GenAI application is measured with outcomes tied to company goals. For a support chatbot, relevant measures include cost per resolved contact, resolution accuracy, customer satisfaction, and customer lifetime value, compared with the cost of running the solution to estimate return on investment. Technical metrics such as parameter count, training corpus size, or hardware counts say nothing about what the business gains, so they should not be the headline measures of success.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company is building a real-time voice assistant, and users abandon the product if replies are delayed. Which model selection factor is most critical?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Latency requirement",
+          "correct": true,
+          "rationale": "Real-time voice needs very fast responses, so response time is the deciding factor."
+        },
+        {
+          "id": "b",
+          "text": "Training data publication date",
+          "correct": false,
+          "rationale": "Training recency can matter for knowledge, but delayed replies are the stated issue."
+        },
+        {
+          "id": "c",
+          "text": "Size of the vendor marketing budget",
+          "correct": false,
+          "rationale": "Vendor marketing has no effect on how fast the model responds."
+        },
+        {
+          "id": "d",
+          "text": "Total number of supported file types",
+          "correct": false,
+          "rationale": "File type support is a capability that does not address delayed replies."
+        }
+      ],
+      "explanation": "Performance requirements drive model choice. A real-time voice assistant is highly sensitive to latency because users notice every delay. Smaller or more efficient models often respond faster, though they may offer lower quality than larger, more complex models, so teams test the trade-off against accuracy and cost. Capabilities, compliance, and constraints still matter, but when the stated problem is delayed replies, the latency requirement should lead the selection decision.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A finance team needs invoice totals calculated with exactly the same result every time and fully auditable logic. A manager proposes using a foundation model for the calculations. What is the best response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use the model because generative AI always returns identical answers",
+          "correct": false,
+          "rationale": "Generative models are often nondeterministic, so identical answers are not guaranteed."
+        },
+        {
+          "id": "b",
+          "text": "Use deterministic code or rules for the calculation, and use the model only for language tasks",
+          "correct": true,
+          "rationale": "Fixed logic gives repeatable, auditable results, while the model suits language tasks such as summarizing."
+        },
+        {
+          "id": "c",
+          "text": "Use the model because its reasoning is fully transparent",
+          "correct": false,
+          "rationale": "Model reasoning is usually hard to interpret, so auditability is weak."
+        },
+        {
+          "id": "d",
+          "text": "Use a larger model to guarantee exact arithmetic",
+          "correct": false,
+          "rationale": "A larger model can still hallucinate or vary, and size does not guarantee exact results."
+        }
+      ],
+      "explanation": "Generative AI is not the right tool for every problem. Calculations that must be exact, repeatable, and auditable are better handled by deterministic code or business rules, because models are nondeterministic, can be inaccurate, and offer limited interpretability. A good design combines both: rules for the calculation and a model for tasks where flexibility helps, such as drafting explanations. Matching the solution to the requirements, instead of defaulting to GenAI, is part of understanding its capabilities and limitations.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/generative-ai-lens.html",
+          "title": "Generative AI Lens - AWS Well-Architected Framework - Generative AI Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0019",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A pilot GenAI assistant lets agents resolve tickets faster, but leadership wants evidence that it justifies its running cost. Which comparison best expresses return on investment?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Number of prompts submitted per day",
+          "correct": false,
+          "rationale": "Usage volume shows adoption but not whether benefits exceed costs."
+        },
+        {
+          "id": "b",
+          "text": "Number of parameters in the model",
+          "correct": false,
+          "rationale": "Parameter count describes the model and does not relate benefits to costs."
+        },
+        {
+          "id": "c",
+          "text": "Value of time and cost saved per resolved ticket compared with the cost to run the assistant",
+          "correct": true,
+          "rationale": "ROI compares measurable benefits with total costs, so this directly answers leadership."
+        },
+        {
+          "id": "d",
+          "text": "Average length of generated replies",
+          "correct": false,
+          "rationale": "Reply length does not show financial benefit relative to cost."
+        }
+      ],
+      "explanation": "Return on investment compares the measurable benefit of a solution with what it costs. For an agent assistant, benefits include reduced handling time, higher resolution accuracy, and improved customer satisfaction, translated into cost savings or revenue effects. Costs include model usage, which for Amazon Bedrock is mainly driven by tokens and model choice, plus add-on features and engineering effort. Adoption and technical statistics are useful for monitoring but do not prove the solution is worth its cost.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.2-0020",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company must choose between a highly capable, complex model and a smaller model for summarizing internal documents. The smaller model meets accuracy targets in testing and responds faster at lower cost. Which choice is best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Choose the larger model because larger is always better",
+          "correct": false,
+          "rationale": "Larger models cost more and can be slower, and the requirements are already met by the smaller one."
+        },
+        {
+          "id": "b",
+          "text": "Choose whichever model has the longest name",
+          "correct": false,
+          "rationale": "Naming is not a selection criterion and ignores test results."
+        },
+        {
+          "id": "c",
+          "text": "Avoid models entirely and publish unsummarized documents",
+          "correct": false,
+          "rationale": "This ignores the requirement to summarize and wastes the benefit of GenAI."
+        },
+        {
+          "id": "d",
+          "text": "Choose the smaller model that meets the accuracy target",
+          "correct": true,
+          "rationale": "It satisfies accuracy while lowering cost and latency, so the stated requirements decide."
+        }
+      ],
+      "explanation": "Model selection is about meeting requirements at the lowest reasonable cost, not picking the most powerful option. When testing shows the smaller model meets accuracy targets, its lower cost and latency make it the better choice for this summarization task. A more complex model is justified only when the task needs capabilities the smaller one lacks. Teams should evaluate candidate models on representative data, measure accuracy, latency, and cost, and revisit the choice as requirements or models change.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    }
+  ]
+}
