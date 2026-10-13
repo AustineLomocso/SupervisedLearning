@@ -1,0 +1,497 @@
+[
+  {
+    "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+    "title": "What is AI? - Artificial Intelligence Explained - AWS",
+    "tasks": ["1.1", "1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/machine-learning/",
+    "title": "What is Machine Learning? - ML Technology Explained - AWS",
+    "tasks": ["1.1", "1.2", "1.3"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/computer-vision/",
+    "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS",
+    "tasks": ["1.1", "1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/nlp/",
+    "title": "What is Natural Language Processing? - NLP Explained - AWS",
+    "tasks": ["1.1", "1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/unsupervised-learning/",
+    "title": "What Is Unsupervised Learning? - Unsupervised Machine Learning Explained - AWS",
+    "tasks": ["1.1", "1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/agentic-ai/",
+    "title": "What is Agentic AI? - Agentic AI Explained - AWS",
+    "tasks": ["1.1", "2.1", "3.1", "2.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html",
+    "title": "Process multiple prompts with batch inference - Amazon Bedrock",
+    "tasks": ["1.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html",
+    "title": "Real-time inference - Amazon SageMaker AI",
+    "tasks": ["1.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+    "title": "Types of Algorithms - Amazon SageMaker AI",
+    "tasks": ["1.1", "1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/transcribe/",
+    "title": "Amazon Transcribe – Speech to Text - AWS",
+    "tasks": ["1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/translate/",
+    "title": "Machine Translation Service — Amazon Translate — Amazon Web Services",
+    "tasks": ["1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/comprehend/",
+    "title": "Natural Language Processing – Amazon Comprehend – AWS",
+    "tasks": ["1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/polly/",
+    "title": "AI Voice Generator and Text-to-Speech Tool - Amazon Polly - AWS",
+    "tasks": ["1.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/kendra/",
+    "title": "Enterprise Search Engine - Amazon Kendra - AWS",
+    "tasks": ["1.2", "3.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/mlops/",
+    "title": "What is MLOps? - Machine Learning Operations Explained - AWS",
+    "tasks": ["1.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+    "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI",
+    "tasks": ["1.3", "2.3"]
+  },
+  {
+    "url": "https://aws.amazon.com/sagemaker/ai/",
+    "title": "Machine Learning Service – Amazon Sagemaker AI – AWS",
+    "tasks": ["1.3", "2.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html",
+    "title": "Data and model quality monitoring with Amazon SageMaker Model Monitor - Amazon SageMaker AI",
+    "tasks": ["1.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+    "title": "Deploy models for inference - Amazon SageMaker AI",
+    "tasks": ["1.1", "1.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mlops-checklist/introduction.html",
+    "title": "Evaluating your ML project with the MLOps checklist - AWS Prescriptive Guidance",
+    "tasks": ["1.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html",
+    "title": "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens",
+    "tasks": ["1.3"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/foundation-models/",
+    "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS",
+    "tasks": ["1.1", "2.1", "3.1", "2.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/generative-ai/",
+    "title": "What is Generative AI? - Gen AI Explained - AWS",
+    "tasks": ["1.1", "2.1", "2.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/large-language-model/",
+    "title": "What is LLM? - Large Language Models Explained - AWS",
+    "tasks": ["1.1", "2.1", "2.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-chunking.html",
+    "title": "How content chunking works for knowledge bases - Amazon Bedrock",
+    "tasks": ["2.1", "3.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/ai/generative-ai/",
+    "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS",
+    "tasks": ["2.1", "2.2", "2.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+    "title": "Overview - Amazon Bedrock AgentCore",
+    "tasks": ["2.1", "2.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory.html",
+    "title": "Add memory to your Amazon Bedrock AgentCore agent - Amazon Bedrock AgentCore",
+    "tasks": ["2.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html",
+    "title": "Use multi-agent collaboration with Amazon Bedrock Agents - Amazon Bedrock",
+    "tasks": ["2.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/introduction.html",
+    "title": "Agentic AI frameworks, platforms, protocols, and tools on AWS - AWS Prescriptive Guidance",
+    "tasks": ["2.1", "2.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/strands-agents.html",
+    "title": "Strands Agents - AWS Prescriptive Guidance",
+    "tasks": ["2.1", "2.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/multi-agent-collaboration.html",
+    "title": "Multi-agent collaboration - AWS Prescriptive Guidance",
+    "tasks": ["2.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mcp-strategies/introduction.html",
+    "title": "Model Context Protocol strategies on AWS - AWS Prescriptive Guidance",
+    "tasks": ["2.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/",
+    "title": "Introducing Strands Agents, an Open Source AI Agents SDK | AWS Open Source Blog",
+    "tasks": ["2.1", "2.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html",
+    "title": "Increase model invocation capacity with Provisioned Throughput in Amazon Bedrock - Amazon Bedrock",
+    "tasks": ["2.1", "2.3"]
+  },
+  {
+    "url": "https://aws.amazon.com/bedrock/pricing/",
+    "title": "Amazon Bedrock Pricing",
+    "tasks": ["2.1", "2.3", "2.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/bedrock/",
+    "title": "Amazon Bedrock – Build genAI applications and agents at production scale – AWS",
+    "tasks": ["2.3", "3.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+    "title": "Overview - Amazon Bedrock",
+    "tasks": ["2.3", "3.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/bedrock/agentcore/",
+    "title": "Amazon Bedrock AgentCore - AWS",
+    "tasks": ["2.1", "2.3", "5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html",
+    "title": "Amazon SageMaker JumpStart Foundation Models - Amazon SageMaker AI",
+    "tasks": ["2.3", "3.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/generative-ai-lens.html",
+    "title": "Generative AI Lens - AWS Well-Architected Framework - Generative AI Lens",
+    "tasks": ["2.2", "2.3", "5.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/",
+    "title": "What is RAG? - Retrieval-Augmented Generation AI Explained - AWS",
+    "tasks": ["3.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/vector-databases/",
+    "title": "What is a Vector Database? Vector Databases Explained - AWS",
+    "tasks": ["3.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/bedrock/knowledge-bases/",
+    "title": "Foundation Models for RAG - Amazon Bedrock Knowledge Bases - AWS",
+    "tasks": ["3.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html",
+    "title": "How Amazon Bedrock knowledge bases work - Amazon Bedrock",
+    "tasks": ["3.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+    "title": "Automate tasks in your application using AI agents - Amazon Bedrock",
+    "tasks": ["3.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html",
+    "title": "Influence response generation with inference parameters - Amazon Bedrock",
+    "tasks": ["3.1", "3.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html",
+    "title": "Customize a model with distillation in Amazon Bedrock - Amazon Bedrock",
+    "tasks": ["3.1", "3.3"]
+  },
+  {
+    "url": "https://aws.amazon.com/opensearch-service/",
+    "title": "Real-Time Retrieval Engine for AI, Search & Analytics - Amazon OpenSearch Service - AWS",
+    "tasks": ["3.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/rds/aurora/",
+    "title": "Relational Database – Amazon Aurora MySQL PostgreSQL – AWS",
+    "tasks": ["3.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/choosing-an-aws-vector-database-for-rag-use-cases/introduction.html",
+    "title": "Choosing an AWS vector database for RAG use cases - AWS Prescriptive Guidance",
+    "tasks": ["3.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/prompt-engineering/",
+    "title": "What is Prompt Engineering? - AI Prompt Engineering Explained - AWS",
+    "tasks": ["3.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html",
+    "title": "Prompt engineering concepts - Amazon Bedrock",
+    "tasks": ["3.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html",
+    "title": "Construct and store reusable prompts with Prompt management in Amazon Bedrock - Amazon Bedrock",
+    "tasks": ["3.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-injection.html",
+    "title": "Prompt injection security - Amazon Bedrock",
+    "tasks": ["3.2", "5.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/transfer-learning/",
+    "title": "What is Transfer Learning? - Transfer Learning in Machine Learning Explained - AWS",
+    "tasks": ["3.3"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/reinforcement-learning-from-human-feedback/",
+    "title": "What is RLHF? - Reinforcement Learning from Human Feedback Explained - AWS",
+    "tasks": ["3.3"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/data-labeling/",
+    "title": "What is Data Labeling? - Data Labeling Explained - AWS",
+    "tasks": ["3.3", "4.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-fine-tuning.html",
+    "title": "Customize a model with fine-tuning in Amazon Bedrock - Amazon Bedrock",
+    "tasks": ["3.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+    "title": "Prepare data for fine-tuning your models - Amazon Bedrock",
+    "tasks": ["3.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-fine-tune.html",
+    "title": "Fine-Tune a Model - Amazon SageMaker AI",
+    "tasks": ["3.3"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+    "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock",
+    "tasks": ["3.4", "4.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-metrics.html",
+    "title": "Use metrics to understand model performance - Amazon Bedrock",
+    "tasks": ["3.4"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html",
+    "title": "Evaluate agent performance with Amazon Bedrock AgentCore Evaluations - Amazon Bedrock AgentCore",
+    "tasks": ["3.4"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html",
+    "title": "Observe your agent applications on Amazon Bedrock AgentCore Observability - Amazon Bedrock AgentCore",
+    "tasks": ["3.4"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-foundation-model-evaluate.html",
+    "title": "Understand options for evaluating large language models with SageMaker Clarify - Amazon SageMaker AI",
+    "tasks": ["3.4"]
+  },
+  {
+    "url": "https://aws.amazon.com/ai/responsible-ai/",
+    "title": "Responsible AI – Building AI Responsibly – AWS",
+    "tasks": ["4.1", "4.2", "5.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/ai/responsible-ai/resources/",
+    "title": "Responsible AI Tools and Resources - Building AI Responsibly - AWS",
+    "tasks": ["4.1", "4.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/explainable-ai/",
+    "title": "What is Explainable AI? - Explainable AI (XAI) Explained - AWS",
+    "tasks": ["4.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/bedrock/guardrails/",
+    "title": "Generative AI Data Governance – Amazon Bedrock Guardrails – AWS",
+    "tasks": ["4.1", "5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+    "title": "Detect and filter harmful content by using Amazon Bedrock Guardrails - Amazon Bedrock",
+    "tasks": ["4.1", "5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-components.html",
+    "title": "Create your guardrail - Amazon Bedrock",
+    "tasks": ["4.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html",
+    "title": "Use contextual grounding check to filter hallucinations in responses - Amazon Bedrock",
+    "tasks": ["4.1", "2.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/responsible-ai.html",
+    "title": "Responsible AI - Generative AI Lens",
+    "tasks": ["4.1", "4.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/wellarchitected/latest/responsible-ai-lens/responsible-ai-lens.html",
+    "title": "Responsible AI Lens - AWS Well-Architected Framework - Responsible AI Lens",
+    "tasks": ["4.1", "4.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/sustainability.html",
+    "title": "Sustainability - Generative AI Lens",
+    "tasks": ["4.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/sagemaker/ai/clarify/",
+    "title": "Bias Detection and Model Explainability - Amazon SageMaker Clarify - AWS",
+    "tasks": ["4.1", "4.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html",
+    "title": "Fairness, model explainability and bias detection with SageMaker Clarify - Amazon SageMaker AI",
+    "tasks": ["4.1", "4.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-explainability.html",
+    "title": "Model Explainability - Amazon SageMaker AI",
+    "tasks": ["4.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html",
+    "title": "Amazon SageMaker Model Cards - Amazon SageMaker AI",
+    "tasks": ["4.2", "5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html",
+    "title": "What is AWS PrivateLink? - Amazon Virtual Private Cloud",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/usingVPC.html",
+    "title": "Protect your data using Amazon VPC and AWS PrivateLink - Amazon Bedrock",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+    "title": "What is IAM? - AWS Identity and Access Management",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html",
+    "title": "AWS Key Management Service - AWS Key Management Service",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html",
+    "title": "Identity and access management for Amazon Bedrock - Amazon Bedrock",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html",
+    "title": "Remove PII from conversations by using sensitive information filters - Amazon Bedrock",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html",
+    "title": "Provide identity and credential management for agent applications with Amazon Bedrock AgentCore Identity - Amazon Bedrock AgentCore",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html",
+    "title": "Policy in Amazon Bedrock AgentCore: Control Agent Interactions - Amazon Bedrock AgentCore",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/security.html",
+    "title": "Security - Generative AI Lens",
+    "tasks": ["5.1"]
+  },
+  {
+    "url": "https://aws.amazon.com/blogs/security/securing-generative-ai-an-introduction-to-the-generative-ai-security-scoping-matrix/",
+    "title": "Securing generative AI: An introduction to the Generative AI Security Scoping Matrix | AWS Security Blog",
+    "tasks": ["5.1", "5.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html",
+    "title": "What Is AWS CloudTrail? - AWS CloudTrail",
+    "tasks": ["5.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/",
+    "title": "Best Practice Guidance for AWS Optimization - AWS Trusted Advisor",
+    "tasks": ["5.2"]
+  },
+  {
+    "url": "https://aws.amazon.com/what-is/ai-governance/",
+    "title": "What Is AI Governance? - AI Governance Explained - AWS",
+    "tasks": ["5.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/compliance-validation.html",
+    "title": "Compliance validation for Amazon Bedrock - Amazon Bedrock",
+    "tasks": ["5.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/logging-using-cloudtrail.html",
+    "title": "Monitor Amazon Bedrock API calls using CloudTrail - Amazon Bedrock",
+    "tasks": ["5.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/llm-prompt-engineering-best-practices/introduction.html",
+    "title": "Prompt engineering best practices to avoid prompt injection attacks on modern LLMs - AWS Prescriptive Guidance",
+    "tasks": ["3.2", "5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/design-a-prompt.html",
+    "title": "Design a prompt - Amazon Bedrock",
+    "tasks": ["3.2"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-prompt-attack.html",
+    "title": "Detect prompt attacks with Amazon Bedrock Guardrails - Amazon Bedrock",
+    "tasks": ["3.2", "5.1"]
+  },
+  {
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html",
+    "title": "Create a prompt using Prompt management - Amazon Bedrock",
+    "tasks": ["3.2"]
+  }
+]
