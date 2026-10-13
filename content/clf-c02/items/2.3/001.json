@@ -1,0 +1,908 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "2.3",
+  "items": [
+    {
+      "id": "clf-c02-2.3-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company is starting to use AWS and needs a service that controls who can sign in and which actions each person can perform. Which AWS service provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Shield",
+          "correct": false,
+          "rationale": "AWS Shield protects applications against DDoS attacks. It does not manage who can sign in or what they may do."
+        },
+        {
+          "id": "b",
+          "text": "AWS Identity and Access Management (IAM)",
+          "correct": true,
+          "rationale": "IAM lets you manage identities and define permissions that control access to AWS services and resources."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Amazon Inspector scans workloads for software vulnerabilities. It does not manage user identities or permissions."
+        },
+        {
+          "id": "d",
+          "text": "AWS Artifact",
+          "correct": false,
+          "rationale": "AWS Artifact provides on-demand compliance reports and agreements. It does not authenticate users or authorize actions."
+        }
+      ],
+      "explanation": "AWS Identity and Access Management (IAM) is the service used to securely control access to AWS resources. It handles authentication (who is signing in) and authorization (what that identity is allowed to do) through users, groups, roles, and policies. IAM is offered at no additional charge and is global rather than tied to a single Region. Security services such as AWS Shield or Amazon Inspector protect or assess workloads, and AWS Artifact delivers compliance documents, but none of them define who may access your account.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+          "title": "What is IAM? - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A security officer asks how to best protect the AWS account root user. Which action should the company take?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create access keys for the root user to use with the AWS CLI",
+          "correct": false,
+          "rationale": "Root access keys are long-term credentials with unrestricted power. Creating them increases risk, so AWS recommends against it."
+        },
+        {
+          "id": "b",
+          "text": "Share the root password with all administrators",
+          "correct": false,
+          "rationale": "Sharing the root password removes accountability and widens exposure of the most powerful identity in the account."
+        },
+        {
+          "id": "c",
+          "text": "Enable multi-factor authentication (MFA) on the root user",
+          "correct": true,
+          "rationale": "MFA adds a second factor to the root sign-in, so a stolen password alone is not enough to take over the account."
+        },
+        {
+          "id": "d",
+          "text": "Use the root user for daily administrative work",
+          "correct": false,
+          "rationale": "Daily use of root raises the chance of leaked credentials or mistakes. Day-to-day work should use less privileged identities."
+        }
+      ],
+      "explanation": "The root user has complete, unrestricted access to everything in the account, and its permissions cannot be limited with IAM policies. For that reason it must be protected carefully. Enable MFA, use a strong unique password, avoid creating root access keys, and keep root credentials out of everyday use. Reserve root sign-in for the few tasks that require it, and use IAM Identity Center or IAM roles for routine administration.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+          "title": "AWS account root user - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html",
+          "title": "Root user best practices for your AWS account - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement describes the principle of least privilege?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Grant only the permissions required to perform a task, and no more",
+          "correct": true,
+          "rationale": "Least privilege means giving identities the minimum access needed for their work, which limits the damage of mistakes or compromise."
+        },
+        {
+          "id": "b",
+          "text": "Grant every user full access so that work is never blocked",
+          "correct": false,
+          "rationale": "Broad access violates least privilege and greatly increases the impact of any compromised or misused credential."
+        },
+        {
+          "id": "c",
+          "text": "Allow all actions by default and deny only known risky ones",
+          "correct": false,
+          "rationale": "Least privilege starts from no access and adds permissions; a default-allow approach does the opposite."
+        },
+        {
+          "id": "d",
+          "text": "Give each team a single shared identity with the same permissions",
+          "correct": false,
+          "rationale": "Shared identities cannot be scoped to individual duties and hide who performed each action."
+        }
+      ],
+      "explanation": "The principle of least privilege is a core security best practice: start with a minimal set of permissions and add more only when a need is demonstrated. In IAM, this means writing policies that allow specific actions on specific resources rather than using wildcards or administrator access. Doing so reduces the blast radius if credentials are leaked and helps meet compliance requirements. It is also easier to expand permissions later than to discover and retract excessive ones.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "title": "Security best practices in IAM - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html",
+          "title": "Policies and permissions in AWS Identity and Access Management - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which task can be performed only by the AWS account root user?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Creating an IAM user",
+          "correct": false,
+          "rationale": "Users with the right IAM permissions, such as administrators, can create IAM users. Root is not required."
+        },
+        {
+          "id": "b",
+          "text": "Attaching a managed policy to a group",
+          "correct": false,
+          "rationale": "Any IAM identity allowed to manage policies can do this. It is not restricted to root."
+        },
+        {
+          "id": "c",
+          "text": "Launching an Amazon EC2 instance",
+          "correct": false,
+          "rationale": "Permitted IAM identities can launch instances. This does not require root credentials."
+        },
+        {
+          "id": "d",
+          "text": "Closing the AWS account",
+          "correct": true,
+          "rationale": "Closing the account is a task reserved for the root user and cannot be delegated through IAM permissions."
+        }
+      ],
+      "explanation": "Most administrative work can be delegated through IAM, but a small set of tasks requires root user credentials. Closing the AWS account is one of them. Others include changing the account name, root email address or root password, and restoring IAM user permissions when no administrator can do so. Because these tasks are rare, you can keep the root user locked down with MFA and out of daily use.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+          "title": "AWS account root user - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html",
+          "title": "Root user best practices for your AWS account - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is the purpose of an IAM group?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To encrypt data stored in Amazon S3",
+          "correct": false,
+          "rationale": "Encryption is handled by AWS KMS and service features. IAM groups do not encrypt anything."
+        },
+        {
+          "id": "b",
+          "text": "To collect IAM users so permissions can be applied to them together",
+          "correct": true,
+          "rationale": "Attaching a policy to a group applies it to every member, which simplifies permission management."
+        },
+        {
+          "id": "c",
+          "text": "To define the trusted accounts for a cross-account role",
+          "correct": false,
+          "rationale": "Trust relationships are set in a role's trust policy, not in a group."
+        },
+        {
+          "id": "d",
+          "text": "To store access keys for applications",
+          "correct": false,
+          "rationale": "Groups hold users, not credentials. Application secrets belong in a service such as AWS Secrets Manager."
+        }
+      ],
+      "explanation": "An IAM group is a collection of IAM users. Instead of attaching policies to each user one at a time, you attach them to a group such as Developers or Auditors, and every member inherits those permissions. Moving someone between teams is then as simple as changing group membership. Groups cannot be nested and cannot be used as a principal in a policy, but they make it far easier to apply least privilege consistently as the user count grows.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+          "title": "What is IAM? - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "title": "Security best practices in IAM - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which description best explains multi-factor authentication (MFA) in AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It encrypts all traffic between AWS Regions",
+          "correct": false,
+          "rationale": "Cross-Region traffic encryption is unrelated to MFA, which protects sign-in."
+        },
+        {
+          "id": "b",
+          "text": "It automatically rotates passwords every 90 days",
+          "correct": false,
+          "rationale": "Password rotation is a password policy setting. MFA is about adding a second proof of identity."
+        },
+        {
+          "id": "c",
+          "text": "It requires a second proof of identity, such as a code from an authenticator, in addition to a password",
+          "correct": true,
+          "rationale": "MFA combines something you know with something you have, which blocks sign-in using only a stolen password."
+        },
+        {
+          "id": "d",
+          "text": "It grants temporary credentials to AWS services",
+          "correct": false,
+          "rationale": "Temporary credentials come from AWS STS and IAM roles. MFA is an additional authentication factor."
+        }
+      ],
+      "explanation": "Multi-factor authentication adds a second layer of protection to sign-in. After entering a password, the user must also provide a code or tap from a device they possess, such as a virtual authenticator app, a FIDO security key, or a hardware TOTP token. Even if a password is phished or leaked, an attacker without the second factor cannot get in. AWS recommends MFA for the root user and for every human user.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html",
+          "title": "AWS Multi-factor authentication in IAM - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company with many AWS accounts in AWS Organizations wants its workforce to sign in once and access assigned accounts and business applications. Which service should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "IAM users created in every account",
+          "correct": false,
+          "rationale": "Creating separate users in each account multiplies credentials to manage and does not provide central single sign-on."
+        },
+        {
+          "id": "b",
+          "text": "AWS Systems Manager",
+          "correct": false,
+          "rationale": "Systems Manager manages and operates resources. It is not a workforce sign-in service."
+        },
+        {
+          "id": "c",
+          "text": "AWS Secrets Manager",
+          "correct": false,
+          "rationale": "Secrets Manager stores and rotates secrets. It does not provide single sign-on."
+        },
+        {
+          "id": "d",
+          "text": "AWS IAM Identity Center",
+          "correct": true,
+          "rationale": "IAM Identity Center provides single sign-on to multiple AWS accounts and applications from one place."
+        }
+      ],
+      "explanation": "AWS IAM Identity Center is the recommended way to give workforce users access to multiple AWS accounts and applications. Administrators connect an identity source, such as the built-in directory or an external identity provider, then assign users and groups to accounts through permission sets. Users sign in once at a portal and receive temporary credentials, so no long-term IAM users or access keys are needed in each account.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html",
+          "title": "What is IAM Identity Center? - AWS IAM Identity Center"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A web application stores a database password and must have that password rotated automatically on a schedule. Which AWS service should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon S3 with versioning enabled",
+          "correct": false,
+          "rationale": "S3 can store files, but it provides no managed secret rotation and is not meant for credentials."
+        },
+        {
+          "id": "b",
+          "text": "AWS CloudTrail",
+          "correct": false,
+          "rationale": "CloudTrail records API activity for auditing. It does not store or rotate secrets."
+        },
+        {
+          "id": "c",
+          "text": "AWS Secrets Manager",
+          "correct": true,
+          "rationale": "Secrets Manager stores secrets securely and can rotate them automatically, removing hard-coded passwords."
+        },
+        {
+          "id": "d",
+          "text": "AWS Config",
+          "correct": false,
+          "rationale": "AWS Config evaluates resource configuration against rules. It does not store or rotate credentials."
+        }
+      ],
+      "explanation": "AWS Secrets Manager helps you protect secrets such as database credentials and API keys. Applications retrieve the secret at run time through an API call, so passwords are not hard-coded in source code or configuration files. Secrets Manager can rotate secrets automatically on a schedule, which limits how long a leaked value stays useful. Access to each secret is controlled with IAM policies, and use of secrets can be audited.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html",
+          "title": "What is AWS Secrets Manager? - AWS Secrets Manager"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0009",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO AWS services can store credentials and sensitive configuration values securely so that they are not hard-coded in application code?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Shield",
+          "correct": false,
+          "rationale": "Shield defends against DDoS attacks and does not store application secrets."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector finds vulnerabilities in workloads. It is not a credential store."
+        },
+        {
+          "id": "c",
+          "text": "AWS Secrets Manager",
+          "correct": true,
+          "rationale": "Secrets Manager stores secrets and supports automatic rotation."
+        },
+        {
+          "id": "d",
+          "text": "AWS Systems Manager Parameter Store",
+          "correct": true,
+          "rationale": "Parameter Store, a capability of AWS Systems Manager, holds configuration data and secure strings, encrypted if you choose."
+        },
+        {
+          "id": "e",
+          "text": "AWS WAF",
+          "correct": false,
+          "rationale": "AWS WAF filters web requests. It does not store credentials."
+        }
+      ],
+      "explanation": "Applications should retrieve credentials at run time instead of embedding them in code. AWS Secrets Manager is purpose-built for secrets and can rotate them automatically. Parameter Store, a capability of AWS Systems Manager, stores configuration values and can hold secrets as encrypted SecureString parameters, with access controlled by IAM. Services such as AWS Shield, Amazon Inspector, and AWS WAF protect or assess workloads, but they do not act as credential stores.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html",
+          "title": "What is AWS Secrets Manager? - AWS Secrets Manager"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html",
+          "title": "What is AWS Systems Manager? - AWS Systems Manager"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company hosts an application in one AWS account that must read objects from an Amazon S3 bucket in a different account without sharing long-term credentials. What should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "An IAM user password shared between both accounts",
+          "correct": false,
+          "rationale": "Shared passwords are long-term credentials that are hard to rotate and audit."
+        },
+        {
+          "id": "b",
+          "text": "A cross-account IAM role that the application assumes",
+          "correct": true,
+          "rationale": "A role in the bucket's account, trusting the application's account, gives temporary credentials for scoped access."
+        },
+        {
+          "id": "c",
+          "text": "The root user of the bucket account",
+          "correct": false,
+          "rationale": "Using root violates best practice and grants unrestricted access, not scoped read access."
+        },
+        {
+          "id": "d",
+          "text": "A copy of the access keys stored in the application's configuration file",
+          "correct": false,
+          "rationale": "Long-term keys in a file can leak and do not provide temporary, auditable access."
+        }
+      ],
+      "explanation": "Cross-account IAM roles let a trusted principal in one account obtain temporary security credentials for resources in another. The bucket account creates a role with a permissions policy for the needed S3 actions and a trust policy naming the other account. The application assumes the role and receives short-lived credentials, so nobody has to create users, share passwords, or distribute access keys across accounts.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+          "title": "IAM roles - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An application running on an Amazon EC2 instance must call Amazon DynamoDB. Which approach avoids storing long-term credentials on the instance?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Save an IAM user's access keys in a file on the instance",
+          "correct": false,
+          "rationale": "Stored access keys are long-term credentials that can be copied if the instance is compromised."
+        },
+        {
+          "id": "b",
+          "text": "Embed the root user's password in the application",
+          "correct": false,
+          "rationale": "Root credentials must never be embedded in applications, and the password does not authenticate API calls."
+        },
+        {
+          "id": "c",
+          "text": "Attach an IAM role to the instance",
+          "correct": true,
+          "rationale": "An instance role supplies temporary credentials automatically, scoped by the role's permissions policy."
+        },
+        {
+          "id": "d",
+          "text": "Create one shared IAM user for all instances",
+          "correct": false,
+          "rationale": "A shared user relies on long-term keys and cannot be scoped to each workload."
+        }
+      ],
+      "explanation": "IAM roles are meant for workloads that need AWS access without permanent keys. When a role is attached to an EC2 instance, the application obtains temporary credentials from the instance, and AWS rotates them automatically. The role's permissions policy defines exactly which DynamoDB actions are allowed, supporting least privilege. This removes the need to create, distribute, or rotate access keys on the instance.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+          "title": "IAM roles - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "title": "Security best practices in IAM - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants employees to sign in with their existing corporate directory credentials instead of creating separate IAM users. Which type of identity management does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Identity federation with an external identity provider",
+          "correct": true,
+          "rationale": "Federation lets users authenticated by an external provider access AWS using temporary credentials, with no separate IAM users."
+        },
+        {
+          "id": "b",
+          "text": "Creating an IAM user for each employee",
+          "correct": false,
+          "rationale": "This creates new AWS-specific identities instead of reusing the corporate directory."
+        },
+        {
+          "id": "c",
+          "text": "Sharing the root user credentials",
+          "correct": false,
+          "rationale": "Root sharing is unsafe and is not an identity management model."
+        },
+        {
+          "id": "d",
+          "text": "Issuing access keys to every employee",
+          "correct": false,
+          "rationale": "Access keys are long-term credentials. They do not link AWS to the corporate directory."
+        }
+      ],
+      "explanation": "Identity federation establishes trust between AWS and an external identity provider, so people authenticate with the credentials they already use at work and receive temporary AWS access. This avoids duplicate identities, keeps user lifecycle management in one place, and removes long-term credentials. AWS IAM Identity Center and IAM identity providers are two ways to implement federation for a workforce. Either way, no employee needs a new long-term IAM password or access key.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+          "title": "What is IAM? - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html",
+          "title": "What is IAM Identity Center? - AWS IAM Identity Center"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A security team wants to require a minimum length and complexity for the passwords of IAM users. Which feature should the team configure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "An Amazon S3 bucket policy",
+          "correct": false,
+          "rationale": "Bucket policies control access to S3 data. They do not set password rules."
+        },
+        {
+          "id": "b",
+          "text": "The IAM account password policy",
+          "correct": true,
+          "rationale": "The password policy defines minimum length, character types, and expiration settings for IAM user passwords."
+        },
+        {
+          "id": "c",
+          "text": "An AWS Organizations service control policy",
+          "correct": false,
+          "rationale": "SCPs limit the maximum permissions in accounts. They do not define password requirements."
+        },
+        {
+          "id": "d",
+          "text": "An AWS Shield Advanced subscription",
+          "correct": false,
+          "rationale": "Shield Advanced adds DDoS protection and has no connection to IAM passwords."
+        }
+      ],
+      "explanation": "IAM lets you set an account password policy that applies to IAM users' passwords. Administrators can require a minimum length, mixed character types, expiration, and prevention of password reuse. This helps enforce good credential hygiene, but passwords alone are weak protection, so the policy is best combined with MFA. For workforce access at scale, IAM Identity Center can reduce the number of passwords to manage.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "title": "Security best practices in IAM - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+          "title": "What is IAM? - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "Which type of IAM policy is created and maintained by AWS and covers common use cases such as read-only access?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Inline policy",
+          "correct": false,
+          "rationale": "Inline policies are written by you and embedded in a single identity, not maintained by AWS."
+        },
+        {
+          "id": "b",
+          "text": "Customer managed policy",
+          "correct": false,
+          "rationale": "You create and maintain customer managed policies yourself."
+        },
+        {
+          "id": "c",
+          "text": "AWS managed policy",
+          "correct": true,
+          "rationale": "AWS managed policies are standalone policies created and updated by AWS for common job functions and use cases."
+        },
+        {
+          "id": "d",
+          "text": "Resource-based policy",
+          "correct": false,
+          "rationale": "Resource-based policies are attached to a resource such as a bucket and are authored by you."
+        }
+      ],
+      "explanation": "IAM supports several policy types. AWS managed policies are standalone policies that AWS writes and updates, such as ReadOnlyAccess, which makes them convenient starting points. When they are broader than needed, you can create customer managed policies tailored to your requirements, or use inline policies embedded in one identity. Choosing the narrowest suitable policy supports least privilege, and customer managed policies can be reused across many users, groups, and roles.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html",
+          "title": "Policies and permissions in AWS Identity and Access Management - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0015",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO actions help protect the AWS account root user?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Share the root password with the operations team",
+          "correct": false,
+          "rationale": "Sharing exposes the most powerful credential to more people and removes accountability."
+        },
+        {
+          "id": "b",
+          "text": "Enable MFA on the root user",
+          "correct": true,
+          "rationale": "MFA requires a second factor, so a leaked password alone cannot be used to sign in."
+        },
+        {
+          "id": "c",
+          "text": "Use the root user for daily administration",
+          "correct": false,
+          "rationale": "Regular use increases the chance that root credentials are exposed or misused."
+        },
+        {
+          "id": "d",
+          "text": "Create root access keys for automation scripts",
+          "correct": false,
+          "rationale": "Root access keys are powerful long-term credentials that AWS recommends not creating."
+        },
+        {
+          "id": "e",
+          "text": "Use a long, unique password kept in a password manager",
+          "correct": true,
+          "rationale": "A strong unique password reduces the chance of guessing or reuse across sites."
+        }
+      ],
+      "explanation": "The root user cannot be restricted by IAM policies, so protecting its credentials is critical. Enable MFA, use a strong and unique password, and avoid creating root access keys; if any exist, delete them. Do not use root for routine work. Instead, create an administrative identity through IAM Identity Center or IAM and keep root sign-in for the few tasks only root can perform, such as closing the account.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+          "title": "AWS account root user - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html",
+          "title": "Root user best practices for your AWS account - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0016",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which THREE actions follow IAM security best practices?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Attach the AdministratorAccess policy to every user",
+          "correct": false,
+          "rationale": "Full administrator rights for everyone violates least privilege and magnifies the impact of any compromise."
+        },
+        {
+          "id": "b",
+          "text": "Grant only the permissions that each identity requires",
+          "correct": true,
+          "rationale": "Granting minimal permissions limits damage from errors or stolen credentials."
+        },
+        {
+          "id": "c",
+          "text": "Share one IAM user among the whole team",
+          "correct": false,
+          "rationale": "Shared users cannot be audited or scoped individually, and credentials spread widely."
+        },
+        {
+          "id": "d",
+          "text": "Require MFA for human users",
+          "correct": true,
+          "rationale": "MFA protects against stolen passwords and is a core recommendation."
+        },
+        {
+          "id": "e",
+          "text": "Embed access keys in code stored in a repository",
+          "correct": false,
+          "rationale": "Keys in code are easily leaked and are long-term credentials."
+        },
+        {
+          "id": "f",
+          "text": "Use temporary credentials through federation and roles",
+          "correct": true,
+          "rationale": "Temporary credentials expire automatically, which reduces the risk of long-lived secrets."
+        }
+      ],
+      "explanation": "IAM best practices focus on reducing the value of any stolen credential. Require human users to use temporary credentials through federation, preferably with IAM Identity Center, and let workloads use IAM roles. Enable MFA, and apply least privilege by granting only the permissions needed. Avoid shared identities, broad administrator access, and long-term access keys, especially keys embedded in code, because they are easy to leak and hard to track.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "title": "Security best practices in IAM - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+          "title": "What is IAM? - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "An administrator accidentally removed the permissions of every IAM user in the account, including all administrators, and nobody can manage IAM. Which action can restore access?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Contact AWS Support to reset the IAM policies",
+          "correct": false,
+          "rationale": "Support does not edit your IAM permissions. This recovery is performed by the account owner."
+        },
+        {
+          "id": "b",
+          "text": "Sign in to IAM Identity Center to attach the missing policies",
+          "correct": false,
+          "rationale": "IAM Identity Center users rely on the same permission setup and cannot override a full lockout of IAM administration."
+        },
+        {
+          "id": "c",
+          "text": "Sign in as the root user and restore the IAM permissions",
+          "correct": true,
+          "rationale": "Restoring IAM user permissions is a task that requires the root user, which IAM policies cannot restrict."
+        },
+        {
+          "id": "d",
+          "text": "Create a new AWS account and start over",
+          "correct": false,
+          "rationale": "This abandons existing resources and is unnecessary because root can fix the permissions."
+        }
+      ],
+      "explanation": "The root user is not subject to IAM permission policies, so it can recover from a situation where no IAM identity can administer permissions. Restoring IAM user permissions is one of the tasks that specifically requires root credentials. This is why the root user should be protected with MFA and kept available, though not used for routine work. After recovery, sign out of root and go back to least-privilege administrator access.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html",
+          "title": "AWS account root user - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html",
+          "title": "Root user best practices for your AWS account - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A developer needs to read objects from a single Amazon S3 bucket. Which approach best follows the principle of least privilege?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Attach AmazonS3FullAccess to the developer",
+          "correct": false,
+          "rationale": "Full S3 access covers every bucket and every action, far beyond what is needed."
+        },
+        {
+          "id": "b",
+          "text": "Attach the AdministratorAccess policy to the developer",
+          "correct": false,
+          "rationale": "Administrator access allows all actions on all services, which is the opposite of least privilege."
+        },
+        {
+          "id": "c",
+          "text": "Give the developer the account root user credentials",
+          "correct": false,
+          "rationale": "Root credentials are unrestricted and must not be handed to developers."
+        },
+        {
+          "id": "d",
+          "text": "Attach a customer managed policy that allows only read actions on that bucket",
+          "correct": true,
+          "rationale": "A narrow policy limited to the needed actions and resource gives exactly the required access and nothing more."
+        }
+      ],
+      "explanation": "Least privilege means scoping permissions to specific actions and specific resources. When AWS managed policies are broader than needed, a customer managed policy can allow just s3:GetObject and s3:ListBucket on the one bucket. The policy can be attached to a group so that future developers inherit the same limited access. Broader choices, such as full S3 access or administrator rights, work technically but expose far more than the task requires.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html",
+          "title": "Policies and permissions in AWS Identity and Access Management - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "title": "Security best practices in IAM - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0019",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A security account must let auditors review resources in ten member accounts. The company wants no new long-term credentials in the member accounts. What should the company do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create a role in each member account that trusts the security account, and have auditors assume it",
+          "correct": true,
+          "rationale": "Roles with a trust policy provide temporary, scoped access without creating users or keys in each member account."
+        },
+        {
+          "id": "b",
+          "text": "Create an IAM user with access keys in each member account",
+          "correct": false,
+          "rationale": "This adds ten sets of long-term credentials to manage and rotate."
+        },
+        {
+          "id": "c",
+          "text": "Share the root password of each member account with the auditors",
+          "correct": false,
+          "rationale": "Sharing root credentials is unsafe and gives unrestricted access."
+        },
+        {
+          "id": "d",
+          "text": "Email a single shared password to the auditors",
+          "correct": false,
+          "rationale": "Shared passwords are not auditable per person and are a long-term credential."
+        }
+      ],
+      "explanation": "Cross-account roles are the standard pattern for access across accounts. Each member account defines a role whose permissions policy grants read-only audit actions and whose trust policy allows principals from the security account. Auditors assume the role and receive temporary credentials, and CloudTrail records who assumed it. Nothing long-lived is created in the member accounts, and removing access means deleting the trust or the role.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html",
+          "title": "IAM roles - AWS Identity and Access Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html",
+          "title": "Security best practices in IAM - AWS Identity and Access Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.3-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO are authentication methods or MFA devices supported for protecting access to AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Virtual authenticator app",
+          "correct": true,
+          "rationale": "A virtual MFA application on a phone generates time-based codes and is a supported MFA type."
+        },
+        {
+          "id": "b",
+          "text": "Amazon S3 pre-signed URL",
+          "correct": false,
+          "rationale": "A pre-signed URL grants temporary access to an object. It is not an MFA device."
+        },
+        {
+          "id": "c",
+          "text": "AWS KMS key policy",
+          "correct": false,
+          "rationale": "A key policy controls access to an encryption key. It is not a sign-in factor."
+        },
+        {
+          "id": "d",
+          "text": "FIDO security key",
+          "correct": true,
+          "rationale": "FIDO security keys are supported hardware devices for phishing-resistant MFA."
+        },
+        {
+          "id": "e",
+          "text": "AWS Shield Advanced",
+          "correct": false,
+          "rationale": "Shield Advanced is DDoS protection and plays no role in authentication."
+        }
+      ],
+      "explanation": "AWS supports several MFA options for the root user and IAM users: virtual authenticator applications that generate time-based codes, FIDO security keys and passkeys that resist phishing, and hardware TOTP tokens. Using more than one MFA device is also possible for added resilience. Items like pre-signed URLs, KMS key policies, or AWS Shield are authorization or protection features, not authentication factors for signing in.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html",
+          "title": "AWS Multi-factor authentication in IAM - AWS Identity and Access Management"
+        }
+      ]
+    }
+  ]
+}
