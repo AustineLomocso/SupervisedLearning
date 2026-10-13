@@ -6,6 +6,18 @@ import { db } from './db.js'
 /** @type {FlagReason[]} */
 export const FLAG_REASONS = ['wrong-answer', 'unclear', 'outdated', 'typo', 'other']
 
+/** @type {Record<FlagReason, string>} */
+export const FLAG_REASON_LABELS = {
+  'wrong-answer': 'Wrong answer',
+  unclear: 'Unclear',
+  outdated: 'Outdated',
+  typo: 'Typo',
+  other: 'Other',
+}
+
+export const REPORTS_FORMAT = 'awsprep-reports'
+export const REPORTS_VERSION = 1
+
 /**
  * @typedef {object} NewFlag
  * @property {string} itemId
@@ -48,4 +60,19 @@ export async function deleteFlag(id) {
 
 export async function clearFlags() {
   await db.flags.clear()
+}
+
+/**
+ * The "My reports" export file: each report carries the item id and version a maintainer
+ * needs to find and fix the question.
+ * @param {Flag[]} flags
+ * @param {number} [now] epoch ms
+ */
+export function buildReportsExport(flags, now = Date.now()) {
+  return {
+    format: REPORTS_FORMAT,
+    version: REPORTS_VERSION,
+    exportedAt: new Date(now).toISOString(),
+    reports: flags,
+  }
 }

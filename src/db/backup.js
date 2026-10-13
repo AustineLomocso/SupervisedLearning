@@ -100,3 +100,13 @@ export async function importBackup(value) {
     await db.settings.bulkPut(tables.settings)
   })
 }
+
+/**
+ * Deletes learning progress (attempts, answer history, review marks) atomically. Reports and
+ * settings are kept.
+ */
+export async function resetProgress() {
+  await db.transaction('rw', [db.attempts, db.itemStats, db.subdomainProgress], async () => {
+    await Promise.all([db.attempts.clear(), db.itemStats.clear(), db.subdomainProgress.clear()])
+  })
+}

@@ -1,6 +1,14 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { resetDb } from '../test/resetDb.js'
-import { addFlag, clearFlags, deleteFlag, FLAG_REASONS, listFlags } from './flags.js'
+import {
+  addFlag,
+  buildReportsExport,
+  clearFlags,
+  deleteFlag,
+  FLAG_REASON_LABELS,
+  FLAG_REASONS,
+  listFlags,
+} from './flags.js'
 
 /** @param {object} [overrides] */
 const report = (overrides = {}) => ({
@@ -17,6 +25,21 @@ beforeEach(resetDb)
 describe('flags', () => {
   it('offers the five report reasons', () => {
     expect(FLAG_REASONS).toEqual(['wrong-answer', 'unclear', 'outdated', 'typo', 'other'])
+  })
+
+  it('has a label for every reason', () => {
+    expect(Object.keys(FLAG_REASON_LABELS).sort()).toEqual([...FLAG_REASONS].sort())
+  })
+
+  it('wraps reports in a versioned export', async () => {
+    await addFlag(report(), 1_000)
+    const flags = await listFlags()
+    expect(buildReportsExport(flags, Date.UTC(2026, 9, 14))).toEqual({
+      format: 'awsprep-reports',
+      version: 1,
+      exportedAt: '2026-10-14T00:00:00.000Z',
+      reports: flags,
+    })
   })
 
   it('stores a report with a trimmed note and returns its id', async () => {

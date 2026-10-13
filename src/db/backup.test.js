@@ -1,8 +1,17 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { resetDb } from '../test/resetDb.js'
 import { createAttempt } from './attempts.js'
-import { BACKUP_FORMAT, BACKUP_VERSION, BackupError, exportBackup, importBackup } from './backup.js'
+import {
+  BACKUP_FORMAT,
+  BACKUP_VERSION,
+  BackupError,
+  exportBackup,
+  importBackup,
+  resetProgress,
+} from './backup.js'
+import { db } from './db.js'
 import { addFlag, listFlags } from './flags.js'
+import { recordAnswer } from './itemStats.js'
 import { listProgressForCert, markReviewComplete } from './progress.js'
 import { getSetting, setSetting } from './settings.js'
 
@@ -73,5 +82,37 @@ describe('importBackup', () => {
     await setSetting('keep', 1)
     await expect(importBackup(bad)).rejects.toThrow(BackupError)
     expect(await getSetting('keep', null)).toBe(1)
+  })
+})
+
+describe('resetProgress', () => {
+  it('clears attempts, answer history and review marks but keeps reports and settings', async () => {
+    await createAttempt({
+      certId: 'clf-c02',
+      kind: 'pre',
+      scopeId: 'clf-c02/1.1',
+      mode: 'study',
+      itemIds: [],
+      optionOrder: {},
+    })
+    await recordAnswer({
+      itemId: 'clf-c02-1.1-0001',
+      certId: 'clf-c02',
+      subdomainId: 'clf-c02/1.1',
+      itemVersion: 1,
+      correct: true,
+      at: 1_000,
+    })
+    await markReviewComplete('clf-c02', 'clf-c02/1.1')
+    await setSetting('k', 1)
+    await addFlag({ itemId: 'clf-c02-1.1-0001', itemVersion: 1, certId: 'clf-c02', reason: 'typo' })
+
+    await resetProgress()
+
+    expect(await db.attempts.count()).toBe(0)
+    expect(await db.itemStats.count()).toBe(0)
+    expect(await listProgressForCert('clf-c02')).toEqual([])
+    expect(await listFlags()).toHaveLength(1)
+    expect(await getSetting('k', 0)).toBe(1)
   })
 })
