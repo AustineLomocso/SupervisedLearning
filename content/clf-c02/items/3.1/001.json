@@ -1,0 +1,892 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.1",
+  "items": [
+    {
+      "id": "clf-c02-3.1-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A systems administrator wants to manage AWS services by typing commands in a terminal and chaining them into scripts. Which tool provides this capability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Management Console",
+          "correct": false,
+          "rationale": "The Management Console is a web-based graphical interface, not a terminal tool."
+        },
+        {
+          "id": "b",
+          "text": "Amazon CloudWatch",
+          "correct": false,
+          "rationale": "CloudWatch collects metrics and logs; it is not a tool for issuing commands to AWS services."
+        },
+        {
+          "id": "c",
+          "text": "AWS Command Line Interface (AWS CLI)",
+          "correct": true,
+          "rationale": "The AWS CLI is a unified tool for managing AWS services from a command-line shell, and its commands can be scripted."
+        },
+        {
+          "id": "d",
+          "text": "AWS Outposts",
+          "correct": false,
+          "rationale": "Outposts extends AWS infrastructure to on-premises sites and is not a command-line interface."
+        }
+      ],
+      "explanation": "The AWS CLI is an open source tool that lets you interact with AWS services using commands in a command-line shell. Because commands are text, they can be saved in scripts and run repeatedly, which makes the CLI a form of programmatic access. The other common ways to reach AWS are the web-based AWS Management Console and the AWS SDKs, which call AWS APIs from application code. All three ultimately use the same underlying AWS service APIs.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html",
+          "title": "What is the AWS Command Line Interface? - AWS Command Line Interface"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement describes a hybrid cloud deployment model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cloud resources are connected to infrastructure that remains on premises.",
+          "correct": true,
+          "rationale": "A hybrid deployment links cloud-based resources with existing resources that are not in the cloud, commonly on-premises infrastructure."
+        },
+        {
+          "id": "b",
+          "text": "All application components run in the cloud with no on-premises servers.",
+          "correct": false,
+          "rationale": "That describes a cloud-based deployment, not a hybrid one."
+        },
+        {
+          "id": "c",
+          "text": "Applications run only on virtualized servers in a company data center.",
+          "correct": false,
+          "rationale": "That describes an on-premises (private cloud) deployment."
+        },
+        {
+          "id": "d",
+          "text": "Two applications run in separate AWS accounts that share no resources.",
+          "correct": false,
+          "rationale": "Account separation is an organizational choice and says nothing about connecting to on-premises resources."
+        }
+      ],
+      "explanation": "AWS describes three deployment models. A cloud deployment runs all parts of an application in the cloud. An on-premises deployment, sometimes called a private cloud, uses virtualization in the company's own data center. A hybrid deployment connects cloud resources to existing non-cloud resources, usually on-premises infrastructure, so an organization can extend into the cloud gradually while keeping internal systems connected.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html",
+          "title": "Types of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service lets a team define AWS resources in a template and then create and update them as a single stack?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon CloudWatch",
+          "correct": false,
+          "rationale": "CloudWatch monitors metrics, logs and alarms; it does not provision resources from templates."
+        },
+        {
+          "id": "b",
+          "text": "AWS Management Console",
+          "correct": false,
+          "rationale": "The console is used for interactive management and does not by itself define resources in a reusable template."
+        },
+        {
+          "id": "c",
+          "text": "AWS Outposts",
+          "correct": false,
+          "rationale": "Outposts places AWS infrastructure on premises; it is not a template-based provisioning service."
+        },
+        {
+          "id": "d",
+          "text": "AWS CloudFormation",
+          "correct": true,
+          "rationale": "CloudFormation provisions and manages related AWS resources from a template, grouped as a stack."
+        }
+      ],
+      "explanation": "AWS CloudFormation is the AWS infrastructure as code service. You describe the resources you want in a template written in JSON or YAML, and CloudFormation creates, updates and deletes them together as a stack. This makes deployments consistent and repeatable, and templates can be stored in version control. Monitoring services such as Amazon CloudWatch observe resources after they exist but do not provision them.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html",
+          "title": "What is CloudFormation? - AWS CloudFormation"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which description best defines infrastructure as code (IaC)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Running servers only inside a company's own data center",
+          "correct": false,
+          "rationale": "Where servers run is a deployment model question, not the definition of IaC."
+        },
+        {
+          "id": "b",
+          "text": "Managing and provisioning infrastructure through machine-readable definition files",
+          "correct": true,
+          "rationale": "IaC treats infrastructure setup as code in files that tools can read, apply and version."
+        },
+        {
+          "id": "c",
+          "text": "Clicking through a graphical wizard to create each resource",
+          "correct": false,
+          "rationale": "Manual wizard steps are the opposite of defining infrastructure in code."
+        },
+        {
+          "id": "d",
+          "text": "Monitoring application performance with dashboards and alarms",
+          "correct": false,
+          "rationale": "Monitoring is an operations activity handled by services such as Amazon CloudWatch, not IaC."
+        }
+      ],
+      "explanation": "Infrastructure as code means describing infrastructure in files that tools interpret to create and change resources automatically, rather than configuring each resource by hand. Because definitions are text, they can be reviewed, tested and kept in version control, and the same definition produces the same environment each time. On AWS, AWS CloudFormation is the primary service for this approach, giving repeatable and consistent deployments.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/iac/",
+          "title": "What is Infrastructure as Code? - IaC Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which method of accessing AWS provides a web-based graphical interface for managing services?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Management Console",
+          "correct": true,
+          "rationale": "The Management Console is the browser-based interface for managing AWS resources."
+        },
+        {
+          "id": "b",
+          "text": "AWS CLI",
+          "correct": false,
+          "rationale": "The CLI is operated by typing commands in a terminal, not through a graphical web interface."
+        },
+        {
+          "id": "c",
+          "text": "AWS SDKs",
+          "correct": false,
+          "rationale": "SDKs are libraries that let application code call AWS APIs; they do not provide a graphical interface."
+        },
+        {
+          "id": "d",
+          "text": "AWS CloudFormation",
+          "correct": false,
+          "rationale": "CloudFormation provisions resources from templates rather than offering an interactive graphical console."
+        }
+      ],
+      "explanation": "The AWS Management Console is a web application where you sign in and use a graphical interface to create, view and configure resources. It is convenient for learning, exploration and one-time tasks. For automation and repeatability, AWS offers programmatic options: the AWS CLI for command-line use, the AWS SDKs for application code, and infrastructure as code with AWS CloudFormation.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/",
+          "title": "AWS Management Console"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company builds a new application in which every component runs on AWS and no servers remain in its own data center. Which deployment model does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hybrid",
+          "correct": false,
+          "rationale": "Hybrid requires some resources to remain outside the cloud and be connected to it."
+        },
+        {
+          "id": "b",
+          "text": "On-premises",
+          "correct": false,
+          "rationale": "On-premises means the resources run in the company's own facility."
+        },
+        {
+          "id": "c",
+          "text": "Cloud",
+          "correct": true,
+          "rationale": "In a cloud deployment, all parts of the application run in the cloud."
+        },
+        {
+          "id": "d",
+          "text": "Colocation",
+          "correct": false,
+          "rationale": "Colocation rents space for the company's own hardware in a third-party facility and is not a cloud deployment."
+        }
+      ],
+      "explanation": "AWS defines a cloud-based deployment as one where the application is fully deployed in the cloud and all parts run there. Such applications are either built in the cloud or migrated from existing infrastructure to gain the benefits of cloud computing, such as elasticity and pay-as-you-go pricing. If some parts stayed in a company data center and connected to AWS, the model would be hybrid instead.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html",
+          "title": "Types of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A developer is writing a Python application that must upload files to Amazon S3 as part of its normal operation. Which access method is the best fit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Management Console",
+          "correct": false,
+          "rationale": "The console is for interactive use by people and cannot be called from application code."
+        },
+        {
+          "id": "b",
+          "text": "AWS SDK for Python",
+          "correct": true,
+          "rationale": "SDKs let application code call AWS services directly from the programming language in use."
+        },
+        {
+          "id": "c",
+          "text": "AWS Outposts",
+          "correct": false,
+          "rationale": "Outposts is an on-premises infrastructure offering, not a way to call S3 from code."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudWatch",
+          "correct": false,
+          "rationale": "CloudWatch monitors resources and does not upload data on behalf of an application."
+        }
+      ],
+      "explanation": "AWS SDKs provide language-specific libraries that wrap the AWS APIs, so application code can create resources, store data and call services programmatically. They suit situations where software, not a person, performs the action. The Management Console serves people working interactively, and the AWS CLI serves shell scripts and terminals. Choosing among them depends on who or what is performing the operation and how often.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/",
+          "title": "AWS Management Console"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html",
+          "title": "What is the AWS Command Line Interface? - AWS Command Line Interface"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must create identical development, test and production environments, and will rebuild them regularly. Which approach is the most appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create each environment manually in the AWS Management Console",
+          "correct": false,
+          "rationale": "Manual creation is slow and prone to drift between environments."
+        },
+        {
+          "id": "b",
+          "text": "Ask engineers to remember the settings and re-enter them",
+          "correct": false,
+          "rationale": "Relying on memory is error-prone and not repeatable."
+        },
+        {
+          "id": "c",
+          "text": "Copy settings between environments using screenshots",
+          "correct": false,
+          "rationale": "Screenshots document settings but cannot create or update resources."
+        },
+        {
+          "id": "d",
+          "text": "Define the environments in AWS CloudFormation templates",
+          "correct": true,
+          "rationale": "Templates produce the same resources every time and can be reused for each environment."
+        }
+      ],
+      "explanation": "When environments must be identical and rebuilt often, a repeatable, automated process beats manual work. Infrastructure as code with AWS CloudFormation captures the resources in a template, so each deployment is consistent and differences between development, test and production are eliminated or parameterized. Manual console steps are acceptable for one-time exploration but introduce human error and configuration drift when repeated.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html",
+          "title": "What is CloudFormation? - AWS CloudFormation"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/iac/",
+          "title": "What is Infrastructure as Code? - IaC Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An administrator needs to look up the configuration of a single Amazon EC2 instance once to answer a support question. Which approach is the most practical?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Open the AWS Management Console and view the instance",
+          "correct": true,
+          "rationale": "For a one-time lookup, the console gives quick visual access without any setup."
+        },
+        {
+          "id": "b",
+          "text": "Write and deploy an AWS CloudFormation template",
+          "correct": false,
+          "rationale": "A template is overkill for a single read and takes longer than viewing the instance directly."
+        },
+        {
+          "id": "c",
+          "text": "Build an application with an AWS SDK",
+          "correct": false,
+          "rationale": "Building an application for a single lookup adds unnecessary development effort."
+        },
+        {
+          "id": "d",
+          "text": "Install AWS Outposts at the company site",
+          "correct": false,
+          "rationale": "Outposts is on-premises infrastructure and is unrelated to viewing an instance."
+        }
+      ],
+      "explanation": "Not every task needs automation. Evaluating requirements means asking whether the work is a one-time operation or a repeatable process. For a quick, single lookup or experiment, the AWS Management Console is the fastest option. If the same task had to run on a schedule or across many resources, the AWS CLI, an AWS SDK or infrastructure as code would be better choices.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/",
+          "title": "AWS Management Console"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company connects its own data center to AWS with a VPN so that its web servers on AWS can use a database that stays on premises. Which deployment model is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cloud",
+          "correct": false,
+          "rationale": "A cloud deployment has no components remaining outside the cloud, but the database stays on premises here."
+        },
+        {
+          "id": "b",
+          "text": "On-premises",
+          "correct": false,
+          "rationale": "Part of the workload runs on AWS, so it is not only on premises."
+        },
+        {
+          "id": "c",
+          "text": "Hybrid",
+          "correct": true,
+          "rationale": "Resources on AWS and on premises are connected to work together, which is a hybrid deployment."
+        },
+        {
+          "id": "d",
+          "text": "Edge-only",
+          "correct": false,
+          "rationale": "Nothing in the scenario places the workload at edge locations."
+        }
+      ],
+      "explanation": "A hybrid deployment links cloud resources with infrastructure that stays outside the cloud. Companies often choose it to migrate in stages, to keep data close to local systems, or to meet requirements about where data lives. Connectivity options such as a VPN or a dedicated network connection join the environments. If everything ran on AWS the model would be cloud; if everything stayed local it would be on-premises.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html",
+          "title": "Types of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A team wants to automate a nightly task using a Bash shell script on a Linux server that copies files to Amazon S3. Which access method fits most directly?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Management Console",
+          "correct": false,
+          "rationale": "The console requires a person using a browser and cannot be called from a Bash script."
+        },
+        {
+          "id": "b",
+          "text": "AWS CLI",
+          "correct": true,
+          "rationale": "The CLI is designed to be called from shell scripts and scheduled jobs."
+        },
+        {
+          "id": "c",
+          "text": "AWS SDK embedded in a new application",
+          "correct": false,
+          "rationale": "An SDK requires building application code, which is more effort than a shell script needs."
+        },
+        {
+          "id": "d",
+          "text": "AWS CloudFormation template",
+          "correct": false,
+          "rationale": "CloudFormation provisions resources and is not meant for copying files on a schedule."
+        }
+      ],
+      "explanation": "Programmatic access options are not interchangeable. The AWS CLI suits shell scripts and quick automation because commands run directly from a terminal. AWS SDKs suit applications written in a programming language. The console suits interactive human use, and AWS CloudFormation suits provisioning infrastructure. Matching the tool to the context, here a shell script, keeps the solution simple and repeatable.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html",
+          "title": "What is the AWS Command Line Interface? - AWS Command Line Interface"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to view operational data and run automated tasks across its Amazon EC2 instances and on-premises servers from one place. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS CloudFormation",
+          "correct": false,
+          "rationale": "CloudFormation provisions resources from templates but is not an operations hub for managing servers."
+        },
+        {
+          "id": "b",
+          "text": "Amazon S3",
+          "correct": false,
+          "rationale": "S3 is object storage and does not manage servers."
+        },
+        {
+          "id": "c",
+          "text": "AWS Outposts",
+          "correct": false,
+          "rationale": "Outposts supplies AWS infrastructure on premises and is not an operations management tool."
+        },
+        {
+          "id": "d",
+          "text": "AWS Systems Manager",
+          "correct": true,
+          "rationale": "Systems Manager provides a unified place to view operational data and automate tasks across AWS and on-premises resources."
+        }
+      ],
+      "explanation": "AWS Systems Manager helps you operate infrastructure at scale. It gives a central view of operational data and lets you automate tasks such as patching and running commands across Amazon EC2 instances, on-premises servers and other resources. It is part of how you operate in the cloud, as opposed to provisioning, which AWS CloudFormation handles. Using it avoids logging in to servers one by one.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html",
+          "title": "What is AWS Systems Manager? - AWS Systems Manager"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to track metrics and logs and receive alarms about the health of its AWS resources. Which AWS service supports this operational need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon CloudWatch",
+          "correct": true,
+          "rationale": "CloudWatch collects and tracks metrics and logs and can raise alarms for AWS resources."
+        },
+        {
+          "id": "b",
+          "text": "AWS CloudFormation",
+          "correct": false,
+          "rationale": "CloudFormation deploys resources and does not monitor their performance."
+        },
+        {
+          "id": "c",
+          "text": "AWS CLI",
+          "correct": false,
+          "rationale": "The CLI is a tool for issuing commands and does not itself provide monitoring and alarms."
+        },
+        {
+          "id": "d",
+          "text": "AWS Outposts",
+          "correct": false,
+          "rationale": "Outposts provides on-premises AWS infrastructure and is not a monitoring service."
+        }
+      ],
+      "explanation": "Operating in the cloud involves observing resources after they are provisioned. Amazon CloudWatch monitors AWS resources and applications by collecting metrics and logs, and it can trigger alarms and automated actions when thresholds are crossed. It is separate from provisioning tools such as AWS CloudFormation, and from access tools such as the AWS CLI or Management Console, which can be used to view CloudWatch data.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html",
+          "title": "What is Amazon CloudWatch? - Amazon CloudWatch"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs virtualization software on its own servers in its own facility and has no connection to AWS. Which deployment model does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cloud",
+          "correct": false,
+          "rationale": "Cloud deployments run in AWS, but nothing here runs there."
+        },
+        {
+          "id": "b",
+          "text": "On-premises",
+          "correct": true,
+          "rationale": "Resources are deployed in the company's own facility, sometimes called a private cloud."
+        },
+        {
+          "id": "c",
+          "text": "Hybrid",
+          "correct": false,
+          "rationale": "Hybrid needs a connection between on-premises and cloud resources, which is absent."
+        },
+        {
+          "id": "d",
+          "text": "Multi-Region",
+          "correct": false,
+          "rationale": "Multi-Region describes spreading across AWS Regions, which is not occurring here."
+        }
+      ],
+      "explanation": "On-premises deployment places resources in the organization's own data center, using virtualization and resource management tools. AWS notes this is sometimes called a private cloud, although it usually lacks many benefits of cloud computing, such as on-demand scaling and pay-as-you-go pricing. It does offer dedicated resources. It becomes hybrid only once it is connected to cloud-based resources.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html",
+          "title": "Types of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A team wants infrastructure changes to be reviewed by peers, tracked in version control, and applied identically in every Region. Which approach best meets these requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Document console steps in a team wiki",
+          "correct": false,
+          "rationale": "Documented manual steps are not versioned code and can drift between Regions."
+        },
+        {
+          "id": "b",
+          "text": "Have engineers type ad hoc CLI commands",
+          "correct": false,
+          "rationale": "Ad hoc commands are not reviewed or reproducible unless stored as code."
+        },
+        {
+          "id": "c",
+          "text": "Keep AWS CloudFormation templates in a source repository",
+          "correct": true,
+          "rationale": "Templates are text files that can be reviewed, versioned and deployed identically in many Regions."
+        },
+        {
+          "id": "d",
+          "text": "Run a one-time SDK program per Region",
+          "correct": false,
+          "rationale": "A one-time program is not a reviewed, versioned definition of the infrastructure."
+        }
+      ],
+      "explanation": "Reviewable, versioned and identical deployments are the hallmarks of infrastructure as code. Defining resources in AWS CloudFormation templates stored in a source repository allows peer review of changes, history of what changed, and the same template to be deployed to any Region. Manual console steps and ad hoc commands depend on people following instructions exactly and cannot be reviewed like code. The decision turns on repeatability, not on which tool is easiest once.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html",
+          "title": "What is CloudFormation? - AWS CloudFormation"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/iac/",
+          "title": "What is Infrastructure as Code? - IaC Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company must process data in its own data center to meet a local requirement but wants to use the same AWS infrastructure and services it uses in the cloud. Which solution fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Outposts",
+          "correct": true,
+          "rationale": "Outposts brings AWS infrastructure and services to on-premises sites for a consistent hybrid experience."
+        },
+        {
+          "id": "b",
+          "text": "A cloud-only deployment in an AWS Region",
+          "correct": false,
+          "rationale": "Running only in a Region does not keep processing in the company's data center."
+        },
+        {
+          "id": "c",
+          "text": "A traditional on-premises private cloud",
+          "correct": false,
+          "rationale": "A private cloud would not provide the same AWS infrastructure and services."
+        },
+        {
+          "id": "d",
+          "text": "Colocation with third-party hardware",
+          "correct": false,
+          "rationale": "Colocation rents space for the company's own hardware and does not provide AWS services."
+        }
+      ],
+      "explanation": "AWS Outposts is a managed service family that places AWS infrastructure and services in on-premises or edge locations while connecting to the nearby AWS Region. It is used to keep latency-sensitive workloads and local data processing close to where they are needed or to meet data residency requirements, while keeping the same tools and APIs. This is a hybrid deployment, which differs from a cloud-only model or a standalone private cloud.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/outposts/",
+          "title": "On Premises Private Cloud - AWS Outposts - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html",
+          "title": "Types of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which of the following are ways to access AWS services?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Outposts",
+          "correct": false,
+          "rationale": "Outposts is on-premises infrastructure, not an access method."
+        },
+        {
+          "id": "b",
+          "text": "AWS Management Console",
+          "correct": true,
+          "rationale": "The console is the web-based interface for accessing AWS services."
+        },
+        {
+          "id": "c",
+          "text": "Amazon CloudWatch",
+          "correct": false,
+          "rationale": "CloudWatch monitors resources and is not a way to access other services."
+        },
+        {
+          "id": "d",
+          "text": "AWS Direct Connect",
+          "correct": false,
+          "rationale": "Direct Connect provides network connectivity but is not an interface for managing services."
+        },
+        {
+          "id": "e",
+          "text": "AWS SDKs",
+          "correct": true,
+          "rationale": "SDKs let application code access AWS services through their APIs."
+        }
+      ],
+      "explanation": "AWS services can be accessed through the AWS Management Console, the AWS CLI, and the AWS SDKs, all of which call the same service APIs. The console suits interactive work, the CLI suits terminals and scripts, and SDKs suit application code. Other services, such as Amazon CloudWatch or AWS Outposts, provide capabilities rather than interfaces for managing AWS, and network links merely carry traffic.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/",
+          "title": "AWS Management Console"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html",
+          "title": "What is the AWS Command Line Interface? - AWS Command Line Interface"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which are benefits of managing infrastructure as code with AWS CloudFormation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deployments are consistent and repeatable.",
+          "correct": true,
+          "rationale": "Using the same template produces the same resources each time."
+        },
+        {
+          "id": "b",
+          "text": "Resources no longer need any permissions.",
+          "correct": false,
+          "rationale": "IAM permissions are still required to create resources through templates."
+        },
+        {
+          "id": "c",
+          "text": "Resource costs are eliminated.",
+          "correct": false,
+          "rationale": "Resources created by templates still incur normal charges."
+        },
+        {
+          "id": "d",
+          "text": "Changes can be tracked in version control.",
+          "correct": true,
+          "rationale": "Templates are text files that can be versioned and reviewed."
+        },
+        {
+          "id": "e",
+          "text": "Testing is no longer needed.",
+          "correct": false,
+          "rationale": "Templates should still be tested before use."
+        }
+      ],
+      "explanation": "Infrastructure as code describes resources in template files, so environments can be created consistently and repeatedly. Because templates are text, they can be stored in version control, reviewed and reused across accounts and Regions. IaC does not remove the need for permissions, testing or payment for the resources created, it only makes provisioning predictable and less manual.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html",
+          "title": "What is CloudFormation? - AWS CloudFormation"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/iac/",
+          "title": "What is Infrastructure as Code? - IaC Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "Which situations favor a repeatable, automated process over a one-time manual operation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "An engineer checks one setting during a support call.",
+          "correct": false,
+          "rationale": "A single lookup is quick to do manually."
+        },
+        {
+          "id": "b",
+          "text": "A student experiments with a new service for an afternoon.",
+          "correct": false,
+          "rationale": "One-off exploration suits the console."
+        },
+        {
+          "id": "c",
+          "text": "A company launches the same stack for each new customer.",
+          "correct": true,
+          "rationale": "Repeated identical launches benefit from templates and automation."
+        },
+        {
+          "id": "d",
+          "text": "An administrator reads a billing page once.",
+          "correct": false,
+          "rationale": "A single read does not justify building automation."
+        },
+        {
+          "id": "e",
+          "text": "A team rebuilds its environment for disaster recovery testing.",
+          "correct": true,
+          "rationale": "Rebuilding environments again and again should be automated."
+        }
+      ],
+      "explanation": "Evaluate whether work is a one-time operation or will recur. Repeated, identical tasks such as per-customer stacks and regular environment rebuilds benefit from infrastructure as code and scripts because they reduce errors and save time. One-off tasks, such as a quick lookup or exploratory learning, are often fastest in the AWS Management Console. The key factors are frequency, consistency and risk of human error.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/iac/",
+          "title": "What is Infrastructure as Code? - IaC Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/",
+          "title": "AWS Management Console"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.1-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 2,
+      "stem": "Which of the following are cloud deployment models?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cloud",
+          "correct": true,
+          "rationale": "Running all components in the cloud is a deployment model."
+        },
+        {
+          "id": "b",
+          "text": "Infrastructure as code",
+          "correct": false,
+          "rationale": "IaC is a method of provisioning, not a deployment model."
+        },
+        {
+          "id": "c",
+          "text": "Hybrid",
+          "correct": true,
+          "rationale": "Connecting cloud and on-premises resources is a deployment model."
+        },
+        {
+          "id": "d",
+          "text": "Programmatic access",
+          "correct": false,
+          "rationale": "Programmatic access is a way to use AWS, not a deployment model."
+        },
+        {
+          "id": "e",
+          "text": "On-premises",
+          "correct": true,
+          "rationale": "Running in the company's own facility is a deployment model."
+        },
+        {
+          "id": "f",
+          "text": "AWS SDK",
+          "correct": false,
+          "rationale": "An SDK is a development tool, not a deployment model."
+        }
+      ],
+      "explanation": "The three deployment models are cloud, hybrid and on-premises. They describe where resources run and how they connect. Infrastructure as code, programmatic access and SDKs describe how you provision and operate resources, which is a separate question. A company can use any of the access methods with any deployment model, though on-premises deployments use them against local tooling.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html",
+          "title": "Types of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,896 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.6",
+  "items": [
+    {
+      "id": "clf-c02-3.6-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to store millions of images and backup files that applications retrieve over HTTPS by using an API. Which type of storage fits this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Block storage",
+          "correct": false,
+          "rationale": "Block storage presents raw volumes to a single server's operating system, not objects retrieved through an HTTPS API."
+        },
+        {
+          "id": "b",
+          "text": "Object storage",
+          "correct": true,
+          "rationale": "Object storage keeps data as objects in buckets and serves them through web APIs, which suits images and backups. Amazon S3 is the AWS example."
+        },
+        {
+          "id": "c",
+          "text": "File storage",
+          "correct": false,
+          "rationale": "File storage is mounted by clients over a protocol such as NFS or SMB rather than accessed through an object API."
+        },
+        {
+          "id": "d",
+          "text": "Ephemeral storage",
+          "correct": false,
+          "rationale": "Ephemeral storage is temporary and loses data when the host stops, so it is unsuitable for durable backups."
+        }
+      ],
+      "explanation": "Object storage stores data as objects, each with its data, metadata and a unique key, inside buckets. Applications read and write objects through HTTPS API calls, and the store scales to very large amounts of data. This makes it the usual choice for images, videos, backups, log archives and data lakes. Amazon S3 is the AWS object storage service. Block and file storage, in contrast, are mounted by an operating system as a disk or a shared file system.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+          "title": "What is Amazon S3? - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service provides block storage volumes that can be attached to Amazon EC2 instances and used like a local hard drive?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Elastic Block Store (Amazon EBS)",
+          "correct": true,
+          "rationale": "Amazon EBS volumes attach to EC2 instances and are formatted and used like a local disk, and they persist independently of the instance."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Simple Storage Service (Amazon S3)",
+          "correct": false,
+          "rationale": "Amazon S3 is object storage accessed through APIs; it cannot be attached to an instance as a disk volume."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Elastic File System (Amazon EFS)",
+          "correct": false,
+          "rationale": "Amazon EFS is a shared network file system, not a block volume attached to one instance."
+        },
+        {
+          "id": "d",
+          "text": "AWS Storage Gateway",
+          "correct": false,
+          "rationale": "AWS Storage Gateway links on-premises applications to AWS storage and is not a volume for EC2 instances."
+        }
+      ],
+      "explanation": "Amazon Elastic Block Store provides scalable block storage for Amazon EC2. After you attach a volume to an instance you can format it and use it like a local drive for files, applications or databases. Volumes persist independently of the instance lifecycle, and you can back them up with point-in-time snapshots. Each volume lives in a single Availability Zone, and several volume types let you balance performance and cost.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
+          "title": "What is Amazon Elastic Block Store? - Amazon EBS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A developer stores scratch data on disks that are physically attached to the host computer of an Amazon EC2 instance. What happens to this instance store data when the instance is terminated?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The data is copied automatically to Amazon S3.",
+          "correct": false,
+          "rationale": "Instance store data is never copied to Amazon S3 automatically; you must do that yourself."
+        },
+        {
+          "id": "b",
+          "text": "The data is moved to an Amazon EBS snapshot.",
+          "correct": false,
+          "rationale": "Snapshots apply to EBS volumes only, and instance store data is not saved to one."
+        },
+        {
+          "id": "c",
+          "text": "The data is kept for 30 days and then deleted.",
+          "correct": false,
+          "rationale": "There is no retention window for instance store data once the instance ends."
+        },
+        {
+          "id": "d",
+          "text": "The data is lost permanently.",
+          "correct": true,
+          "rationale": "Instance store provides temporary storage tied to the host, so data is lost when the instance stops, terminates or the drive fails."
+        }
+      ],
+      "explanation": "Instance store gives an Amazon EC2 instance temporary block-level storage on disks attached to the physical host. It offers very low latency and high throughput, which suits buffers, caches and scratch data that can be re-created. Because the storage is tied to the host, the data does not survive instance termination or hardware failure. Data that must persist should be placed on Amazon EBS, Amazon EFS or Amazon S3 instead.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
+          "title": "What is Amazon Elastic Block Store? - Amazon EBS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service provides a serverless, elastic file system that uses the NFS protocol and grows and shrinks automatically as files are added and removed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon EBS",
+          "correct": false,
+          "rationale": "Amazon EBS offers fixed-size block volumes, and capacity does not grow and shrink automatically as files change."
+        },
+        {
+          "id": "b",
+          "text": "AWS Snowball",
+          "correct": false,
+          "rationale": "AWS Snowball is a physical device for offline data transfer, not a file system."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Elastic File System (Amazon EFS)",
+          "correct": true,
+          "rationale": "Amazon EFS is a serverless elastic file system that supports NFS and scales on demand without provisioning capacity."
+        },
+        {
+          "id": "d",
+          "text": "Amazon S3 Glacier Deep Archive",
+          "correct": false,
+          "rationale": "This is an archive storage class for objects, not an NFS file system."
+        }
+      ],
+      "explanation": "Amazon Elastic File System is a managed, serverless file storage service. It supports the Network File System protocol, scales to petabytes on demand and grows and shrinks automatically, so you never provision capacity. Many compute resources, including Amazon EC2, Amazon ECS, Amazon EKS and AWS Lambda, can mount the same file system at once. Using it with Windows-based EC2 instances is not supported.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+          "title": "What is Amazon Elastic File System? - Amazon Elastic File System"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is the primary purpose of AWS Storage Gateway?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To connect on-premises applications to AWS cloud storage, with frequently used data cached locally",
+          "correct": true,
+          "rationale": "Storage Gateway is a hybrid service that bridges on-premises environments and AWS storage, caching hot data locally for low latency."
+        },
+        {
+          "id": "b",
+          "text": "To replace Amazon EBS volumes on EC2 instances",
+          "correct": false,
+          "rationale": "It does not replace EBS; it serves on-premises applications that need cloud-backed storage."
+        },
+        {
+          "id": "c",
+          "text": "To encrypt data stored in Amazon S3 buckets",
+          "correct": false,
+          "rationale": "Encryption is handled by S3 encryption features and AWS KMS, not by Storage Gateway."
+        },
+        {
+          "id": "d",
+          "text": "To distribute content to users through edge locations",
+          "correct": false,
+          "rationale": "Content delivery through edge locations is the role of Amazon CloudFront."
+        }
+      ],
+      "explanation": "AWS Storage Gateway is a hybrid cloud storage service. It gives on-premises applications access to virtually unlimited cloud storage through standard protocols while keeping frequently accessed data cached locally for low-latency access. The complete data set is stored in AWS, for example in Amazon S3. Typical uses include extending file shares to the cloud, backing up on-premises data and reducing local storage footprint.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+          "title": "What is Amazon S3? - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service centralizes and automates data protection by letting you define backup policies for multiple AWS services?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Snowball",
+          "correct": false,
+          "rationale": "AWS Snowball transfers data offline with physical devices and does not manage backup policies."
+        },
+        {
+          "id": "b",
+          "text": "AWS Backup",
+          "correct": true,
+          "rationale": "AWS Backup is a centralized, policy-based service for automating backups across supported AWS services."
+        },
+        {
+          "id": "c",
+          "text": "Amazon S3 Transfer Acceleration",
+          "correct": false,
+          "rationale": "This speeds up uploads to S3 over long distances and has no backup policy features."
+        },
+        {
+          "id": "d",
+          "text": "Amazon EFS",
+          "correct": false,
+          "rationale": "EFS is a file system; although it can be backed up, it does not manage backups for other services."
+        }
+      ],
+      "explanation": "AWS Backup is a fully managed service that centralizes and automates backups across supported AWS services such as Amazon EBS, Amazon EFS and Amazon RDS. You create backup plans that set schedules and retention, assign resources to them, and monitor backup activity from one place. This removes the need to build custom scripts for each service and helps meet compliance requirements for data protection.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
+          "title": "What is Amazon Elastic Block Store? - Amazon EBS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+          "title": "What is Amazon Elastic File System? - Amazon Elastic File System"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company stores data in Amazon S3 whose access patterns are unknown and change unpredictably. It wants storage costs to optimize automatically without retrieval fees. Which storage class should it choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Standard-IA",
+          "correct": false,
+          "rationale": "Standard-IA charges per-GB retrieval fees and suits data with predictable infrequent access."
+        },
+        {
+          "id": "b",
+          "text": "S3 Glacier Flexible Retrieval",
+          "correct": false,
+          "rationale": "This archive class requires restores and charges retrieval fees, so it does not fit unpredictable access."
+        },
+        {
+          "id": "c",
+          "text": "S3 Intelligent-Tiering",
+          "correct": true,
+          "rationale": "Intelligent-Tiering moves objects between access tiers automatically as patterns change, with no retrieval fees."
+        },
+        {
+          "id": "d",
+          "text": "S3 One Zone-IA",
+          "correct": false,
+          "rationale": "One Zone-IA stores data in one Availability Zone and charges retrieval fees; it does not adapt to access patterns."
+        }
+      ],
+      "explanation": "S3 Intelligent-Tiering is built for data with unknown or changing access patterns. It monitors access at the object level and automatically moves objects that have not been accessed to lower-cost tiers, for example after 30 consecutive days. When objects are accessed again they return to the frequent tier. There are no retrieval fees, but a small monthly monitoring and automation charge applies per object.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        },
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must keep compliance records for many years and expects to read them less than once a year. Hours of retrieval time are acceptable. Which Amazon S3 storage class has the lowest storage cost?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Standard",
+          "correct": false,
+          "rationale": "Standard is designed for frequent access and has the highest storage price of the common classes."
+        },
+        {
+          "id": "b",
+          "text": "S3 Glacier Instant Retrieval",
+          "correct": false,
+          "rationale": "This class gives millisecond access for data read about quarterly, at a higher storage price than Deep Archive."
+        },
+        {
+          "id": "c",
+          "text": "S3 Intelligent-Tiering",
+          "correct": false,
+          "rationale": "Intelligent-Tiering suits unknown access patterns, and its monitoring costs are not needed for predictable archives."
+        },
+        {
+          "id": "d",
+          "text": "S3 Glacier Deep Archive",
+          "correct": true,
+          "rationale": "Deep Archive is the lowest-cost class, for data accessed less than once a year with retrieval in hours."
+        }
+      ],
+      "explanation": "Amazon S3 classes trade storage price against retrieval speed and cost. Records that are kept for years and almost never read belong in an archive class. S3 Glacier Deep Archive has the lowest storage price in S3 and is designed for data accessed less than once a year, with retrieval in hours and a 180-day minimum storage duration. Classes built for faster access cost more per gigabyte stored.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        },
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company uploads temporary report files to an Amazon S3 bucket and wants them deleted automatically 30 days later without manual work. Which feature should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Lifecycle expiration rule",
+          "correct": true,
+          "rationale": "A lifecycle rule can expire (delete) objects after a set number of days automatically."
+        },
+        {
+          "id": "b",
+          "text": "AWS Backup plan",
+          "correct": false,
+          "rationale": "AWS Backup creates recovery points; it is not meant to delete objects on a schedule."
+        },
+        {
+          "id": "c",
+          "text": "Amazon EBS snapshot",
+          "correct": false,
+          "rationale": "Snapshots back up EBS volumes and do not manage S3 objects."
+        },
+        {
+          "id": "d",
+          "text": "S3 Intelligent-Tiering",
+          "correct": false,
+          "rationale": "This moves objects between tiers but does not delete them after a fixed time."
+        }
+      ],
+      "explanation": "S3 Lifecycle configurations contain rules that act on objects based on their age. A transition action moves objects to a cheaper storage class, for example from S3 Standard to S3 Standard-IA, and an expiration action deletes them. Lifecycle rules suit temporary files, logs and data whose value declines over time, because they reduce cost and administration without scripts or manual cleanup.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company is migrating a Windows application that needs a fully managed file share accessed with the SMB protocol. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Elastic File System (Amazon EFS)",
+          "correct": false,
+          "rationale": "EFS uses NFS and does not support Windows-based EC2 instances."
+        },
+        {
+          "id": "b",
+          "text": "Amazon FSx for Windows File Server",
+          "correct": true,
+          "rationale": "FSx for Windows File Server provides managed Windows-native file shares over SMB."
+        },
+        {
+          "id": "c",
+          "text": "Amazon S3",
+          "correct": false,
+          "rationale": "S3 is object storage accessed by API and is not an SMB file share."
+        },
+        {
+          "id": "d",
+          "text": "Amazon EBS",
+          "correct": false,
+          "rationale": "EBS volumes attach to a single instance and are not shared SMB file systems."
+        }
+      ],
+      "explanation": "Amazon FSx provides fully managed file systems built on popular technologies. FSx for Windows File Server supports the SMB protocol and Windows features, so Windows applications can use it as a shared file store. Other FSx options include FSx for Lustre for high-performance computing, FSx for NetApp ONTAP and FSx for OpenZFS. Amazon EFS, by contrast, uses NFS and is aimed at Linux workloads.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+          "title": "What is Amazon Elastic File System? - Amazon Elastic File System"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company keeps secondary copies of data that it can re-create easily. The data is accessed infrequently but must be available in milliseconds, and the company wants the lowest cost for that need. Which Amazon S3 storage class fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Standard",
+          "correct": false,
+          "rationale": "Standard costs more than needed for infrequently accessed data."
+        },
+        {
+          "id": "b",
+          "text": "S3 Glacier Deep Archive",
+          "correct": false,
+          "rationale": "Deep Archive retrieval takes hours, which violates the millisecond requirement."
+        },
+        {
+          "id": "c",
+          "text": "S3 One Zone-IA",
+          "correct": true,
+          "rationale": "One Zone-IA is lower-cost infrequent-access storage with millisecond access; losing the single zone is acceptable for re-creatable data."
+        },
+        {
+          "id": "d",
+          "text": "S3 Standard-IA",
+          "correct": false,
+          "rationale": "Standard-IA also meets the access need but costs more because it stores data across multiple Availability Zones."
+        }
+      ],
+      "explanation": "S3 One Zone-IA is for infrequently accessed data that is available in milliseconds. It stores data in one Availability Zone, which lowers the price compared with S3 Standard-IA but means the data is not resilient to loss of that zone. It therefore suits data that can be re-created and replicas. Both IA classes have retrieval fees and a 30-day minimum storage duration.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        },
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A media company archives photos that are read about once a quarter. When a photo is needed, it must be available in milliseconds. Which Amazon S3 storage class is designed for this pattern?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Glacier Flexible Retrieval",
+          "correct": false,
+          "rationale": "Flexible Retrieval takes minutes to hours and needs a restore before access."
+        },
+        {
+          "id": "b",
+          "text": "S3 Glacier Deep Archive",
+          "correct": false,
+          "rationale": "Deep Archive retrieves in hours and targets data read less than once a year."
+        },
+        {
+          "id": "c",
+          "text": "S3 Express One Zone",
+          "correct": false,
+          "rationale": "Express One Zone is for latency-sensitive, frequently accessed workloads, not low-cost archives."
+        },
+        {
+          "id": "d",
+          "text": "S3 Glacier Instant Retrieval",
+          "correct": true,
+          "rationale": "Glacier Instant Retrieval is for archive data read about once a quarter that still needs millisecond access."
+        }
+      ],
+      "explanation": "S3 Glacier Instant Retrieval offers low-cost archive storage with millisecond retrieval, designed for long-lived data accessed about once a quarter. The other Glacier classes are cheaper but their objects are archived, so you must restore them first, which takes minutes to hours. Choosing among archive classes comes down to how quickly and how often the data must be retrieved.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        },
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs a database on an Amazon EC2 instance and needs data on its volume to persist when the instance is stopped. Which storage option should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon EBS volume",
+          "correct": true,
+          "rationale": "EBS volumes persist independently of the instance and can be stopped and restarted without data loss."
+        },
+        {
+          "id": "b",
+          "text": "Instance store volume",
+          "correct": false,
+          "rationale": "Instance store data is lost when the instance stops, so it cannot meet the persistence requirement."
+        },
+        {
+          "id": "c",
+          "text": "AWS Snowball device",
+          "correct": false,
+          "rationale": "Snowball is a physical transfer device, not storage for a running database."
+        },
+        {
+          "id": "d",
+          "text": "S3 Glacier Flexible Retrieval",
+          "correct": false,
+          "rationale": "This archive class cannot serve as a low-latency database volume."
+        }
+      ],
+      "explanation": "Amazon EBS provides persistent block storage for Amazon EC2. Data on an EBS volume remains when the instance is stopped, and the volume can be detached and reattached. It is a common choice for databases and boot volumes. Instance store, in contrast, is temporary and ends with the instance. For extra protection, you can back up EBS volumes with snapshots.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
+          "title": "What is Amazon Elastic Block Store? - Amazon EBS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company has on-premises applications that need low-latency access to frequently used files. The full data set must be stored durably in Amazon S3 to reduce local storage costs. Which solution meets these needs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon EFS mounted over the internet",
+          "correct": false,
+          "rationale": "EFS stores data in its own file system rather than keeping a local cache in front of S3 for on-premises users."
+        },
+        {
+          "id": "b",
+          "text": "AWS Storage Gateway",
+          "correct": true,
+          "rationale": "Storage Gateway caches frequently used data locally and stores the full data set in AWS, such as in Amazon S3."
+        },
+        {
+          "id": "c",
+          "text": "An AWS Snowball device",
+          "correct": false,
+          "rationale": "Snowball moves data offline in bulk and does not provide ongoing cached file access."
+        },
+        {
+          "id": "d",
+          "text": "Amazon EBS volumes",
+          "correct": false,
+          "rationale": "EBS volumes attach to EC2 instances in AWS and are not a local on-premises cache."
+        }
+      ],
+      "explanation": "AWS Storage Gateway is the hybrid option for cached access. A gateway on premises serves recently and frequently used data from a local cache for low latency, while the complete data set resides durably in AWS, for example in Amazon S3. This lowers the amount of local storage needed. Snowball is designed for one-time or periodic bulk transfers, not continuous access.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+          "title": "What is Amazon S3? - Amazon Simple Storage Service"
+        },
+        {
+          "url": "https://aws.amazon.com/snowball/",
+          "title": "AWS Snowball | Secure Edge Computing and Offline Data Transfer | Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company stores the only copy of customer records that cannot be re-created. The data is accessed rarely but must be returned in milliseconds and survive the loss of an Availability Zone. Which Amazon S3 storage class meets the requirements at the lowest cost?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 One Zone-IA",
+          "correct": false,
+          "rationale": "One Zone-IA is not resilient to loss of its Availability Zone, which is a risk for the only copy."
+        },
+        {
+          "id": "b",
+          "text": "S3 Express One Zone",
+          "correct": false,
+          "rationale": "Express One Zone also stores data in a single zone and is aimed at high-performance access."
+        },
+        {
+          "id": "c",
+          "text": "S3 Standard-IA",
+          "correct": true,
+          "rationale": "Standard-IA stores data across multiple Availability Zones with millisecond access, at a lower cost than Standard for rare access."
+        },
+        {
+          "id": "d",
+          "text": "S3 Glacier Deep Archive",
+          "correct": false,
+          "rationale": "Deep Archive survives zone loss but its hours-long retrieval fails the millisecond requirement."
+        }
+      ],
+      "explanation": "Two requirements decide this: millisecond access and resilience to Availability Zone loss. S3 Standard-IA stores objects across multiple Availability Zones and returns them in milliseconds, with lower storage cost than S3 Standard for infrequent access. AWS recommends it for primary copies of data that cannot be re-created. S3 One Zone-IA is cheaper but keeps data in one zone, and Deep Archive is too slow.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        },
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company runs Amazon EBS volumes, Amazon EFS file systems and Amazon RDS databases. It wants one policy-based service to schedule backups, set retention and monitor results across all of them. Which service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Data Lifecycle Manager",
+          "correct": false,
+          "rationale": "Data Lifecycle Manager automates EBS snapshots and EBS-backed AMIs only, not multiple services."
+        },
+        {
+          "id": "b",
+          "text": "S3 Lifecycle",
+          "correct": false,
+          "rationale": "S3 Lifecycle manages objects inside S3 buckets and does not back up EBS, EFS or RDS."
+        },
+        {
+          "id": "c",
+          "text": "AWS Storage Gateway",
+          "correct": false,
+          "rationale": "Storage Gateway provides hybrid access to cloud storage; it does not schedule backups of these services."
+        },
+        {
+          "id": "d",
+          "text": "AWS Backup",
+          "correct": true,
+          "rationale": "AWS Backup centrally manages backup plans, retention and monitoring across supported services, including EBS, EFS and RDS."
+        }
+      ],
+      "explanation": "AWS Backup is the central, policy-based service for protecting data across many AWS services. A backup plan defines the schedule and retention, resources are assigned by tags or ID, and the console shows backup jobs in one place. Narrower tools exist: Amazon Data Lifecycle Manager automates EBS snapshots and S3 Lifecycle manages S3 objects. When the scenario spans several services, AWS Backup is the fit.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
+          "title": "What is Amazon Elastic Block Store? - Amazon EBS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+          "title": "What is Amazon Elastic File System? - Amazon Elastic File System"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is reviewing AWS options that provide block-level storage for Amazon EC2 instances. Which options are block storage?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon S3",
+          "correct": false,
+          "rationale": "S3 is object storage accessed through APIs, not block storage."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Elastic Block Store (Amazon EBS)",
+          "correct": true,
+          "rationale": "EBS provides persistent block volumes attached to EC2 instances."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Elastic File System (Amazon EFS)",
+          "correct": false,
+          "rationale": "EFS is a shared file system, not block storage."
+        },
+        {
+          "id": "d",
+          "text": "Amazon FSx for Lustre",
+          "correct": false,
+          "rationale": "FSx for Lustre is a managed file system for high-performance workloads, not block storage."
+        },
+        {
+          "id": "e",
+          "text": "Amazon EC2 instance store",
+          "correct": true,
+          "rationale": "Instance store gives temporary block-level storage on disks attached to the host."
+        }
+      ],
+      "explanation": "Block storage presents raw volumes that an operating system formats and uses like a local disk. For Amazon EC2 there are two forms: Amazon EBS, which is persistent and independent of the instance, and instance store, which is temporary and tied to the host hardware. Amazon S3 is object storage, while Amazon EFS and Amazon FSx are file storage that clients mount over network protocols.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
+          "title": "What is Amazon Elastic Block Store? - Amazon EBS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is planning archival storage in Amazon S3. Which storage classes require archived objects to be restored before they can be accessed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Glacier Flexible Retrieval",
+          "correct": true,
+          "rationale": "Flexible Retrieval objects are archived and must be restored, taking minutes to hours."
+        },
+        {
+          "id": "b",
+          "text": "S3 Standard-IA",
+          "correct": false,
+          "rationale": "Standard-IA objects are available in milliseconds and need no restore."
+        },
+        {
+          "id": "c",
+          "text": "S3 Glacier Deep Archive",
+          "correct": true,
+          "rationale": "Deep Archive objects are archived and must be restored first, with retrieval in hours."
+        },
+        {
+          "id": "d",
+          "text": "S3 Glacier Instant Retrieval",
+          "correct": false,
+          "rationale": "Glacier Instant Retrieval gives real-time millisecond access without a restore."
+        },
+        {
+          "id": "e",
+          "text": "S3 One Zone-IA",
+          "correct": false,
+          "rationale": "One Zone-IA objects are available in milliseconds and need no restore."
+        }
+      ],
+      "explanation": "Two of the archive classes store objects in a state that is not available for real-time access. S3 Glacier Flexible Retrieval and S3 Glacier Deep Archive require you to restore an object before you can read it, taking minutes to hours for Flexible Retrieval and hours for Deep Archive. S3 Glacier Instant Retrieval, S3 Standard-IA and S3 One Zone-IA all return data in milliseconds.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        },
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is evaluating use cases for object storage. Which workloads are well suited to Amazon S3?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A boot volume for a single Amazon EC2 instance",
+          "correct": false,
+          "rationale": "Boot volumes need block storage, which is Amazon EBS."
+        },
+        {
+          "id": "b",
+          "text": "A POSIX file share mounted by many Linux servers",
+          "correct": false,
+          "rationale": "A mounted shared file system is the job of Amazon EFS, not object storage."
+        },
+        {
+          "id": "c",
+          "text": "A data lake that stores large volumes of raw data",
+          "correct": true,
+          "rationale": "S3 is the common foundation for data lakes because it scales without limit."
+        },
+        {
+          "id": "d",
+          "text": "Hosting static website content such as images and HTML files",
+          "correct": true,
+          "rationale": "S3 can serve static content and handle large numbers of requests."
+        },
+        {
+          "id": "e",
+          "text": "A transactional database volume that needs block-level writes",
+          "correct": false,
+          "rationale": "Transactional databases need block storage such as Amazon EBS."
+        }
+      ],
+      "explanation": "Object storage in Amazon S3 holds data as objects retrieved through APIs, and it scales without limit. That makes it a strong fit for data lakes, static website content, backups, media and archives. Workloads that need a mounted disk or file system, such as boot volumes, databases and shared POSIX file shares, belong on block storage like Amazon EBS or file storage like Amazon EFS.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
+          "title": "What is Amazon S3? - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.6-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company is assessing AWS Backup. Which are valid use cases for AWS Backup?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Providing a low-latency block volume for an EC2 instance",
+          "correct": false,
+          "rationale": "Block volumes are provided by Amazon EBS; AWS Backup protects data but does not serve it."
+        },
+        {
+          "id": "b",
+          "text": "Applying one backup policy to resources in several AWS services",
+          "correct": true,
+          "rationale": "Backup plans can cover resources across supported services from one place."
+        },
+        {
+          "id": "c",
+          "text": "Caching frequently used files for on-premises users",
+          "correct": false,
+          "rationale": "Local caching is the role of AWS Storage Gateway."
+        },
+        {
+          "id": "d",
+          "text": "Enforcing retention periods for backups to meet compliance needs",
+          "correct": true,
+          "rationale": "Backup plans define how long recovery points are retained."
+        },
+        {
+          "id": "e",
+          "text": "Monitoring backup activity from a central location",
+          "correct": true,
+          "rationale": "AWS Backup lets you monitor backup jobs across services in one place."
+        },
+        {
+          "id": "f",
+          "text": "Hosting a static website",
+          "correct": false,
+          "rationale": "Hosting static content is a job for Amazon S3."
+        }
+      ],
+      "explanation": "AWS Backup centralizes data protection. A backup plan sets the schedule and retention for resources across supported services such as Amazon EBS, Amazon EFS and Amazon RDS, and you can monitor backup activity from one place instead of managing each service separately. It does not provide primary storage, local caching or website hosting. Those are handled by Amazon EBS, AWS Storage Gateway and Amazon S3.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
+          "title": "What is Amazon Elastic Block Store? - Amazon EBS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
+          "title": "What is Amazon Elastic File System? - Amazon Elastic File System"
+        }
+      ]
+    }
+  ]
+}

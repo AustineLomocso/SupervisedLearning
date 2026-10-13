@@ -1,0 +1,868 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.4",
+  "items": [
+    {
+      "id": "clf-c02-3.4-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants a managed service that runs engines such as MySQL, PostgreSQL and Microsoft SQL Server without administering database servers. Which AWS service meets this requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB is a NoSQL key-value and document database and does not run relational engines such as SQL Server."
+        },
+        {
+          "id": "b",
+          "text": "Amazon RDS",
+          "correct": true,
+          "rationale": "Amazon RDS is a managed relational database service that supports several engines and automates patching, backups and failover."
+        },
+        {
+          "id": "c",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache provides in-memory caching and is not a general relational database engine host."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a data warehouse for analytics, not a host for transactional engines such as SQL Server."
+        }
+      ],
+      "explanation": "Amazon Relational Database Service (Amazon RDS) is the managed way to run relational engines on AWS, including MySQL, PostgreSQL, MariaDB, Oracle Database and Microsoft SQL Server. AWS handles provisioning, operating system and engine patching, automated backups and Multi-AZ failover, so the customer manages only schemas, queries and access. Services built for other data models, such as DynamoDB, ElastiCache and Redshift, do not host those relational engines.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
+          "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service is a serverless NoSQL database that stores key-value and document data with single-digit millisecond performance at any scale?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Aurora",
+          "correct": false,
+          "rationale": "Aurora is a relational database compatible with MySQL and PostgreSQL, not a NoSQL service."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a SQL data warehouse for analytics workloads."
+        },
+        {
+          "id": "c",
+          "text": "Amazon DynamoDB",
+          "correct": true,
+          "rationale": "DynamoDB is a serverless key-value and document database designed for consistent single-digit millisecond latency at scale."
+        },
+        {
+          "id": "d",
+          "text": "AWS DMS",
+          "correct": false,
+          "rationale": "AWS DMS migrates data between databases and is not itself a database."
+        }
+      ],
+      "explanation": "Amazon DynamoDB is AWS's fully managed, serverless NoSQL database. It stores items in tables using a key-value and document model, with no servers to provision or patch, and it is built for single-digit millisecond responses regardless of scale. Features such as global tables replicate data across Regions. When an exam question mentions NoSQL, key-value access and predictable low latency, DynamoDB is the expected answer rather than a relational or warehouse service.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html",
+          "title": "What is Amazon DynamoDB? - Amazon DynamoDB"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service provides a managed in-memory data store that is commonly used to cache frequently read data and reduce load on a database?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon ElastiCache",
+          "correct": true,
+          "rationale": "ElastiCache provides managed in-memory caching with engines such as Valkey, Redis OSS and Memcached."
+        },
+        {
+          "id": "b",
+          "text": "Amazon RDS",
+          "correct": false,
+          "rationale": "RDS runs disk-based relational engines and is not an in-memory caching layer."
+        },
+        {
+          "id": "c",
+          "text": "Amazon DocumentDB",
+          "correct": false,
+          "rationale": "DocumentDB stores JSON-like documents for MongoDB-style workloads and is not a cache."
+        },
+        {
+          "id": "d",
+          "text": "AWS SCT",
+          "correct": false,
+          "rationale": "AWS SCT converts database schemas and does not store or serve application data."
+        }
+      ],
+      "explanation": "Amazon ElastiCache is a managed in-memory service that supports engines such as Valkey, Redis OSS and Memcached. Placing a cache in front of a database lets applications serve repeated reads from memory in microseconds, which lowers latency and offloads the primary database. Because the data lives in memory, it suits caching, session stores and leaderboards. Relational, document and migration services do not play this caching role.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html",
+          "title": "What is Amazon ElastiCache? - Amazon ElastiCache"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service helps migrate databases to AWS with minimal downtime while the source database remains operational?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Aurora",
+          "correct": false,
+          "rationale": "Aurora is a target database engine, not a migration service."
+        },
+        {
+          "id": "b",
+          "text": "AWS SCT",
+          "correct": false,
+          "rationale": "AWS SCT converts schema and code but does not continuously replicate the data."
+        },
+        {
+          "id": "c",
+          "text": "Amazon MemoryDB",
+          "correct": false,
+          "rationale": "MemoryDB is an in-memory database, not a migration tool."
+        },
+        {
+          "id": "d",
+          "text": "AWS DMS",
+          "correct": true,
+          "rationale": "AWS Database Migration Service replicates data to the target while the source stays available, keeping downtime minimal."
+        }
+      ],
+      "explanation": "AWS Database Migration Service (AWS DMS) moves data between a source and a target database. The source remains fully operational during the migration, and ongoing changes can be replicated until you cut over, which keeps downtime minimal. AWS DMS supports homogeneous migrations between the same engine and heterogeneous migrations between different engines. Schema conversion for heterogeneous moves is handled separately by AWS SCT.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+          "title": "What is AWS Database Migration Service? - AWS Database Migration Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A data analyst needs a managed data warehouse to run complex SQL analytics queries across large volumes of data. Which AWS service fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB serves key-value lookups at scale and is not designed for complex analytical SQL."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": true,
+          "rationale": "Redshift is a managed data warehouse built for analytical queries over large datasets."
+        },
+        {
+          "id": "c",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache stores cached data in memory and is not an analytics warehouse."
+        },
+        {
+          "id": "d",
+          "text": "Amazon DocumentDB",
+          "correct": false,
+          "rationale": "DocumentDB is built for operational document workloads, not warehouse-style analytics."
+        }
+      ],
+      "explanation": "Amazon Redshift is AWS's managed data warehouse service. It uses SQL and columnar storage to run complex analytical queries across very large datasets, which differs from transactional databases such as Amazon RDS that handle many small reads and writes. When a scenario mentions analytics, reporting or business intelligence over large data volumes, Redshift is the usual match, while DynamoDB, ElastiCache and DocumentDB serve operational application needs.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html",
+          "title": "What is Amazon Redshift? - Amazon Redshift"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company has an application written for MongoDB and wants a managed AWS database that supports the same document model and APIs. Which service should the company choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon RDS",
+          "correct": false,
+          "rationale": "RDS offers relational engines and does not provide MongoDB-compatible document APIs."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a relational data warehouse and does not use the MongoDB document model."
+        },
+        {
+          "id": "c",
+          "text": "Amazon DocumentDB (with MongoDB compatibility)",
+          "correct": true,
+          "rationale": "DocumentDB is a managed document database that is compatible with MongoDB workloads and APIs."
+        },
+        {
+          "id": "d",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache is an in-memory cache and does not offer a MongoDB-compatible document store."
+        }
+      ],
+      "explanation": "Amazon DocumentDB (with MongoDB compatibility) is a managed document database that lets applications written for MongoDB run with little change. It stores JSON-like documents, scales storage and read capacity, and removes the need to run MongoDB yourself on servers. It is a NoSQL service, but DynamoDB is a different design with its own API, so a MongoDB-compatible requirement points specifically to DocumentDB.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/documentdb/latest/devguide/what-is.html",
+          "title": "What is Amazon DocumentDB (with MongoDB compatibility) - Amazon DocumentDB"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A small team wants to run a MySQL database but has no staff to apply patches, schedule backups or configure failover. Which approach best meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Install MySQL on an Amazon EC2 instance and script the maintenance tasks",
+          "correct": false,
+          "rationale": "Self-managed MySQL on EC2 leaves patching, backups and failover to the team, which is the work they want to avoid."
+        },
+        {
+          "id": "b",
+          "text": "Install MySQL on EC2 and add a second instance in another Availability Zone",
+          "correct": false,
+          "rationale": "This still requires the team to configure replication, failover and patching themselves."
+        },
+        {
+          "id": "c",
+          "text": "Use Amazon DynamoDB with a SQL compatibility layer",
+          "correct": false,
+          "rationale": "DynamoDB is a NoSQL service and does not run the MySQL engine."
+        },
+        {
+          "id": "d",
+          "text": "Use Amazon RDS for MySQL",
+          "correct": true,
+          "rationale": "RDS manages patching, automated backups and Multi-AZ failover, removing those tasks from the team."
+        }
+      ],
+      "explanation": "Running a database on Amazon EC2 gives full control but makes you responsible for installation, operating system and engine patching, backups, replication and failover. Amazon RDS shifts most of that undifferentiated work to AWS, including automated backups, software patching and optional Multi-AZ deployments for high availability. When a scenario stresses limited staff or reduced operational overhead for a supported engine, a managed database is the better choice.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
+          "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants a relational database that is compatible with PostgreSQL and designed for the cloud, with storage that is replicated across multiple Availability Zones. Which service should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB is NoSQL and is not compatible with PostgreSQL."
+        },
+        {
+          "id": "b",
+          "text": "Amazon MemoryDB",
+          "correct": false,
+          "rationale": "MemoryDB is an in-memory database and not a PostgreSQL-compatible relational engine."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a data warehouse for analytics rather than a general-purpose transactional database."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Aurora",
+          "correct": true,
+          "rationale": "Aurora is a cloud-built relational database with MySQL and PostgreSQL compatibility and storage distributed across Availability Zones."
+        }
+      ],
+      "explanation": "Amazon Aurora is a relational database built for the cloud that is compatible with MySQL and PostgreSQL. Its storage layer is distributed across multiple Availability Zones and grows automatically, which provides high availability and durability. Aurora is a managed service, so AWS handles patching and backups. It is therefore a common answer when a question asks for a relational engine with cloud-native performance and resilience.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html",
+          "title": "What is Amazon Aurora? - Amazon Aurora"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An online game must look up player profiles by key with consistent single-digit millisecond latency, and traffic is unpredictable. The company wants no servers to manage. Which service is the best fit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon RDS for Oracle",
+          "correct": false,
+          "rationale": "RDS requires choosing instance sizes and is not serverless key-value storage for unpredictable traffic."
+        },
+        {
+          "id": "b",
+          "text": "Amazon DynamoDB",
+          "correct": true,
+          "rationale": "DynamoDB is serverless and delivers consistent single-digit millisecond key-based access that scales with demand."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is built for analytic queries, not low-latency key lookups."
+        },
+        {
+          "id": "d",
+          "text": "AWS SCT",
+          "correct": false,
+          "rationale": "AWS SCT converts schemas and does not store application data."
+        }
+      ],
+      "explanation": "Player profiles retrieved by key, unpredictable traffic and a no-servers requirement describe a key-value workload for a serverless NoSQL database. Amazon DynamoDB scales throughput up and down to follow demand and keeps latency in the single-digit millisecond range, without instances to size or patch. Relational and warehouse services require capacity planning and are optimized for different query patterns.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html",
+          "title": "What is Amazon DynamoDB? - Amazon DynamoDB"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company is moving from an on-premises Oracle database to Amazon Aurora PostgreSQL. Which AWS tool converts the database schema and code to the target engine's format?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Schema Conversion Tool (AWS SCT)",
+          "correct": true,
+          "rationale": "AWS SCT converts the source schema and code objects to a form compatible with the target engine."
+        },
+        {
+          "id": "b",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache is an in-memory cache and does not convert schemas."
+        },
+        {
+          "id": "c",
+          "text": "Amazon DocumentDB",
+          "correct": false,
+          "rationale": "DocumentDB is a document database and not a conversion tool."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a data warehouse and does not convert database schemas."
+        }
+      ],
+      "explanation": "When the source and target use different engines, the migration is heterogeneous. AWS Schema Conversion Tool (AWS SCT) analyzes the source schema, stored procedures and code, and converts them to a format compatible with the target, such as Oracle to Aurora PostgreSQL. AWS Database Migration Service then moves the data itself. Questions that say convert the schema point to AWS SCT, while questions about moving data point to AWS DMS.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+          "title": "What is AWS Database Migration Service? - AWS Database Migration Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A web application's relational database is overloaded by repeated identical read queries for product pages. The company wants to lower read latency and database load by keeping popular results in memory. Which service should the company add?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon ElastiCache",
+          "correct": true,
+          "rationale": "ElastiCache keeps hot data in memory so repeated reads are served without hitting the database."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a data warehouse and would not serve repeated product page reads in memory."
+        },
+        {
+          "id": "c",
+          "text": "AWS DMS",
+          "correct": false,
+          "rationale": "AWS DMS moves data between databases and does not cache query results."
+        },
+        {
+          "id": "d",
+          "text": "Amazon DocumentDB",
+          "correct": false,
+          "rationale": "DocumentDB is a persistent document database, not an in-memory cache."
+        }
+      ],
+      "explanation": "A cache in front of a database stores frequently requested results in memory, so repeated reads return in microseconds and never reach the database. Amazon ElastiCache provides this as a managed service using engines such as Valkey, Redis OSS or Memcached. This pattern reduces latency and database load without changing the underlying relational database, which is why caching is a common answer to read-heavy bottlenecks.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html",
+          "title": "What is Amazon ElastiCache? - Amazon ElastiCache"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must migrate a production MySQL database to Amazon Aurora MySQL while users keep using the application with as little interruption as possible. Which service should the company use to move the data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Schema Conversion Tool (AWS SCT)",
+          "correct": false,
+          "rationale": "The engine family is the same, so schema conversion is not the main need, and AWS SCT does not move data."
+        },
+        {
+          "id": "b",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache is a cache and cannot migrate a production database."
+        },
+        {
+          "id": "c",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB is a different database, not a tool to migrate MySQL data."
+        },
+        {
+          "id": "d",
+          "text": "AWS Database Migration Service (AWS DMS)",
+          "correct": true,
+          "rationale": "AWS DMS replicates data to the target while the source stays online, minimizing downtime."
+        }
+      ],
+      "explanation": "AWS Database Migration Service copies data from a source to a target and can keep replicating changes while the source database continues serving users. You then cut over when the target is in sync, which minimizes interruption. Because MySQL to Aurora MySQL is a homogeneous migration, little or no schema conversion is needed. AWS SCT becomes necessary mainly for heterogeneous migrations between different engines.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+          "title": "What is AWS Database Migration Service? - AWS Database Migration Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs a legacy database that requires operating system access and a custom engine configuration that managed AWS database services do not support. Where should the company run the database?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB is a managed NoSQL service and provides no operating system access."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a managed warehouse and does not allow custom engine installation."
+        },
+        {
+          "id": "c",
+          "text": "On Amazon EC2 instances that the company manages",
+          "correct": true,
+          "rationale": "EC2 gives full control of the operating system and engine, which is the reason to self-manage a database."
+        },
+        {
+          "id": "d",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache is a managed cache and does not allow custom database engines or OS access."
+        }
+      ],
+      "explanation": "Managed databases trade control for convenience. If a workload needs operating system access, an unsupported engine or version, or custom configurations that managed services restrict, running the database on Amazon EC2 is justified. The company then takes on patching, backups, replication and failover. Without such a requirement, managed services such as Amazon RDS or Aurora are preferred.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
+          "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company needs an in-memory database with microsecond reads that is also durable, and it will use the service as the primary database rather than only as a cache in front of another database. Which service should the company choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache is typically used as a cache in front of another database rather than as the durable primary store."
+        },
+        {
+          "id": "b",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB is durable but is not an in-memory database with microsecond reads."
+        },
+        {
+          "id": "c",
+          "text": "Amazon MemoryDB",
+          "correct": true,
+          "rationale": "MemoryDB is a durable in-memory database compatible with Valkey and Redis OSS that can be a primary database."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a disk-based data warehouse, not an in-memory primary database."
+        }
+      ],
+      "explanation": "Amazon ElastiCache and Amazon MemoryDB both use in-memory engines compatible with Valkey and Redis OSS, but their roles differ. ElastiCache is usually the caching layer in front of another database. Amazon MemoryDB stores data durably across multiple Availability Zones using a transaction log, so it can serve as the primary database with microsecond reads and single-digit millisecond writes. The requirement for durability as a primary store decides between them.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/memorydb/latest/devguide/what-is-memorydb.html",
+          "title": "What is MemoryDB - Amazon MemoryDB"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html",
+          "title": "What is Amazon ElastiCache? - Amazon ElastiCache"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company will move an on-premises Microsoft SQL Server database to Amazon Aurora PostgreSQL. The team wants to convert the schema and stored code and then transfer the data with minimal downtime. Which combination of tools should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS SCT to convert the schema, then AWS DMS to migrate the data",
+          "correct": true,
+          "rationale": "This pairing is the standard approach for heterogeneous migrations: convert the schema, then replicate the data."
+        },
+        {
+          "id": "b",
+          "text": "AWS DMS alone for both schema conversion and data transfer",
+          "correct": false,
+          "rationale": "AWS DMS moves data, but converting a SQL Server schema and code to PostgreSQL needs AWS SCT."
+        },
+        {
+          "id": "c",
+          "text": "Amazon ElastiCache to convert the schema, then Amazon Redshift to load the data",
+          "correct": false,
+          "rationale": "Neither service converts schemas or migrates databases."
+        },
+        {
+          "id": "d",
+          "text": "AWS SCT alone, because it also replicates ongoing changes",
+          "correct": false,
+          "rationale": "AWS SCT does not replicate ongoing data changes; AWS DMS does."
+        }
+      ],
+      "explanation": "A migration between different engines is heterogeneous. AWS Schema Conversion Tool analyzes the source and converts schema objects and application code to the target format, flagging items that need manual attention. AWS Database Migration Service then copies the data and can replicate ongoing changes while the source stays online. Using both tools together is the standard pattern for moves such as SQL Server or Oracle to Aurora PostgreSQL.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+          "title": "What is AWS Database Migration Service? - AWS Database Migration Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company runs an order system on Oracle with complex multi-table joins and transactions. The company wants a managed service with the same engine and minimal application changes. Which service should it choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB is NoSQL and would require redesigning the data model and application for joins."
+        },
+        {
+          "id": "b",
+          "text": "Amazon DocumentDB",
+          "correct": false,
+          "rationale": "DocumentDB is a document database and does not run the Oracle engine."
+        },
+        {
+          "id": "c",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache is a cache and not a transactional system of record for Oracle workloads."
+        },
+        {
+          "id": "d",
+          "text": "Amazon RDS for Oracle",
+          "correct": true,
+          "rationale": "RDS for Oracle is a managed relational service that keeps the same engine, SQL and transactional behavior."
+        }
+      ],
+      "explanation": "Complex joins and transactions are strengths of relational databases, and keeping the existing Oracle engine minimizes application changes. Amazon RDS supports Oracle Database as a managed engine, handling patching, backups and Multi-AZ failover. NoSQL services such as DynamoDB and DocumentDB would require redesigning data models and queries, and in-memory services serve other purposes.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
+          "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html",
+          "title": "What is Amazon DynamoDB? - Amazon DynamoDB"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is reviewing AWS database options for its applications. Which services are relational databases?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB is a NoSQL key-value and document database."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Aurora",
+          "correct": true,
+          "rationale": "Aurora is a relational database compatible with MySQL and PostgreSQL."
+        },
+        {
+          "id": "c",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache is an in-memory caching service, not a relational database."
+        },
+        {
+          "id": "d",
+          "text": "Amazon RDS",
+          "correct": true,
+          "rationale": "RDS is a managed service that runs relational engines such as MySQL and PostgreSQL."
+        },
+        {
+          "id": "e",
+          "text": "Amazon DocumentDB",
+          "correct": false,
+          "rationale": "DocumentDB is a document database with MongoDB compatibility."
+        }
+      ],
+      "explanation": "Relational databases store structured data in tables with a defined schema and are queried with SQL. On AWS, Amazon RDS runs several relational engines as a managed service, and Amazon Aurora is a cloud-built relational database compatible with MySQL and PostgreSQL. DynamoDB and DocumentDB are NoSQL databases, and ElastiCache is an in-memory store, so they follow different data models.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
+          "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html",
+          "title": "What is Amazon Aurora? - Amazon Aurora"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company uses Amazon RDS instead of installing a database on EC2. Which tasks does AWS handle for the company?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Designing the table schema",
+          "correct": false,
+          "rationale": "The customer designs schemas because that depends on the application's data."
+        },
+        {
+          "id": "b",
+          "text": "Applying patches to the database engine",
+          "correct": true,
+          "rationale": "RDS manages engine patching as part of the managed service."
+        },
+        {
+          "id": "c",
+          "text": "Writing application queries",
+          "correct": false,
+          "rationale": "The customer writes queries; AWS does not know the application's logic."
+        },
+        {
+          "id": "d",
+          "text": "Deciding who may access the data",
+          "correct": false,
+          "rationale": "Access decisions remain the customer's responsibility."
+        },
+        {
+          "id": "e",
+          "text": "Running automated backups",
+          "correct": true,
+          "rationale": "RDS provides automated backups as a built-in managed feature."
+        }
+      ],
+      "explanation": "Amazon RDS is a managed service, so AWS performs routine administrative work such as provisioning hardware, patching the database engine and operating system, and running automated backups. The customer still owns what is specific to its workload: schema design, queries, and decisions about who can access the data. This split is why managed databases lower operational effort without removing the customer's responsibility for data and access.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
+          "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is planning to migrate databases to AWS. Which AWS tools are designed for database migration?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon ElastiCache",
+          "correct": false,
+          "rationale": "ElastiCache is a caching service and not a migration tool."
+        },
+        {
+          "id": "b",
+          "text": "Amazon DynamoDB",
+          "correct": false,
+          "rationale": "DynamoDB is a database service and not a migration tool."
+        },
+        {
+          "id": "c",
+          "text": "AWS Database Migration Service (AWS DMS)",
+          "correct": true,
+          "rationale": "AWS DMS migrates data between databases with minimal downtime."
+        },
+        {
+          "id": "d",
+          "text": "AWS Schema Conversion Tool (AWS SCT)",
+          "correct": true,
+          "rationale": "AWS SCT converts schemas and code for migrations between different engines."
+        },
+        {
+          "id": "e",
+          "text": "Amazon MemoryDB",
+          "correct": false,
+          "rationale": "MemoryDB is an in-memory database and not a migration tool."
+        }
+      ],
+      "explanation": "AWS provides two main database migration tools. AWS Database Migration Service moves data between source and target databases and can keep replicating changes so the source stays operational until cutover. AWS Schema Conversion Tool converts the source schema and code for a different target engine, which is needed in heterogeneous migrations. Database services such as DynamoDB, ElastiCache and MemoryDB are destinations or caches rather than migration tools.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+          "title": "What is AWS Database Migration Service? - AWS Database Migration Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.4-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company is deciding between self-managing a database on Amazon EC2 and using an AWS managed database service. Which are benefits of a managed database service?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Root access to the underlying operating system",
+          "correct": false,
+          "rationale": "Managed services generally do not expose the underlying operating system; this is a benefit of EC2."
+        },
+        {
+          "id": "b",
+          "text": "Automated backups",
+          "correct": true,
+          "rationale": "Managed databases provide automated backups without custom scripting."
+        },
+        {
+          "id": "c",
+          "text": "Ability to install any unsupported database software",
+          "correct": false,
+          "rationale": "Managed services limit you to supported engines; installing arbitrary software requires EC2."
+        },
+        {
+          "id": "d",
+          "text": "Automated patching of the database engine",
+          "correct": true,
+          "rationale": "AWS applies engine patches, reducing the administrative effort."
+        },
+        {
+          "id": "e",
+          "text": "Control of the physical host hypervisor",
+          "correct": false,
+          "rationale": "AWS manages the hypervisor and hardware for every service."
+        },
+        {
+          "id": "f",
+          "text": "Built-in high availability options such as Multi-AZ deployments",
+          "correct": true,
+          "rationale": "Managed databases offer built-in options for failover across Availability Zones."
+        }
+      ],
+      "explanation": "Managed database services such as Amazon RDS reduce operational effort by automating backups, patching and high availability features like Multi-AZ failover. In exchange, you give up some control: you cannot log in to the operating system as root, install unsupported software or change the underlying hypervisor. Choose EC2-hosted databases only when you need that control; otherwise the managed service is the typical exam answer.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
+          "title": "What is Amazon Relational Database Service (Amazon RDS)? - Amazon Relational Database Service"
+        }
+      ]
+    }
+  ]
+}

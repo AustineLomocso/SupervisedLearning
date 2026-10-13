@@ -1,0 +1,884 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.8",
+  "items": [
+    {
+      "id": "clf-c02-3.8-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants a fully managed service that lets application components send messages to a queue and process them later. Which AWS service provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon SNS",
+          "correct": false,
+          "rationale": "SNS pushes messages to subscribers through topics rather than holding them in a queue for later polling."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Simple Queue Service (Amazon SQS)",
+          "correct": true,
+          "rationale": "SQS is a managed message queue that stores messages until a consumer retrieves and processes them."
+        },
+        {
+          "id": "c",
+          "text": "Amazon EventBridge",
+          "correct": false,
+          "rationale": "EventBridge routes events to targets by rules; it is not a queue that consumers poll."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Simple Email Service (Amazon SES)",
+          "correct": false,
+          "rationale": "SES sends and receives email; it does not queue messages between application components."
+        }
+      ],
+      "explanation": "Amazon SQS is a fully managed message queuing service used to decouple the parts of an application. A producer sends messages to a queue, and a consumer polls the queue and processes messages at its own pace. Because messages wait in the queue, a slow or failed consumer does not cause the sender to lose data or stall. SNS and EventBridge instead push or route messages to targets, and SES is for email, so SQS is the queuing service.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html",
+          "title": "What is Amazon Simple Queue Service? - Amazon Simple Queue Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service uses topics to publish a message once and deliver it to many subscribers, such as email addresses, SMS numbers, and SQS queues?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Simple Queue Service (Amazon SQS)",
+          "correct": false,
+          "rationale": "SQS holds messages for consumers to poll; it does not publish to many subscribers from a topic."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Connect",
+          "correct": false,
+          "rationale": "Amazon Connect is a cloud contact center, not a publish/subscribe messaging service."
+        },
+        {
+          "id": "c",
+          "text": "AWS X-Ray",
+          "correct": false,
+          "rationale": "X-Ray traces application requests and does not deliver notifications."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Simple Notification Service (Amazon SNS)",
+          "correct": true,
+          "rationale": "SNS is a publish/subscribe service that fans a message out to every subscriber of a topic."
+        }
+      ],
+      "explanation": "Amazon SNS is a managed publish/subscribe messaging service. A publisher sends a message to a topic, and SNS delivers a copy to every subscribed endpoint, including email, SMS, mobile push, HTTP endpoints, and SQS queues or Lambda functions. This fan-out pattern is useful for notifications and alerts. SQS queues messages for a consumer group to poll, which is a different delivery model.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html",
+          "title": "What is Amazon SNS? - Amazon Simple Notification Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to route events from its AWS services and SaaS applications to targets based on rules, and also run actions on a schedule. Which service meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon EventBridge",
+          "correct": true,
+          "rationale": "EventBridge is a serverless event bus that matches events to rules and sends them to targets, including scheduled events."
+        },
+        {
+          "id": "b",
+          "text": "AWS CodePipeline",
+          "correct": false,
+          "rationale": "CodePipeline automates release stages and does not act as a general event bus."
+        },
+        {
+          "id": "c",
+          "text": "Amazon WorkSpaces",
+          "correct": false,
+          "rationale": "WorkSpaces provides virtual desktops and has no event routing role."
+        },
+        {
+          "id": "d",
+          "text": "AWS Amplify",
+          "correct": false,
+          "rationale": "Amplify helps build and host web and mobile apps, not route events between services."
+        }
+      ],
+      "explanation": "Amazon EventBridge is a serverless event bus that connects applications using events. Events from AWS services, your own applications, and integrated SaaS partners arrive on an event bus, where rules match event patterns and send them to targets such as AWS Lambda functions or SQS queues. EventBridge can also invoke targets on a schedule. This makes it the application integration service for event-driven architectures.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html",
+          "title": "What Is Amazon EventBridge? - Amazon EventBridge"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to set up a cloud-based contact center so that customer service agents can take phone calls and chats without managing telephony hardware. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon SES",
+          "correct": false,
+          "rationale": "SES sends and receives email at scale but is not a contact center."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SNS",
+          "correct": false,
+          "rationale": "SNS sends notifications to subscribers and cannot route live customer calls to agents."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Connect",
+          "correct": true,
+          "rationale": "Amazon Connect is a cloud contact center service for voice and chat with no hardware to manage."
+        },
+        {
+          "id": "d",
+          "text": "Amazon AppStream 2.0",
+          "correct": false,
+          "rationale": "AppStream 2.0 streams desktop applications to users and is not a customer service platform."
+        }
+      ],
+      "explanation": "Amazon Connect is an AWS business application service that provides an omnichannel cloud contact center. Companies can set up voice and chat support, route contacts to agents, and scale up or down without buying or maintaining telephony equipment. Messaging services like SNS and SES can send notifications or email, but only Amazon Connect gives agents a platform to handle live customer conversations.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+          "title": "What is Connect Customer? - Amazon Connect Customer"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A marketing team needs to send large volumes of promotional and transactional emails to customers. Which AWS service is designed for this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Simple Email Service (Amazon SES)",
+          "correct": true,
+          "rationale": "SES is a cloud email service for sending marketing and transactional email at scale."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Simple Queue Service (Amazon SQS)",
+          "correct": false,
+          "rationale": "SQS queues messages between components and does not send email to customers."
+        },
+        {
+          "id": "c",
+          "text": "AWS CodeBuild",
+          "correct": false,
+          "rationale": "CodeBuild compiles and tests source code and has no email-sending purpose."
+        },
+        {
+          "id": "d",
+          "text": "Amazon WorkSpaces",
+          "correct": false,
+          "rationale": "WorkSpaces provides virtual desktops, not bulk email delivery."
+        }
+      ],
+      "explanation": "Amazon SES is a scalable, cost-effective email service for applications and marketing teams. It supports transactional messages such as receipts and password resets, and bulk marketing or notification emails. SES is the best match whenever the requirement is to send email to customers from an application. SNS can also deliver email notifications, but it targets topic subscribers, not large customer email campaigns.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ses/latest/dg/Welcome.html",
+          "title": "What is Amazon SES? - Amazon Simple Email Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service helps developers analyze and debug distributed applications by tracing requests as they travel through the application components?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon EventBridge",
+          "correct": false,
+          "rationale": "EventBridge routes events between services and does not trace requests."
+        },
+        {
+          "id": "b",
+          "text": "AWS X-Ray",
+          "correct": true,
+          "rationale": "X-Ray collects trace data and shows a service map so developers can find where errors and latency occur."
+        },
+        {
+          "id": "c",
+          "text": "AWS CodePipeline",
+          "correct": false,
+          "rationale": "CodePipeline orchestrates release workflows and does not trace running requests."
+        },
+        {
+          "id": "d",
+          "text": "AWS IoT Core",
+          "correct": false,
+          "rationale": "IoT Core connects devices to the cloud and is not a debugging tool."
+        }
+      ],
+      "explanation": "AWS X-Ray is a developer tool service for troubleshooting applications. It traces requests as they pass through the services of a distributed application and builds a service map showing latency and errors for each component. Developers use it to find performance bottlenecks and root causes. Tools like CodeBuild and CodePipeline help build and deploy code, but X-Ray is the service for diagnosing it while it runs.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html",
+          "title": "What Is Amazon EventBridge? - Amazon EventBridge"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A development team wants to automate the build, test, and deploy stages of its release process so that every code change flows through the same workflow. Which AWS service orchestrates these stages?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS X-Ray",
+          "correct": false,
+          "rationale": "X-Ray traces requests in running applications and does not orchestrate releases."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SNS",
+          "correct": false,
+          "rationale": "SNS delivers notifications and does not model release stages."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SES",
+          "correct": false,
+          "rationale": "SES sends email and has no role in a release workflow."
+        },
+        {
+          "id": "d",
+          "text": "AWS CodePipeline",
+          "correct": true,
+          "rationale": "CodePipeline is a continuous delivery service that models and automates release stages."
+        }
+      ],
+      "explanation": "AWS CodePipeline is a continuous delivery service that automates the stages of a release process, such as source, build, test, and deploy. Each code change moves through the pipeline automatically. AWS CodeBuild can be one stage inside the pipeline, compiling code and running tests. X-Ray is a different kind of developer tool, used to troubleshoot an application after it is deployed rather than to automate its release.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html",
+          "title": "What is Amazon SNS? - Amazon Simple Notification Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A small team wants to build, deploy, and host a frontend web application and a mobile app backend with minimal infrastructure work. Which AWS service is designed for this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS CodeBuild",
+          "correct": false,
+          "rationale": "CodeBuild only compiles and tests code and does not host frontend apps or provide mobile backends."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Connect",
+          "correct": false,
+          "rationale": "Amazon Connect is a contact center service, not an app development platform."
+        },
+        {
+          "id": "c",
+          "text": "AWS Amplify",
+          "correct": true,
+          "rationale": "Amplify provides tools and hosting to create and deploy frontend web and mobile applications."
+        },
+        {
+          "id": "d",
+          "text": "Amazon AppStream 2.0",
+          "correct": false,
+          "rationale": "AppStream 2.0 streams existing desktop applications and does not build new apps."
+        }
+      ],
+      "explanation": "AWS Amplify is the frontend web and mobile service in scope for the exam. It gives developers a set of tools and services to build full-stack web and mobile applications, connect them to backend features such as authentication and data, and host and deploy them with a managed workflow. AppStream 2.0 delivers existing applications to users, while Amplify is used to create and deploy new frontend and mobile apps.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+          "title": "What is Connect Customer? - Amazon Connect Customer"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A manufacturer wants thousands of sensors and devices to connect securely to the AWS Cloud and send telemetry data. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS IoT Core",
+          "correct": true,
+          "rationale": "IoT Core lets connected devices interact securely with cloud applications and other devices."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SQS",
+          "correct": false,
+          "rationale": "SQS queues messages between software components and does not manage device connections or identities."
+        },
+        {
+          "id": "c",
+          "text": "Amazon WorkSpaces",
+          "correct": false,
+          "rationale": "WorkSpaces supplies virtual desktops, not device connectivity."
+        },
+        {
+          "id": "d",
+          "text": "AWS CodePipeline",
+          "correct": false,
+          "rationale": "CodePipeline automates software releases and does not connect devices."
+        }
+      ],
+      "explanation": "AWS IoT Core is a managed service that lets internet-connected devices, such as sensors and appliances, connect to AWS securely. It handles device authentication and message exchange at scale, and it routes device data to other AWS services. It is the service to choose for connecting and managing IoT devices. Queueing and delivery services can process the data afterward, but they do not manage the devices themselves.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html",
+          "title": "What is Amazon Simple Queue Service? - Amazon Simple Queue Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants its employees to run a Windows-based desktop application from any browser, without installing it on their local machines. The application is streamed from AWS. Which service fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon WorkSpaces Secure Browser",
+          "correct": false,
+          "rationale": "Secure Browser provides secure access to web content and internal websites, not streaming of installed desktop applications."
+        },
+        {
+          "id": "b",
+          "text": "Amazon AppStream 2.0",
+          "correct": true,
+          "rationale": "AppStream 2.0 streams desktop applications from AWS to a user browser."
+        },
+        {
+          "id": "c",
+          "text": "AWS Amplify",
+          "correct": false,
+          "rationale": "Amplify builds and hosts web and mobile apps; it does not stream desktop software."
+        },
+        {
+          "id": "d",
+          "text": "AWS IoT Core",
+          "correct": false,
+          "rationale": "IoT Core connects devices and is not an application streaming service."
+        }
+      ],
+      "explanation": "Amazon AppStream 2.0 is a fully managed application streaming service. Applications run on AWS and their output is streamed to the user device through a browser, so nothing needs to be installed locally. This is an end-user computing service for delivering desktop applications. WorkSpaces gives users a full virtual desktop, and WorkSpaces Secure Browser is focused on secure web access instead of streaming desktop applications.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+          "title": "What is Connect Customer? - Amazon Connect Customer"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company needs to give remote employees a persistent, full cloud-hosted Windows or Linux desktop that they can reach from their own devices. Which AWS service provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon AppStream 2.0",
+          "correct": false,
+          "rationale": "AppStream 2.0 streams individual applications rather than providing a persistent full desktop."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Connect",
+          "correct": false,
+          "rationale": "Amazon Connect provides contact center capabilities and no virtual desktops."
+        },
+        {
+          "id": "c",
+          "text": "AWS CodeBuild",
+          "correct": false,
+          "rationale": "CodeBuild runs builds for developers and does not provide end-user desktops."
+        },
+        {
+          "id": "d",
+          "text": "Amazon WorkSpaces",
+          "correct": true,
+          "rationale": "WorkSpaces provides managed virtual desktops that users reach from many device types."
+        }
+      ],
+      "explanation": "Amazon WorkSpaces is a managed Desktop-as-a-Service offering. It provisions cloud-based virtual desktops, running Windows or Linux, that users access from laptops, tablets, or browsers. The desktop display output is streamed to the end-user machine while the virtual machine runs in AWS. When the requirement is a full desktop rather than a single streamed application, WorkSpaces is the usual answer.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+          "title": "What is Connect Customer? - Amazon Connect Customer"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A security team wants employees on unmanaged devices to reach internal web applications through a locked-down browser, without installing agents or using a VPN. Which AWS service should it choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon WorkSpaces",
+          "correct": false,
+          "rationale": "WorkSpaces delivers full virtual desktops, which is more than the stated need for web-only access."
+        },
+        {
+          "id": "b",
+          "text": "AWS Amplify",
+          "correct": false,
+          "rationale": "Amplify is for developers building apps, not for secure employee browsing."
+        },
+        {
+          "id": "c",
+          "text": "Amazon WorkSpaces Secure Browser",
+          "correct": true,
+          "rationale": "Secure Browser delivers a managed, secure browser session to reach internal web applications."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SES",
+          "correct": false,
+          "rationale": "SES sends email and has no browsing capability."
+        }
+      ],
+      "explanation": "Amazon WorkSpaces Secure Browser is an end-user computing service that gives users a secure, managed browser session for accessing internal websites and SaaS applications. Web content is rendered in AWS and streamed to the user local browser, so data does not sit on the unmanaged device. Compared with a full WorkSpaces desktop, it is lighter and targets web-only workloads.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ses/latest/dg/Welcome.html",
+          "title": "What is Amazon SES? - Amazon Simple Email Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A global enterprise wants a designated technical advisor from AWS who understands its workloads and provides proactive guidance. Which AWS Support option includes a Technical Account Manager (TAM)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Enterprise Support",
+          "correct": true,
+          "rationale": "Enterprise Support includes a designated Technical Account Manager for proactive guidance."
+        },
+        {
+          "id": "b",
+          "text": "Basic Support",
+          "correct": false,
+          "rationale": "Basic Support is free and offers no designated advisor."
+        },
+        {
+          "id": "c",
+          "text": "AWS re:Post",
+          "correct": false,
+          "rationale": "re:Post is a community Q&A service and has no assigned AWS staff for a company."
+        },
+        {
+          "id": "d",
+          "text": "Business Support+",
+          "correct": false,
+          "rationale": "Business Support+ offers 24/7 support but does not include a designated TAM."
+        }
+      ],
+      "explanation": "AWS offers support plans for different needs. The free Basic plan provides documentation, whitepapers, AWS re:Post, and core checks. Business Support+ adds 24/7 access to support for production workloads. Enterprise Support adds a designated Technical Account Manager who gives proactive, strategic guidance for large or critical environments. Choose the plan by the assistance the business needs.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/premiumsupport/plans/",
+          "title": "AWS Support plan comparison – AWS Support features – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/",
+          "title": "AI-powered cloud support – AWS Support plans – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A startup has no paid AWS Support plan. Which of the following can it still use at no cost?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A designated Technical Account Manager",
+          "correct": false,
+          "rationale": "A TAM comes with Enterprise Support, which is a paid plan."
+        },
+        {
+          "id": "b",
+          "text": "AWS re:Post and AWS documentation",
+          "correct": true,
+          "rationale": "Documentation, whitepapers, and AWS re:Post are available with the free Basic plan."
+        },
+        {
+          "id": "c",
+          "text": "A dedicated incident management engineer",
+          "correct": false,
+          "rationale": "Dedicated engineers belong to higher paid plans."
+        },
+        {
+          "id": "d",
+          "text": "Phone-based 24/7 engineer support",
+          "correct": false,
+          "rationale": "24/7 engineer access requires a paid support plan."
+        }
+      ],
+      "explanation": "Every AWS account includes Basic Support at no charge. It gives access to customer service for account and billing questions, documentation, whitepapers, support forums such as AWS re:Post, and core Trusted Advisor checks along with AWS Health information. Technical guidance from engineers, designated advisors, and similar benefits come from paid plans such as Business Support+ and Enterprise Support.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/premiumsupport/plans/",
+          "title": "AWS Support plan comparison – AWS Support features – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "An operations team needs a cloud alarm to instantly notify an on-call group by email and SMS, and to notify an automation queue, all from one published message. Which service should deliver the message?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Simple Queue Service (Amazon SQS)",
+          "correct": false,
+          "rationale": "SQS stores messages for polling consumers and does not push email or SMS to subscribers."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Simple Email Service (Amazon SES)",
+          "correct": false,
+          "rationale": "SES sends email only and cannot fan out to SMS and queues from a single message."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Simple Notification Service (Amazon SNS)",
+          "correct": true,
+          "rationale": "SNS publishes one message to a topic and fans it out to email, SMS, and SQS subscribers."
+        },
+        {
+          "id": "d",
+          "text": "AWS CodePipeline",
+          "correct": false,
+          "rationale": "CodePipeline is a release automation tool and does not deliver alerts."
+        }
+      ],
+      "explanation": "Sending alerts to several kinds of recipients is a pub/sub use case. With Amazon SNS, the alarm publishes once to a topic, and SNS pushes the message to every subscription: email, SMS, and an SQS queue for automation. SQS alone only holds messages for polling consumers, and SES is limited to email. EventBridge could route events but is not the standard choice for direct email and SMS alerts.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html",
+          "title": "What is Amazon SNS? - Amazon Simple Notification Service"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html",
+          "title": "What Is Amazon EventBridge? - Amazon EventBridge"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A retailer website receives sudden spikes of orders. The company wants to buffer the orders so back-end workers can process each one at their own pace without losing any. Which service best fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon SNS",
+          "correct": false,
+          "rationale": "SNS pushes immediately to subscribers and does not buffer for workers that read at their own pace."
+        },
+        {
+          "id": "b",
+          "text": "Amazon EventBridge",
+          "correct": false,
+          "rationale": "EventBridge routes events to targets by rules and is not a buffer that consumers poll."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Simple Email Service (Amazon SES)",
+          "correct": false,
+          "rationale": "SES delivers email and is not used to buffer work."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Simple Queue Service (Amazon SQS)",
+          "correct": true,
+          "rationale": "SQS stores orders in a queue so workers poll and process them at their own pace."
+        }
+      ],
+      "explanation": "When producers can outpace consumers, place a queue between them. Amazon SQS stores each message until a worker retrieves and deletes it, so traffic spikes are absorbed and no order is lost if workers are slow or temporarily unavailable. SNS and EventBridge push events to targets rather than letting consumers pull at their own rate, which makes them poorer fits when buffering is the explicit requirement.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html",
+          "title": "What is Amazon Simple Queue Service? - Amazon Simple Queue Service"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html",
+          "title": "What is Amazon SNS? - Amazon Simple Notification Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "Which services are application integration services that help connect and decouple the components of an application?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon EventBridge",
+          "correct": true,
+          "rationale": "EventBridge routes events between applications and services, so it is an integration service."
+        },
+        {
+          "id": "b",
+          "text": "Amazon WorkSpaces",
+          "correct": false,
+          "rationale": "WorkSpaces is an end-user computing service for virtual desktops."
+        },
+        {
+          "id": "c",
+          "text": "AWS CodeBuild",
+          "correct": false,
+          "rationale": "CodeBuild is a developer tool for compiling and testing code."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Simple Queue Service (Amazon SQS)",
+          "correct": true,
+          "rationale": "SQS decouples components by queueing messages between them."
+        },
+        {
+          "id": "e",
+          "text": "AWS IoT Core",
+          "correct": false,
+          "rationale": "IoT Core is an IoT service for connecting devices, not the application integration category."
+        }
+      ],
+      "explanation": "Application integration services connect software components so they can exchange messages and events without being tightly coupled. Amazon EventBridge routes events by rule, Amazon SQS queues messages, and Amazon SNS publishes to subscribers. Services from other categories, such as WorkSpaces for end-user computing, CodeBuild for developer tools, and IoT Core for IoT, serve different purposes even though they may exchange data with these services.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html",
+          "title": "What Is Amazon EventBridge? - Amazon EventBridge"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html",
+          "title": "What is Amazon Simple Queue Service? - Amazon Simple Queue Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which services help developers deploy applications and troubleshoot them once they are running?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Connect",
+          "correct": false,
+          "rationale": "Amazon Connect is a business application for contact centers."
+        },
+        {
+          "id": "b",
+          "text": "AWS CodePipeline",
+          "correct": true,
+          "rationale": "CodePipeline automates the build, test, and deploy stages of a release."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SES",
+          "correct": false,
+          "rationale": "SES is an email service and not a developer deployment tool."
+        },
+        {
+          "id": "d",
+          "text": "Amazon AppStream 2.0",
+          "correct": false,
+          "rationale": "AppStream 2.0 streams applications to users and does not deploy or debug code."
+        },
+        {
+          "id": "e",
+          "text": "AWS X-Ray",
+          "correct": true,
+          "rationale": "X-Ray traces requests so developers can troubleshoot application issues."
+        }
+      ],
+      "explanation": "The developer tools category covers services used across the software lifecycle. AWS CodePipeline helps deploy by automating release stages, with AWS CodeBuild handling build and test steps. AWS X-Ray helps troubleshoot by tracing requests across distributed components and showing where errors or latency occur. Business application and end-user computing services such as Amazon Connect, SES, and AppStream 2.0 fall in other categories.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ses/latest/dg/Welcome.html",
+          "title": "What is Amazon SES? - Amazon Simple Email Service"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+          "title": "What is Connect Customer? - Amazon Connect Customer"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which services can present the output of virtual machines or applications running in AWS on end-user machines?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon WorkSpaces",
+          "correct": true,
+          "rationale": "WorkSpaces streams a virtual desktop running in AWS to the user device."
+        },
+        {
+          "id": "b",
+          "text": "AWS Amplify",
+          "correct": false,
+          "rationale": "Amplify builds and hosts web and mobile apps and does not stream VM output."
+        },
+        {
+          "id": "c",
+          "text": "Amazon AppStream 2.0",
+          "correct": true,
+          "rationale": "AppStream 2.0 streams applications running in AWS to a user browser."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SNS",
+          "correct": false,
+          "rationale": "SNS is a messaging service and does not render anything on user devices."
+        },
+        {
+          "id": "e",
+          "text": "AWS IoT Core",
+          "correct": false,
+          "rationale": "IoT Core connects devices to AWS and does not stream desktops."
+        }
+      ],
+      "explanation": "End-user computing services run desktops or applications in AWS and stream the display to the user own device. Amazon WorkSpaces delivers full virtual desktops, and Amazon AppStream 2.0 streams individual applications to a browser. Amazon WorkSpaces Secure Browser similarly streams a browser session. Services in other categories, such as messaging, IoT, or frontend development, do not present VM output on user machines.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+          "title": "What is Connect Customer? - Amazon Connect Customer"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.8-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company wants to reach customers using email campaigns, mobile notifications, and live phone support. Which services support these needs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Simple Email Service (Amazon SES)",
+          "correct": true,
+          "rationale": "SES sends marketing and transactional email to customers."
+        },
+        {
+          "id": "b",
+          "text": "AWS CodeBuild",
+          "correct": false,
+          "rationale": "CodeBuild compiles code and does not reach customers."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Simple Notification Service (Amazon SNS)",
+          "correct": true,
+          "rationale": "SNS can send mobile push and SMS notifications to users."
+        },
+        {
+          "id": "d",
+          "text": "AWS X-Ray",
+          "correct": false,
+          "rationale": "X-Ray traces application requests and does not send messages."
+        },
+        {
+          "id": "e",
+          "text": "Amazon Connect",
+          "correct": true,
+          "rationale": "Amazon Connect lets agents handle live phone and chat contacts."
+        },
+        {
+          "id": "f",
+          "text": "Amazon WorkSpaces",
+          "correct": false,
+          "rationale": "WorkSpaces provides virtual desktops for employees, not customer outreach."
+        }
+      ],
+      "explanation": "Different services cover different customer channels. Amazon SES handles email at scale, Amazon SNS delivers mobile push notifications and SMS to subscribers, and Amazon Connect provides a cloud contact center for live voice and chat. CodeBuild and X-Ray are developer tools, and WorkSpaces is an end-user computing service for employee desktops, so none of them communicate with customers directly.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/ses/latest/dg/Welcome.html",
+          "title": "What is Amazon SES? - Amazon Simple Email Service"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html",
+          "title": "What is Amazon SNS? - Amazon Simple Notification Service"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+          "title": "What is Connect Customer? - Amazon Connect Customer"
+        }
+      ]
+    }
+  ]
+}
