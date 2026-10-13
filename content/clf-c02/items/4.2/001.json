@@ -1,0 +1,900 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "4.2",
+  "items": [
+    {
+      "id": "clf-c02-4.2-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to view and analyze its historical AWS costs and usage in charts and reports. Which AWS tool should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Budgets",
+          "correct": false,
+          "rationale": "AWS Budgets sets thresholds and sends alerts; it is not the main tool for exploring historical cost data in graphs."
+        },
+        {
+          "id": "b",
+          "text": "AWS Cost Explorer",
+          "correct": true,
+          "rationale": "Cost Explorer lets you visualize, filter, and group past and current costs and usage, including up to 13 months of history."
+        },
+        {
+          "id": "c",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "Pricing Calculator estimates the cost of planned workloads; it does not analyze actual spending."
+        },
+        {
+          "id": "d",
+          "text": "AWS Organizations",
+          "correct": false,
+          "rationale": "Organizations manages accounts and consolidates billing, but it is not an analysis and visualization tool."
+        }
+      ],
+      "explanation": "AWS Cost Explorer is the tool for analyzing what you have already spent. It shows up to 13 months of historical data, can forecast future spend, and lets you filter or group by service, linked account, or active cost allocation tag. AWS Budgets is for setting thresholds and alerts, AWS Pricing Calculator is for estimating future workloads, and AWS Organizations is for managing multiple accounts. Matching the verb in the question (analyze, alert, estimate, manage) to the tool is a reliable exam approach.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html",
+          "title": "Analyzing your costs and usage with AWS Cost Explorer - AWS Cost Management"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/what-is-costmanagement.html",
+          "title": "Use AWS Billing and Cost Management for AWS - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company notices an unexpected charge on its monthly AWS invoice and wants to ask about it or appeal it. Whom should the company contact?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Marketplace",
+          "correct": false,
+          "rationale": "AWS Marketplace is a catalog for buying third-party software and does not handle billing disputes for AWS charges."
+        },
+        {
+          "id": "b",
+          "text": "AWS Artifact",
+          "correct": false,
+          "rationale": "AWS Artifact provides compliance reports and agreements, not billing assistance."
+        },
+        {
+          "id": "c",
+          "text": "AWS Support",
+          "correct": true,
+          "rationale": "AWS Support handles questions about bills and payments, including appeals of charges."
+        },
+        {
+          "id": "d",
+          "text": "AWS Training and Certification",
+          "correct": false,
+          "rationale": "Training and Certification offers learning resources and exams; it does not resolve invoice questions."
+        }
+      ],
+      "explanation": "Billing questions are handled through AWS Support. The AWS Billing and Cost Management documentation directs customers with questions about their bills, or who want to appeal charges, to contact Support. The Bills page in the console shows charges by service and helps you understand what you were charged before you open a case. Services such as AWS Artifact deal with compliance documents, and AWS Marketplace deals with third-party software purchases, so neither is the place for invoice disputes.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html",
+          "title": "What is AWS Billing and Cost Management? - AWS Billing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/what-is-costmanagement.html",
+          "title": "Use AWS Billing and Cost Management for AWS - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Where can a customer find the published pricing details for individual AWS services?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The AWS pricing pages on the AWS website",
+          "correct": true,
+          "rationale": "The AWS website publishes a pricing page for each service describing how it is charged."
+        },
+        {
+          "id": "b",
+          "text": "AWS Artifact",
+          "correct": false,
+          "rationale": "Artifact provides compliance reports and agreements, not service prices."
+        },
+        {
+          "id": "c",
+          "text": "AWS Health Dashboard",
+          "correct": false,
+          "rationale": "The AWS Health Dashboard reports service events and account-specific issues, not prices."
+        },
+        {
+          "id": "d",
+          "text": "AWS Config",
+          "correct": false,
+          "rationale": "AWS Config records resource configuration history and does not publish pricing."
+        }
+      ],
+      "explanation": "AWS publishes pricing information for each service on its website, with a central pricing page linking to every service. Most services are pay-as-you-go, and the pages describe the pricing dimensions such as compute hours, storage, and data transfer. Because prices change, candidates should know where to look rather than memorize figures. The pricing pages also describe commitment discount options such as Savings Plans, and they feed tools like AWS Pricing Calculator.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement best describes AWS Pricing Calculator?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A tool that sends alerts when actual spending passes a limit",
+          "correct": false,
+          "rationale": "Sending alerts on actual spend is the job of AWS Budgets, not Pricing Calculator."
+        },
+        {
+          "id": "b",
+          "text": "A report that lists every line item of past usage",
+          "correct": false,
+          "rationale": "Line-item history of past usage is in the AWS Cost and Usage Report, not Pricing Calculator."
+        },
+        {
+          "id": "c",
+          "text": "A service that merges the bills of multiple accounts",
+          "correct": false,
+          "rationale": "Merging bills is consolidated billing in AWS Organizations."
+        },
+        {
+          "id": "d",
+          "text": "A free web tool for estimating the cost of AWS services before using them",
+          "correct": true,
+          "rationale": "Pricing Calculator is a free planning tool for modeling a solution and producing a cost estimate."
+        }
+      ],
+      "explanation": "AWS Pricing Calculator is a free, web-based planning tool. You pick services, configurations, and expected usage, and it produces an estimate with upfront, monthly, and annual costs. You can group estimates by architecture, review the calculations behind each price, save a shareable link, and export to CSV or PDF. It estimates future costs, so it complements Cost Explorer, which analyzes real spending, and Budgets, which alerts on it.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html",
+          "title": "What is AWS Pricing Calculator? - AWS Pricing Calculator"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0005",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which two benefits does consolidated billing in AWS Organizations provide?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It encrypts all billing data with customer managed keys",
+          "correct": false,
+          "rationale": "Consolidated billing is about billing structure, not encryption of billing data."
+        },
+        {
+          "id": "b",
+          "text": "It provides a single bill for all accounts in the organization",
+          "correct": true,
+          "rationale": "One consolidated bill covers all member accounts and is paid through the management account."
+        },
+        {
+          "id": "c",
+          "text": "It requires each member account to pay its own invoice",
+          "correct": false,
+          "rationale": "The opposite is true: charges roll up to the management account, which pays one bill."
+        },
+        {
+          "id": "d",
+          "text": "It removes the need to tag resources",
+          "correct": false,
+          "rationale": "Tags are still needed to allocate costs by project or team; consolidated billing does not replace them."
+        },
+        {
+          "id": "e",
+          "text": "It lets combined usage across accounts qualify for volume pricing discounts",
+          "correct": true,
+          "rationale": "Usage from all accounts is combined, which can reach higher volume discount tiers."
+        }
+      ],
+      "explanation": "With consolidated billing, AWS Organizations combines the charges of all member accounts into one bill paid by the management account. Because usage is aggregated, it can reach volume pricing tiers sooner than the same usage spread over separate accounts. Charges are still itemized per account, so owners remain visible. Consolidated billing does not encrypt anything, does not make members pay separately, and does not replace tagging, which is how you attribute costs to projects rather than accounts.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html",
+          "title": "What is AWS Organizations? - AWS Organizations"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html",
+          "title": "What is AWS Billing and Cost Management? - AWS Billing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is an AWS cost allocation tag?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A firewall rule that restricts which accounts can be billed",
+          "correct": false,
+          "rationale": "Firewall rules control network traffic and have nothing to do with cost reporting."
+        },
+        {
+          "id": "b",
+          "text": "A discount code applied to an account's invoice",
+          "correct": false,
+          "rationale": "Tags do not reduce prices; they only organize and report costs."
+        },
+        {
+          "id": "c",
+          "text": "A key-value label that can be activated to group costs in billing reports",
+          "correct": true,
+          "rationale": "Cost allocation tags are labels you activate so costs can be organized by categories like project or owner."
+        },
+        {
+          "id": "d",
+          "text": "A limit on how many resources an account can create",
+          "correct": false,
+          "rationale": "Resource limits are quotas, which are unrelated to tags."
+        }
+      ],
+      "explanation": "A tag is a label made of a key and a value. When you activate a tag as a cost allocation tag in the Billing and Cost Management console, AWS uses it to organize your costs in cost allocation reports and lets you filter and group by it in Cost Explorer. Typical keys are cost center, application name, or owner. Tags only organize and report charges; they do not change prices or enforce limits.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
+          "title": "Organizing and tracking costs using AWS cost allocation tags - AWS Billing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants an email notification when its forecasted monthly AWS spend is expected to exceed a set amount. Which AWS tool meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "Pricing Calculator estimates planned workloads and does not monitor your account's spending."
+        },
+        {
+          "id": "b",
+          "text": "AWS Organizations",
+          "correct": false,
+          "rationale": "Organizations consolidates billing but does not send spend threshold notifications."
+        },
+        {
+          "id": "c",
+          "text": "AWS Cost Explorer",
+          "correct": false,
+          "rationale": "Cost Explorer shows forecasts in the console, but threshold alerts to email are configured in AWS Budgets."
+        },
+        {
+          "id": "d",
+          "text": "AWS Budgets",
+          "correct": true,
+          "rationale": "Budgets can alert by email or Amazon SNS when actual or forecasted spend is expected to exceed a threshold."
+        }
+      ],
+      "explanation": "AWS Budgets lets you set a cost or usage threshold and receive notifications when actual spend passes it or when forecasted spend is expected to. Notifications can go to an email address, an Amazon SNS topic, or both. Cost Explorer can display a forecast, but it is an analysis tool and does not alert. Budgets data is refreshed up to three times a day, so there can be a short delay between a charge and the alert.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+          "title": "Managing your costs with AWS Budgets - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company plans to migrate an application to AWS and wants a monthly cost estimate for the Amazon EC2 and Amazon RDS configuration it is designing, before deploying anything. Which tool should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Pricing Calculator",
+          "correct": true,
+          "rationale": "Pricing Calculator models planned configurations and produces an estimate without deploying resources."
+        },
+        {
+          "id": "b",
+          "text": "AWS Cost Explorer",
+          "correct": false,
+          "rationale": "Cost Explorer analyzes actual spend, so it has no data for a workload that is not yet running."
+        },
+        {
+          "id": "c",
+          "text": "AWS Budgets",
+          "correct": false,
+          "rationale": "Budgets alerts on spend that is already occurring or forecast, not on a design that does not exist yet."
+        },
+        {
+          "id": "d",
+          "text": "AWS Cost and Usage Report",
+          "correct": false,
+          "rationale": "The Cost and Usage Report details actual usage and cannot estimate an undeployed design."
+        }
+      ],
+      "explanation": "AWS Pricing Calculator exists for exactly this planning scenario. You enter the services, instance types, storage, and expected usage, and it generates an estimate that you can save, share, and export. The other options depend on real usage data. Cost Explorer, Budgets, and the Cost and Usage Report all report on resources that already run in an account, so they cannot price a design that has not been built.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html",
+          "title": "What is AWS Pricing Calculator? - AWS Pricing Calculator"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/what-is-costmanagement.html",
+          "title": "Use AWS Billing and Cost Management for AWS - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants a cost allocation tag that AWS creates and applies on its behalf, for example one that records who created a resource. Which type of tag is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "User-defined tag",
+          "correct": false,
+          "rationale": "User-defined tags are created and applied by the customer, not by AWS."
+        },
+        {
+          "id": "b",
+          "text": "AWS-generated tag",
+          "correct": true,
+          "rationale": "AWS-generated tags are defined and applied by AWS and use the aws: prefix, such as aws:createdBy."
+        },
+        {
+          "id": "c",
+          "text": "Resource policy tag",
+          "correct": false,
+          "rationale": "This is not a cost allocation tag type; the two types are AWS-generated and user-defined."
+        },
+        {
+          "id": "d",
+          "text": "Reserved tag",
+          "correct": false,
+          "rationale": "There is no such cost allocation tag type; the two types are AWS-generated and user-defined."
+        }
+      ],
+      "explanation": "AWS offers two types of cost allocation tags. AWS-generated tags are defined, created, and applied by AWS (or an AWS Marketplace ISV) and carry the aws: prefix, for example aws:createdBy. User-defined tags are created and applied by you and carry the user: prefix in reports. Both must be activated separately in the Billing and Cost Management console before they appear in Cost Explorer or cost allocation reports.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
+          "title": "Organizing and tracking costs using AWS cost allocation tags - AWS Billing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0010",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which two statements about cost allocation tags are correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tags appear in billing reports as soon as they are applied to a resource",
+          "correct": false,
+          "rationale": "Tags must first be activated, and even then can take up to 24 hours to appear."
+        },
+        {
+          "id": "b",
+          "text": "Tags must be activated in the Billing and Cost Management console before they appear in cost reports",
+          "correct": true,
+          "rationale": "Both AWS-generated and user-defined tags need to be activated before they show in Cost Explorer or allocation reports."
+        },
+        {
+          "id": "c",
+          "text": "Any member account in an organization can manage the cost allocation tags settings",
+          "correct": false,
+          "rationale": "Only the management account (or a standalone account) has access to the cost allocation tags manager."
+        },
+        {
+          "id": "d",
+          "text": "Tags can take up to 24 hours to appear in the Billing and Cost Management console",
+          "correct": true,
+          "rationale": "AWS states that all tags can take up to 24 hours to appear in the console."
+        },
+        {
+          "id": "e",
+          "text": "Only user-defined tags need to be activated",
+          "correct": false,
+          "rationale": "Both types of tags, AWS-generated and user-defined, must be activated."
+        }
+      ],
+      "explanation": "Cost allocation tags are a two-step process: apply the tag to a resource, then activate it as a cost allocation tag in the Billing and Cost Management console. Both AWS-generated and user-defined tags require activation, and they can take up to 24 hours to appear. In an organization, only the management account can use the cost allocation tags manager. Once active, the tags group costs in Cost Explorer and in the cost allocation report.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
+          "title": "Organizing and tracking costs using AWS cost allocation tags - AWS Billing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company's finance team needs the most detailed AWS billing dataset, including columns for active cost allocation tags, for deep analysis. Which resource provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Health Dashboard",
+          "correct": false,
+          "rationale": "The Health Dashboard shows service events and issues, not billing data."
+        },
+        {
+          "id": "b",
+          "text": "AWS Cost and Usage Report",
+          "correct": true,
+          "rationale": "The Cost and Usage Report provides the most detailed usage and cost data and includes active cost allocation tags."
+        },
+        {
+          "id": "c",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "Pricing Calculator produces estimates and does not contain actual billing records."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor gives best-practice recommendations rather than detailed billing records."
+        }
+      ],
+      "explanation": "The AWS Cost and Usage Report (CUR) is the most comprehensive set of cost and usage data AWS provides, with line items for usage and, when tags are activated, columns for each active cost allocation tag. Cost Explorer uses the same underlying dataset, but the CUR lets you deliver the raw data for custom analysis. The report is a record of actual charges, so it differs from Pricing Calculator estimates or Trusted Advisor recommendations.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
+          "title": "Organizing and tracking costs using AWS cost allocation tags - AWS Billing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/what-is-costmanagement.html",
+          "title": "Use AWS Billing and Cost Management for AWS - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "In an AWS organization, which account is responsible for activating cost allocation tags and paying the consolidated bill?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The management account",
+          "correct": true,
+          "rationale": "The management account manages cost allocation tags and pays the consolidated bill for all member accounts."
+        },
+        {
+          "id": "b",
+          "text": "Any member account that created the tagged resource",
+          "correct": false,
+          "rationale": "Member accounts cannot manage cost allocation tags for the organization."
+        },
+        {
+          "id": "c",
+          "text": "The account with the highest monthly spend",
+          "correct": false,
+          "rationale": "Spend level does not determine billing roles; the management account does."
+        },
+        {
+          "id": "d",
+          "text": "The most recently created member account",
+          "correct": false,
+          "rationale": "Creation order is irrelevant to billing responsibility."
+        }
+      ],
+      "explanation": "The management account of an AWS organization pays the charges of all member accounts through consolidated billing. It is also the account with access to the cost allocation tags manager in the Billing console, so tag activation is done there rather than in member accounts. Member accounts can still see and manage their own resources and tags, but organization-wide billing decisions sit with the management account.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
+          "title": "Organizing and tracking costs using AWS cost allocation tags - AWS Billing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html",
+          "title": "What is AWS Organizations? - AWS Organizations"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company wants an automatic safeguard: when monthly spend reaches 80 percent of its planned amount, an IAM policy should be applied that denies launching additional resources. Which tool provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Cost Explorer forecasts",
+          "correct": false,
+          "rationale": "Cost Explorer can show forecasts but cannot trigger actions when a threshold is reached."
+        },
+        {
+          "id": "b",
+          "text": "AWS Pricing Calculator estimates",
+          "correct": false,
+          "rationale": "Pricing Calculator estimates planned costs and cannot monitor or act on actual spending."
+        },
+        {
+          "id": "c",
+          "text": "AWS Budgets with budget actions",
+          "correct": true,
+          "rationale": "Budgets can apply an IAM policy automatically when a cost threshold is reached."
+        },
+        {
+          "id": "d",
+          "text": "AWS Organizations consolidated billing",
+          "correct": false,
+          "rationale": "Consolidated billing combines invoices and does not act on spending thresholds."
+        }
+      ],
+      "explanation": "AWS Budgets supports budget actions that run when a threshold is crossed, such as applying a custom IAM policy that denies provisioning more resources. A cost budget with a notification at 80 percent can trigger that action. Cost Explorer and Pricing Calculator are informational, and consolidated billing only changes how charges are billed, so none of them can respond automatically to a spending threshold.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+          "title": "Managing your costs with AWS Budgets - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "Several teams in one account tag their Amazon EC2 instances with the key Department. Finance wants to see last quarter's cost per department. What should the company do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create an AWS Budgets alert for each department",
+          "correct": false,
+          "rationale": "Budgets alerts notify on thresholds; they do not give a historical breakdown by tag."
+        },
+        {
+          "id": "b",
+          "text": "Use AWS Pricing Calculator to model each department",
+          "correct": false,
+          "rationale": "Pricing Calculator estimates future workloads and does not report actual tagged costs."
+        },
+        {
+          "id": "c",
+          "text": "Activate the AWS-generated tags so AWS assigns departments",
+          "correct": false,
+          "rationale": "AWS-generated tags do not know your departments; the Department key is user-defined."
+        },
+        {
+          "id": "d",
+          "text": "Activate Department as a cost allocation tag and group costs by it in Cost Explorer",
+          "correct": true,
+          "rationale": "Activating the user-defined tag makes it available to group and filter costs by department."
+        }
+      ],
+      "explanation": "The Department key is a user-defined tag, so the company must activate it as a cost allocation tag in the Billing and Cost Management console. Once active it can be used to filter and group costs in Cost Explorer, and it appears in the cost allocation report and Cost and Usage Report. Costs incurred before activation are not tagged unless the tags are backfilled, which is why activation should happen early.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
+          "title": "Organizing and tracking costs using AWS cost allocation tags - AWS Billing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html",
+          "title": "Analyzing your costs and usage with AWS Cost Explorer - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0015",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which two are types of budget that can be created in AWS Budgets?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Latency budget",
+          "correct": false,
+          "rationale": "AWS Budgets does not track application latency; that is a monitoring metric."
+        },
+        {
+          "id": "b",
+          "text": "Cost budget",
+          "correct": true,
+          "rationale": "A cost budget alerts you when costs approach or exceed a threshold."
+        },
+        {
+          "id": "c",
+          "text": "Compliance budget",
+          "correct": false,
+          "rationale": "There is no compliance budget type; compliance is handled by other services."
+        },
+        {
+          "id": "d",
+          "text": "Backup budget",
+          "correct": false,
+          "rationale": "There is no backup budget type in AWS Budgets."
+        },
+        {
+          "id": "e",
+          "text": "Reserved Instance utilization budget",
+          "correct": true,
+          "rationale": "RI utilization budgets alert you when Reserved Instance usage drops below a threshold."
+        }
+      ],
+      "explanation": "AWS Budgets offers cost budgets, usage budgets, and utilization and coverage budgets for Reserved Instances and Savings Plans. Cost and usage budgets alert you when spend or usage approaches or exceeds a threshold, while utilization and coverage budgets alert when commitments are under-used or cover too little of your usage. Metrics such as latency and compliance status belong to monitoring and governance services, not to AWS Budgets.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+          "title": "Managing your costs with AWS Budgets - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A solutions team must compare the estimated monthly cost of two proposed architectures and export the results as PDF files for stakeholders, before building either one. Which approach fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Forecast both architectures in AWS Budgets",
+          "correct": false,
+          "rationale": "Budgets forecasts spend that is already occurring and cannot model unbuilt architectures."
+        },
+        {
+          "id": "b",
+          "text": "Create an estimate for each architecture in AWS Pricing Calculator and export it",
+          "correct": true,
+          "rationale": "Pricing Calculator models planned configurations and exports estimates as CSV or PDF."
+        },
+        {
+          "id": "c",
+          "text": "Run Cost Explorer reports on both architectures",
+          "correct": false,
+          "rationale": "Cost Explorer needs actual usage data and cannot report on architectures that do not exist."
+        },
+        {
+          "id": "d",
+          "text": "Link both architectures through AWS Organizations",
+          "correct": false,
+          "rationale": "Organizations does not estimate costs; it organizes accounts and consolidates billing."
+        }
+      ],
+      "explanation": "Planning calls for AWS Pricing Calculator. You can build one estimate per architecture, group services to mirror each design, review the calculations behind each price, and export the results as CSV or PDF to share with stakeholders. Cost Explorer and Budgets work from real account usage, so they cannot price designs that have not been deployed, and Organizations has no estimation features at all.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html",
+          "title": "What is AWS Pricing Calculator? - AWS Pricing Calculator"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company with 30 AWS accounts wants one bill and one payment method for all of them. Which AWS service provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Budgets",
+          "correct": false,
+          "rationale": "Budgets tracks and alerts on spend but does not merge invoices or payment methods."
+        },
+        {
+          "id": "b",
+          "text": "AWS Cost Explorer",
+          "correct": false,
+          "rationale": "Cost Explorer analyzes costs; it does not combine accounts under one payment method."
+        },
+        {
+          "id": "c",
+          "text": "AWS Organizations",
+          "correct": true,
+          "rationale": "Organizations provides consolidated billing with a single payment method for all accounts."
+        },
+        {
+          "id": "d",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "Pricing Calculator estimates costs and does not change how accounts are billed."
+        }
+      ],
+      "explanation": "AWS Organizations simplifies billing by using a single payment method for all accounts and producing one consolidated bill. Accounts can also be grouped into organizational units and governed with policies. Because the bill is itemized per account, each team's charges stay visible. Cost Explorer, Budgets, and Pricing Calculator can be used within an organization, but none of them consolidates payment.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html",
+          "title": "What is AWS Organizations? - AWS Organizations"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html",
+          "title": "What is AWS Billing and Cost Management? - AWS Billing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A finance team wants to see forecasted AWS spend for upcoming months and get recommendations on which Reserved Instances to purchase. Which tool provides both?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Cost Explorer",
+          "correct": true,
+          "rationale": "Cost Explorer provides forecasts and Reserved Instance purchase recommendations."
+        },
+        {
+          "id": "b",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "Pricing Calculator estimates planned workloads rather than forecasting existing spend or recommending purchases."
+        },
+        {
+          "id": "c",
+          "text": "AWS Health Dashboard",
+          "correct": false,
+          "rationale": "The Health Dashboard reports service events, not cost forecasts."
+        },
+        {
+          "id": "d",
+          "text": "AWS Organizations",
+          "correct": false,
+          "rationale": "Organizations does not forecast spending or recommend purchases."
+        }
+      ],
+      "explanation": "AWS Cost Explorer can forecast how much you are likely to spend for the next 18 months based on historical usage, and it provides recommendations for which Reserved Instances to purchase. It also keeps up to 13 months of history for trend analysis. Budgets can alert on forecasted spend but is not where you browse forecasts and purchase recommendations, and Pricing Calculator estimates new workloads instead.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html",
+          "title": "Analyzing your costs and usage with AWS Cost Explorer - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0019",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "In AWS Organizations consolidated billing, which account pays the combined charges of all member accounts?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Each member account pays only its own charges",
+          "correct": false,
+          "rationale": "Under consolidated billing, member charges roll up to a single payer."
+        },
+        {
+          "id": "b",
+          "text": "AWS Support pays on the organization's behalf",
+          "correct": false,
+          "rationale": "AWS Support does not pay customer charges."
+        },
+        {
+          "id": "c",
+          "text": "The account that was created first among the members",
+          "correct": false,
+          "rationale": "Billing responsibility does not depend on creation order of member accounts."
+        },
+        {
+          "id": "d",
+          "text": "The management account",
+          "correct": true,
+          "rationale": "The management account receives and pays the consolidated bill for the whole organization."
+        }
+      ],
+      "explanation": "In AWS Organizations, the management account is the payer for the entire organization. Charges from every member account are consolidated into one bill that the management account pays, while the bill still shows usage per account. This is also why the management account, and not individual members, administers organization-wide billing features such as cost allocation tag activation.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html",
+          "title": "What is AWS Organizations? - AWS Organizations"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html",
+          "title": "What is AWS Billing and Cost Management? - AWS Billing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.2-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company runs a multi-account organization and wants to allocate costs to projects. Which three actions are needed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Apply a Project tag to resources in each account",
+          "correct": true,
+          "rationale": "Resources must carry the tag before costs can be grouped by project."
+        },
+        {
+          "id": "b",
+          "text": "Ask each member account to activate the tag in its own Billing console",
+          "correct": false,
+          "rationale": "Member accounts do not have the cost allocation tags manager in an organization."
+        },
+        {
+          "id": "c",
+          "text": "Activate the Project tag as a cost allocation tag in the management account",
+          "correct": true,
+          "rationale": "The management account activates tags so they appear in cost reports."
+        },
+        {
+          "id": "d",
+          "text": "Use AWS Pricing Calculator to retrieve last quarter's tagged costs",
+          "correct": false,
+          "rationale": "Pricing Calculator contains estimates only, not actual tagged costs."
+        },
+        {
+          "id": "e",
+          "text": "Group or filter costs by the Project tag in Cost Explorer or the Cost and Usage Report",
+          "correct": true,
+          "rationale": "Active tags show up in Cost Explorer and the Cost and Usage Report for grouping."
+        },
+        {
+          "id": "f",
+          "text": "Create a budget to rename the tag in billing reports",
+          "correct": false,
+          "rationale": "Budgets do not rename or manage tags."
+        }
+      ],
+      "explanation": "Allocating costs by project takes three steps. First, tag resources with a consistent key such as Project. Second, in an organization the management account activates that key as a cost allocation tag, since member accounts cannot manage the tags manager. Third, analyze costs grouped or filtered by the tag in Cost Explorer or in the Cost and Usage Report. Pricing Calculator holds estimates only, and Budgets do not manage tags.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html",
+          "title": "Organizing and tracking costs using AWS cost allocation tags - AWS Billing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html",
+          "title": "What is AWS Organizations? - AWS Organizations"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html",
+          "title": "Analyzing your costs and usage with AWS Cost Explorer - AWS Cost Management"
+        }
+      ]
+    }
+  ]
+}

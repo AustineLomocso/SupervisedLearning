@@ -1,0 +1,932 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "4.3",
+  "items": [
+    {
+      "id": "clf-c02-4.3-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A support engineer wants to find official AWS articles that answer common technical questions raised by other Support customers. Which resource should they use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Marketplace",
+          "correct": false,
+          "rationale": "AWS Marketplace is a catalog for buying third-party software, not a source of how-to articles."
+        },
+        {
+          "id": "b",
+          "text": "AWS Knowledge Center",
+          "correct": true,
+          "rationale": "The AWS Knowledge Center publishes official articles that answer frequently asked technical questions from Support customers."
+        },
+        {
+          "id": "c",
+          "text": "AWS Health API",
+          "correct": false,
+          "rationale": "The AWS Health API provides programmatic access to health events, not troubleshooting articles."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor inspects your account and gives recommendations; it does not host question-and-answer articles."
+        }
+      ],
+      "explanation": "The AWS Knowledge Center is a library of official articles written by AWS Support staff from the questions customers ask most often. It gives step-by-step troubleshooting and how-to answers and is free to read. It complements documentation, which describes how services work, and AWS re:Post, where the community asks and answers questions. Tools such as Trusted Advisor and the AWS Health API analyze your own account or events rather than providing general articles.",
+      "references": [
+        {
+          "url": "https://repost.aws/knowledge-center",
+          "title": "Discover AWS Official Knowledge Center Articles | AWS re:Post"
+        },
+        {
+          "url": "https://repost.aws/",
+          "title": "Access AWS Expert Solutions & Authoritative Knowledge - AWS re:Post | AWS re:Post"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS resource is a community question-and-answer site where customers and AWS experts discuss technical topics?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Support Center",
+          "correct": false,
+          "rationale": "The Support Center is the console location for creating and managing support cases, not a community forum."
+        },
+        {
+          "id": "b",
+          "text": "AWS Whitepapers & Guides",
+          "correct": false,
+          "rationale": "Whitepapers are published documents that do not offer interactive question-and-answer discussion."
+        },
+        {
+          "id": "c",
+          "text": "AWS Partner Network",
+          "correct": false,
+          "rationale": "The AWS Partner Network is a program for companies that build on and sell with AWS."
+        },
+        {
+          "id": "d",
+          "text": "AWS re:Post",
+          "correct": true,
+          "rationale": "AWS re:Post is the community Q&A service where customers and AWS experts ask and answer technical questions."
+        }
+      ],
+      "explanation": "AWS re:Post is a community-driven question-and-answer service that is free to use and open to AWS customers and experts. It sits alongside the AWS Knowledge Center, which holds official articles, and the documentation. Basic Support includes access to this kind of community help, so it is the usual first stop for customers without a paid support plan. Cases with Cloud Support Engineers are a separate paid-plan feature handled through the Support Center.",
+      "references": [
+        {
+          "url": "https://repost.aws/",
+          "title": "Access AWS Expert Solutions & Authoritative Knowledge - AWS re:Post | AWS re:Post"
+        },
+        {
+          "url": "https://repost.aws/knowledge-center",
+          "title": "Discover AWS Official Knowledge Center Articles | AWS re:Post"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is AWS Marketplace?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A digital catalog where customers find, buy and deploy third-party software",
+          "correct": true,
+          "rationale": "AWS Marketplace lets customers discover, purchase and deploy software from independent software vendors and other sellers."
+        },
+        {
+          "id": "b",
+          "text": "A program that certifies employees on AWS skills",
+          "correct": false,
+          "rationale": "Training and certification is a separate AWS offering, not what the Marketplace is."
+        },
+        {
+          "id": "c",
+          "text": "A tool that recommends ways to reduce account costs",
+          "correct": false,
+          "rationale": "Cost recommendations come from tools such as AWS Trusted Advisor, not the Marketplace."
+        },
+        {
+          "id": "d",
+          "text": "A service that reports AWS service outages",
+          "correct": false,
+          "rationale": "Service events are shown in the AWS Health Dashboard, not in the Marketplace."
+        }
+      ],
+      "explanation": "AWS Marketplace is a digital catalog that lets customers find, buy, deploy and manage software, data products and services from independent software vendors (ISVs) and consulting partners. It gives sellers a sales channel and gives buyers governance and control features and cost management tools, with charges appearing alongside AWS usage. It is not a training, recommendation or health-monitoring service, which are covered by other AWS offerings.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/marketplace",
+          "title": "AWS Marketplace: Homepage"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Where can a solutions architect find in-depth AWS technical papers and best practice guides published by AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Marketplace",
+          "correct": false,
+          "rationale": "The Marketplace sells third-party products rather than publishing AWS technical papers."
+        },
+        {
+          "id": "b",
+          "text": "AWS Health Dashboard",
+          "correct": false,
+          "rationale": "The Health Dashboard shows events affecting your resources, not published guides."
+        },
+        {
+          "id": "c",
+          "text": "AWS Whitepapers & Guides",
+          "correct": true,
+          "rationale": "The AWS Whitepapers & Guides site collects in-depth technical papers and best practice guidance from AWS."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trust and Safety",
+          "correct": false,
+          "rationale": "The Trust and Safety team handles abuse reports and does not publish technical papers."
+        }
+      ],
+      "explanation": "AWS publishes technical content on its official websites. The Whitepapers & Guides page collects in-depth papers on topics such as architecture, security and migration. Related resources include the AWS Architecture Center for reference architectures, AWS Blogs for announcements and examples, and the documentation for service details. Knowing which official site holds which type of content helps you answer location questions on the exam.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/whitepapers/",
+          "title": "AWS Whitepapers & Guides"
+        },
+        {
+          "url": "https://aws.amazon.com/architecture/",
+          "title": "Reference Architecture Examples and Best Practices"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A customer discovers that an Amazon EC2 instance in someone else's account is being used to send spam from AWS IP addresses. Which team should the customer contact to report this abuse?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Professional Services",
+          "correct": false,
+          "rationale": "Professional Services helps customers deliver projects and does not take abuse reports."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trust and Safety team",
+          "correct": true,
+          "rationale": "The AWS Trust and Safety team handles reports of abuse of AWS resources such as spam, malware and attacks."
+        },
+        {
+          "id": "c",
+          "text": "AWS Technical Account Manager",
+          "correct": false,
+          "rationale": "A TAM guides customers who have an Enterprise-level plan and does not handle abuse reports."
+        },
+        {
+          "id": "d",
+          "text": "AWS Partner Network",
+          "correct": false,
+          "rationale": "The Partner Network is a program for AWS partner companies, not a reporting channel."
+        }
+      ],
+      "explanation": "Abuse of AWS resources, such as sending spam, hosting malware, or launching attacks from AWS-hosted resources, should be reported to the AWS Trust and Safety team. This is different from opening a support case about problems in your own account, which goes through the Support Center. Knowing the right channel matters because the Trust and Safety team investigates and can act on the offending resources, while other teams cannot.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+          "title": "AWS Support Plans - AWS Support"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/",
+          "title": "AI-powered cloud support – AWS Support plans – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which feature is included for every AWS customer under Basic Support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A designated Technical Account Manager",
+          "correct": false,
+          "rationale": "A designated TAM is part of Enterprise Support and higher plans, not Basic Support."
+        },
+        {
+          "id": "b",
+          "text": "24x7 phone access to Cloud Support Engineers",
+          "correct": false,
+          "rationale": "Phone access to engineers requires a paid plan such as Business Support+."
+        },
+        {
+          "id": "c",
+          "text": "Third-party software support",
+          "correct": false,
+          "rationale": "Support for third-party software components is a paid plan feature."
+        },
+        {
+          "id": "d",
+          "text": "Support for account and billing questions",
+          "correct": true,
+          "rationale": "Basic Support includes one-on-one responses to account and billing questions for all customers."
+        }
+      ],
+      "explanation": "Every AWS account includes Basic Support at no charge. It provides 24x7 help with account and billing questions, access to support forums, service health checks, documentation, whitepapers and best practice guides, plus a limited set of Trusted Advisor checks. Technical support cases with engineers, third-party software support and a designated Technical Account Manager are available only on paid plans.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+          "title": "AWS Support Plans - AWS Support"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/plans/",
+          "title": "AWS Support plan comparison – AWS Support features – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs production workloads and needs a designated Technical Account Manager and the fastest response times for production-critical cases. Which AWS Support plan meets these requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Enterprise Support",
+          "correct": true,
+          "rationale": "Enterprise Support provides a designated TAM and the fastest response time for production-critical cases."
+        },
+        {
+          "id": "b",
+          "text": "Basic Support",
+          "correct": false,
+          "rationale": "Basic Support offers no technical cases and no TAM."
+        },
+        {
+          "id": "c",
+          "text": "AWS Business Support+",
+          "correct": false,
+          "rationale": "Business Support+ offers 24x7 engineer access but does not include a designated TAM."
+        },
+        {
+          "id": "d",
+          "text": "AWS Marketplace support",
+          "correct": false,
+          "rationale": "Marketplace is a software catalog and is not an AWS Support plan."
+        }
+      ],
+      "explanation": "AWS Support plans scale with the criticality of workloads. Basic Support is free for all accounts. AWS Business Support+ adds 24x7 access to Cloud Support Engineers and the full Trusted Advisor checks. AWS Enterprise Support adds a designated Technical Account Manager, the quickest production-critical response, strategic reviews and event support through AWS Countdown. AWS Unified Operations goes further for mission-critical workloads. A named TAM is the key signal for Enterprise-level plans.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+          "title": "AWS Support Plans - AWS Support"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/plans/",
+          "title": "AWS Support plan comparison – AWS Support features – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company needs a team of AWS experts to work alongside its engineers on a hands-on project to design and deliver a complex migration. Which AWS offering fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Support Center",
+          "correct": false,
+          "rationale": "The Support Center is where cases are created and does not provide a project delivery team."
+        },
+        {
+          "id": "b",
+          "text": "AWS Knowledge Center",
+          "correct": false,
+          "rationale": "The Knowledge Center provides self-service articles and does not staff projects."
+        },
+        {
+          "id": "c",
+          "text": "AWS Professional Services",
+          "correct": true,
+          "rationale": "AWS Professional Services is a global team that works with customers on projects such as migrations."
+        },
+        {
+          "id": "d",
+          "text": "AWS Health API",
+          "correct": false,
+          "rationale": "The AWS Health API exposes health events and does not deliver projects."
+        }
+      ],
+      "explanation": "AWS offers several kinds of technical assistance. AWS Professional Services is a global team of AWS experts who partner with customers on hands-on projects such as migration and modernization. AWS solutions architects provide architecture guidance. Support plans give case-based help and, at higher tiers, a TAM. Self-service resources like the Knowledge Center answer questions but do not staff projects. A project delivery need points to Professional Services or a partner.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/partners/",
+          "title": "Become an AWS Partner | AWS Partner Network"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/",
+          "title": "AI-powered cloud support – AWS Support plans – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company lacks the staff to move its data center to AWS and wants an AWS Partner to design, migrate and run the workloads. Which type of AWS Partner should it engage?",
+      "options": [
+        {
+          "id": "a",
+          "text": "An independent software vendor",
+          "correct": false,
+          "rationale": "An ISV builds and sells software; migration and operations are not its main role."
+        },
+        {
+          "id": "b",
+          "text": "A Support plan reseller",
+          "correct": false,
+          "rationale": "Reselling a plan does not describe designing and delivering a migration."
+        },
+        {
+          "id": "c",
+          "text": "An AWS Marketplace buyer",
+          "correct": false,
+          "rationale": "A buyer purchases from the Marketplace and does not deliver services."
+        },
+        {
+          "id": "d",
+          "text": "A system integrator",
+          "correct": true,
+          "rationale": "System integrators design, build, migrate and manage workloads for customers on AWS."
+        }
+      ],
+      "explanation": "The AWS Partner Network includes companies with different roles. Independent software vendors build software products that run on or integrate with AWS and often sell through AWS Marketplace. System integrators and consulting partners provide services such as architecture design, migration and managed operations. When a customer needs people to do the work rather than a product to buy, a system integrator is the match.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/partners/",
+          "title": "Become an AWS Partner | AWS Partner Network"
+        },
+        {
+          "url": "https://aws.amazon.com/marketplace",
+          "title": "AWS Marketplace: Homepage"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants automated recommendations on idle resources and underused instances to reduce costs. Which AWS tool provides these recommendations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Health Dashboard",
+          "correct": false,
+          "rationale": "The Health Dashboard reports events affecting your resources and does not check for waste."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor",
+          "correct": true,
+          "rationale": "Trusted Advisor inspects the account and recommends actions, including cost optimization."
+        },
+        {
+          "id": "c",
+          "text": "AWS Support Center",
+          "correct": false,
+          "rationale": "The Support Center manages cases and does not analyze your resources."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trust and Safety",
+          "correct": false,
+          "rationale": "The Trust and Safety team handles abuse reports and gives no cost advice."
+        }
+      ],
+      "explanation": "AWS Trusted Advisor inspects your AWS environment and recommends ways to save money, improve availability and performance, and close security gaps. Cost optimization checks flag idle or underused resources. Basic Support includes only a limited set of checks, while AWS Business Support+, Enterprise Support and Unified Operations provide the full set. Do not confuse it with the AWS Health Dashboard, which reports events that affect your resources.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+          "title": "AWS Trusted Advisor - AWS Support"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/",
+          "title": "Best Practice Guidance for AWS Optimization - AWS Trusted Advisor"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants a personalized view of AWS service events and scheduled maintenance that affect its own resources. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Health Dashboard",
+          "correct": true,
+          "rationale": "The AWS Health Dashboard shows events and scheduled changes that affect your own AWS resources and accounts."
+        },
+        {
+          "id": "b",
+          "text": "AWS Marketplace",
+          "correct": false,
+          "rationale": "The Marketplace is a software catalog and shows no event information."
+        },
+        {
+          "id": "c",
+          "text": "AWS Whitepapers & Guides",
+          "correct": false,
+          "rationale": "Whitepapers are static documents and are not tailored to your resources."
+        },
+        {
+          "id": "d",
+          "text": "AWS Partner Network",
+          "correct": false,
+          "rationale": "The Partner Network is a partner program and does not report events."
+        }
+      ],
+      "explanation": "The AWS Health Dashboard provides personalized information about events that can affect your AWS resources, such as service issues and scheduled maintenance, so you can plan and respond. This is different from a general status page, because it is tied to the resources and accounts you use. The AWS Health API exposes the same kind of information programmatically for automation.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+          "title": "AWS Support Plans - AWS Support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+          "title": "AWS Trusted Advisor - AWS Support"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An operations team wants to pull AWS health events into its existing monitoring and ticketing tools automatically. Which option should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Trusted Advisor console",
+          "correct": false,
+          "rationale": "The Trusted Advisor console shows optimization recommendations rather than health events for tool integration."
+        },
+        {
+          "id": "b",
+          "text": "AWS Knowledge Center",
+          "correct": false,
+          "rationale": "The Knowledge Center is a library of articles and cannot feed events to other tools."
+        },
+        {
+          "id": "c",
+          "text": "AWS Health API",
+          "correct": true,
+          "rationale": "The AWS Health API provides programmatic access to health events for integration with other tools."
+        },
+        {
+          "id": "d",
+          "text": "AWS re:Post",
+          "correct": false,
+          "rationale": "re:Post is a community Q&A site and does not deliver events."
+        }
+      ],
+      "explanation": "The AWS Health API gives programmatic access to the information shown in the AWS Health Dashboard. Teams use it to integrate event information into their own monitoring, chat or ticketing systems so they can react without watching a dashboard. Choose the dashboard for humans reviewing events, and the API when automation is the requirement.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+          "title": "AWS Support Plans - AWS Support"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+          "title": "AWS Trusted Advisor - AWS Support"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A developer on a team with a paid support plan needs to open a technical case with an AWS support engineer. Where should the case be created?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Marketplace",
+          "correct": false,
+          "rationale": "The Marketplace is for purchasing software and does not manage support cases."
+        },
+        {
+          "id": "b",
+          "text": "AWS Whitepapers & Guides",
+          "correct": false,
+          "rationale": "Whitepapers are documents and cannot be used to open cases."
+        },
+        {
+          "id": "c",
+          "text": "AWS Blogs",
+          "correct": false,
+          "rationale": "Blogs publish news and examples and offer no case management."
+        },
+        {
+          "id": "d",
+          "text": "AWS Support Center",
+          "correct": true,
+          "rationale": "The AWS Support Center is where customers create and manage support cases."
+        }
+      ],
+      "explanation": "The AWS Support Center is the place in the AWS Management Console to create, view and manage support cases. Which kinds of cases you can open depends on your plan: Basic Support covers account and billing questions, while paid plans add technical cases with Cloud Support Engineers. Documentation, blogs and community forums are self-service resources and do not create cases with AWS staff.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+          "title": "AWS Support Plans - AWS Support"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/",
+          "title": "AI-powered cloud support – AWS Support plans – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company runs mission-critical applications and wants designated specialist engineers, application-specific architecture guidance and the quickest incident engagement. Which plan fits better than AWS Enterprise Support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Business Support+",
+          "correct": false,
+          "rationale": "Business Support+ has no designated specialists and is a lower tier than Enterprise Support."
+        },
+        {
+          "id": "b",
+          "text": "AWS Unified Operations",
+          "correct": true,
+          "rationale": "Unified Operations adds Domain Specialist Engineers, architecture guidance and critical workload reviews for mission-critical workloads."
+        },
+        {
+          "id": "c",
+          "text": "Basic Support",
+          "correct": false,
+          "rationale": "Basic Support does not offer technical cases or designated engineers."
+        },
+        {
+          "id": "d",
+          "text": "AWS Professional Services",
+          "correct": false,
+          "rationale": "Professional Services delivers projects but is not a support plan with incident engagement."
+        }
+      ],
+      "explanation": "AWS Unified Operations sits above Enterprise Support. It targets mission-critical workloads and adds a designated TAM with Domain Specialist Engineers, application architecture guidance, critical workload reviews with personalized runbooks, and the fastest incident engagement. Enterprise Support already provides a TAM and fast response, but not application-specific specialists. When the stem stresses mission-critical resilience and specialists, choose Unified Operations.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+          "title": "AWS Support Plans - AWS Support"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/plans/",
+          "title": "AWS Support plan comparison – AWS Support features – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company wants to buy a third-party security appliance from an independent software vendor with the charges added to its AWS bill and purchases limited to approved products. Which AWS offering supports this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Partner Network",
+          "correct": false,
+          "rationale": "The Partner Network is a program for partner companies and is not where customers purchase software."
+        },
+        {
+          "id": "b",
+          "text": "AWS Professional Services",
+          "correct": false,
+          "rationale": "Professional Services provides expert project help and does not sell ISV software."
+        },
+        {
+          "id": "c",
+          "text": "AWS Marketplace",
+          "correct": true,
+          "rationale": "AWS Marketplace sells ISV software, with governance and control features and charges tied to AWS billing."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor recommends optimizations and does not sell products."
+        }
+      ],
+      "explanation": "AWS Marketplace is the catalog where customers buy software from independent software vendors. It supports governance and control over what can be purchased and cost management tools, and purchases appear with AWS charges. The AWS Partner Network is the program that the ISVs belong to, so it is related but is not the purchasing channel. Professional Services and Trusted Advisor are not product catalogs.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/marketplace",
+          "title": "AWS Marketplace: Homepage"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html",
+          "title": "What is AWS Billing and Cost Management? - AWS Billing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team wants to review AWS reference architecture diagrams and best practices for building a web application. Which official resource should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Trust and Safety",
+          "correct": false,
+          "rationale": "This team handles abuse reports and publishes no architectures."
+        },
+        {
+          "id": "b",
+          "text": "AWS Health API",
+          "correct": false,
+          "rationale": "The Health API returns event data and not design guidance."
+        },
+        {
+          "id": "c",
+          "text": "AWS Support Center",
+          "correct": false,
+          "rationale": "The Support Center manages cases and does not host architecture content."
+        },
+        {
+          "id": "d",
+          "text": "AWS Architecture Center",
+          "correct": true,
+          "rationale": "The AWS Architecture Center provides reference architecture examples and best practices."
+        }
+      ],
+      "explanation": "AWS publishes design guidance on its official sites. The Architecture Center offers reference architecture diagrams and best practices for common workloads, whitepapers go deeper into specific topics, and blogs give worked examples. Support and health tools address operating your existing account instead of designing something new.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/architecture/",
+          "title": "Reference Architecture Examples and Best Practices"
+        },
+        {
+          "url": "https://aws.amazon.com/whitepapers/",
+          "title": "AWS Whitepapers & Guides"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO features are included for all AWS customers under Basic Support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A designated Technical Account Manager",
+          "correct": false,
+          "rationale": "A designated TAM is available only on Enterprise-level plans."
+        },
+        {
+          "id": "b",
+          "text": "Service health checks",
+          "correct": true,
+          "rationale": "Basic Support includes service health checks for all customers."
+        },
+        {
+          "id": "c",
+          "text": "24x7 chat access to Cloud Support Engineers",
+          "correct": false,
+          "rationale": "Chat access to engineers requires a paid support plan."
+        },
+        {
+          "id": "d",
+          "text": "One-on-one responses to account and billing questions",
+          "correct": true,
+          "rationale": "Account and billing help is part of Basic Support."
+        },
+        {
+          "id": "e",
+          "text": "Third-party software support",
+          "correct": false,
+          "rationale": "Support for third-party software is a paid plan feature."
+        }
+      ],
+      "explanation": "Basic Support is provided to every AWS account at no charge. It covers one-on-one responses to account and billing questions, support forums, service health checks, and documentation, whitepapers and best practice guides, along with a limited set of Trusted Advisor checks. Direct technical help from Cloud Support Engineers, third-party software support and a TAM are reserved for paid plans, which is why distractors naming those features are wrong.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html",
+          "title": "AWS Support Plans - AWS Support"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/plans/",
+          "title": "AWS Support plan comparison – AWS Support features – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is evaluating AWS Marketplace for procurement. Which TWO capabilities does AWS Marketplace offer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Governance and control features over purchases",
+          "correct": true,
+          "rationale": "Marketplace offers governance and control features for managing what can be bought."
+        },
+        {
+          "id": "b",
+          "text": "Penetration testing of purchased software",
+          "correct": false,
+          "rationale": "Marketplace does not automatically test purchased software."
+        },
+        {
+          "id": "c",
+          "text": "Free upgrades to AWS Enterprise Support",
+          "correct": false,
+          "rationale": "Buying software does not upgrade a support plan."
+        },
+        {
+          "id": "d",
+          "text": "Training and certification for employees",
+          "correct": false,
+          "rationale": "Training is separate from the Marketplace."
+        },
+        {
+          "id": "e",
+          "text": "Cost management tools for software spend",
+          "correct": true,
+          "rationale": "Marketplace provides cost management tools for tracking software purchases."
+        }
+      ],
+      "explanation": "AWS Marketplace is a digital catalog for finding, buying and deploying third-party software from independent software vendors and partners. For customers it adds governance and control features, which help organizations limit and approve what can be purchased, and cost management tools to track spend. It does not change support plans, certify staff or test software for you. Those needs are met by other AWS offerings.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/marketplace",
+          "title": "AWS Marketplace: Homepage"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html",
+          "title": "What is AWS Billing and Cost Management? - AWS Billing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company wants direct technical assistance from AWS for designing and implementing a new workload. Which TWO options provide this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Trust and Safety team",
+          "correct": false,
+          "rationale": "This team handles abuse reports and does not help design workloads."
+        },
+        {
+          "id": "b",
+          "text": "AWS Health Dashboard",
+          "correct": false,
+          "rationale": "The dashboard reports events and gives no design help."
+        },
+        {
+          "id": "c",
+          "text": "AWS Professional Services",
+          "correct": true,
+          "rationale": "Professional Services works with customers on hands-on projects."
+        },
+        {
+          "id": "d",
+          "text": "AWS Marketplace",
+          "correct": false,
+          "rationale": "The Marketplace sells software and does not provide AWS expert assistance."
+        },
+        {
+          "id": "e",
+          "text": "AWS solutions architects",
+          "correct": true,
+          "rationale": "AWS solutions architects provide architecture guidance."
+        }
+      ],
+      "explanation": "AWS provides people-based technical assistance in addition to self-service documentation. AWS Professional Services is a team of experts that partners with customers on projects, and AWS solutions architects provide guidance on designing architectures. By contrast, the Trust and Safety team deals with abuse, the Health Dashboard reports events and Marketplace is a software catalog. Matching the stated need to the right team is the pattern the exam tests.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/partners/",
+          "title": "Become an AWS Partner | AWS Partner Network"
+        },
+        {
+          "url": "https://aws.amazon.com/premiumsupport/",
+          "title": "AI-powered cloud support – AWS Support plans – AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.3-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company is considering joining the AWS Partner Network. Which THREE benefits can AWS Partners receive?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Partner training and certification",
+          "correct": true,
+          "rationale": "Partners can use training and certification to build skills on AWS."
+        },
+        {
+          "id": "b",
+          "text": "Removal of their responsibilities under the shared responsibility model",
+          "correct": false,
+          "rationale": "No program removes customer responsibilities for what they run on AWS."
+        },
+        {
+          "id": "c",
+          "text": "Partner events",
+          "correct": true,
+          "rationale": "Partners can take part in AWS partner events."
+        },
+        {
+          "id": "d",
+          "text": "Free AWS Enterprise Support on every account",
+          "correct": false,
+          "rationale": "Partnership does not include free support plans for all accounts."
+        },
+        {
+          "id": "e",
+          "text": "Automatic approval of every Marketplace listing",
+          "correct": false,
+          "rationale": "Listings are not automatically approved."
+        },
+        {
+          "id": "f",
+          "text": "Partner volume discounts",
+          "correct": true,
+          "rationale": "Volume discounts are a benefit offered to partners."
+        }
+      ],
+      "explanation": "The AWS Partner Network supports companies such as independent software vendors and system integrators that build on and sell with AWS. Benefits include partner training and certification, partner events and volume discounts. Being a partner does not change the shared responsibility model, grant free support plans or guarantee Marketplace listings, which would contradict how AWS programs work. Learn the benefit list as it appears in the exam guide.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/partners/",
+          "title": "Become an AWS Partner | AWS Partner Network"
+        },
+        {
+          "url": "https://aws.amazon.com/marketplace",
+          "title": "AWS Marketplace: Homepage"
+        }
+      ]
+    }
+  ]
+}
