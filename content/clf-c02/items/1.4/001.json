@@ -1,0 +1,932 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "1.4",
+  "items": [
+    {
+      "id": "clf-c02-1.4-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A startup wants to avoid buying servers before it knows how popular its application will be. Which cost model does the AWS Cloud offer to support this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fixed capital expense paid before launch",
+          "correct": false,
+          "rationale": "Capital expense means paying up front for assets, which is the on-premises model the startup wants to avoid."
+        },
+        {
+          "id": "b",
+          "text": "Variable expense that scales with usage",
+          "correct": true,
+          "rationale": "Pay-as-you-go pricing turns up-front capital expense into variable expense, so the startup pays only for what it consumes."
+        },
+        {
+          "id": "c",
+          "text": "A flat monthly fee regardless of usage",
+          "correct": false,
+          "rationale": "Most AWS services are billed by consumption, not a flat fee unrelated to how much is used."
+        },
+        {
+          "id": "d",
+          "text": "A mandatory three-year hardware lease",
+          "correct": false,
+          "rationale": "AWS does not require hardware leases; resources are provisioned on demand."
+        }
+      ],
+      "explanation": "Cloud economics replaces fixed, up-front capital expense with variable expense. In an on-premises model a company buys servers before it knows its demand and carries that cost whether or not the servers are busy. With AWS, resources are rented on demand and billed for actual consumption, so spending rises and falls with usage. This lowers financial risk for new projects because there is no large investment to recover if demand turns out to be small.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/economics/",
+          "title": "Learn Cloud Economics - Value of Cloud - Cloud ROI Framework - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Why can AWS offer lower pay-as-you-go prices than most customers could achieve by running their own data centers?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS does not pay for electricity or hardware",
+          "correct": false,
+          "rationale": "AWS pays for power, facilities, and hardware like any large operator, so this is not the reason."
+        },
+        {
+          "id": "b",
+          "text": "AWS only serves customers with small workloads",
+          "correct": false,
+          "rationale": "AWS serves customers of every size, and this does not explain lower prices."
+        },
+        {
+          "id": "c",
+          "text": "Aggregate usage from hundreds of thousands of customers gives AWS economies of scale",
+          "correct": true,
+          "rationale": "Combined demand lets AWS buy at volume and run efficiently, and it passes savings on as lower prices."
+        },
+        {
+          "id": "d",
+          "text": "Customers must commit to long contracts for every service",
+          "correct": false,
+          "rationale": "Many services are pay-as-you-go with no long-term commitment, so contracts are not the source of the savings."
+        }
+      ],
+      "explanation": "Economies of scale means that unit costs fall as volume grows. Because AWS aggregates the usage of a very large number of customers, it can negotiate better hardware prices, run data centers more efficiently, and spread fixed investments across many users. These savings are passed on to customers in the form of lower pay-as-you-go prices, and AWS has reduced prices many times. A single company running its own data center rarely reaches comparable scale.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which term describes matching instance types and sizes to the actual CPU and memory needs of a workload to avoid paying for unused capacity?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rightsizing",
+          "correct": true,
+          "rationale": "Rightsizing means choosing resource sizes that fit measured workload needs so no capacity is wasted."
+        },
+        {
+          "id": "b",
+          "text": "Cross-region replication",
+          "correct": false,
+          "rationale": "Replication copies data between Regions for resilience and does not adjust resource sizes."
+        },
+        {
+          "id": "c",
+          "text": "Vertical partitioning",
+          "correct": false,
+          "rationale": "This is a database design technique and has no link to matching resources with demand."
+        },
+        {
+          "id": "d",
+          "text": "Capacity hoarding",
+          "correct": false,
+          "rationale": "This is not an AWS cost concept; reserving more than needed is what rightsizing avoids."
+        }
+      ],
+      "explanation": "Rightsizing is the practice of selecting the instance type and size that matches the real performance needs of a workload at the lowest cost. Teams that provision for guessed peaks often end up with resources that sit mostly idle, and they pay for that unused capacity. Reviewing utilization metrics and resizing, either down or up, removes the waste. It is a core part of the Cost Optimization pillar of the AWS Well-Architected Framework and can be repeated as demand changes.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://aws.amazon.com/compute-optimizer/",
+          "title": "Web Optimizer - Workload Rightsizing - AWS Compute Optimizer - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company has existing software licenses and wants to run that software on AWS using those licenses. What is this licensing strategy called?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Included license",
+          "correct": false,
+          "rationale": "With an included license the license cost is bundled into the AWS usage price, so the company would not use its own."
+        },
+        {
+          "id": "b",
+          "text": "Pay-per-use subscription",
+          "correct": false,
+          "rationale": "This describes metered billing and not the use of licenses a company already owns."
+        },
+        {
+          "id": "c",
+          "text": "Consumption-based tiering",
+          "correct": false,
+          "rationale": "This is not a licensing model for existing licenses."
+        },
+        {
+          "id": "d",
+          "text": "Bring Your Own License (BYOL)",
+          "correct": true,
+          "rationale": "BYOL lets a company apply eligible licenses it already owns to resources on AWS, subject to the vendor's terms."
+        }
+      ],
+      "explanation": "Software on AWS can be licensed in two broad ways. With license-included, the license fee is part of the hourly price of the resource, so there is nothing to buy separately. With Bring Your Own License (BYOL), a customer uses licenses it already owns, which can reduce spending when the company has already paid for them. BYOL eligibility depends on the software vendor's terms, so customers should confirm that their licenses may be used in the cloud.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/economics/",
+          "title": "Learn Cloud Economics - Value of Cloud - Cloud ROI Framework - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which of the following is a cost that a company typically carries when it runs its own on-premises data center, but does not pay directly when using AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Application development salaries",
+          "correct": false,
+          "rationale": "The company still employs developers for its applications when it uses AWS."
+        },
+        {
+          "id": "b",
+          "text": "Power, cooling, and physical facility costs",
+          "correct": true,
+          "rationale": "The company pays these directly on premises, while AWS runs and pays for facilities and builds this cost into service prices."
+        },
+        {
+          "id": "c",
+          "text": "Charges for data stored in Amazon S3",
+          "correct": false,
+          "rationale": "This is an AWS usage charge and not an on-premises cost."
+        },
+        {
+          "id": "d",
+          "text": "Fees for Amazon EC2 instance hours",
+          "correct": false,
+          "rationale": "This is an AWS usage charge and not an on-premises cost."
+        }
+      ],
+      "explanation": "Total cost of ownership for on-premises infrastructure includes much more than server hardware. Companies also pay for real estate, power, cooling, physical security, networking equipment, hardware refresh cycles, and the staff who maintain them. Many of these costs are fixed and hard to see in a simple price comparison. When moving to AWS, the company no longer carries the data center overhead directly; it pays for the services it consumes instead.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/economics/",
+          "title": "Learn Cloud Economics - Value of Cloud - Cloud ROI Framework - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is a benefit of using automation to provision and manage cloud infrastructure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It guarantees that infrastructure never needs monitoring",
+          "correct": false,
+          "rationale": "Automation does not remove the need to monitor; it only reduces manual effort."
+        },
+        {
+          "id": "b",
+          "text": "It removes all costs associated with the infrastructure",
+          "correct": false,
+          "rationale": "Resources provisioned by automation still incur usage charges."
+        },
+        {
+          "id": "c",
+          "text": "It reduces manual errors and makes deployments repeatable",
+          "correct": true,
+          "rationale": "Scripted or templated provisioning does the same thing every time, which reduces human error and saves effort."
+        },
+        {
+          "id": "d",
+          "text": "It transfers security responsibility to AWS",
+          "correct": false,
+          "rationale": "Shared responsibility does not change because deployments are automated."
+        }
+      ],
+      "explanation": "Automation means using code and tools, such as AWS CloudFormation templates or scheduled actions, to create and manage resources instead of doing it by hand. It makes deployments consistent and repeatable, reduces human error, speeds up delivery, and frees staff for higher-value work, all of which lowers operating cost. It does not eliminate resource charges, remove the need for monitoring, or change which security tasks belong to the customer.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs a fleet of Amazon EC2 instances and wants recommendations for moving each to a more cost-effective instance type based on its measured utilization. Which AWS service should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Compute Optimizer",
+          "correct": true,
+          "rationale": "Compute Optimizer analyzes utilization metrics and recommends optimal resource sizes."
+        },
+        {
+          "id": "b",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "Pricing Calculator estimates the cost of planned usage and does not analyze running resources."
+        },
+        {
+          "id": "c",
+          "text": "AWS CloudFormation",
+          "correct": false,
+          "rationale": "CloudFormation provisions infrastructure from templates and gives no rightsizing advice."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Route 53",
+          "correct": false,
+          "rationale": "Route 53 is a DNS service and has no cost recommendation function."
+        }
+      ],
+      "explanation": "AWS Compute Optimizer reviews historical utilization metrics of resources such as Amazon EC2 instances and recommends sizes that better match the workload. It flags over-provisioned resources that waste money and under-provisioned ones that risk performance. This makes rightsizing a data-driven task and not a guess. AWS Pricing Calculator, in contrast, estimates costs for planned usage before deployment and does not examine resources that are already running.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/compute-optimizer/",
+          "title": "Web Optimizer - Workload Rightsizing - AWS Compute Optimizer - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A retailer cannot predict how much capacity its new website will need and is afraid of buying too much or too little hardware. Which benefit of cloud computing addresses this concern?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduced need for software licenses",
+          "correct": false,
+          "rationale": "Licensing is unrelated to the problem of not knowing how much capacity to buy."
+        },
+        {
+          "id": "b",
+          "text": "A fixed price for each server",
+          "correct": false,
+          "rationale": "A fixed price does not help the company match capacity to unpredictable demand."
+        },
+        {
+          "id": "c",
+          "text": "Ownership of the physical data center",
+          "correct": false,
+          "rationale": "Ownership would increase the capacity-planning burden and not remove it."
+        },
+        {
+          "id": "d",
+          "text": "Stop guessing capacity by scaling resources up and down on demand",
+          "correct": true,
+          "rationale": "Elasticity lets the retailer add or remove capacity as demand changes, so it avoids over- or under-buying."
+        }
+      ],
+      "explanation": "One of the six advantages of cloud computing is that you can stop guessing capacity. On premises, teams must estimate peak demand months ahead, which often leaves expensive hardware idle or causes shortages during spikes. With AWS you can provision resources in minutes and scale them up or down as demand changes, paying only for what is running. This lowers cost and reduces the risk of poor customer experience.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs Windows Server on Amazon EC2 and does not own any Windows Server licenses. It wants to avoid purchasing licenses separately. Which option fits this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "BYOL with licenses purchased from a reseller",
+          "correct": false,
+          "rationale": "This requires buying licenses separately, which the company wants to avoid."
+        },
+        {
+          "id": "b",
+          "text": "License-included instances, with the license cost in the hourly price",
+          "correct": true,
+          "rationale": "The license is bundled into the EC2 usage price, so no separate purchase is needed."
+        },
+        {
+          "id": "c",
+          "text": "Using an on-premises license server for AWS instances",
+          "correct": false,
+          "rationale": "This adds infrastructure to manage and is not needed when licenses are included."
+        },
+        {
+          "id": "d",
+          "text": "Running the instances without any license",
+          "correct": false,
+          "rationale": "Licensed software must be licensed, so running without one is not an option."
+        }
+      ],
+      "explanation": "AWS offers license-included options for several commercial products, including Windows Server on Amazon EC2. The license fee is built into the per-hour price, so the customer needs no separate purchase or long-term license commitment and pays only while the instance runs. This is attractive for variable or short-lived workloads. Companies that already own eligible licenses might use BYOL instead, if the vendor terms allow it, to avoid paying for the same license twice.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company is planning a migration and wants to estimate the monthly cost of running a proposed architecture on AWS before deploying anything. Which tool should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Compute Optimizer",
+          "correct": false,
+          "rationale": "Compute Optimizer analyzes resources that already run and cannot model a planned architecture."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor checks existing accounts against best practices and is not a pre-deployment estimator."
+        },
+        {
+          "id": "c",
+          "text": "AWS Pricing Calculator",
+          "correct": true,
+          "rationale": "Pricing Calculator lets users model services and configurations to estimate cost before deployment."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudWatch",
+          "correct": false,
+          "rationale": "CloudWatch monitors metrics and logs for running resources and does not estimate planned costs."
+        }
+      ],
+      "explanation": "AWS Pricing Calculator is a free web tool for estimating the cost of AWS services for planned use cases. You add services, configure expected usage, and see a monthly estimate, which can be saved and shared. This supports building a business case and comparing options before spending money. It differs from tools that analyze resources already running, such as Compute Optimizer, and from billing tools that report on actual past spend.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html",
+          "title": "What is AWS Pricing Calculator? - AWS Pricing Calculator"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/what-is-costmanagement.html",
+          "title": "Use AWS Billing and Cost Management for AWS - AWS Cost Management"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company has many developers whose time is spent racking servers and patching hardware. How can moving to AWS improve the company's economics?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Staff can focus on projects that differentiate the business instead of infrastructure",
+          "correct": true,
+          "rationale": "AWS handles the physical infrastructure, so people can shift to work that creates business value."
+        },
+        {
+          "id": "b",
+          "text": "The company no longer needs any technical staff",
+          "correct": false,
+          "rationale": "Customers still design, build, and operate their workloads on AWS."
+        },
+        {
+          "id": "c",
+          "text": "Hardware costs become fixed and predictable",
+          "correct": false,
+          "rationale": "Cloud costs are mostly variable, so this reverses the actual benefit."
+        },
+        {
+          "id": "d",
+          "text": "The company becomes responsible for the data center's physical security",
+          "correct": false,
+          "rationale": "AWS, not the customer, is responsible for security of its facilities."
+        }
+      ],
+      "explanation": "Running a data center takes significant staff time on undifferentiated tasks such as racking, cabling, and replacing hardware. AWS operates the physical infrastructure, so these tasks disappear from the customer's workload. The people who did them can build features, improve applications, and run experiments that benefit the business. The economic gain is therefore both lower infrastructure overhead and better use of skilled employees, although customers still need technical staff to design and operate their workloads.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/economics/",
+          "title": "Learn Cloud Economics - Value of Cloud - Cloud ROI Framework - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs development environments on Amazon EC2 that are only used during working hours. It uses scheduled automation to stop the instances overnight and on weekends. What is the main cost benefit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The instances become free for the entire month",
+          "correct": false,
+          "rationale": "Stopped instances remove compute charges only while they are stopped; the other hours are still billed."
+        },
+        {
+          "id": "b",
+          "text": "The company's fixed costs increase",
+          "correct": false,
+          "rationale": "Scheduling stops usage-based charges, so it does not raise fixed costs."
+        },
+        {
+          "id": "c",
+          "text": "Security responsibility moves to AWS",
+          "correct": false,
+          "rationale": "Automation does not change the shared responsibility model."
+        },
+        {
+          "id": "d",
+          "text": "The company avoids paying for compute capacity while it sits idle",
+          "correct": true,
+          "rationale": "Compute is billed by usage, so stopping idle instances automatically removes those charges."
+        }
+      ],
+      "explanation": "Because most AWS compute is billed for the time it runs, idle resources are pure waste. Automation, such as scheduled start and stop actions, makes sure non-production environments only run when people need them, without relying on someone remembering to shut them off. Consistent automation saves more than manual effort because it never forgets. Storage attached to stopped instances can still incur charges, so the saving applies to compute, not to everything.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An Amazon EC2 instance has averaged about 8 percent CPU utilization and low memory use for several months. What is the best way to lower its cost while still meeting the workload's needs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Move to a larger instance type for future growth",
+          "correct": false,
+          "rationale": "A larger type adds cost for capacity the workload does not use."
+        },
+        {
+          "id": "b",
+          "text": "Add more instances behind a load balancer",
+          "correct": false,
+          "rationale": "This raises cost and does not address the oversized instance."
+        },
+        {
+          "id": "c",
+          "text": "Move to a smaller instance type that matches the usage",
+          "correct": true,
+          "rationale": "Measured utilization is low, so a smaller type meets the need at lower cost, which is rightsizing."
+        },
+        {
+          "id": "d",
+          "text": "Leave it unchanged because instance size does not affect price",
+          "correct": false,
+          "rationale": "Larger instance types cost more, so size has a direct effect on price."
+        }
+      ],
+      "explanation": "Rightsizing starts with measured utilization. Several months of very low CPU and memory use is clear evidence that the instance is over-provisioned, so selecting a smaller type lowers the hourly price while still serving the workload. Teams should check peaks, not only averages, and then confirm performance after the change. Services like AWS Compute Optimizer can automate the analysis. Rightsizing is a continuing process because workload needs change over time.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/compute-optimizer/",
+          "title": "Web Optimizer - Workload Rightsizing - AWS Compute Optimizer - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "Which pillar of the AWS Well-Architected Framework focuses on delivering business value at the lowest price point by avoiding unnecessary costs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reliability",
+          "correct": false,
+          "rationale": "Reliability focuses on recovering from failure and meeting demand, not on minimizing spend."
+        },
+        {
+          "id": "b",
+          "text": "Operational Excellence",
+          "correct": false,
+          "rationale": "Operational Excellence focuses on running and improving workloads, not on cost."
+        },
+        {
+          "id": "c",
+          "text": "Performance Efficiency",
+          "correct": false,
+          "rationale": "Performance Efficiency focuses on using resources efficiently for performance, not on minimizing spend."
+        },
+        {
+          "id": "d",
+          "text": "Cost Optimization",
+          "correct": true,
+          "rationale": "Cost Optimization is the pillar for avoiding unnecessary costs and delivering value at the lowest price."
+        }
+      ],
+      "explanation": "The AWS Well-Architected Framework has pillars that guide the design of workloads. Cost Optimization is the pillar about running systems that deliver business value at the lowest price point. Its practices include financial management, awareness of spending, choosing cost-effective resources, matching supply to demand, and optimizing over time. Rightsizing, pay-as-you-go consumption, and automation all support this pillar, which makes it central to understanding the economics of the cloud.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://aws.amazon.com/economics/",
+          "title": "Learn Cloud Economics - Value of Cloud - Cloud ROI Framework - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company owns Microsoft SQL Server licenses that it bought before moving to the cloud. It is migrating its databases to AWS and wants the lowest long-term licensing spend. The vendor terms allow the licenses to be used on AWS. Which approach should the company evaluate first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Include new licenses in the hourly price",
+          "correct": false,
+          "rationale": "This would pay for the license a second time because the company already owns eligible licenses."
+        },
+        {
+          "id": "b",
+          "text": "Use its existing licenses with a Bring Your Own License model",
+          "correct": true,
+          "rationale": "Reusing eligible licenses avoids paying for the same license twice and can lower spending."
+        },
+        {
+          "id": "c",
+          "text": "Stop using licensed software altogether",
+          "correct": false,
+          "rationale": "This is not required, and it ignores that the company may need that software."
+        },
+        {
+          "id": "d",
+          "text": "Delay migration until licenses expire",
+          "correct": false,
+          "rationale": "Delay is unnecessary because the stated terms already allow use on AWS."
+        }
+      ],
+      "explanation": "Licensing strategy can change the economics of a migration. When a company already owns licenses that may be used on AWS, applying them through a Bring Your Own License model avoids paying again for a license bundled into an hourly price. When it owns none, or when its workload is short-lived or variable, license-included pricing can be cheaper and simpler. The deciding factors are what the company already owns, what the vendor terms permit, and how long the workload will run.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/economics/",
+          "title": "Learn Cloud Economics - Value of Cloud - Cloud ROI Framework - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company provisions its servers for a sales event that happens five days a year, so most capacity sits idle the rest of the year. It wants to pay for peak capacity only when needed without manual effort. Which approach best meets the requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Buy more servers on premises for next year's event",
+          "correct": false,
+          "rationale": "This repeats the fixed-cost problem and leaves capacity idle most of the year."
+        },
+        {
+          "id": "b",
+          "text": "Rightsize to the average load and accept slower performance during the event",
+          "correct": false,
+          "rationale": "Sizing to the average would hurt performance during the event, which the company wants to avoid."
+        },
+        {
+          "id": "c",
+          "text": "Keep the current capacity and negotiate a lower hardware price",
+          "correct": false,
+          "rationale": "This still pays for idle capacity for most of the year."
+        },
+        {
+          "id": "d",
+          "text": "Use automated scaling to add capacity during the event and remove it afterward",
+          "correct": true,
+          "rationale": "Automation matches capacity to demand, so peak capacity is paid for only while needed."
+        }
+      ],
+      "explanation": "Both rightsizing and automation reduce waste, but they solve different problems. Rightsizing picks the right size for a steady load. For demand that spikes briefly, the cost-efficient design is elastic: automatically add capacity when demand rises and remove it when it falls, so peak resources are paid for only while used. This turns a fixed provisioning decision into a variable expense and removes manual effort.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO costs are typically associated with running an on-premises data center?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hourly charges for Amazon EC2 instances",
+          "correct": false,
+          "rationale": "These are AWS charges, not costs of an on-premises data center."
+        },
+        {
+          "id": "b",
+          "text": "Physical security and facility costs",
+          "correct": true,
+          "rationale": "Companies running their own data centers pay for buildings, power, cooling, and security."
+        },
+        {
+          "id": "c",
+          "text": "Charges for data transferred out of AWS",
+          "correct": false,
+          "rationale": "This is an AWS usage charge and does not apply to on-premises operation."
+        },
+        {
+          "id": "d",
+          "text": "Server hardware purchase and refresh",
+          "correct": true,
+          "rationale": "The company must buy servers and replace them as they age, often with large up-front spending."
+        },
+        {
+          "id": "e",
+          "text": "Per-request charges for Amazon S3",
+          "correct": false,
+          "rationale": "This is an AWS usage charge and does not apply to on-premises operation."
+        }
+      ],
+      "explanation": "On-premises infrastructure carries many costs beyond the price of a server. A company must pay for the facility, power, cooling, physical security, networking equipment, and the staff to run it all, and it must buy and later refresh hardware. These are largely fixed costs paid whether or not capacity is used. AWS charges, such as EC2 hours, S3 requests, and data transfer out, are variable costs associated with using the cloud, so they are not part of an on-premises cost model.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/economics/",
+          "title": "Learn Cloud Economics - Value of Cloud - Cloud ROI Framework - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO are benefits of using automation for cloud infrastructure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deployments are consistent and repeatable",
+          "correct": true,
+          "rationale": "Templates and scripts create the same result every time, which makes environments consistent."
+        },
+        {
+          "id": "b",
+          "text": "All variable costs are converted to fixed costs",
+          "correct": false,
+          "rationale": "Automation does not change how AWS bills for usage."
+        },
+        {
+          "id": "c",
+          "text": "Monitoring is no longer required",
+          "correct": false,
+          "rationale": "Automation reduces manual work, but workloads still need monitoring."
+        },
+        {
+          "id": "d",
+          "text": "The customer no longer shares security responsibility",
+          "correct": false,
+          "rationale": "Shared responsibility stays in place regardless of automation."
+        },
+        {
+          "id": "e",
+          "text": "Less staff time is spent on manual, repetitive tasks",
+          "correct": true,
+          "rationale": "Automating routine work saves labor and lets teams focus on higher-value tasks."
+        }
+      ],
+      "explanation": "Automation applies code and tooling to tasks that people would otherwise do by hand, such as creating environments from AWS CloudFormation templates or starting and stopping resources on a schedule. The main benefits are consistent, repeatable deployments with fewer human errors and less staff time spent on routine work. Automation does not change the pricing model, remove the need to monitor workloads, or shift security duties; it only changes how work gets done.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "A company migrated servers to AWS by copying the on-premises specifications exactly, and costs are higher than expected. Which TWO actions will most directly reduce cost?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Provision capacity for peak demand all year",
+          "correct": false,
+          "rationale": "Provisioning for peak all year keeps paying for unused capacity."
+        },
+        {
+          "id": "b",
+          "text": "Move each instance to a larger type to be safe",
+          "correct": false,
+          "rationale": "Larger instances raise cost without evidence that more capacity is needed."
+        },
+        {
+          "id": "c",
+          "text": "Review utilization metrics and downsize over-provisioned instances",
+          "correct": true,
+          "rationale": "On-premises sizing often exceeds need, so downsizing based on metrics removes waste."
+        },
+        {
+          "id": "d",
+          "text": "Use AWS Compute Optimizer recommendations",
+          "correct": true,
+          "rationale": "Compute Optimizer identifies better-fitting sizes from actual utilization data."
+        },
+        {
+          "id": "e",
+          "text": "Keep unattached storage volumes for future use",
+          "correct": false,
+          "rationale": "Unused volumes still incur charges, so keeping them adds cost."
+        }
+      ],
+      "explanation": "Servers sized on premises are often larger than needed, because hardware had to cover peak demand for years. Copying those specifications to the cloud carries the waste along, but in the cloud size can be changed in minutes. Reviewing utilization metrics and using tools such as AWS Compute Optimizer identifies over-provisioned resources so they can be moved to smaller types. Leaving capacity oversized or adding more for safety increases spending, and unused resources continue to be billed.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/compute-optimizer/",
+          "title": "Web Optimizer - Workload Rightsizing - AWS Compute Optimizer - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.4-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which THREE statements describe how moving to AWS can improve a company's economics?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS purchases at scale and passes lower costs to customers",
+          "correct": true,
+          "rationale": "Aggregated demand gives AWS economies of scale, and these savings appear as lower prices."
+        },
+        {
+          "id": "b",
+          "text": "Spending becomes a fixed amount regardless of usage",
+          "correct": false,
+          "rationale": "Most AWS spending varies with consumption, so this is not an accurate benefit."
+        },
+        {
+          "id": "c",
+          "text": "Up-front capital expense is replaced by variable expense",
+          "correct": true,
+          "rationale": "Pay-as-you-go billing means customers do not buy infrastructure before they need it."
+        },
+        {
+          "id": "d",
+          "text": "Every workload is guaranteed to cost less than on premises",
+          "correct": false,
+          "rationale": "No such guarantee exists; cost depends on workload and how well it is optimized."
+        },
+        {
+          "id": "e",
+          "text": "The company stops spending on running and maintaining data centers",
+          "correct": true,
+          "rationale": "AWS operates the facilities, so the customer no longer carries this effort and cost."
+        },
+        {
+          "id": "f",
+          "text": "Long-term contracts are required for every service",
+          "correct": false,
+          "rationale": "Many services have no long-term commitment, so contracts are not a requirement or benefit."
+        }
+      ],
+      "explanation": "AWS describes several economic advantages of the cloud. Trading capital expense for variable expense removes large up-front purchases. Economies of scale lets AWS offer lower pay-as-you-go prices than most companies can reach alone. Not running and maintaining data centers frees money and staff for the business. There are no guarantees that every workload will be cheaper, and billing is usage-based and not fixed, so savings come from using services well, for example through rightsizing and automation.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/economics/",
+          "title": "Learn Cloud Economics - Value of Cloud - Cloud ROI Framework - AWS"
+        }
+      ]
+    }
+  ]
+}

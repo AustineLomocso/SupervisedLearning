@@ -1,0 +1,884 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "2.4",
+  "items": [
+    {
+      "id": "clf-c02-2.4-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to filter incoming HTTP requests to its web application and block requests from specific IP addresses. Which AWS service provides this capability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon GuardDuty",
+          "correct": false,
+          "rationale": "GuardDuty detects threats by analyzing logs but does not filter or block web requests."
+        },
+        {
+          "id": "b",
+          "text": "AWS WAF",
+          "correct": true,
+          "rationale": "AWS WAF lets you create rules that allow, block or count web requests, including by source IP address."
+        },
+        {
+          "id": "c",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor gives best practice recommendations and does not inspect web traffic."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector scans workloads for vulnerabilities and does not filter incoming requests."
+        }
+      ],
+      "explanation": "AWS WAF is a web application firewall that operates at the application layer. You define web access control lists with rules that match IP addresses, HTTP headers, URI strings or request bodies, and choose to allow, block or count matching requests. It attaches to resources such as Amazon CloudFront distributions, Application Load Balancers and Amazon API Gateway APIs. Detection and assessment services such as GuardDuty and Inspector report findings but do not sit in the request path.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html",
+          "title": "AWS WAF - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        },
+        {
+          "url": "https://aws.amazon.com/waf/",
+          "title": "Web Application Firewall - Web API Protection - AWS WAF - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement describes AWS Shield Standard?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It automatically protects all AWS customers against common DDoS attacks at no additional charge.",
+          "correct": true,
+          "rationale": "Shield Standard is enabled for every AWS customer by default and has no separate fee."
+        },
+        {
+          "id": "b",
+          "text": "It is a paid service that must be subscribed to for each account.",
+          "correct": false,
+          "rationale": "The paid tier is AWS Shield Advanced, not Shield Standard."
+        },
+        {
+          "id": "c",
+          "text": "It scans EC2 instances for software vulnerabilities.",
+          "correct": false,
+          "rationale": "Vulnerability scanning is the role of Amazon Inspector."
+        },
+        {
+          "id": "d",
+          "text": "It manages firewall rules across an AWS Organizations environment.",
+          "correct": false,
+          "rationale": "Central rule management across accounts is the role of AWS Firewall Manager."
+        }
+      ],
+      "explanation": "AWS Shield is a managed protection service against distributed denial of service (DDoS) attacks. Shield Standard is included automatically for all customers and defends against the most common network and transport layer attacks. Shield Advanced is an optional paid tier that adds enhanced detection, mitigation support from the AWS Shield Response Team and cost protection for attack-related scaling. Knowing which tier is free and automatic is a frequent exam point.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html",
+          "title": "AWS WAF - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service provides intelligent threat detection by continuously monitoring for malicious activity and unauthorized behavior in an AWS account?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS WAF",
+          "correct": false,
+          "rationale": "AWS WAF filters web requests and does not monitor account activity for threats."
+        },
+        {
+          "id": "b",
+          "text": "AWS Firewall Manager",
+          "correct": false,
+          "rationale": "Firewall Manager deploys firewall rules centrally and does not detect threats."
+        },
+        {
+          "id": "c",
+          "text": "Amazon GuardDuty",
+          "correct": true,
+          "rationale": "GuardDuty analyzes sources such as CloudTrail events, VPC flow logs and DNS logs to find malicious or unauthorized activity."
+        },
+        {
+          "id": "d",
+          "text": "AWS Marketplace",
+          "correct": false,
+          "rationale": "AWS Marketplace is a catalog for buying third-party software, not a detection service."
+        }
+      ],
+      "explanation": "Amazon GuardDuty is a threat detection service. It continuously analyzes data sources including AWS CloudTrail events, VPC flow logs and DNS query logs, and uses threat intelligence and machine learning to identify suspicious activity such as unusual API calls or instances communicating with known malicious addresses. It produces findings but does not block traffic itself. Enabling it requires no agents or changes to your workloads.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html",
+          "title": "What is Amazon GuardDuty? - Amazon GuardDuty"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Where can a company find, buy and deploy third-party security software such as next-generation firewalls and have charges appear on its AWS bill?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Artifact",
+          "correct": false,
+          "rationale": "AWS Artifact provides compliance reports and agreements, not software to purchase."
+        },
+        {
+          "id": "b",
+          "text": "AWS Support Center",
+          "correct": false,
+          "rationale": "The Support Center is for opening cases with AWS, not for buying software."
+        },
+        {
+          "id": "c",
+          "text": "AWS Knowledge Center",
+          "correct": false,
+          "rationale": "The Knowledge Center contains support articles and does not sell software."
+        },
+        {
+          "id": "d",
+          "text": "AWS Marketplace",
+          "correct": true,
+          "rationale": "AWS Marketplace is a digital catalog of third-party software, including security products, billed through AWS."
+        }
+      ],
+      "explanation": "AWS Marketplace is a curated digital catalog where independent software vendors list products that run on or integrate with AWS. Security products such as firewalls, endpoint protection and managed rule sets are available there. Customers can discover, subscribe to and deploy the software quickly, and the charges appear on their AWS bill. For the exam, remember that third-party security products come from AWS Marketplace rather than from a built-in AWS security service.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/marketplace",
+          "title": "AWS Marketplace: Homepage"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A developer wants to read answers to frequently asked AWS support questions, including how to resolve common security configuration issues. Which resource should the developer use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "The Pricing Calculator estimates costs and has no troubleshooting content."
+        },
+        {
+          "id": "b",
+          "text": "AWS Knowledge Center",
+          "correct": true,
+          "rationale": "The Knowledge Center holds articles answering the most common questions from AWS Support, hosted on AWS re:Post."
+        },
+        {
+          "id": "c",
+          "text": "AWS Cost Explorer",
+          "correct": false,
+          "rationale": "Cost Explorer visualizes spending and does not provide support articles."
+        },
+        {
+          "id": "d",
+          "text": "AWS Budgets",
+          "correct": false,
+          "rationale": "Budgets sets cost and usage alerts and does not provide how-to guidance."
+        }
+      ],
+      "explanation": "The AWS Knowledge Center is a collection of articles that answer the most frequent questions customers ask AWS Support, with step-by-step resolutions. It is hosted on AWS re:Post. For security topics it covers items such as fixing access errors or adjusting configurations. Other AWS information sources include the AWS Security Blog for news and best practices and AWS documentation and whitepapers for in-depth reference. Cost tools do not provide troubleshooting content.",
+      "references": [
+        {
+          "url": "https://repost.aws/knowledge-center",
+          "title": "Discover AWS Official Knowledge Center Articles | AWS re:Post"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service inspects an AWS account and provides recommendations that follow AWS best practices, including security checks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Trusted Advisor",
+          "correct": true,
+          "rationale": "Trusted Advisor runs checks across categories such as security and cost optimization and recommends improvements."
+        },
+        {
+          "id": "b",
+          "text": "Amazon GuardDuty",
+          "correct": false,
+          "rationale": "GuardDuty detects active threats and does not provide general best practice checks."
+        },
+        {
+          "id": "c",
+          "text": "AWS Shield",
+          "correct": false,
+          "rationale": "Shield protects against DDoS attacks and does not review account configuration."
+        },
+        {
+          "id": "d",
+          "text": "AWS WAF",
+          "correct": false,
+          "rationale": "WAF filters web requests and does not evaluate account configuration."
+        }
+      ],
+      "explanation": "AWS Trusted Advisor evaluates your AWS environment against AWS best practices and gives recommendations in areas such as cost optimization, performance, security, fault tolerance and service limits. Security checks include examples like security groups that allow unrestricted access and missing multi-factor authentication on the root user. The set of checks available in full depends on your AWS Support plan, with core checks available to everyone.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+          "title": "AWS Trusted Advisor - AWS Support"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company with many AWS accounts in AWS Organizations wants to enforce the same AWS WAF rules on all Application Load Balancers, including those in newly created accounts. Which service should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector scans for vulnerabilities and does not deploy firewall rules."
+        },
+        {
+          "id": "b",
+          "text": "AWS Shield Standard",
+          "correct": false,
+          "rationale": "Shield Standard gives automatic DDoS protection and does not manage WAF rules."
+        },
+        {
+          "id": "c",
+          "text": "AWS Firewall Manager",
+          "correct": true,
+          "rationale": "Firewall Manager centrally configures and enforces firewall rules, such as AWS WAF rules, across accounts and resources."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor recommends improvements and cannot deploy firewall policies."
+        }
+      ],
+      "explanation": "AWS Firewall Manager simplifies administration of firewall protections across many accounts and resources. Using AWS Organizations, an administrator defines security policies once, for example AWS WAF rules, Shield Advanced protections or security group rules. Firewall Manager then applies them to existing resources and to new accounts and resources as they are created. This central enforcement is what distinguishes it from AWS WAF itself, which is configured per web ACL.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html",
+          "title": "AWS Firewall Manager - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A security team wants automated vulnerability scanning of its Amazon EC2 instances to find known software vulnerabilities. Which AWS service meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS WAF",
+          "correct": false,
+          "rationale": "WAF filters web requests and does not scan instances."
+        },
+        {
+          "id": "b",
+          "text": "AWS Shield Advanced",
+          "correct": false,
+          "rationale": "Shield Advanced mitigates DDoS attacks and does not check software for vulnerabilities."
+        },
+        {
+          "id": "c",
+          "text": "AWS Firewall Manager",
+          "correct": false,
+          "rationale": "Firewall Manager manages firewall policies and does not scan workloads."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Inspector",
+          "correct": true,
+          "rationale": "Inspector automatically discovers workloads and scans them for software vulnerabilities and unintended network exposure."
+        }
+      ],
+      "explanation": "Amazon Inspector is an automated vulnerability management service. It discovers Amazon EC2 instances, container images in Amazon ECR and AWS Lambda functions, then scans them for software vulnerabilities and unintended network exposure. Findings are prioritized with a risk score. Inspector looks at weaknesses in your workloads, while a service such as GuardDuty looks for active malicious behavior. Choosing between the two is a common exam pattern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+          "title": "What is Amazon Inspector? - Amazon Inspector"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must block SQL injection and cross-site scripting attempts against its public web application. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS WAF",
+          "correct": true,
+          "rationale": "AWS WAF can inspect requests and block common exploits such as SQL injection and cross-site scripting."
+        },
+        {
+          "id": "b",
+          "text": "Amazon GuardDuty",
+          "correct": false,
+          "rationale": "GuardDuty reports suspicious activity after the fact and does not block requests."
+        },
+        {
+          "id": "c",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor provides recommendations and does not filter traffic."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector finds vulnerabilities in workloads and does not block attacks in the request path."
+        }
+      ],
+      "explanation": "SQL injection and cross-site scripting are application layer attacks carried in HTTP requests. AWS WAF inspects those requests and can block them using rules you write or managed rule groups maintained by AWS and AWS Marketplace sellers. Detection services report issues but do not prevent them in real time, and advisory tools only recommend changes. Matching the attack layer to the service is the key skill here.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html",
+          "title": "AWS WAF - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs several AWS security services and wants a single place to view and prioritize their security findings together. Which service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon GuardDuty",
+          "correct": false,
+          "rationale": "GuardDuty produces its own findings but does not aggregate findings from many services."
+        },
+        {
+          "id": "b",
+          "text": "AWS Security Hub",
+          "correct": true,
+          "rationale": "Security Hub collects and prioritizes findings from AWS services and partner products in one place."
+        },
+        {
+          "id": "c",
+          "text": "AWS Shield",
+          "correct": false,
+          "rationale": "Shield defends against DDoS attacks and does not aggregate findings."
+        },
+        {
+          "id": "d",
+          "text": "AWS Marketplace",
+          "correct": false,
+          "rationale": "Marketplace sells software and does not collect findings."
+        }
+      ],
+      "explanation": "AWS Security Hub gives a consolidated view of your security posture. It aggregates findings from services such as Amazon GuardDuty and Amazon Inspector as well as supported partner products, normalizes them, and helps prioritize them. It can also check your environment against security standards. Individual services like GuardDuty only report on what they themselves detect, so a team using several of them benefits from a central dashboard.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html",
+          "title": "Introduction to AWS Security Hub CSPM - AWS Security Hub"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to quickly learn whether any security groups in its account allow unrestricted access from the internet. Which AWS tool provides this check with no extra setup?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon GuardDuty",
+          "correct": false,
+          "rationale": "GuardDuty detects threats from log analysis and is not a configuration checklist."
+        },
+        {
+          "id": "b",
+          "text": "AWS Shield",
+          "correct": false,
+          "rationale": "Shield mitigates DDoS attacks and does not review security group rules."
+        },
+        {
+          "id": "c",
+          "text": "AWS Trusted Advisor",
+          "correct": true,
+          "rationale": "Trusted Advisor includes security checks that flag security groups with unrestricted access."
+        },
+        {
+          "id": "d",
+          "text": "AWS WAF",
+          "correct": false,
+          "rationale": "WAF filters web requests and does not report on security groups."
+        }
+      ],
+      "explanation": "AWS Trusted Advisor includes a security category with checks for common misconfigurations. One flags security groups that allow unrestricted access to specific ports, and others flag items such as missing multi-factor authentication on the root user or publicly accessible resources. Trusted Advisor requires no agents; it analyzes your account and reports recommendations in the console. It complements detection services by surfacing configuration risks before they are exploited.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+          "title": "AWS Trusted Advisor - AWS Support"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A security officer wants to follow AWS announcements about new security features and read best practice articles written by AWS security experts. Which resource is the best fit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "The Pricing Calculator estimates costs and does not publish security news."
+        },
+        {
+          "id": "b",
+          "text": "AWS Budgets",
+          "correct": false,
+          "rationale": "Budgets tracks spending against thresholds and has no security content."
+        },
+        {
+          "id": "c",
+          "text": "AWS Cost Explorer",
+          "correct": false,
+          "rationale": "Cost Explorer analyzes spend and does not publish articles."
+        },
+        {
+          "id": "d",
+          "text": "AWS Security Blog",
+          "correct": true,
+          "rationale": "The AWS Security Blog publishes announcements and best practices from AWS security teams."
+        }
+      ],
+      "explanation": "AWS publishes security information in several places. The AWS Security Blog carries announcements, how-to articles and best practices from AWS security experts. The AWS Security Center provides an overview of security resources and guidance, and the AWS Knowledge Center answers common support questions. Cost and billing tools such as Cost Explorer, Budgets and the Pricing Calculator serve a different purpose. Matching the type of information to its source is tested directly.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/security-and-compliance.html",
+          "title": "Security and compliance - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to understand how AWS describes the security features and compliance programs of its services before adopting them. Which type of resource should it consult?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS security documentation and whitepapers",
+          "correct": true,
+          "rationale": "AWS documentation and whitepapers describe security features, controls and compliance in detail."
+        },
+        {
+          "id": "b",
+          "text": "AWS Cost and Usage Report",
+          "correct": false,
+          "rationale": "The report details costs and usage, not security features."
+        },
+        {
+          "id": "c",
+          "text": "AWS Budgets alerts",
+          "correct": false,
+          "rationale": "Budgets alerts notify about spending thresholds and say nothing about security features."
+        },
+        {
+          "id": "d",
+          "text": "AWS Pricing Calculator estimates",
+          "correct": false,
+          "rationale": "Estimates cover expected costs and do not describe security capabilities."
+        }
+      ],
+      "explanation": "AWS provides extensive security-related documentation. Service user guides explain each service's security features, and whitepapers such as the security and compliance overview describe how AWS secures its infrastructure and what controls customers can use. These documents help customers evaluate services before adopting them. Billing and cost tools answer financial questions and are not a source for security feature descriptions.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/security-and-compliance.html",
+          "title": "Security and compliance - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company has 40 accounts in AWS Organizations. A security policy requires AWS WAF on every Application Load Balancer, including those created later. The team wants compliance enforced automatically with minimal manual work. Which choice best meets the requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create a web ACL with AWS WAF in each account manually",
+          "correct": false,
+          "rationale": "Manual setup per account does not automatically cover new load balancers and creates operational overhead."
+        },
+        {
+          "id": "b",
+          "text": "Use AWS Firewall Manager with an AWS WAF policy",
+          "correct": true,
+          "rationale": "A Firewall Manager policy applies WAF rules to existing and new load balancers across the organization."
+        },
+        {
+          "id": "c",
+          "text": "Enable AWS Shield Standard in each account",
+          "correct": false,
+          "rationale": "Shield Standard is automatic DDoS protection and does not apply WAF rules."
+        },
+        {
+          "id": "d",
+          "text": "Review the accounts regularly with AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor only recommends changes and cannot enforce a WAF policy."
+        }
+      ],
+      "explanation": "Two services touch AWS WAF at scale. AWS WAF defines the rules in a web ACL for resources in one account and Region. AWS Firewall Manager sits above it and, with AWS Organizations, applies WAF policies automatically to all in-scope accounts, including resources created later, and can flag noncompliant ones. When a scenario stresses many accounts, new resources and automatic enforcement, Firewall Manager is the better choice over configuring WAF directly.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html",
+          "title": "AWS Firewall Manager - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html",
+          "title": "AWS WAF - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company sees an Amazon EC2 instance communicating with a domain associated with cryptocurrency mining. It has no known software vulnerabilities. Which service most likely produced the alert about this behavior?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon GuardDuty",
+          "correct": true,
+          "rationale": "GuardDuty analyzes DNS logs and threat intelligence to flag instances contacting malicious or mining-related domains."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector reports vulnerabilities and exposure, and the instance has none."
+        },
+        {
+          "id": "c",
+          "text": "AWS WAF",
+          "correct": false,
+          "rationale": "WAF filters inbound web requests and does not review outbound DNS activity."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor checks configuration best practices and does not analyze network behavior."
+        }
+      ],
+      "explanation": "The stem describes suspicious behavior, not a weakness. Amazon GuardDuty examines DNS logs, VPC flow logs and AWS CloudTrail events with threat intelligence and machine learning, and raises findings for behavior such as an instance contacting cryptocurrency mining pools. Amazon Inspector would be the choice if the issue were an unpatched package or open exposure. Distinguishing behavior detection from vulnerability assessment is a core skill for this task.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html",
+          "title": "What is Amazon GuardDuty? - Amazon GuardDuty"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+          "title": "What is Amazon Inspector? - Amazon Inspector"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company needs a specific vendor's next-generation firewall appliance that is not offered as a native AWS service. The company wants to subscribe and be billed through its AWS account. Which option is best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Firewall Manager",
+          "correct": false,
+          "rationale": "Firewall Manager manages AWS firewall policies and does not supply vendor appliances."
+        },
+        {
+          "id": "b",
+          "text": "AWS WAF managed rule groups only",
+          "correct": false,
+          "rationale": "Managed rule groups extend WAF rules and are not a vendor firewall appliance."
+        },
+        {
+          "id": "c",
+          "text": "AWS Marketplace",
+          "correct": true,
+          "rationale": "AWS Marketplace offers third-party security products that can be subscribed to and billed through AWS."
+        },
+        {
+          "id": "d",
+          "text": "AWS Shield Advanced",
+          "correct": false,
+          "rationale": "Shield Advanced provides DDoS protection and not third-party firewall appliances."
+        }
+      ],
+      "explanation": "AWS offers native security services, but customers can also use third-party products. AWS Marketplace lists vendor software, including firewall appliances, endpoint protection and managed rule sets, that customers subscribe to and deploy on AWS with charges on their AWS bill. When a requirement names a specific vendor or a capability beyond native services, Marketplace is the answer. Firewall Manager only manages policies for AWS firewall services and certain integrations.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/marketplace",
+          "title": "AWS Marketplace: Homepage"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html",
+          "title": "AWS Firewall Manager - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO AWS services help protect a public web application from external attacks by blocking or absorbing malicious traffic?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon GuardDuty",
+          "correct": false,
+          "rationale": "GuardDuty detects threats and reports findings but does not block traffic."
+        },
+        {
+          "id": "b",
+          "text": "AWS WAF",
+          "correct": true,
+          "rationale": "AWS WAF blocks malicious web requests such as injection attempts."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector assesses workloads for vulnerabilities and does not block traffic."
+        },
+        {
+          "id": "d",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "Trusted Advisor recommends improvements and does not filter traffic."
+        },
+        {
+          "id": "e",
+          "text": "AWS Shield",
+          "correct": true,
+          "rationale": "Shield absorbs DDoS attacks aimed at AWS resources."
+        }
+      ],
+      "explanation": "Protection services sit in the traffic path and act on it. AWS WAF filters application layer web requests, and AWS Shield defends against DDoS attacks. Amazon GuardDuty and Amazon Inspector are assessment and detection services that report findings, and AWS Trusted Advisor gives recommendations. A useful memory aid is that WAF and Shield protect, while GuardDuty and Inspector detect and assess. Questions often present one of each group as distractors.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html",
+          "title": "AWS WAF - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/security-and-compliance.html",
+          "title": "Security and compliance - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO resources provide AWS security information such as best practices, announcements and answers to common questions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Pricing Calculator",
+          "correct": false,
+          "rationale": "The Pricing Calculator estimates costs and is not an information source on security."
+        },
+        {
+          "id": "b",
+          "text": "AWS Security Blog",
+          "correct": true,
+          "rationale": "The Security Blog publishes security announcements and best practices from AWS."
+        },
+        {
+          "id": "c",
+          "text": "AWS Cost Explorer",
+          "correct": false,
+          "rationale": "Cost Explorer analyzes spending and has no security guidance."
+        },
+        {
+          "id": "d",
+          "text": "AWS Knowledge Center",
+          "correct": true,
+          "rationale": "The Knowledge Center answers common support questions, including security configuration topics."
+        },
+        {
+          "id": "e",
+          "text": "AWS Budgets",
+          "correct": false,
+          "rationale": "Budgets monitors spending against thresholds and has no security guidance."
+        }
+      ],
+      "explanation": "AWS publishes security guidance through dedicated channels. The AWS Security Blog carries announcements and best practices, the AWS Security Center collects security resources, and the AWS Knowledge Center answers the questions customers raise most often with AWS Support. Cost management tools such as Cost Explorer, Budgets and the Pricing Calculator belong to a different domain. On the exam, identify the type of information requested and then the matching source.",
+      "references": [
+        {
+          "url": "https://repost.aws/knowledge-center",
+          "title": "Discover AWS Official Knowledge Center Articles | AWS re:Post"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/security-and-compliance.html",
+          "title": "Security and compliance - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO tasks can AWS Trusted Advisor help a company with?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Identify security groups that allow unrestricted access",
+          "correct": true,
+          "rationale": "Trusted Advisor has security checks that flag security groups with unrestricted access."
+        },
+        {
+          "id": "b",
+          "text": "Block SQL injection attempts against a web application",
+          "correct": false,
+          "rationale": "Blocking injection attempts is done by AWS WAF."
+        },
+        {
+          "id": "c",
+          "text": "Identify underutilized resources to reduce costs",
+          "correct": true,
+          "rationale": "Cost optimization checks highlight idle or underused resources."
+        },
+        {
+          "id": "d",
+          "text": "Scan container images for known vulnerabilities",
+          "correct": false,
+          "rationale": "Scanning images for vulnerabilities is done by Amazon Inspector."
+        },
+        {
+          "id": "e",
+          "text": "Apply firewall rules across all accounts in an organization",
+          "correct": false,
+          "rationale": "Central rule deployment is done by AWS Firewall Manager."
+        }
+      ],
+      "explanation": "AWS Trusted Advisor reviews an account against best practices and reports recommendations across categories including cost optimization, performance, security, fault tolerance and service limits. It can flag a security group open to the world or an idle resource that costs money. It does not enforce policies, block traffic or scan workloads, which are jobs for AWS Firewall Manager, AWS WAF and Amazon Inspector respectively. Remember it as an advisor, not an enforcer.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
+          "title": "AWS Trusted Advisor - AWS Support"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-2.4-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which THREE statements about AWS WAF are true?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It scans Amazon EC2 instances for software vulnerabilities.",
+          "correct": false,
+          "rationale": "Vulnerability scanning of instances is performed by Amazon Inspector."
+        },
+        {
+          "id": "b",
+          "text": "It can allow or block requests based on IP addresses.",
+          "correct": true,
+          "rationale": "IP match rules are a basic AWS WAF capability."
+        },
+        {
+          "id": "c",
+          "text": "It analyzes AWS CloudTrail events to detect compromised accounts.",
+          "correct": false,
+          "rationale": "Analyzing CloudTrail events for threats is performed by Amazon GuardDuty."
+        },
+        {
+          "id": "d",
+          "text": "It can be attached to an Amazon CloudFront distribution.",
+          "correct": true,
+          "rationale": "AWS WAF can protect CloudFront distributions, along with resources such as Application Load Balancers."
+        },
+        {
+          "id": "e",
+          "text": "It supports managed rule groups, including ones sold in AWS Marketplace.",
+          "correct": true,
+          "rationale": "Managed rule groups from AWS and Marketplace sellers can be added to a web ACL."
+        },
+        {
+          "id": "f",
+          "text": "It is the service that provides automatic DDoS protection for all customers.",
+          "correct": false,
+          "rationale": "Automatic DDoS protection for all customers is AWS Shield Standard."
+        }
+      ],
+      "explanation": "AWS WAF is a web application firewall. Its rules can match IP addresses, headers, URI strings and attack patterns, and its web ACLs attach to resources such as Amazon CloudFront distributions and Application Load Balancers. You can add managed rule groups maintained by AWS or by AWS Marketplace sellers instead of writing every rule yourself. Vulnerability scanning belongs to Amazon Inspector, threat detection from logs belongs to GuardDuty, and automatic DDoS protection belongs to AWS Shield Standard.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html",
+          "title": "AWS WAF - AWS WAF, AWS Firewall Manager, AWS Shield Advanced, and AWS Shield network security director"
+        },
+        {
+          "url": "https://aws.amazon.com/marketplace",
+          "title": "AWS Marketplace: Homepage"
+        }
+      ]
+    }
+  ]
+}

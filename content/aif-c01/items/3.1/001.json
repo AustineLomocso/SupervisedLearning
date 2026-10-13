@@ -1,0 +1,944 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.1",
+  "items": [
+    {
+      "id": "aif-c01-3.1-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A team wants a foundation model to answer questions using the company's own documents without retraining the model. Which technique retrieves relevant documents and adds them to the prompt at request time?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model distillation",
+          "correct": false,
+          "rationale": "Distillation transfers knowledge from a larger teacher model to a smaller student model. It does not retrieve documents at request time."
+        },
+        {
+          "id": "b",
+          "text": "Continued pre-training",
+          "correct": false,
+          "rationale": "Continued pre-training updates model weights with new data in advance. It is not a request-time retrieval step."
+        },
+        {
+          "id": "c",
+          "text": "Retrieval Augmented Generation (RAG)",
+          "correct": true,
+          "rationale": "RAG retrieves relevant content from an external data source and adds it to the prompt so the model can ground its answer, with no retraining."
+        },
+        {
+          "id": "d",
+          "text": "Reinforcement learning",
+          "correct": false,
+          "rationale": "Reinforcement learning optimizes a model through rewards during training. It does not add documents to a prompt."
+        }
+      ],
+      "explanation": "Retrieval Augmented Generation (RAG) combines a retrieval step with text generation. When a user asks a question, the application searches an external knowledge source, usually a vector database, for relevant passages. It then adds those passages to the prompt so the foundation model can answer using current, private information. Because the model weights never change, RAG avoids retraining cost and lets you update knowledge simply by updating the data source.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/",
+          "title": "What is RAG? - Retrieval-Augmented Generation AI Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html",
+          "title": "How Amazon Bedrock knowledge bases work - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A developer wants a foundation model to give more consistent, predictable answers to the same prompt. Which change to an inference parameter is most appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase the temperature value",
+          "correct": false,
+          "rationale": "A higher temperature flattens the probability distribution, which makes responses more varied rather than more consistent."
+        },
+        {
+          "id": "b",
+          "text": "Remove all stop sequences",
+          "correct": false,
+          "rationale": "Stop sequences end generation at a given string. Removing them does not make word choice more predictable."
+        },
+        {
+          "id": "c",
+          "text": "Increase the maximum response length",
+          "correct": false,
+          "rationale": "Response length limits the number of tokens returned. It does not control how random token selection is."
+        },
+        {
+          "id": "d",
+          "text": "Decrease the temperature value",
+          "correct": true,
+          "rationale": "A lower temperature steepens the distribution so the model favors higher-probability tokens, giving more deterministic output."
+        }
+      ],
+      "explanation": "Temperature is an inference parameter that shapes the probability distribution a model samples from when it picks each next token. A low temperature makes high-probability tokens even more likely, so repeated requests return similar, focused answers. A high temperature flattens the distribution, which allows less likely tokens and produces more varied, creative output. Top K and Top P also limit the candidate pool, while length parameters limit how many tokens are returned.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html",
+          "title": "Influence response generation with inference parameters - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement best describes the role of an AI agent in a generative AI application?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It stores embeddings and runs similarity searches",
+          "correct": false,
+          "rationale": "Storing and searching embeddings is the job of a vector database, not an agent."
+        },
+        {
+          "id": "b",
+          "text": "It splits a request into steps, calls tools or APIs, and works toward a goal",
+          "correct": true,
+          "rationale": "An agent uses a foundation model to plan steps, take actions through tools or APIs, and iterate toward completing a user's goal."
+        },
+        {
+          "id": "c",
+          "text": "It labels training data for supervised learning",
+          "correct": false,
+          "rationale": "Data labeling is a separate ML preparation task, not the role of an agent."
+        },
+        {
+          "id": "d",
+          "text": "It compresses a large model into a smaller one",
+          "correct": false,
+          "rationale": "Compressing a model into a smaller one describes distillation, not an agent."
+        }
+      ],
+      "explanation": "An AI agent is a software component that uses a foundation model to reason about a goal, break it into smaller steps, and take actions on the user's behalf. Agents can call APIs, invoke other tools, query knowledge bases, and ask users for missing details. This lets them automate multi-step tasks such as processing a claim or booking travel, instead of only returning a single text answer. Agentic AI builds on this idea with greater autonomy.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+          "title": "Automate tasks in your application using AI agents - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What do vector databases store so that applications can find semantically similar content?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Embeddings",
+          "correct": true,
+          "rationale": "Embeddings are numeric vectors that represent the meaning of text, images, or other data, and vector databases index them for similarity search."
+        },
+        {
+          "id": "b",
+          "text": "Model checkpoints",
+          "correct": false,
+          "rationale": "Checkpoints are saved model weights, which are not what vector databases index."
+        },
+        {
+          "id": "c",
+          "text": "Inference logs",
+          "correct": false,
+          "rationale": "Logs record invocations for monitoring and are not vectors used for similarity search."
+        },
+        {
+          "id": "d",
+          "text": "Prompt templates",
+          "correct": false,
+          "rationale": "Prompt templates are text patterns used to build prompts, not numeric representations of meaning."
+        }
+      ],
+      "explanation": "A vector database stores and indexes vectors, which are numerical representations called embeddings. An embedding model converts text, images, or other content into a list of numbers so that items with similar meaning end up close together. The database can then run fast similarity searches to return the closest items to a query vector. Generative AI applications use this to find relevant context for RAG, and for semantic search and recommendations.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/vector-databases/",
+          "title": "What is a Vector Database? Vector Databases Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html",
+          "title": "How Amazon Bedrock knowledge bases work - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A prompt includes a few example questions and answers so the foundation model follows the desired format. What is this approach called?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pre-training",
+          "correct": false,
+          "rationale": "Pre-training builds a model from large datasets by updating its weights, which is far more than adding examples to a prompt."
+        },
+        {
+          "id": "b",
+          "text": "Fine-tuning",
+          "correct": false,
+          "rationale": "Fine-tuning adjusts model weights using labeled data in a training job, not by placing examples in the prompt."
+        },
+        {
+          "id": "c",
+          "text": "In-context learning",
+          "correct": true,
+          "rationale": "In-context learning supplies instructions or examples inside the prompt, so the model adapts without any weight changes."
+        },
+        {
+          "id": "d",
+          "text": "Model distillation",
+          "correct": false,
+          "rationale": "Distillation trains a smaller student model from a teacher model's outputs, not from examples in a single prompt."
+        }
+      ],
+      "explanation": "In-context learning guides a foundation model by placing instructions or a few examples directly in the prompt. The model weights do not change, so there is no training job and the upfront cost is low. You pay only for the extra input tokens on each request. It is usually the first customization approach to try, before moving to more expensive options such as RAG, fine-tuning, or pre-training.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company needs a model that accepts both images and text as input and returns text descriptions. Which foundation model selection criterion matters most?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prompt caching",
+          "correct": false,
+          "rationale": "Prompt caching reduces cost and latency for repeated prompt prefixes. It does not determine which input types a model supports."
+        },
+        {
+          "id": "b",
+          "text": "Temperature range",
+          "correct": false,
+          "rationale": "Temperature controls randomness of output, not which kinds of input the model can accept."
+        },
+        {
+          "id": "c",
+          "text": "Stop sequences",
+          "correct": false,
+          "rationale": "Stop sequences end generation at a string and do not determine input types."
+        },
+        {
+          "id": "d",
+          "text": "Modality",
+          "correct": true,
+          "rationale": "Modality describes the input and output types a model supports, such as text, image, or embeddings, so it decides whether the model can handle images."
+        }
+      ],
+      "explanation": "Choosing a foundation model starts with fit for the task. Modality is the first filter because models differ in the inputs and outputs they support, such as text only, text and images, image generation, or embeddings. After modality, compare cost, latency, languages supported, model size and complexity, customization options, and input and output length limits. Amazon Bedrock offers many models so you can test and pick the best fit.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/",
+          "title": "Amazon Bedrock – Build genAI applications and agents at production scale – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A customer-facing chat feature needs very fast responses for short, simple questions at high volume, and the company wants to keep inference cost low. Which model choice is most appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The largest, most complex model available",
+          "correct": false,
+          "rationale": "Larger models usually add latency and cost per request, which works against the stated goals for simple questions."
+        },
+        {
+          "id": "b",
+          "text": "A model that must be pre-trained from scratch",
+          "correct": false,
+          "rationale": "Pre-training from scratch is very expensive and slow to deliver, and it is not a model selection for low-cost inference."
+        },
+        {
+          "id": "c",
+          "text": "A smaller, lower-latency model",
+          "correct": true,
+          "rationale": "Smaller models generally respond faster and cost less per token, which suits simple, high-volume tasks when their accuracy is sufficient."
+        },
+        {
+          "id": "d",
+          "text": "A model with the longest input context",
+          "correct": false,
+          "rationale": "A long context window helps with large inputs, but the questions here are short, so it adds no value for the stated needs."
+        }
+      ],
+      "explanation": "Model size and complexity trade accuracy and capability against latency and price. Larger models tend to handle complex reasoning better but respond more slowly and cost more per token. For short, simple, high-volume requests, a smaller model often gives sufficient quality with lower latency and cost. Test candidate models against your own prompts, and consider features such as prompt caching and distillation to cut cost further.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/",
+          "title": "Amazon Bedrock – Build genAI applications and agents at production scale – AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company notices that summaries from a foundation model are cut off mid-sentence. Which inference setting should a developer check first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The maximum response length (output tokens)",
+          "correct": true,
+          "rationale": "If the maximum output token limit is set too low, generation stops when the limit is reached, which truncates the response."
+        },
+        {
+          "id": "b",
+          "text": "The embedding dimension",
+          "correct": false,
+          "rationale": "Embedding dimension describes vector size for retrieval and does not limit how long a generated response is."
+        },
+        {
+          "id": "c",
+          "text": "The vector index type",
+          "correct": false,
+          "rationale": "The vector index affects retrieval speed and accuracy, not where generation stops."
+        },
+        {
+          "id": "d",
+          "text": "The training data bucket",
+          "correct": false,
+          "rationale": "The training data location has no effect on response length at inference time."
+        }
+      ],
+      "explanation": "Length parameters limit how many tokens a foundation model returns. If the maximum response length is set below what the answer needs, the model stops generating and the text is cut off. Longer outputs also increase cost and latency because pricing is generally based on tokens. Input length matters too, since prompt plus retrieved context must fit within the model's context window. Set limits that match the task.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html",
+          "title": "Influence response generation with inference parameters - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants a support chatbot that answers from its internal policy PDFs and keeps answers current as the PDFs change. The team wants a managed solution that avoids building the retrieval pipeline. Which AWS capability fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock model distillation",
+          "correct": false,
+          "rationale": "Distillation creates a smaller model from a teacher model. It does not connect a model to changing documents."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition analyzes images and video and is not a managed RAG service for documents."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock Knowledge Bases",
+          "correct": true,
+          "rationale": "Knowledge Bases manages ingestion, chunking, embeddings, and retrieval so a model can answer from private documents, and re-syncing picks up changes."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Polly",
+          "correct": false,
+          "rationale": "Polly converts text to speech and does not retrieve information from documents."
+        }
+      ],
+      "explanation": "Amazon Bedrock Knowledge Bases provides a managed, out-of-the-box RAG workflow. It ingests documents from a data source, splits them into chunks, converts the chunks to embeddings, and stores them in a vector index. At runtime it retrieves relevant chunks and adds them to the prompt. When documents change, you sync the data source instead of retraining. Business uses include customer support assistants, internal knowledge search, and policy question answering.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/knowledge-bases/",
+          "title": "Foundation Models for RAG - Amazon Bedrock Knowledge Bases - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html",
+          "title": "How Amazon Bedrock knowledge bases work - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company already runs its application data on Amazon Aurora PostgreSQL-Compatible Edition and wants to store embeddings next to that data for a RAG application. Which approach fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Move all data to Amazon Athena",
+          "correct": false,
+          "rationale": "Athena queries data in Amazon S3 with SQL and is not a vector store for embeddings."
+        },
+        {
+          "id": "b",
+          "text": "Store embeddings in AWS CloudTrail",
+          "correct": false,
+          "rationale": "CloudTrail records API activity for auditing and is not a place to store embeddings."
+        },
+        {
+          "id": "c",
+          "text": "Store embeddings in Amazon Route 53",
+          "correct": false,
+          "rationale": "Route 53 is a DNS service and cannot store or search embeddings."
+        },
+        {
+          "id": "d",
+          "text": "Use the pgvector extension in Aurora PostgreSQL",
+          "correct": true,
+          "rationale": "Aurora PostgreSQL supports the pgvector extension, which stores embeddings in the database and runs similarity search alongside existing relational data."
+        }
+      ],
+      "explanation": "Several AWS databases can act as vector stores. Amazon Aurora PostgreSQL-Compatible Edition and Amazon RDS for PostgreSQL support the pgvector extension, which stores embeddings and performs similarity search inside the relational database. This is attractive when teams already use PostgreSQL and want vectors alongside operational data. Amazon OpenSearch Service is another common choice, especially for large-scale vector and hybrid search.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/vector-databases/",
+          "title": "What is a Vector Database? Vector Databases Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/rds/aurora/",
+          "title": "Relational Database – Amazon Aurora MySQL PostgreSQL – AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/choosing-an-aws-vector-database-for-rag-use-cases/introduction.html",
+          "title": "Choosing an AWS vector database for RAG use cases - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company's product catalog changes daily, and an assistant must answer using the latest information. Which customization approach is generally the most cost-effective?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pre-train a new foundation model each week",
+          "correct": false,
+          "rationale": "Pre-training requires huge data and compute, so repeating it weekly is far too costly for this need."
+        },
+        {
+          "id": "b",
+          "text": "Use RAG with the catalog as the data source",
+          "correct": true,
+          "rationale": "RAG retrieves current data at request time, so updating the data source is enough and no model training is needed."
+        },
+        {
+          "id": "c",
+          "text": "Fine-tune the model after every catalog update",
+          "correct": false,
+          "rationale": "Repeated fine-tuning jobs add training cost and delay, and the model could still be out of date between runs."
+        },
+        {
+          "id": "d",
+          "text": "Distill the model after every catalog update",
+          "correct": false,
+          "rationale": "Distillation creates a smaller model and does not keep answers aligned with fast-changing facts."
+        }
+      ],
+      "explanation": "Customization approaches differ in upfront cost and in how well they handle changing data. Prompt engineering and in-context learning are cheapest. RAG adds retrieval and storage cost but lets you update knowledge by refreshing the data source, with no training. Fine-tuning needs labeled data and training jobs, and pre-training needs very large datasets and compute. For frequently changing facts, RAG usually gives the best balance of cost and freshness.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/",
+          "title": "What is RAG? - Retrieval-Augmented Generation AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/knowledge-bases/",
+          "title": "Foundation Models for RAG - Amazon Bedrock Knowledge Bases - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants an assistant that can check order status by calling its internal order API and then update the customer's shipping address. Which design is most appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A fine-tuned model with no tool access",
+          "correct": false,
+          "rationale": "A model without tool access can generate text but cannot call the order API or change the address."
+        },
+        {
+          "id": "b",
+          "text": "A vector database containing past conversations",
+          "correct": false,
+          "rationale": "Past conversations could add context, but a vector database cannot call APIs or make updates."
+        },
+        {
+          "id": "c",
+          "text": "An AI agent with an action group that calls the API",
+          "correct": true,
+          "rationale": "Agents plan steps and call APIs through action groups, so one can look up the order and then update the address."
+        },
+        {
+          "id": "d",
+          "text": "A larger context window only",
+          "correct": false,
+          "rationale": "A larger context window lets the model read more text but does not give it the ability to take actions."
+        }
+      ],
+      "explanation": "AI agents extend foundation models so they can act, not only answer. An agent interprets the request, plans the needed steps, and calls APIs defined in its action groups, for example looking up an order and then updating an address. It can also collect missing information from the user and query knowledge bases. Business applications include customer service automation, claims processing, travel booking, and IT workflow automation.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+          "title": "Automate tasks in your application using AI agents - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to summarize very long contracts in a single request. Which model characteristic is most important when selecting a foundation model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A small model size",
+          "correct": false,
+          "rationale": "A small model may be cheaper, but size alone says nothing about how much input it can accept."
+        },
+        {
+          "id": "b",
+          "text": "A maximum input length large enough for the contracts",
+          "correct": true,
+          "rationale": "A model can only process input up to its context limit, so it must be large enough to fit the long contracts."
+        },
+        {
+          "id": "c",
+          "text": "A low default temperature",
+          "correct": false,
+          "rationale": "Temperature affects randomness of output and does not determine how much input the model can read."
+        },
+        {
+          "id": "d",
+          "text": "Support for image generation",
+          "correct": false,
+          "rationale": "Image generation is a modality feature unrelated to summarizing long text documents."
+        }
+      ],
+      "explanation": "Foundation models have limits on input and output length, often described as the context window and maximum output tokens. If a document exceeds the input limit, the model cannot read all of it in one request, so you would need a model with a longer context or a chunking strategy. Check these limits together with cost, since longer inputs usually mean more tokens billed. Languages supported is another criterion for global workloads.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A marketing team wants a foundation model to generate many different creative slogans for the same product description. Which inference setting change is most likely to help?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lower the temperature to near zero",
+          "correct": false,
+          "rationale": "A very low temperature produces similar, predictable output, which reduces variety."
+        },
+        {
+          "id": "b",
+          "text": "Set a very small maximum response length",
+          "correct": false,
+          "rationale": "A small length limit shortens output but does not increase variety."
+        },
+        {
+          "id": "c",
+          "text": "Add a stop sequence for every word",
+          "correct": false,
+          "rationale": "Stop sequences end generation early and would cut slogans off rather than diversify them."
+        },
+        {
+          "id": "d",
+          "text": "Increase the temperature value",
+          "correct": true,
+          "rationale": "A higher temperature gives lower-probability tokens more chance, which increases variety and creativity in the output."
+        }
+      ],
+      "explanation": "Randomness and diversity parameters control how varied outputs are. Raising temperature flattens the token probability distribution so lower-probability words are chosen more often, which suits brainstorming and creative writing. Top P and Top K widen the candidate pool in a similar way when set higher. For factual or structured tasks, such as extraction or question answering, use lower values for more predictable results.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/inference-parameters.html",
+          "title": "Influence response generation with inference parameters - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company uses a large model for a narrow task and wants similar quality at lower inference cost and latency. Which customization approach is designed for this goal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increasing the temperature",
+          "correct": false,
+          "rationale": "Temperature changes randomness of outputs and does not reduce model size or cost."
+        },
+        {
+          "id": "b",
+          "text": "Model distillation",
+          "correct": true,
+          "rationale": "Distillation transfers knowledge from a larger teacher model to a smaller student model, giving a faster, cheaper model for a specific use case."
+        },
+        {
+          "id": "c",
+          "text": "Creating more embeddings",
+          "correct": false,
+          "rationale": "More embeddings increase storage and retrieval work and do not make the model smaller or faster."
+        },
+        {
+          "id": "d",
+          "text": "Pre-training a larger model",
+          "correct": false,
+          "rationale": "A larger model would raise inference cost and latency, which is the opposite of the goal."
+        }
+      ],
+      "explanation": "Model distillation trains a smaller student model using responses from a larger teacher model. In Amazon Bedrock, the service generates teacher responses from your prompts or invocation logs and fine-tunes the student model, which then runs faster and costs less for your use case. The tradeoff is the upfront distillation job, including teacher inference charges. It pays off when request volume is high and the task is narrow.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html",
+          "title": "Customize a model with distillation in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/",
+          "title": "Amazon Bedrock – Build genAI applications and agents at production scale – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A startup wants to adapt a foundation model to its domain and minimize upfront cost and effort. Which ordering lists the approaches from generally lowest to highest upfront cost?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pre-training, fine-tuning, RAG, in-context learning",
+          "correct": false,
+          "rationale": "This reverses the order. Pre-training is the most expensive, not the cheapest."
+        },
+        {
+          "id": "b",
+          "text": "Fine-tuning, in-context learning, pre-training, RAG",
+          "correct": false,
+          "rationale": "Fine-tuning needs a training job and labeled data, so it costs more than in-context learning and RAG."
+        },
+        {
+          "id": "c",
+          "text": "RAG, pre-training, in-context learning, fine-tuning",
+          "correct": false,
+          "rationale": "Pre-training is the most expensive approach and cannot sit between RAG and in-context learning."
+        },
+        {
+          "id": "d",
+          "text": "In-context learning, RAG, fine-tuning, pre-training",
+          "correct": true,
+          "rationale": "Prompt-based learning has almost no setup cost, RAG adds retrieval infrastructure, fine-tuning needs labeled data and training, and pre-training needs massive data and compute."
+        }
+      ],
+      "explanation": "Customization approaches scale in upfront effort. In-context learning only changes the prompt. RAG adds a data pipeline, embeddings, and a vector store but needs no training. Fine-tuning requires curated labeled data and a training job, plus hosting for the custom model. Pre-training builds a model from very large datasets and takes the most compute and time. Start with the cheapest approach that meets the quality requirement, and move up only when needed.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/",
+          "title": "What is RAG? - Retrieval-Augmented Generation AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html",
+          "title": "Customize a model with distillation in Amazon Bedrock - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO steps happen at runtime in a RAG workflow?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The user's query is converted to an embedding",
+          "correct": true,
+          "rationale": "An embedding model turns the query into a vector so it can be compared with stored document vectors."
+        },
+        {
+          "id": "b",
+          "text": "The foundation model is pre-trained on the company data",
+          "correct": false,
+          "rationale": "Pre-training happens before deployment and is not part of RAG, which leaves model weights unchanged."
+        },
+        {
+          "id": "c",
+          "text": "The model weights are updated with the retrieved text",
+          "correct": false,
+          "rationale": "RAG does not change weights. Retrieved text is only added to the prompt."
+        },
+        {
+          "id": "d",
+          "text": "The vector index is searched and the matching chunks are added to the prompt",
+          "correct": true,
+          "rationale": "The most similar chunks are retrieved and added to the prompt, which grounds the model's response."
+        },
+        {
+          "id": "e",
+          "text": "The data source is deleted after each query",
+          "correct": false,
+          "rationale": "RAG leaves the data source in place so it can answer later queries."
+        }
+      ],
+      "explanation": "A RAG workflow has an ingestion phase and a runtime phase. During ingestion, documents are chunked, converted to embeddings, and stored in a vector index. At runtime, the application embeds the user's query, searches the index for semantically similar chunks, and adds those chunks to the prompt. The foundation model then generates an answer grounded in the retrieved context. Model weights are never modified in this process.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-how-it-works.html",
+          "title": "How Amazon Bedrock knowledge bases work - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/",
+          "title": "What is RAG? - Retrieval-Augmented Generation AI Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-chunking.html",
+          "title": "How content chunking works for knowledge bases - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "A company needs a vector store for embeddings in a RAG application. Which TWO AWS services can store embeddings for similarity search?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena runs SQL queries over data in Amazon S3 and is not a vector database."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Aurora PostgreSQL-Compatible Edition",
+          "correct": true,
+          "rationale": "Aurora PostgreSQL supports the pgvector extension to store embeddings and perform similarity search."
+        },
+        {
+          "id": "c",
+          "text": "AWS Glue DataBrew",
+          "correct": false,
+          "rationale": "DataBrew is a visual data preparation tool and does not provide vector search."
+        },
+        {
+          "id": "d",
+          "text": "Amazon OpenSearch Service",
+          "correct": true,
+          "rationale": "OpenSearch Service supports vector search and is described by AWS as a recommended vector database for Amazon Bedrock."
+        },
+        {
+          "id": "e",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront is a content delivery network and does not store embeddings."
+        }
+      ],
+      "explanation": "Embeddings must be stored in a system that supports similarity search. Amazon OpenSearch Service offers vector search and is commonly paired with Amazon Bedrock. Amazon Aurora PostgreSQL-Compatible Edition and Amazon RDS for PostgreSQL support the pgvector extension, which is useful when data already lives in PostgreSQL. Other AWS databases also offer vector capabilities. Query and analytics services such as Athena, and content delivery services, are not vector stores.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/opensearch-service/",
+          "title": "Real-Time Retrieval Engine for AI, Search & Analytics - Amazon OpenSearch Service - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/rds/aurora/",
+          "title": "Relational Database – Amazon Aurora MySQL PostgreSQL – AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/choosing-an-aws-vector-database-for-rag-use-cases/introduction.html",
+          "title": "Choosing an AWS vector database for RAG use cases - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company is selecting a foundation model for a multilingual customer service assistant. Which THREE criteria should the company evaluate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Whether the model supports the required languages",
+          "correct": true,
+          "rationale": "The assistant must work well in each target language, and models differ in language coverage and quality."
+        },
+        {
+          "id": "b",
+          "text": "The color scheme of the model provider's website",
+          "correct": false,
+          "rationale": "Website appearance has no effect on a model's suitability."
+        },
+        {
+          "id": "c",
+          "text": "Latency and cost per request",
+          "correct": true,
+          "rationale": "A customer-facing assistant needs acceptable response times and a sustainable per-request price."
+        },
+        {
+          "id": "d",
+          "text": "The number of Availability Zones in the data source bucket",
+          "correct": false,
+          "rationale": "This is an infrastructure detail of storage and does not describe how well a model fits the task."
+        },
+        {
+          "id": "e",
+          "text": "The input and output length limits",
+          "correct": true,
+          "rationale": "Conversation history and retrieved context must fit within the model's context window, and answers need enough output length."
+        },
+        {
+          "id": "f",
+          "text": "The font used in the chat widget",
+          "correct": false,
+          "rationale": "UI styling has no bearing on which foundation model to choose."
+        }
+      ],
+      "explanation": "Selecting a foundation model means weighing how well it fits the workload against operating constraints. Common criteria include modality, language support, cost, latency, model size and complexity, customization options, and input and output length. A multilingual customer service assistant needs strong coverage of the target languages, response times that feel interactive, and a price that scales with traffic. Context window limits also matter once chat history is included. Evaluating candidates on real prompts confirms the choice.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/",
+          "title": "Amazon Bedrock – Build genAI applications and agents at production scale – AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.1-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "A company is evaluating AI agents for IT operations. Which TWO capabilities describe what an AI agent adds beyond a standalone foundation model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It can decide the next steps needed to reach a goal",
+          "correct": true,
+          "rationale": "Agents use a foundation model to reason about a goal and break it into steps, rather than returning one answer."
+        },
+        {
+          "id": "b",
+          "text": "It permanently modifies the model weights on each request",
+          "correct": false,
+          "rationale": "Agents do not retrain models per request. They orchestrate steps at runtime."
+        },
+        {
+          "id": "c",
+          "text": "It can call tools and APIs to take actions",
+          "correct": true,
+          "rationale": "Agents act on company systems through tools or APIs, such as through action groups in Amazon Bedrock Agents."
+        },
+        {
+          "id": "d",
+          "text": "It removes the need for any data source",
+          "correct": false,
+          "rationale": "Agents often rely on data sources and knowledge bases to ground their actions and answers."
+        },
+        {
+          "id": "e",
+          "text": "It guarantees a response with no foundation model",
+          "correct": false,
+          "rationale": "An agent is built on a foundation model and does not replace it."
+        }
+      ],
+      "explanation": "A standalone foundation model takes a prompt and returns generated content. An AI agent wraps a model with orchestration so it can plan, take multi-step actions, call APIs and tools, query knowledge bases, and ask the user for missing details. Business applications include customer service, claims processing, travel booking, and IT workflow automation. Agents still depend on a foundation model for reasoning and on data sources or tools to ground their work.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+          "title": "Automate tasks in your application using AI agents - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        }
+      ]
+    }
+  ]
+}

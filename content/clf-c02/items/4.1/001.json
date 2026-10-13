@@ -1,0 +1,900 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "4.1",
+  "items": [
+    {
+      "id": "clf-c02-4.1-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Amazon EC2 purchasing option provides up to a 90% discount by using spare capacity that AWS can reclaim?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On-Demand Instances",
+          "correct": false,
+          "rationale": "On-Demand Instances are billed at the standard rate with no discount for spare capacity, and they are not reclaimed."
+        },
+        {
+          "id": "b",
+          "text": "Dedicated Hosts",
+          "correct": false,
+          "rationale": "Dedicated Hosts give you a whole physical server and are not a discounted spare-capacity option."
+        },
+        {
+          "id": "c",
+          "text": "Spot Instances",
+          "correct": true,
+          "rationale": "Spot Instances use unused EC2 capacity at up to a 90% discount, but AWS can interrupt them when it needs the capacity back."
+        },
+        {
+          "id": "d",
+          "text": "Capacity Reservations",
+          "correct": false,
+          "rationale": "Capacity Reservations guarantee capacity in an Availability Zone but provide no discount on their own."
+        }
+      ],
+      "explanation": "Spot Instances let you use spare EC2 capacity at a steep discount compared with On-Demand prices. The trade-off is that AWS can reclaim the capacity, so Spot suits stateless, fault-tolerant, or flexible workloads such as batch processing, CI/CD, and big data. Other purchasing options such as On-Demand, Dedicated Hosts, and Capacity Reservations are not built around discounted spare capacity. Always check whether a workload can tolerate interruption before choosing a discounted option.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ec2/spot/",
+          "title": "Save up-to 90% on On-Demand Prices – Amazon EC2 Spot Instances – Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement about AWS data transfer pricing is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data transfer into AWS from the internet is free of charge.",
+          "correct": true,
+          "rationale": "AWS does not charge for inbound data transfer, which is a common exam fact."
+        },
+        {
+          "id": "b",
+          "text": "Data transfer into AWS is charged per GB at the same rate as outbound.",
+          "correct": false,
+          "rationale": "Inbound transfer is free, so it is not billed at the outbound rate."
+        },
+        {
+          "id": "c",
+          "text": "Data transfer out of AWS to the internet is always free.",
+          "correct": false,
+          "rationale": "Outbound transfer to the internet is charged, usually with tiered rates."
+        },
+        {
+          "id": "d",
+          "text": "Data transfer out costs the same per GB regardless of volume.",
+          "correct": false,
+          "rationale": "Outbound transfer uses tiered pricing, so the per-GB price falls as volume grows."
+        }
+      ],
+      "explanation": "AWS follows a pay-as-you-go model, but data transfer in to AWS is free. Data transfer out to the internet is charged and uses tiered pricing, where the per-GB cost drops at higher volumes. Knowing which direction is billed helps you estimate costs for workloads that ingest large datasets versus those that serve content to users. Remember this direction rule when comparing architectures that move large amounts of data.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which pricing model requires a commitment to a consistent amount of spend, measured in dollars per hour, for a one-year or three-year term?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Spot Instances",
+          "correct": false,
+          "rationale": "Spot Instances have no spend commitment and are priced by spare-capacity supply and demand."
+        },
+        {
+          "id": "b",
+          "text": "On-Demand Instances",
+          "correct": false,
+          "rationale": "On-Demand Instances are pay-as-you-go with no term or spend commitment."
+        },
+        {
+          "id": "c",
+          "text": "Capacity Reservations",
+          "correct": false,
+          "rationale": "An immediate-use Capacity Reservation has no term commitment and is not measured as an hourly spend."
+        },
+        {
+          "id": "d",
+          "text": "Savings Plans",
+          "correct": true,
+          "rationale": "Savings Plans trade a committed hourly spend for one or three years for lower prices than On-Demand."
+        }
+      ],
+      "explanation": "Savings Plans are a flexible pricing model in which you commit to a consistent spend rate in dollars per hour for a one-year or three-year term. In return you receive lower prices than On-Demand, with advertised savings of up to 72%. Spot and On-Demand involve no commitment, and Capacity Reservations are about assuring capacity rather than committing to spend. Commitment-based models reward predictable usage, so match the commitment to how steady your demand really is.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/savingsplans/",
+          "title": "Cloud Cost Savings – Savings Plans – Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Amazon S3 storage class has the lowest storage cost for data that is rarely retrieved and kept for many years?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Standard",
+          "correct": false,
+          "rationale": "S3 Standard has the highest storage price of the common classes because it is built for frequent access."
+        },
+        {
+          "id": "b",
+          "text": "S3 Glacier Deep Archive",
+          "correct": true,
+          "rationale": "S3 Glacier Deep Archive has the lowest storage cost and suits data that is rarely read, with retrieval within hours."
+        },
+        {
+          "id": "c",
+          "text": "S3 Standard-IA",
+          "correct": false,
+          "rationale": "S3 Standard-IA costs less than Standard but more than the archive classes, and it charges per-GB retrieval fees."
+        },
+        {
+          "id": "d",
+          "text": "S3 Intelligent-Tiering",
+          "correct": false,
+          "rationale": "S3 Intelligent-Tiering is aimed at unknown access patterns and adds a small monitoring charge."
+        }
+      ],
+      "explanation": "S3 storage classes trade storage price against retrieval speed, retrieval fees, and minimum storage duration. S3 Glacier Deep Archive sits at the low-cost end, with a 180-day minimum duration and retrieval measured in hours, so it fits long-term retention. S3 Standard is priced for frequent access, and the infrequent-access classes sit between them. Retrieval speed and per-GB retrieval fees usually rise as the storage price falls.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0005",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which workloads are suitable for Amazon EC2 Spot Instances?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Stateless big data analysis that can restart",
+          "correct": true,
+          "rationale": "Stateless, restartable analytics tolerate interruptions, so Spot gives large savings."
+        },
+        {
+          "id": "b",
+          "text": "A production database that holds the only copy of data",
+          "correct": false,
+          "rationale": "Interruption could cause data loss or downtime, so this is a poor fit for Spot."
+        },
+        {
+          "id": "c",
+          "text": "A license server that must always be reachable",
+          "correct": false,
+          "rationale": "A server needing constant availability cannot tolerate reclaimed capacity."
+        },
+        {
+          "id": "d",
+          "text": "Stateless CI/CD build and test runners",
+          "correct": true,
+          "rationale": "Build and test workers are flexible and fault-tolerant, which suits Spot."
+        },
+        {
+          "id": "e",
+          "text": "A payment gateway with strict uptime goals",
+          "correct": false,
+          "rationale": "Strict uptime requirements conflict with Spot interruptions."
+        }
+      ],
+      "explanation": "Spot Instances use spare EC2 capacity at up to a 90% discount, but AWS can reclaim that capacity. They fit stateless, fault-tolerant, or flexible applications such as big data, containerized workloads, CI/CD, web servers, high performance computing, and test and development. Workloads that hold the only copy of data or require constant availability should use On-Demand, Reserved Instances, or Savings Plans instead.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ec2/spot/",
+          "title": "Save up-to 90% on On-Demand Prices – Amazon EC2 Spot Instances – Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs a nightly batch job that can be stopped and restarted and has flexible start times. Which Amazon EC2 option is the most cost-effective?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Spot Instances",
+          "correct": true,
+          "rationale": "Spot Instances give the deepest discount, and the job tolerates interruption and flexible timing."
+        },
+        {
+          "id": "b",
+          "text": "On-Demand Instances",
+          "correct": false,
+          "rationale": "On-Demand Instances work but cost more than Spot for an interruptible job."
+        },
+        {
+          "id": "c",
+          "text": "Dedicated Instances",
+          "correct": false,
+          "rationale": "Dedicated Instances add hardware isolation and a per-Region fee that this job does not need."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Hosts",
+          "correct": false,
+          "rationale": "Dedicated Hosts are billed per physical server and suit licensing needs, not low-cost batch work."
+        }
+      ],
+      "explanation": "Choose the purchasing option that matches workload behavior. A job that is fault-tolerant, restartable, and flexible about timing is the textbook use case for Spot Instances, which offer up to a 90% discount from spare capacity. Interruption is the price of that discount, so Spot is a poor match for workloads that must run continuously without interruption. Match the option to workload behavior first, then to cost.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ec2/spot/",
+          "title": "Save up-to 90% on On-Demand Prices – Amazon EC2 Spot Instances – Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Amazon S3 storage class automatically moves objects between access tiers as access patterns change?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Intelligent-Tiering",
+          "correct": true,
+          "rationale": "S3 Intelligent-Tiering monitors access and moves objects between tiers automatically, with no retrieval fees."
+        },
+        {
+          "id": "b",
+          "text": "S3 One Zone-IA",
+          "correct": false,
+          "rationale": "S3 One Zone-IA stores data in one Availability Zone and does not move objects between tiers."
+        },
+        {
+          "id": "c",
+          "text": "S3 Glacier Flexible Retrieval",
+          "correct": false,
+          "rationale": "S3 Glacier Flexible Retrieval is an archive class that you choose directly, not an automatic tiering class."
+        },
+        {
+          "id": "d",
+          "text": "S3 Standard-IA",
+          "correct": false,
+          "rationale": "S3 Standard-IA is a fixed infrequent-access class and does not change tiers automatically."
+        }
+      ],
+      "explanation": "S3 Intelligent-Tiering is designed for data with unknown or changing access patterns. It moves objects between access tiers automatically and has no retrieval charges, though it adds a small monitoring and automation charge per object. The other classes are fixed choices that you select, so you must already know how often the data will be read. Use it when you cannot predict how often objects will be read.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company will run a steady production workload on Amazon EC2 for three years and wants a lower price than On-Demand. It wants to commit to hourly spend while keeping freedom to change instance family and Region. Which option meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Spot Instances",
+          "correct": false,
+          "rationale": "Spot capacity can be reclaimed, so it does not suit a steady production workload."
+        },
+        {
+          "id": "b",
+          "text": "Capacity Reservations",
+          "correct": false,
+          "rationale": "Capacity Reservations reserve capacity in one Availability Zone and give no discount by themselves."
+        },
+        {
+          "id": "c",
+          "text": "On-Demand Instances",
+          "correct": false,
+          "rationale": "On-Demand Instances offer no commitment-based discount, so they cost more over three years."
+        },
+        {
+          "id": "d",
+          "text": "Compute Savings Plans",
+          "correct": true,
+          "rationale": "Compute Savings Plans apply regardless of instance family, Region, operating system, and tenancy in return for a spend commitment."
+        }
+      ],
+      "explanation": "Savings Plans lower costs in exchange for a one- or three-year commitment to a consistent hourly spend. Compute Savings Plans are the most flexible, applying regardless of instance family, Region, operating system, and tenancy, and they extend to AWS Fargate and AWS Lambda. That flexibility is the deciding factor here, since a plan locked to one configuration would not allow the change the company wants. Flexibility usually costs a little discount, so pick only as much flexibility as the scenario requires.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/savingsplans/",
+          "title": "Cloud Cost Savings – Savings Plans – Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must reuse existing per-socket software licenses on Amazon EC2 and needs to see the number of sockets and cores on the server. Which option should the company choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dedicated Hosts",
+          "correct": true,
+          "rationale": "Dedicated Hosts expose sockets, cores, and host affinity, which supports server-bound licenses."
+        },
+        {
+          "id": "b",
+          "text": "Dedicated Instances",
+          "correct": false,
+          "rationale": "Dedicated Instances isolate hardware but do not show sockets, cores, or the host ID."
+        },
+        {
+          "id": "c",
+          "text": "Spot Instances",
+          "correct": false,
+          "rationale": "Spot Instances run on shared spare capacity and give no visibility into physical hardware."
+        },
+        {
+          "id": "d",
+          "text": "On-Demand Instances",
+          "correct": false,
+          "rationale": "Standard On-Demand Instances give no control over or visibility into the underlying server."
+        }
+      ],
+      "explanation": "Dedicated Hosts are physical EC2 servers fully dedicated to you. Because you can see sockets, physical cores, and the host ID, and can keep instances on the same host, you can use eligible per-socket, per-core, or per-VM software licenses and meet some compliance needs. Dedicated Instances also isolate hardware, but they lack host-level visibility and placement control. Look for keywords such as licenses, sockets, and cores in scenario questions.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ec2/dedicated-hosts/",
+          "title": "Dedicated Server Hosting - Amazon EC2 Dedicated Hosts - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ec2/pricing/dedicated-instances/",
+          "title": "Amazon EC2 Dedicated Instances"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0010",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which data transfers incur AWS data transfer charges?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Uploading data from the internet into Amazon S3",
+          "correct": false,
+          "rationale": "Inbound data transfer from the internet is free."
+        },
+        {
+          "id": "b",
+          "text": "Copying data from one AWS Region to another",
+          "correct": true,
+          "rationale": "Data leaving a Region is charged per GB, even when the destination is another AWS Region."
+        },
+        {
+          "id": "c",
+          "text": "Sending data from Amazon EC2 out to the internet",
+          "correct": true,
+          "rationale": "Outbound transfer to the internet is charged and uses tiered pricing."
+        },
+        {
+          "id": "d",
+          "text": "Receiving data into an Amazon EC2 instance from the internet",
+          "correct": false,
+          "rationale": "Inbound data transfer to EC2 is free."
+        },
+        {
+          "id": "e",
+          "text": "Keeping existing data stored in an Amazon S3 bucket",
+          "correct": false,
+          "rationale": "Storing data incurs storage charges, but no data transfer occurs, so there are no transfer charges."
+        }
+      ],
+      "explanation": "AWS does not charge for data transfer in, so uploading to Amazon S3 or receiving traffic on an EC2 instance from the internet is free. Charges apply to data that leaves AWS to the internet and to data that moves between Regions. Outbound pricing is tiered, so the per-GB cost decreases as monthly volume grows. Keeping workloads and users in the same Region is a simple way to limit these charges.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A retailer needs guaranteed Amazon EC2 capacity in one Availability Zone for a seasonal sale and does not want a one-year or three-year commitment. Which option meets these requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Spot Instances",
+          "correct": false,
+          "rationale": "Spot capacity can be interrupted, so it cannot guarantee capacity for a sale."
+        },
+        {
+          "id": "b",
+          "text": "Savings Plans",
+          "correct": false,
+          "rationale": "Savings Plans lower the price but do not reserve capacity in an Availability Zone."
+        },
+        {
+          "id": "c",
+          "text": "On-Demand Capacity Reservations",
+          "correct": true,
+          "rationale": "A Capacity Reservation reserves capacity in a specific Availability Zone, and an immediate-use reservation has no term commitment."
+        },
+        {
+          "id": "d",
+          "text": "Regional Reserved Instances",
+          "correct": false,
+          "rationale": "Regional Reserved Instances require a one- or three-year term and do not reserve capacity."
+        }
+      ],
+      "explanation": "Capacity Reservations reserve compute capacity in a specific Availability Zone for any duration. An immediate-use reservation has no term commitment, and you can modify or cancel it at any time. They provide no billing discount by themselves, so companies pair them with Savings Plans or Regional Reserved Instances when they also want a lower rate. Expect exam questions to contrast guaranteed capacity with discounted price.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html",
+          "title": "Reserve compute capacity with EC2 On-Demand Capacity Reservations - Amazon Elastic Compute Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company copies a large dataset from an Amazon S3 bucket in one AWS Region to a bucket in a different Region. How is this transfer billed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is free because both Regions belong to AWS.",
+          "correct": false,
+          "rationale": "Transfer between Regions is not free, even though both endpoints are inside AWS."
+        },
+        {
+          "id": "b",
+          "text": "It is charged per GB for data leaving the source Region.",
+          "correct": true,
+          "rationale": "Inter-Region transfer is billed per GB on the data that leaves the source Region."
+        },
+        {
+          "id": "c",
+          "text": "It is free if the data is encrypted.",
+          "correct": false,
+          "rationale": "Encryption does not change data transfer pricing."
+        },
+        {
+          "id": "d",
+          "text": "It is charged only for data arriving in the destination Region.",
+          "correct": false,
+          "rationale": "Inbound data transfer to AWS resources is free, so the charge is on the outbound side."
+        }
+      ],
+      "explanation": "Data transfer in is free, but data that leaves a Region is charged per GB. Copying data from one Region to another therefore incurs a transfer charge on the source side. Transfer to the internet is also charged and tiered. Designing architectures that keep traffic within a Region, or serve users through caching, helps limit transfer costs. Pricing differences like this often decide architecture choices for global applications.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company bought Reserved Instances in one account of an AWS Organizations organization that uses consolidated billing. How can other accounts in the organization benefit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Other accounts must each buy their own Reserved Instance to receive any discount.",
+          "correct": false,
+          "rationale": "Discounts can be shared across the organization, so separate purchases are not required."
+        },
+        {
+          "id": "b",
+          "text": "Only the account that purchased the Reserved Instances can use the discount.",
+          "correct": false,
+          "rationale": "Under consolidated billing, the discount can apply to matching usage in other accounts."
+        },
+        {
+          "id": "c",
+          "text": "Only the management account can use the discount.",
+          "correct": false,
+          "rationale": "The discount is not limited to the management account."
+        },
+        {
+          "id": "d",
+          "text": "The discount applies to matching usage in any account in the organization.",
+          "correct": true,
+          "rationale": "With consolidated billing, Reserved Instance discounts can apply to matching usage across accounts, unless sharing is turned off."
+        }
+      ],
+      "explanation": "AWS Organizations combines usage and charges from member accounts through consolidated billing. Because of this, Reserved Instance and Savings Plans discounts can apply to matching usage in any account in the organization, so unused reserved capacity in one account is not wasted. Sharing can be turned off for specific accounts if a company wants to keep benefits separate. Remember that discounts follow consolidated billing, which is a major benefit of using AWS Organizations.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/savingsplans/",
+          "title": "Cloud Cost Savings – Savings Plans – Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants a Reserved Instance discount but expects to change the instance family and operating system during the term. Which option best fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Convertible Reserved Instances",
+          "correct": true,
+          "rationale": "Convertible Reserved Instances can be exchanged for different attributes, trading a slightly smaller discount for flexibility."
+        },
+        {
+          "id": "b",
+          "text": "Standard Reserved Instances",
+          "correct": false,
+          "rationale": "Standard Reserved Instances give a larger discount but are less flexible for changing instance family or operating system."
+        },
+        {
+          "id": "c",
+          "text": "Spot Instances",
+          "correct": false,
+          "rationale": "Spot Instances are not Reserved Instances and can be interrupted."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Instances",
+          "correct": false,
+          "rationale": "Dedicated Instances are about hardware isolation, not about flexibility of a reservation."
+        }
+      ],
+      "explanation": "Reserved Instances come in types that balance discount against flexibility. Standard Reserved Instances offer the biggest discount but limited change, while Convertible Reserved Instances let you exchange for a different instance family, operating system, or tenancy in return for a smaller discount. Savings Plans are another flexible commitment option when a company prefers to commit to spend. Read the scenario for any hint that the configuration may change during the term.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/savingsplans/",
+          "title": "Cloud Cost Savings – Savings Plans – Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0015",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "Which statements about Amazon S3 storage class pricing are correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Standard has a 30-day minimum storage duration.",
+          "correct": false,
+          "rationale": "S3 Standard has no minimum storage duration."
+        },
+        {
+          "id": "b",
+          "text": "S3 Intelligent-Tiering charges a per-GB retrieval fee.",
+          "correct": false,
+          "rationale": "S3 Intelligent-Tiering has no retrieval charges."
+        },
+        {
+          "id": "c",
+          "text": "S3 Glacier Deep Archive has a 180-day minimum storage duration.",
+          "correct": true,
+          "rationale": "Deep Archive has the longest minimum duration of the classes, at 180 days."
+        },
+        {
+          "id": "d",
+          "text": "S3 Standard-IA charges a per-GB retrieval fee.",
+          "correct": true,
+          "rationale": "The infrequent-access classes trade lower storage prices for per-GB retrieval fees."
+        },
+        {
+          "id": "e",
+          "text": "S3 One Zone-IA stores data across three or more Availability Zones.",
+          "correct": false,
+          "rationale": "S3 One Zone-IA stores data in a single Availability Zone."
+        }
+      ],
+      "explanation": "Lower storage prices in S3 usually come with conditions. S3 Standard has no minimum duration or retrieval fee, and S3 Intelligent-Tiering has no retrieval charges. S3 Standard-IA and S3 One Zone-IA charge per-GB retrieval fees and have 30-day minimums, while S3 Glacier Deep Archive has a 180-day minimum and the lowest storage cost. One Zone-IA keeps data in one Availability Zone.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company stores re-creatable image thumbnails that are rarely accessed. The data can be regenerated if lost, and the company wants the lowest-cost infrequent-access Amazon S3 storage class. Which class should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Standard",
+          "correct": false,
+          "rationale": "S3 Standard costs more because it is designed for frequently accessed data."
+        },
+        {
+          "id": "b",
+          "text": "S3 Standard-IA",
+          "correct": false,
+          "rationale": "S3 Standard-IA stores data in three or more Availability Zones, which the company does not need, so it costs more."
+        },
+        {
+          "id": "c",
+          "text": "S3 One Zone-IA",
+          "correct": true,
+          "rationale": "S3 One Zone-IA stores data in one Availability Zone at a lower cost and suits data that can be re-created."
+        },
+        {
+          "id": "d",
+          "text": "S3 Intelligent-Tiering",
+          "correct": false,
+          "rationale": "S3 Intelligent-Tiering is for unknown access patterns and adds a monitoring charge, but the pattern here is known."
+        }
+      ],
+      "explanation": "S3 One Zone-IA is an infrequent-access class that stores data in a single Availability Zone, lowering the price compared with S3 Standard-IA. The data can be lost if that zone is damaged, so it fits re-creatable data. Both infrequent-access classes charge per-GB retrieval fees and have a 30-day minimum storage duration. Check how critical the data is before accepting reduced durability across Availability Zones.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company must ensure that its Amazon EC2 instances do not share physical hardware with other AWS accounts. It has no license-binding needs and does not need control over instance placement. Which option is the best fit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Dedicated Hosts",
+          "correct": false,
+          "rationale": "Dedicated Hosts add placement control and are billed per host, which is more than this company needs."
+        },
+        {
+          "id": "b",
+          "text": "Dedicated Instances",
+          "correct": true,
+          "rationale": "Dedicated Instances run on hardware isolated from other AWS accounts and are billed per instance."
+        },
+        {
+          "id": "c",
+          "text": "Capacity Reservations",
+          "correct": false,
+          "rationale": "Capacity Reservations assure capacity but do not provide hardware isolation."
+        },
+        {
+          "id": "d",
+          "text": "On-Demand Instances with default tenancy",
+          "correct": false,
+          "rationale": "Default tenancy can share hardware with other AWS accounts."
+        }
+      ],
+      "explanation": "Both Dedicated Instances and Dedicated Hosts use hardware not shared with other accounts. Dedicated Hosts add visibility of sockets and cores, host affinity, and targeted placement, and are billed per host, which suits server-bound licenses. When a company only needs isolation and per-instance billing, Dedicated Instances are the better fit. Requirements decide between the two. The stated requirements, not the feature list, decide which option wins.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ec2/pricing/dedicated-instances/",
+          "title": "Amazon EC2 Dedicated Instances"
+        },
+        {
+          "url": "https://aws.amazon.com/ec2/dedicated-hosts/",
+          "title": "Dedicated Server Hosting - Amazon EC2 Dedicated Hosts - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company stores data with unpredictable access patterns. It wants to avoid per-GB retrieval fees and minimum storage duration charges while still lowering storage cost for data that becomes inactive. Which Amazon S3 storage class should it choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "S3 Intelligent-Tiering",
+          "correct": true,
+          "rationale": "S3 Intelligent-Tiering has no retrieval fees or minimum duration charges and moves inactive objects to cheaper tiers automatically."
+        },
+        {
+          "id": "b",
+          "text": "S3 Standard-IA",
+          "correct": false,
+          "rationale": "S3 Standard-IA charges per-GB retrieval fees and has a 30-day minimum duration."
+        },
+        {
+          "id": "c",
+          "text": "S3 One Zone-IA",
+          "correct": false,
+          "rationale": "S3 One Zone-IA also charges retrieval fees, has a 30-day minimum, and uses only one Availability Zone."
+        },
+        {
+          "id": "d",
+          "text": "S3 Glacier Flexible Retrieval",
+          "correct": false,
+          "rationale": "S3 Glacier Flexible Retrieval has a 90-day minimum duration and retrieval fees and delays."
+        }
+      ],
+      "explanation": "When access patterns are unknown, choosing an infrequent-access or archive class can backfire through retrieval fees and minimum storage durations. S3 Intelligent-Tiering avoids both, because it has no retrieval charges or minimum duration and automatically moves objects to lower-cost tiers when they are not accessed. The cost is a small monitoring and automation charge per object. Review pricing details whenever the access pattern of data is unclear.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/s3/storage-classes/",
+          "title": "Object Storage Classes – Amazon S3"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html",
+          "title": "Understanding and managing Amazon S3 storage classes - Amazon Simple Storage Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0019",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Amazon EC2 purchasing option offers a discount compared with On-Demand pricing in exchange for a one-year or three-year commitment to a specific instance configuration?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Spot Instances",
+          "correct": false,
+          "rationale": "Spot Instances carry no term commitment and can be interrupted."
+        },
+        {
+          "id": "b",
+          "text": "On-Demand Instances",
+          "correct": false,
+          "rationale": "On-Demand Instances involve no commitment and no discount for committing."
+        },
+        {
+          "id": "c",
+          "text": "Reserved Instances",
+          "correct": true,
+          "rationale": "Reserved Instances give a lower rate than On-Demand in return for a one- or three-year commitment to a configuration."
+        },
+        {
+          "id": "d",
+          "text": "Dedicated Instances",
+          "correct": false,
+          "rationale": "Dedicated Instances provide hardware isolation and are not defined by a term commitment."
+        }
+      ],
+      "explanation": "Reserved Instances are a billing discount applied to matching On-Demand usage in return for a one-year or three-year commitment. They suit steady-state workloads whose configuration is predictable. Standard Reserved Instances give the largest discount, while Convertible Reserved Instances allow changes to attributes. On-Demand and Spot have no term commitment, and Dedicated Instances address tenancy rather than commitment. Reservations reward predictability, so confirm the workload is steady before committing.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/pricing/",
+          "title": "AWS Product and Service Pricing | Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-4.1-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which statements correctly compare On-Demand Capacity Reservations with Savings Plans?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A Capacity Reservation reserves capacity in a specific Availability Zone.",
+          "correct": true,
+          "rationale": "A Capacity Reservation provides a capacity benefit in the chosen Availability Zone."
+        },
+        {
+          "id": "b",
+          "text": "Savings Plans reserve capacity in a specific Availability Zone.",
+          "correct": false,
+          "rationale": "Savings Plans reduce price but do not reserve capacity."
+        },
+        {
+          "id": "c",
+          "text": "A Capacity Reservation provides no billing discount by itself.",
+          "correct": true,
+          "rationale": "Reserved capacity is billed at On-Demand rates unless you combine it with Savings Plans or Regional Reserved Instances."
+        },
+        {
+          "id": "d",
+          "text": "Capacity Reservations can be used with Dedicated Hosts.",
+          "correct": false,
+          "rationale": "Capacity Reservations cannot be used with Dedicated Hosts."
+        },
+        {
+          "id": "e",
+          "text": "Compute Savings Plans apply to only one instance family in one Region.",
+          "correct": false,
+          "rationale": "Compute Savings Plans apply regardless of instance family and Region."
+        },
+        {
+          "id": "f",
+          "text": "An immediate-use Capacity Reservation can be cancelled at any time.",
+          "correct": true,
+          "rationale": "An immediate-use reservation has no term commitment and can be modified or cancelled at any time."
+        }
+      ],
+      "explanation": "Capacity Reservations and Savings Plans solve different problems. A Capacity Reservation assures capacity in a particular Availability Zone, has no term commitment when used immediately, and gives no discount on its own. Savings Plans give a lower price in return for a spend commitment but reserve no capacity. Combining the two gives both assured capacity and a lower rate. On the exam, match the stated need, capacity or price, to the right option.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html",
+          "title": "Reserve compute capacity with EC2 On-Demand Capacity Reservations - Amazon Elastic Compute Cloud"
+        },
+        {
+          "url": "https://aws.amazon.com/savingsplans/",
+          "title": "Cloud Cost Savings – Savings Plans – Amazon Web Services"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,916 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "2.1",
+  "items": [
+    {
+      "id": "aif-c01-2.1-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A developer reads that a large language model (LLM) processes input as tokens. What is a token?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A fixed-size block of GPU memory used during training",
+          "correct": false,
+          "rationale": "GPU memory blocks are a hardware concept and are unrelated to how text is split for the model."
+        },
+        {
+          "id": "b",
+          "text": "A unit of text, such as a word or part of a word, that the model reads and generates",
+          "correct": true,
+          "rationale": "LLMs break text into tokens, which can be whole words, sub-words, or punctuation, and process and produce text one token at a time."
+        },
+        {
+          "id": "c",
+          "text": "A security credential that authorizes access to the model",
+          "correct": false,
+          "rationale": "Access credentials are called API keys or authentication tokens, which is a different meaning of the word."
+        },
+        {
+          "id": "d",
+          "text": "A labeled example used to fine-tune the model",
+          "correct": false,
+          "rationale": "Labeled examples are training records, not tokens; a single example contains many tokens."
+        }
+      ],
+      "explanation": "Large language models do not read raw characters or whole sentences. A tokenizer splits text into tokens, which are units such as words, sub-words, or punctuation marks, and maps each to a number. The model then predicts the next token repeatedly to produce output. Token counts matter because they determine how much text fits in the context window and how much an inference request costs. The same sentence can produce different token counts in different models.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/large-language-model/",
+          "title": "What is LLM? - Large Language Models Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What does an embedding represent in a generative AI application?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A compressed copy of the original file stored for backup",
+          "correct": false,
+          "rationale": "Embeddings are not backups; the original content cannot be reliably reconstructed from them."
+        },
+        {
+          "id": "b",
+          "text": "A rule that blocks harmful model output",
+          "correct": false,
+          "rationale": "Blocking harmful output is the job of guardrails, not embeddings."
+        },
+        {
+          "id": "c",
+          "text": "The list of tokens a model is allowed to generate",
+          "correct": false,
+          "rationale": "The allowed vocabulary belongs to the tokenizer; an embedding is a numeric representation of content."
+        },
+        {
+          "id": "d",
+          "text": "A numerical vector that captures the meaning of text, images, or other data",
+          "correct": true,
+          "rationale": "Embedding models convert content into vectors so that items with similar meaning are placed close together in vector space."
+        }
+      ],
+      "explanation": "An embedding is a list of numbers (a vector) produced by an embedding model to capture the semantic meaning of content such as text or images. Content with similar meaning produces vectors that are close together, so applications can measure similarity mathematically. This is the basis of semantic search and retrieval-augmented generation, where vectors are stored in a vector database and the closest matches to a query vector are retrieved.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company loads long policy documents into a knowledge base for a generative AI assistant. What is the purpose of chunking the documents?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To split documents into smaller segments that are embedded and retrieved individually",
+          "correct": true,
+          "rationale": "Chunking breaks content into manageable pieces so each can be converted to a vector and the most relevant pieces retrieved for a query."
+        },
+        {
+          "id": "b",
+          "text": "To encrypt each document with a separate key",
+          "correct": false,
+          "rationale": "Encryption protects data at rest and is a separate control from splitting content for retrieval."
+        },
+        {
+          "id": "c",
+          "text": "To translate each document into a different language",
+          "correct": false,
+          "rationale": "Translation changes language; chunking only changes how the text is divided."
+        },
+        {
+          "id": "d",
+          "text": "To increase the number of parameters in the foundation model",
+          "correct": false,
+          "rationale": "Chunking prepares source data and does not change the model's parameters."
+        }
+      ],
+      "explanation": "Chunking divides source documents into smaller pieces before they are converted into embeddings and stored. Retrieval then returns only the chunks most relevant to a question, instead of whole documents that may exceed the model's context window and add noise. Chunk size and strategy affect quality: chunks that are too small lose context, and chunks that are too large dilute relevance and use more tokens in the prompt.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-chunking.html",
+          "title": "How content chunking works for knowledge bases - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A retailer wants a foundation model to write product descriptions in a consistent brand voice without retraining the model. Which technique should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pre-train a new model from scratch on the product catalog",
+          "correct": false,
+          "rationale": "Pre-training from scratch is very expensive and is not needed just to control tone and format."
+        },
+        {
+          "id": "b",
+          "text": "Reduce the size of the model's vocabulary",
+          "correct": false,
+          "rationale": "The vocabulary is fixed by the model's tokenizer and does not control writing style."
+        },
+        {
+          "id": "c",
+          "text": "Prompt engineering with clear instructions and example descriptions",
+          "correct": true,
+          "rationale": "Well-structured instructions and few-shot examples guide the model's output style without changing its weights."
+        },
+        {
+          "id": "d",
+          "text": "Convert the catalog into diffusion model training images",
+          "correct": false,
+          "rationale": "Diffusion models generate images and are not used to write text descriptions."
+        }
+      ],
+      "explanation": "Prompt engineering is the practice of designing the input given to a foundation model to get better output. Techniques include giving clear instructions, assigning a role, specifying the output format, and including a few examples (few-shot prompting). It requires no training and no change to model weights, so it is the fastest and cheapest first step for shaping tone and format. Fine-tuning is considered only when prompting is not enough.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/large-language-model/",
+          "title": "What is LLM? - Large Language Models Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement best describes a foundation model (FM)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A rules-based program that follows hand-written if-then logic",
+          "correct": false,
+          "rationale": "Rules-based programs do not learn from data, whereas an FM is a trained neural network."
+        },
+        {
+          "id": "b",
+          "text": "A large model pre-trained on broad data that can be adapted to many tasks",
+          "correct": true,
+          "rationale": "FMs are trained on very large datasets, often with self-supervised learning, and serve as a starting point for many downstream applications."
+        },
+        {
+          "id": "c",
+          "text": "A database that stores vectors for similarity search",
+          "correct": false,
+          "rationale": "A vector database stores embeddings; it is not a trained model."
+        },
+        {
+          "id": "d",
+          "text": "A model trained only on one labeled dataset for a single task",
+          "correct": false,
+          "rationale": "Single-task models trained on one labeled dataset are traditional ML models, not FMs."
+        }
+      ],
+      "explanation": "A foundation model is a large neural network pre-trained on broad, mostly unlabeled data, typically with self-supervised learning. Because it learns general patterns, one FM can be applied to many tasks such as summarization, question answering, and code generation, either directly through prompts or after adaptation such as fine-tuning. Large language models are one kind of FM. Starting from an existing FM is faster and cheaper than training a model from scratch.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A marketing team wants a model that creates new images from text descriptions. The model works by starting from random noise and gradually removing it. Which type of model is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A decision tree classifier",
+          "correct": false,
+          "rationale": "Decision trees classify or predict from tabular features and do not generate images."
+        },
+        {
+          "id": "b",
+          "text": "A k-means clustering model",
+          "correct": false,
+          "rationale": "Clustering groups similar data points and does not generate new content."
+        },
+        {
+          "id": "c",
+          "text": "A recurrent model for time-series forecasting",
+          "correct": false,
+          "rationale": "Time-series forecasting predicts future values and is not an image generation approach."
+        },
+        {
+          "id": "d",
+          "text": "A diffusion model",
+          "correct": true,
+          "rationale": "Diffusion models learn to add and then remove noise, which lets them generate new images from a text prompt."
+        }
+      ],
+      "explanation": "Diffusion models generate images by learning a two-step process. During training, noise is gradually added to images, and the model learns to reverse that process. At inference, it starts from random noise and removes it step by step, guided by a text prompt, until an image appears. Stable Diffusion is a well-known example. Transformer-based LLMs, by contrast, generate text by predicting the next token.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0007",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which statements about how generative AI models work are correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Embeddings of content with similar meaning are located close together in vector space.",
+          "correct": true,
+          "rationale": "Distance between vectors reflects semantic similarity, which is what makes embedding-based search work."
+        },
+        {
+          "id": "b",
+          "text": "An embedding is an exact, lossless copy of the original text.",
+          "correct": false,
+          "rationale": "Embeddings are numeric summaries of meaning; they are not exact copies."
+        },
+        {
+          "id": "c",
+          "text": "Transformer-based LLMs use attention to weigh how tokens relate to each other.",
+          "correct": true,
+          "rationale": "The attention mechanism lets the model consider relationships between tokens across the input, which is central to the transformer architecture."
+        },
+        {
+          "id": "d",
+          "text": "LLMs can only be trained on labeled question-and-answer pairs.",
+          "correct": false,
+          "rationale": "LLMs are pre-trained on large amounts of unlabeled text using self-supervised learning."
+        },
+        {
+          "id": "e",
+          "text": "Diffusion models are used only to generate text.",
+          "correct": false,
+          "rationale": "Diffusion models are most commonly used to generate images and other media, not text."
+        }
+      ],
+      "explanation": "Embedding models map content to vectors so that similar meanings sit close together, which enables semantic search. Transformer-based LLMs rely on an attention mechanism to relate tokens to one another, so the meaning of a word can depend on the words around it. LLMs are pre-trained with self-supervised learning on large unlabeled text, so labeled pairs are not required. Diffusion models generate images or other media by denoising, not text.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/large-language-model/",
+          "title": "What is LLM? - Large Language Models Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants one model that can accept both an image and a text question, such as a photo of a damaged part and the question \"What is broken?\". What type of model is needed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A multi-modal model",
+          "correct": true,
+          "rationale": "Multi-modal models process more than one type of input, such as text and images, in the same request."
+        },
+        {
+          "id": "b",
+          "text": "A text-only embedding model",
+          "correct": false,
+          "rationale": "A text-only embedding model cannot interpret images and does not answer questions."
+        },
+        {
+          "id": "c",
+          "text": "A time-series forecasting model",
+          "correct": false,
+          "rationale": "Forecasting models predict future numeric values from past data and do not interpret images."
+        },
+        {
+          "id": "d",
+          "text": "A clustering model",
+          "correct": false,
+          "rationale": "Clustering groups similar items and cannot answer a question about a photo."
+        }
+      ],
+      "explanation": "A multi-modal model can work with more than one type of data, such as text, images, audio, or video, as input, output, or both. For example, a model that accepts a photo and a text question and returns a text answer is multi-modal. Single-modality models, such as text-only LLMs, cannot interpret the image. Multi-modal models support use cases like document extraction, visual inspection, and image captioning.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0009",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which two tasks are good use cases for generative AI?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Translating customer support emails between languages",
+          "correct": true,
+          "rationale": "Translation is a language generation task that LLMs perform well."
+        },
+        {
+          "id": "b",
+          "text": "Predicting next month's sales figure from historical numeric data",
+          "correct": false,
+          "rationale": "Numeric forecasting from tabular history is a traditional machine learning task rather than a generative task."
+        },
+        {
+          "id": "c",
+          "text": "Generating source code from a natural-language description",
+          "correct": true,
+          "rationale": "Code generation from a description is a common FM use case, as is code explanation and debugging."
+        },
+        {
+          "id": "d",
+          "text": "Assigning a numeric fraud score to each card transaction",
+          "correct": false,
+          "rationale": "Scoring transactions is a classification task suited to traditional ML models, not content generation."
+        },
+        {
+          "id": "e",
+          "text": "Sorting a table of records by date",
+          "correct": false,
+          "rationale": "Sorting is a deterministic database operation that needs no AI model."
+        }
+      ],
+      "explanation": "Generative AI creates new content such as text, code, images, audio, and video. Common use cases include summarization, translation, AI assistants, code generation, customer service agents, semantic search, and recommendation explanations. Tasks that predict a number or assign a category from structured data, such as forecasting or fraud scoring, are typically handled by traditional machine learning. Deterministic operations like sorting do not need AI.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0010",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company wants to adapt an existing foundation model to answer questions about its insurance products. Which three activities are part of the FM lifecycle for this project?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Evaluating several candidate models on representative tasks to choose one",
+          "correct": true,
+          "rationale": "Model selection compares candidates against the use case's needs before committing."
+        },
+        {
+          "id": "b",
+          "text": "Pre-training a brand-new model from scratch on billions of public web pages",
+          "correct": false,
+          "rationale": "Pre-training from scratch is not part of adapting an existing FM and is very costly."
+        },
+        {
+          "id": "c",
+          "text": "Fine-tuning the chosen model on curated, high-quality domain examples",
+          "correct": true,
+          "rationale": "Fine-tuning adapts a pre-trained model using selected domain data, which matches the data selection and fine-tuning stages."
+        },
+        {
+          "id": "d",
+          "text": "Skipping evaluation because the model provider already tested it",
+          "correct": false,
+          "rationale": "Provider benchmarks do not show whether the model meets this company's accuracy and safety needs."
+        },
+        {
+          "id": "e",
+          "text": "Collecting user feedback after deployment to guide improvements",
+          "correct": true,
+          "rationale": "Feedback closes the loop and informs later data selection, prompts, or retraining."
+        },
+        {
+          "id": "f",
+          "text": "Training on all production prompts without reviewing them for quality or sensitive data",
+          "correct": false,
+          "rationale": "Data selection requires curating and reviewing data; unreviewed prompts can add noise and expose sensitive information."
+        }
+      ],
+      "explanation": "The foundation model lifecycle runs from data selection and model selection through pre-training, fine-tuning, evaluation, deployment, and feedback. When adapting an existing FM, a team skips pre-training and focuses on the other stages: choose a model by comparing candidates, fine-tune it with curated domain data, evaluate it against the company's own criteria, deploy it, and collect feedback to improve the next iteration. Evaluation is never optional.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team has a pre-trained foundation model and has a few thousand labeled examples of its own support conversations. It wants the model to follow the company's terminology and response style more reliably. Which step does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pre-training",
+          "correct": false,
+          "rationale": "Pre-training builds the general model from very large, broad datasets and is done before adaptation."
+        },
+        {
+          "id": "b",
+          "text": "Deployment",
+          "correct": false,
+          "rationale": "Deployment makes a model available for inference and does not change its behavior."
+        },
+        {
+          "id": "c",
+          "text": "Fine-tuning",
+          "correct": true,
+          "rationale": "Fine-tuning continues training a pre-trained model on a smaller domain-specific dataset to specialize its behavior."
+        },
+        {
+          "id": "d",
+          "text": "Tokenization",
+          "correct": false,
+          "rationale": "Tokenization splits text into tokens and does not adapt the model."
+        }
+      ],
+      "explanation": "Pre-training and fine-tuning are different lifecycle stages. Pre-training teaches a model general patterns from very large datasets and is expensive. Fine-tuning then continues training on a much smaller, curated dataset of labeled examples to specialize the model for a domain, terminology, or style. Because it starts from the pre-trained weights, fine-tuning needs far less data and compute than training from scratch.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "For on-demand inference with a foundation model in Amazon Bedrock, what is the pricing model based on?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The number of Availability Zones the model runs in",
+          "correct": false,
+          "rationale": "On-demand pricing is not based on Availability Zones."
+        },
+        {
+          "id": "b",
+          "text": "The size of the training dataset used by the provider",
+          "correct": false,
+          "rationale": "Training data size is not billed to customers for on-demand inference."
+        },
+        {
+          "id": "c",
+          "text": "The number of users in the AWS account",
+          "correct": false,
+          "rationale": "On-demand inference is not priced per user."
+        },
+        {
+          "id": "d",
+          "text": "The number of input and output tokens processed",
+          "correct": true,
+          "rationale": "On-demand pricing is charged per token, with separate rates for input tokens and output tokens that vary by model."
+        }
+      ],
+      "explanation": "With on-demand inference in Amazon Bedrock you pay for what you use, measured in tokens. Input tokens (the prompt, instructions, and any retrieved context) and output tokens (the generated response) are usually priced separately, and rates vary by model. No upfront commitment is required. Because cost scales with token volume, longer prompts and longer responses cost more.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An application sends the same long set of instructions and several retrieved documents with every request to a pay-per-token foundation model. Costs are higher than expected and responses are slow. Which change would reduce both cost and latency?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Shorten the prompt by sending only the instructions and chunks the task needs",
+          "correct": true,
+          "rationale": "Fewer input tokens means lower per-request cost, and a smaller prompt generally lets the model respond faster."
+        },
+        {
+          "id": "b",
+          "text": "Ask the model to produce longer and more detailed answers",
+          "correct": false,
+          "rationale": "Longer output increases output tokens, which raises cost and latency."
+        },
+        {
+          "id": "c",
+          "text": "Add more examples to every prompt regardless of relevance",
+          "correct": false,
+          "rationale": "Extra examples add input tokens and cost without a guaranteed quality gain."
+        },
+        {
+          "id": "d",
+          "text": "Repeat the instructions twice for emphasis",
+          "correct": false,
+          "rationale": "Repeating text doubles those input tokens and costs more without a reliable benefit."
+        }
+      ],
+      "explanation": "With token-based pricing, cost depends on the number of input and output tokens, and larger prompts and responses also take longer to process. Trimming prompts to the instructions and retrieved chunks that matter, and limiting response length, reduces both spend and latency. Larger models also tend to cost more per token, so choosing the smallest model that meets quality needs is another lever.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company has a steady, high-volume generative AI workload that needs consistent throughput and predictable cost. Its current on-demand token charges vary widely and it sometimes sees throttling during peaks. Which option best fits these requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep using on-demand inference and add retries in the application",
+          "correct": false,
+          "rationale": "Retries do not remove throttling or make cost predictable."
+        },
+        {
+          "id": "b",
+          "text": "Purchase Provisioned Throughput in Amazon Bedrock for a dedicated model capacity",
+          "correct": true,
+          "rationale": "Provisioned Throughput reserves model units for a fixed hourly price, giving consistent throughput and predictable cost for sustained workloads."
+        },
+        {
+          "id": "c",
+          "text": "Move the workload to a smaller context window by removing all instructions",
+          "correct": false,
+          "rationale": "Removing instructions would hurt quality and does not guarantee capacity."
+        },
+        {
+          "id": "d",
+          "text": "Ask users to submit requests less often",
+          "correct": false,
+          "rationale": "Limiting users does not meet the business need for steady, high throughput."
+        }
+      ],
+      "explanation": "On-demand inference is billed per token and shares capacity, which suits variable or unpredictable workloads but can be throttled and cost more as volume grows. Provisioned Throughput lets you buy model units that provide a set level of throughput, billed per hour with optional one-month or six-month commitments. It trades flexibility for predictable performance and cost, so it fits steady, high-volume production traffic.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html",
+          "title": "Increase model invocation capacity with Provisioned Throughput in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company builds a customer assistant on a foundation model. The team decides what instructions, retrieved documents, conversation history, and tool descriptions are placed into each request. What is this practice called?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Context engineering",
+          "correct": true,
+          "rationale": "Context engineering is the practice of assembling and managing the right information in the model's context window for each request."
+        },
+        {
+          "id": "b",
+          "text": "Model pre-training",
+          "correct": false,
+          "rationale": "Pre-training changes model weights using massive datasets and is not about per-request inputs."
+        },
+        {
+          "id": "c",
+          "text": "Hyperparameter sweeping",
+          "correct": false,
+          "rationale": "Hyperparameter sweeps tune training settings and do not decide what goes in a prompt."
+        },
+        {
+          "id": "d",
+          "text": "Data labeling",
+          "correct": false,
+          "rationale": "Data labeling annotates training data and is unrelated to assembling prompts at inference time."
+        }
+      ],
+      "explanation": "A foundation model only knows what is in its training data and the context window of the current request. Context engineering is the discipline of deciding what goes into that window: system instructions, relevant retrieved content, conversation history or memory, and tool definitions, while keeping it within the token limit. It goes beyond writing a single prompt, because the context is assembled dynamically for each step.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mcp-strategies/introduction.html",
+          "title": "Model Context Protocol strategies on AWS - AWS Prescriptive Guidance"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "An agent has access to dozens of tools. Each tool description is added to every request, and the application now shows rising token costs and the model often picks the wrong tool. Which approach addresses this best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase the model's maximum output length",
+          "correct": false,
+          "rationale": "Output length does not reduce the tokens spent on tool descriptions or improve tool selection."
+        },
+        {
+          "id": "b",
+          "text": "Add a longer disclaimer to every prompt",
+          "correct": false,
+          "rationale": "A longer prompt adds more tokens and does not fix tool selection."
+        },
+        {
+          "id": "c",
+          "text": "Fine-tune the model to ignore tool descriptions",
+          "correct": false,
+          "rationale": "Ignoring descriptions would stop the agent from knowing how to use tools."
+        },
+        {
+          "id": "d",
+          "text": "Include only the tools relevant to the current workflow in the context",
+          "correct": true,
+          "rationale": "Filtering and scoping tools reduces tokens per request and helps the model choose correctly, which is a core context engineering practice."
+        }
+      ],
+      "explanation": "Everything placed in the context window consumes tokens and competes for the model's attention. Tool definitions are a common source of bloat: each one adds tokens to every call, and a large, overlapping list makes selection harder. Context engineering addresses this by scoping tools to the workflow, filtering or retrieving only relevant tools, and keeping instructions and retrieved content concise. This lowers cost and latency and improves accuracy.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mcp-strategies/introduction.html",
+          "title": "Model Context Protocol strategies on AWS - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which two statements correctly describe the Model Context Protocol (MCP)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is an open standard for connecting agents and AI applications to external tools and data",
+          "correct": true,
+          "rationale": "MCP standardizes how agents communicate with external resources instead of requiring custom integrations."
+        },
+        {
+          "id": "b",
+          "text": "It is a technique that compresses model weights for faster inference",
+          "correct": false,
+          "rationale": "Compressing weights is quantization or distillation, which has nothing to do with MCP."
+        },
+        {
+          "id": "c",
+          "text": "It lets an integration built once as an MCP server be reused across agents and teams",
+          "correct": true,
+          "rationale": "A shared MCP server avoids each team building its own integration for the same system."
+        },
+        {
+          "id": "d",
+          "text": "It is a method for fine-tuning a model on private data",
+          "correct": false,
+          "rationale": "MCP does not update model weights; it connects agents to tools and data at run time."
+        },
+        {
+          "id": "e",
+          "text": "It works only with models hosted in a single cloud provider",
+          "correct": false,
+          "rationale": "MCP is an open protocol and is not limited to one provider's models."
+        }
+      ],
+      "explanation": "The Model Context Protocol is an open standard that defines how agents and AI applications connect to external systems such as databases, APIs, and files. A system exposes its capabilities through an MCP server, and any MCP-compatible agent can discover and call them. This replaces many one-off integrations with a reusable one and supports governance, since tool usage can be managed centrally. MCP operates at run time and does not change model weights.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mcp-strategies/introduction.html",
+          "title": "Model Context Protocol strategies on AWS - AWS Prescriptive Guidance"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/introduction.html",
+          "title": "Agentic AI frameworks, platforms, protocols, and tools on AWS - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A customer service agent talks with a user across several sessions. The company wants the agent to remember the user's stated preferences from earlier sessions. Which agent capability provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Long-term memory",
+          "correct": true,
+          "rationale": "Long-term memory stores key facts and preferences across sessions so the agent can personalize later conversations."
+        },
+        {
+          "id": "b",
+          "text": "Short-term memory only",
+          "correct": false,
+          "rationale": "Short-term memory holds turn-by-turn context within a single session and does not persist across sessions."
+        },
+        {
+          "id": "c",
+          "text": "A larger output token limit",
+          "correct": false,
+          "rationale": "The output limit controls response length and does not preserve information between sessions."
+        },
+        {
+          "id": "d",
+          "text": "Higher temperature",
+          "correct": false,
+          "rationale": "Temperature controls randomness of output and does not store information."
+        }
+      ],
+      "explanation": "Agents are stateless by default, so memory management is a core agentic concept. Short-term memory keeps the turn-by-turn history of a session so follow-up questions make sense. Long-term memory extracts and stores important facts, preferences, and summaries so they persist across sessions. Amazon Bedrock AgentCore Memory provides both as a managed capability. Memory content is added to the context at the right time.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory.html",
+          "title": "Add memory to your Amazon Bedrock AgentCore agent - Amazon Bedrock AgentCore"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+          "title": "Overview - Amazon Bedrock AgentCore"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0019",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An agent receives the request \"Where is my order 1234?\" and calls a company order-lookup API to get the status before replying. Which agentic AI concept does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Pre-training",
+          "correct": false,
+          "rationale": "Pre-training is a training stage and does not involve calling an API at run time."
+        },
+        {
+          "id": "b",
+          "text": "Tool usage",
+          "correct": true,
+          "rationale": "Agents use tools such as APIs, functions, or MCP servers to take actions and get information beyond the model's built-in knowledge."
+        },
+        {
+          "id": "c",
+          "text": "Chunking",
+          "correct": false,
+          "rationale": "Chunking splits documents for retrieval and does not describe calling an API."
+        },
+        {
+          "id": "d",
+          "text": "Tokenization",
+          "correct": false,
+          "rationale": "Tokenization splits text into tokens and does not describe an agent taking an action."
+        }
+      ],
+      "explanation": "An agentic AI system uses a foundation model to reason about a goal, decide on steps, and take actions. Tool usage is how it acts: the model selects a tool, such as an API, database query, or MCP server, supplies the parameters, and uses the result in its next step. Without tools, a model can only answer from training data and the prompt. Workflow orchestration coordinates these steps toward the goal.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+          "title": "Overview - Amazon Bedrock AgentCore"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.1-0020",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company builds a complex application in which one agent receives user requests, breaks them into subtasks, and delegates each to specialist agents for billing, shipping, and returns. Which multi-agent pattern is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A single agent with no delegation",
+          "correct": false,
+          "rationale": "A single agent does not delegate work to other agents."
+        },
+        {
+          "id": "b",
+          "text": "A batch inference job",
+          "correct": false,
+          "rationale": "Batch inference processes many prompts offline and is not an agent coordination pattern."
+        },
+        {
+          "id": "c",
+          "text": "A supervisor agent coordinating specialist collaborator agents",
+          "correct": true,
+          "rationale": "A supervisor plans the work, routes subtasks to specialist agents, and combines their results, which is the hierarchical multi-agent pattern."
+        },
+        {
+          "id": "d",
+          "text": "A vector database with multiple indexes",
+          "correct": false,
+          "rationale": "A vector database stores embeddings and does not coordinate agents."
+        }
+      ],
+      "explanation": "In a multi-agent system, several agents with focused roles work together on a task too complex for one agent. In the supervisor (hierarchical) pattern, a supervisor agent interprets the request, plans, delegates subtasks to specialist collaborator agents, and assembles the final answer. Specialization keeps each agent's context and tools small, and subtasks can run in parallel. Roles should be clearly defined with minimal overlap so routing is reliable.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/multi-agent-collaboration.html",
+          "title": "Multi-agent collaboration - AWS Prescriptive Guidance"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html",
+          "title": "Use multi-agent collaboration with Amazon Bedrock Agents - Amazon Bedrock"
+        }
+      ]
+    }
+  ]
+}

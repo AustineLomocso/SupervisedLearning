@@ -1,0 +1,920 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "4.1",
+  "items": [
+    {
+      "id": "aif-c01-4.1-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which core dimension of responsible AI describes weighing how an AI system affects different groups of stakeholders?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Explainability",
+          "correct": false,
+          "rationale": "Explainability is about understanding and evaluating what the system outputs, not about impact on groups."
+        },
+        {
+          "id": "b",
+          "text": "Controllability",
+          "correct": false,
+          "rationale": "Controllability is the ability to monitor and steer system behavior."
+        },
+        {
+          "id": "c",
+          "text": "Fairness",
+          "correct": true,
+          "rationale": "Fairness considers how the system affects different groups of stakeholders, so it matches the description."
+        },
+        {
+          "id": "d",
+          "text": "Governance",
+          "correct": false,
+          "rationale": "Governance applies best practices across the AI supply chain, not group impact."
+        }
+      ],
+      "explanation": "AWS describes responsible AI through core dimensions including fairness, explainability, privacy and security, safety, controllability, veracity and robustness, governance and transparency. Fairness is the dimension that looks at how a system affects different groups of people, which is why biased outcomes for a demographic group are treated as a fairness problem. Explainability, controllability and governance address other concerns such as understanding outputs, steering behavior and supply chain practices.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/",
+          "title": "Responsible AI – Building AI Responsibly – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which responsible AI dimension refers to producing correct outputs even when the system receives unexpected or adversarial inputs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Veracity and robustness",
+          "correct": true,
+          "rationale": "Veracity and robustness cover correct outputs, including under unexpected or adversarial inputs."
+        },
+        {
+          "id": "b",
+          "text": "Transparency",
+          "correct": false,
+          "rationale": "Transparency helps stakeholders make informed choices about using the system, not output correctness."
+        },
+        {
+          "id": "c",
+          "text": "Privacy and security",
+          "correct": false,
+          "rationale": "Privacy and security concern appropriate handling and protection of data and models."
+        },
+        {
+          "id": "d",
+          "text": "Controllability",
+          "correct": false,
+          "rationale": "Controllability concerns monitoring and steering the system rather than output correctness."
+        }
+      ],
+      "explanation": "Veracity and robustness is the responsible AI dimension that focuses on whether a system gives correct answers and keeps behaving well when inputs are unusual, noisy or deliberately adversarial. A robust system resists manipulation such as prompt attacks and does not collapse on edge cases. Safety, transparency, privacy and controllability are related but address harmful outputs, informed use, data protection and oversight respectively. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/",
+          "title": "Responsible AI – Building AI Responsibly – AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/responsible-ai.html",
+          "title": "Responsible AI - Generative AI Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Amazon Bedrock capability provides configurable safeguards, such as content filters and denied topics, for generative AI applications?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock Knowledge Bases",
+          "correct": false,
+          "rationale": "Knowledge Bases connect models to company data for retrieval, not to filter harmful content."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock Agents",
+          "correct": false,
+          "rationale": "Agents orchestrate multistep tasks and tool calls rather than apply safety filters."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock Prompt Management",
+          "correct": false,
+          "rationale": "Prompt Management helps create and version prompts, not enforce content safeguards."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock Guardrails",
+          "correct": true,
+          "rationale": "Guardrails provides content filters, denied topics, word filters and other safeguards for inputs and outputs."
+        }
+      ],
+      "explanation": "Amazon Bedrock Guardrails gives teams configurable safeguards that evaluate both user inputs and model responses. Its filters include content filters, denied topics, word filters, sensitive information filters, contextual grounding checks and Automated Reasoning checks. Guardrails can be attached to foundation model calls or used on their own through the ApplyGuardrail API, which makes them a central tool for building safer generative AI applications. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+          "title": "Detect and filter harmful content by using Amazon Bedrock Guardrails - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/guardrails/",
+          "title": "Generative AI Data Governance – Amazon Bedrock Guardrails – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which dataset characteristic helps a model perform well for all of the user groups it will serve?",
+      "options": [
+        {
+          "id": "a",
+          "text": "High compression ratio",
+          "correct": false,
+          "rationale": "Compression affects storage size and has no bearing on how well groups are represented."
+        },
+        {
+          "id": "b",
+          "text": "Diverse and inclusive coverage of groups",
+          "correct": true,
+          "rationale": "A dataset that includes diverse, inclusive examples of all user groups helps the model serve each of them."
+        },
+        {
+          "id": "c",
+          "text": "Encryption at rest",
+          "correct": false,
+          "rationale": "Encryption protects stored data but does not change representation of groups."
+        },
+        {
+          "id": "d",
+          "text": "Fast ingestion speed",
+          "correct": false,
+          "rationale": "Ingestion speed is a performance trait unrelated to dataset fairness or coverage."
+        }
+      ],
+      "explanation": "Responsible AI starts with data. A dataset should be inclusive and diverse, balanced across groups, and drawn from curated, vetted sources. If some groups are under-represented, the model sees few examples of them and tends to perform worse for them. Technical traits such as compression, encryption and ingestion speed matter for operations and security but do not make a dataset more representative. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/resources/",
+          "title": "Responsible AI Tools and Resources - Building AI Responsibly - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html",
+          "title": "Fairness, model explainability and bias detection with SageMaker Clarify - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A machine learning model scores very high on its training data but performs poorly on new data. Which term describes this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Underfitting",
+          "correct": false,
+          "rationale": "Underfitting shows poor results on both training and new data, not strong training results."
+        },
+        {
+          "id": "b",
+          "text": "High bias",
+          "correct": false,
+          "rationale": "High bias is associated with a model too simple to learn patterns, which hurts training performance too."
+        },
+        {
+          "id": "c",
+          "text": "Overfitting",
+          "correct": true,
+          "rationale": "Overfitting means the model memorized training data and fails to generalize to new data."
+        },
+        {
+          "id": "d",
+          "text": "Data labeling",
+          "correct": false,
+          "rationale": "Data labeling is the process of annotating data, not a model behavior."
+        }
+      ],
+      "explanation": "Overfitting happens when a model learns the training data too closely, including its noise, so it generalizes poorly. It is linked to high variance. Underfitting is the opposite problem: the model is too simple (high bias) and performs poorly even on training data. Distinguishing the two is a common exam skill, and both lead to inaccurate predictions in production. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html",
+          "title": "Fairness, model explainability and bias detection with SageMaker Clarify - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A generative AI model confidently states facts that are fabricated and not supported by any source. Which term describes this risk?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hallucination",
+          "correct": true,
+          "rationale": "A hallucination is a fluent but false or unsupported output from a generative model."
+        },
+        {
+          "id": "b",
+          "text": "Overfitting",
+          "correct": false,
+          "rationale": "Overfitting describes poor generalization of a trained model, not fabricated content."
+        },
+        {
+          "id": "c",
+          "text": "Data drift",
+          "correct": false,
+          "rationale": "Data drift is a change in input data over time, not invented facts."
+        },
+        {
+          "id": "d",
+          "text": "Prompt caching",
+          "correct": false,
+          "rationale": "Prompt caching is a cost and latency optimization, not a risk of false output."
+        }
+      ],
+      "explanation": "Hallucinations are outputs that sound plausible but are inaccurate or not grounded in a trusted source. They create legal and reputational risk because users may act on false information. Mitigations include retrieval augmented generation, human review and Amazon Bedrock Guardrails contextual grounding checks, which compare a response with the source material and the user query. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html",
+          "title": "Use contextual grounding check to filter hallucinations in responses - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/responsible-ai.html",
+          "title": "Responsible AI - Generative AI Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to reduce the environmental footprint of a generative AI workload that performs a simple, well-defined task. Which approach follows responsible model selection?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Choose the largest available foundation model",
+          "correct": false,
+          "rationale": "A larger model uses more energy and is unnecessary for a simple task."
+        },
+        {
+          "id": "b",
+          "text": "Evaluate and use a right-sized, smaller model",
+          "correct": true,
+          "rationale": "A smaller model that meets accuracy needs lowers energy use and cost, which supports sustainability."
+        },
+        {
+          "id": "c",
+          "text": "Train a new model from scratch",
+          "correct": false,
+          "rationale": "Training from scratch consumes far more compute and energy than selecting an existing model."
+        },
+        {
+          "id": "d",
+          "text": "Keep oversized instances always running",
+          "correct": false,
+          "rationale": "Idle, over-provisioned capacity wastes energy and conflicts with efficient resource use."
+        }
+      ],
+      "explanation": "The Generative AI Lens recommends asking whether generative AI is required at all, then selecting right-sized, energy-efficient models, and using auto scaling or serverless capacity so resources are not idle. Picking the biggest model or training from scratch increases energy use without a matching benefit when a smaller model can meet the requirement. Sustainability is therefore part of responsible model selection alongside accuracy and cost. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/sustainability.html",
+          "title": "Sustainability - Generative AI Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A retrieval augmented generation chatbot sometimes returns answers that are not supported by the retrieved documents. Which Amazon Bedrock Guardrails capability helps detect this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Word filters",
+          "correct": false,
+          "rationale": "Word filters block specific words or phrases and cannot judge whether an answer matches source text."
+        },
+        {
+          "id": "b",
+          "text": "Denied topics",
+          "correct": false,
+          "rationale": "Denied topics block subjects you define, not unsupported claims on allowed subjects."
+        },
+        {
+          "id": "c",
+          "text": "Sensitive information filters",
+          "correct": false,
+          "rationale": "These filters block or mask PII, which does not address factual grounding."
+        },
+        {
+          "id": "d",
+          "text": "Contextual grounding check",
+          "correct": true,
+          "rationale": "This check detects responses that are not grounded in the source or irrelevant to the user query."
+        }
+      ],
+      "explanation": "Contextual grounding checks in Amazon Bedrock Guardrails compare a model response with the reference source and the user query. They flag or block hallucinated content that adds information not found in the source or does not answer the question. This is especially useful in RAG applications, where responses are expected to stay faithful to retrieved passages. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html",
+          "title": "Use contextual grounding check to filter hallucinations in responses - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+          "title": "Detect and filter harmful content by using Amazon Bedrock Guardrails - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A call center summarization application must mask personally identifiable information, such as Social Security numbers, in model output. Which Amazon Bedrock Guardrails feature meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sensitive information filters",
+          "correct": true,
+          "rationale": "These filters block or mask PII such as SSNs, and support custom regex patterns."
+        },
+        {
+          "id": "b",
+          "text": "Contextual grounding check",
+          "correct": false,
+          "rationale": "Grounding checks detect unsupported content and do not redact PII."
+        },
+        {
+          "id": "c",
+          "text": "Content filters",
+          "correct": false,
+          "rationale": "Content filters address harmful categories such as hate or violence, not PII."
+        },
+        {
+          "id": "d",
+          "text": "Denied topics",
+          "correct": false,
+          "rationale": "Denied topics block whole subjects instead of masking specific personal data."
+        }
+      ],
+      "explanation": "Sensitive information filters in Amazon Bedrock Guardrails detect entities such as Social Security numbers, dates of birth and addresses, and either block or mask them in inputs and responses. Custom regular expressions can extend detection to organization-specific patterns. This supports the privacy and security dimension of responsible AI without changing the underlying model. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+          "title": "Detect and filter harmful content by using Amazon Bedrock Guardrails - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/guardrails/",
+          "title": "Generative AI Data Governance – Amazon Bedrock Guardrails – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company deploys a generative AI image tool. Which legal risk arises if its outputs closely resemble copyrighted works?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Higher inference latency",
+          "correct": false,
+          "rationale": "Latency is a performance concern, not a legal risk."
+        },
+        {
+          "id": "b",
+          "text": "Model underfitting",
+          "correct": false,
+          "rationale": "Underfitting is a technical modeling problem, not a legal claim."
+        },
+        {
+          "id": "c",
+          "text": "Intellectual property infringement claims",
+          "correct": true,
+          "rationale": "Outputs that resemble protected works can lead to copyright or other intellectual property claims."
+        },
+        {
+          "id": "d",
+          "text": "Token limit errors",
+          "correct": false,
+          "rationale": "Token limits are a technical constraint of a model, not a legal exposure."
+        }
+      ],
+      "explanation": "Generative AI introduces legal risks beyond technical ones. Intellectual property infringement claims can follow when outputs or training data reproduce protected work. Other risks include biased outputs that lead to discrimination complaints, loss of customer trust, harm to end users who rely on wrong information, and hallucinations. Organizations manage these through data governance, review processes and safeguards. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/",
+          "title": "Responsible AI – Building AI Responsibly – AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/responsible-ai.html",
+          "title": "Responsible AI - Generative AI Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A loan approval model is trained on data in which 90 percent of the applicants come from one region. Which dataset problem does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data stored in an unsupported format",
+          "correct": false,
+          "rationale": "Format problems affect processing, not the representation of groups."
+        },
+        {
+          "id": "b",
+          "text": "An unbalanced dataset that under-represents some groups",
+          "correct": true,
+          "rationale": "Under-represented regions give the model few examples, which can reduce accuracy for those applicants."
+        },
+        {
+          "id": "c",
+          "text": "Overly curated data sources",
+          "correct": false,
+          "rationale": "Curated sources are a strength; the issue here is skewed representation."
+        },
+        {
+          "id": "d",
+          "text": "Missing encryption of training data",
+          "correct": false,
+          "rationale": "Encryption is a security control and does not explain skewed representation."
+        }
+      ],
+      "explanation": "Balanced, diverse and inclusive datasets are a basic responsible AI practice. When one group dominates the data, the model learns patterns that fit that group and can perform worse, or produce unfair decisions, for others. The effect shows up as unequal accuracy across demographic groups. Teams address it by collecting more representative data, rebalancing, and checking performance for each group. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html",
+          "title": "Fairness, model explainability and bias detection with SageMaker Clarify - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/resources/",
+          "title": "Responsible AI Tools and Resources - Building AI Responsibly - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A model has high error on both its training data and its test data because it is too simple to capture the patterns. What does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Overfitting caused by high variance",
+          "correct": false,
+          "rationale": "Overfitting would show low training error and high test error."
+        },
+        {
+          "id": "b",
+          "text": "Data leakage between datasets",
+          "correct": false,
+          "rationale": "Leakage typically makes test results look better than they should, not worse."
+        },
+        {
+          "id": "c",
+          "text": "Model drift in production",
+          "correct": false,
+          "rationale": "Drift develops over time after deployment, not from a model that is too simple."
+        },
+        {
+          "id": "d",
+          "text": "Underfitting caused by high bias",
+          "correct": true,
+          "rationale": "A model too simple to learn the patterns underfits and performs poorly on all data."
+        }
+      ],
+      "explanation": "Bias and variance describe two failure modes. High bias leads to underfitting: the model makes strong simplifying assumptions and misses patterns, so error is high on training and test data. High variance leads to overfitting: error is low on training data but high on new data. Both reduce accuracy, and either can hurt some demographic groups more than others. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html",
+          "title": "Fairness, model explainability and bias detection with SageMaker Clarify - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A bank reports 95 percent overall accuracy for its loan model, but complaints suggest it rejects qualified applicants from one demographic group. Which action best reveals the problem?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Compare model performance for each demographic group",
+          "correct": true,
+          "rationale": "Subgroup analysis exposes unequal error rates that an overall accuracy figure hides."
+        },
+        {
+          "id": "b",
+          "text": "Train the model for more epochs",
+          "correct": false,
+          "rationale": "More training does not reveal where the model is unfair and may worsen overfitting."
+        },
+        {
+          "id": "c",
+          "text": "Publish the overall accuracy each month",
+          "correct": false,
+          "rationale": "An aggregate number is exactly what hides subgroup differences."
+        },
+        {
+          "id": "d",
+          "text": "Add content filters in Bedrock Guardrails",
+          "correct": false,
+          "rationale": "Content filters screen harmful text and do not measure bias in a loan model."
+        }
+      ],
+      "explanation": "Aggregate metrics can look excellent while a smaller group is treated poorly. Subgroup analysis computes the same metrics, such as accuracy and false rejection rate, separately for each demographic group so differences become visible. Tools such as Amazon SageMaker Clarify can compute bias metrics, and human review of decisions can add context. Training longer or tracking only overall accuracy does not address fairness. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html",
+          "title": "Fairness, model explainability and bias detection with SageMaker Clarify - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://aws.amazon.com/sagemaker/ai/clarify/",
+          "title": "Bias Detection and Model Explainability - Amazon SageMaker Clarify - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A team must measure bias in a tabular training dataset before training a custom model and later explain individual predictions. Which tool is the best fit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock Guardrails content filters",
+          "correct": false,
+          "rationale": "Content filters screen GenAI text and images and do not analyze tabular dataset bias."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Augmented AI (Amazon A2I)",
+          "correct": false,
+          "rationale": "A2I adds human review workflows and does not compute bias metrics or feature attributions."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker Clarify",
+          "correct": true,
+          "rationale": "Clarify computes pre-training and post-training bias metrics and feature attributions for explanations."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Macie",
+          "correct": false,
+          "rationale": "Macie discovers sensitive data in Amazon S3 and does not measure fairness."
+        }
+      ],
+      "explanation": "Amazon SageMaker Clarify analyzes datasets and models for bias before training, after training and in production, and explains predictions with feature attributions. Guardrails is built to filter generative AI inputs and outputs, Amazon A2I orchestrates human review, and Macie finds sensitive data. Matching the tool to the job, here bias measurement and explainability, is the key to the question. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/sagemaker/ai/clarify/",
+          "title": "Bias Detection and Model Explainability - Amazon SageMaker Clarify - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-configure-processing-jobs.html",
+          "title": "Fairness, model explainability and bias detection with SageMaker Clarify - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company uses a generative AI assistant to screen job applicants, and its outputs systematically disadvantage one demographic group. Which pair of consequences is most directly created?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Higher storage costs and slower training",
+          "correct": false,
+          "rationale": "These are operational effects and do not follow from biased outputs."
+        },
+        {
+          "id": "b",
+          "text": "Discrimination claims and loss of customer trust",
+          "correct": true,
+          "rationale": "Biased outputs can lead to legal claims and damage the trust of applicants and customers."
+        },
+        {
+          "id": "c",
+          "text": "Token limit errors and cold starts",
+          "correct": false,
+          "rationale": "These are technical issues, not consequences of biased outputs."
+        },
+        {
+          "id": "d",
+          "text": "Underfitting and reduced context windows",
+          "correct": false,
+          "rationale": "These are model characteristics, not legal or reputational outcomes."
+        }
+      ],
+      "explanation": "Biased model outputs are a recognized legal risk of generative AI. In hiring, systematic disadvantage to a group can trigger discrimination complaints and damage customer trust. Responsible practices include inclusive, balanced data, evaluation by subgroup, human oversight of decisions and ongoing monitoring. Technical performance issues such as latency or token limits are separate from this ethical and legal exposure. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/responsible-ai.html",
+          "title": "Responsible AI - Generative AI Lens"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/",
+          "title": "Responsible AI – Building AI Responsibly – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A generative AI summarizer scores well on automated benchmarks, but a company needs assurance that summaries of nuanced legal documents are truthful. Which approach adds the most reliable check?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Increase the instance size",
+          "correct": false,
+          "rationale": "Larger instances improve throughput, not truthfulness of summaries."
+        },
+        {
+          "id": "b",
+          "text": "Enable word filters for legal terms",
+          "correct": false,
+          "rationale": "Word filters block listed words and cannot judge factual accuracy."
+        },
+        {
+          "id": "c",
+          "text": "Add more automated benchmark runs",
+          "correct": false,
+          "rationale": "Automated benchmarks already passed and may miss nuanced errors."
+        },
+        {
+          "id": "d",
+          "text": "Use human audits of sampled summaries",
+          "correct": true,
+          "rationale": "Human reviewers can judge nuance and truthfulness in context, complementing automated tests."
+        }
+      ],
+      "explanation": "Automated metrics are useful but can miss subtle errors in specialized content. Human audits, in which reviewers sample outputs and compare them with source documents, are a recognized way to monitor trustworthiness and truthfulness. They can be combined with analysis of label quality, subgroup analysis and Guardrails contextual grounding checks for a layered approach. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/resources/",
+          "title": "Responsible AI Tools and Resources - Building AI Responsibly - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/responsible-ai.html",
+          "title": "Responsible AI - Generative AI Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which of the following are core dimensions of responsible AI as described by AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Latency optimization",
+          "correct": false,
+          "rationale": "Latency is a performance goal and is not a responsible AI dimension."
+        },
+        {
+          "id": "b",
+          "text": "Transparency",
+          "correct": true,
+          "rationale": "Transparency helps stakeholders make informed choices about using the system."
+        },
+        {
+          "id": "c",
+          "text": "Cost allocation",
+          "correct": false,
+          "rationale": "Cost allocation is a financial management practice, not a responsible AI dimension."
+        },
+        {
+          "id": "d",
+          "text": "Controllability",
+          "correct": true,
+          "rationale": "Controllability is the ability to monitor and steer system behavior."
+        },
+        {
+          "id": "e",
+          "text": "Elasticity",
+          "correct": false,
+          "rationale": "Elasticity is a cloud scaling property, not a responsible AI dimension."
+        }
+      ],
+      "explanation": "AWS lists core dimensions of responsible AI that include fairness, explainability, privacy and security, safety, controllability, veracity and robustness, governance and transparency. Transparency and controllability both appear in that list. Latency, cost allocation and elasticity describe performance, finance and infrastructure and are not part of the responsible AI dimensions. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/",
+          "title": "Responsible AI – Building AI Responsibly – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/resources/",
+          "title": "Responsible AI Tools and Resources - Building AI Responsibly - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is building an insurance chatbot with Amazon Bedrock Guardrails. It must keep the bot from giving investment advice and from naming competitors. Which safeguards should it configure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Denied topics",
+          "correct": true,
+          "rationale": "A denied topic can block investment advice as an undesirable subject."
+        },
+        {
+          "id": "b",
+          "text": "Contextual grounding check",
+          "correct": false,
+          "rationale": "Grounding checks detect unsupported responses and do not block subjects."
+        },
+        {
+          "id": "c",
+          "text": "Word filters",
+          "correct": true,
+          "rationale": "Word filters block custom words or phrases such as competitor names."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock Knowledge Bases",
+          "correct": false,
+          "rationale": "Knowledge Bases supply retrieval data and are not a Guardrails safeguard."
+        },
+        {
+          "id": "e",
+          "text": "Model fine-tuning job",
+          "correct": false,
+          "rationale": "Fine-tuning changes model weights and does not enforce blocking rules."
+        }
+      ],
+      "explanation": "Denied topics let you define subjects that should be blocked in both user queries and model responses, which suits a restriction on investment advice. Word filters block specific words and phrases, such as competitor names or profanity. Contextual grounding checks serve a different purpose, detecting hallucinations, while Knowledge Bases and fine-tuning are not guardrail safeguards. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+          "title": "Detect and filter harmful content by using Amazon Bedrock Guardrails - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/guardrails/",
+          "title": "Generative AI Data Governance – Amazon Bedrock Guardrails – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which characteristics make a training dataset more suitable for building fair models?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It comes from a single convenient source",
+          "correct": false,
+          "rationale": "Relying on one source narrows coverage and can embed its biases."
+        },
+        {
+          "id": "b",
+          "text": "It is as large as possible, regardless of who it represents",
+          "correct": false,
+          "rationale": "Volume alone does not fix under-representation of groups."
+        },
+        {
+          "id": "c",
+          "text": "It includes diverse examples of all user groups",
+          "correct": true,
+          "rationale": "Diversity and inclusivity help the model serve every group."
+        },
+        {
+          "id": "d",
+          "text": "It is dominated by the majority class",
+          "correct": false,
+          "rationale": "Imbalance leaves minority groups with too few examples."
+        },
+        {
+          "id": "e",
+          "text": "It comes from curated, vetted sources",
+          "correct": true,
+          "rationale": "Curated sources improve data quality and make bias easier to find and fix."
+        }
+      ],
+      "explanation": "Responsible dataset design favors inclusivity, diversity, balance and curated data sources. Diverse coverage ensures every user group appears in the data, and curated sources improve quality and traceability, including label quality. A single source, sheer volume or a dominant majority class tends to carry or amplify bias, leading to unequal model performance. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/resources/",
+          "title": "Responsible AI Tools and Resources - Building AI Responsibly - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/data-labeling/",
+          "title": "What is Data Labeling? - Data Labeling Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-4.1-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 2,
+      "stem": "Which of the following are legal or business risks of using generative AI?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Intellectual property infringement claims",
+          "correct": true,
+          "rationale": "Outputs or training data resembling protected works can lead to infringement claims."
+        },
+        {
+          "id": "b",
+          "text": "Lower token pricing",
+          "correct": false,
+          "rationale": "Pricing changes are a cost factor, not a legal or business risk of the technology."
+        },
+        {
+          "id": "c",
+          "text": "Loss of customer trust after harmful or biased outputs",
+          "correct": true,
+          "rationale": "Harmful or biased outputs can damage reputation and customer trust."
+        },
+        {
+          "id": "d",
+          "text": "A larger context window",
+          "correct": false,
+          "rationale": "A larger context window is a model capability, not a risk."
+        },
+        {
+          "id": "e",
+          "text": "Faster inference speed",
+          "correct": false,
+          "rationale": "Faster inference is a performance benefit."
+        },
+        {
+          "id": "f",
+          "text": "End user harm from hallucinated information",
+          "correct": true,
+          "rationale": "Users who act on fabricated information can be harmed, creating liability."
+        }
+      ],
+      "explanation": "Generative AI brings distinct legal and business risks. These include intellectual property infringement claims, biased outputs that harm groups and customer trust, harm to end users who rely on hallucinated answers, and reputational damage. Pricing, context window size and inference speed are product characteristics that do not themselves create legal exposure. On the exam, tie the scenario wording to the specific concept or tool named in the correct answer, and note why the plausible alternatives address a different concern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/responsible-ai.html",
+          "title": "Responsible AI - Generative AI Lens"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/responsible-ai/",
+          "title": "Responsible AI – Building AI Responsibly – AWS"
+        }
+      ]
+    }
+  ]
+}

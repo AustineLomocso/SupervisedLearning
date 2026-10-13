@@ -1,0 +1,920 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "2.3",
+  "items": [
+    {
+      "id": "aif-c01-2.3-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to build generative AI applications using foundation models from several providers through a single managed API, without managing servers. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker Ground Truth",
+          "correct": false,
+          "rationale": "Ground Truth creates labeled training datasets. It does not provide API access to foundation models."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock",
+          "correct": true,
+          "rationale": "Amazon Bedrock is a fully managed service that gives access to foundation models from multiple providers through APIs, with no infrastructure to manage."
+        },
+        {
+          "id": "c",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "AWS Glue is a data integration and ETL service, not a service for invoking foundation models."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena runs SQL queries on data in Amazon S3. It does not host or serve foundation models."
+        }
+      ],
+      "explanation": "Amazon Bedrock is the primary AWS service for building generative AI applications. It is fully managed, so there are no servers to provision, and it offers foundation models from Amazon and other leading providers behind a consistent API. Developers can try different models, add features such as guardrails, and move to production without managing model hosting. Services like Glue, Athena, and Ground Truth support data work but do not serve foundation models.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement best describes Amazon SageMaker JumpStart?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A hub of pretrained models, including foundation models, that you can deploy and fine-tune in Amazon SageMaker AI",
+          "correct": true,
+          "rationale": "JumpStart provides publicly available and third-party foundation models that you can access, customize, and integrate into your ML workflow."
+        },
+        {
+          "id": "b",
+          "text": "A serverless service that converts text to speech",
+          "correct": false,
+          "rationale": "Text-to-speech is the purpose of Amazon Polly, not JumpStart."
+        },
+        {
+          "id": "c",
+          "text": "A tool that automatically labels images for training",
+          "correct": false,
+          "rationale": "Labeling data is handled by labeling services such as SageMaker Ground Truth, not JumpStart."
+        },
+        {
+          "id": "d",
+          "text": "An IDE that writes code from natural language specifications",
+          "correct": false,
+          "rationale": "That describes a coding tool such as Kiro, not JumpStart."
+        }
+      ],
+      "explanation": "Amazon SageMaker JumpStart is a model hub inside Amazon SageMaker AI. It offers pretrained, publicly available foundation models and proprietary models from third-party providers. You can browse them, deploy them to SageMaker AI endpoints, evaluate them, and fine-tune them with your own data. It suits teams that want more control over the model and the infrastructure than a fully managed API provides.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html",
+          "title": "Amazon SageMaker JumpStart Foundation Models - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A development team wants an open-source SDK, originally released by AWS, for building autonomous AI agents around a model-first approach. Which option fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock Guardrails",
+          "correct": false,
+          "rationale": "Guardrails apply safeguards to model inputs and outputs. It is not an SDK for building agents."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Q Developer",
+          "correct": false,
+          "rationale": "Q Developer is an assistant for developers, not an open-source agent-building SDK."
+        },
+        {
+          "id": "c",
+          "text": "Strands Agents",
+          "correct": true,
+          "rationale": "Strands Agents is an open-source SDK from AWS for building autonomous agents, with the foundation model at the center of the agent loop."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Comprehend",
+          "correct": false,
+          "rationale": "Comprehend is a natural language processing service for analyzing text, not an agent framework."
+        }
+      ],
+      "explanation": "Strands Agents is an open-source SDK, first released by AWS, for building autonomous AI agents. Its model-first design makes the foundation model the core of agent reasoning, and it supports tools, multi-agent patterns, and the Model Context Protocol (MCP). It works with Amazon Bedrock and other model providers. You can then run the agent on your preferred infrastructure, including Amazon Bedrock AgentCore.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/strands-agents.html",
+          "title": "Strands Agents - AWS Prescriptive Guidance"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+          "title": "Overview - Amazon Bedrock AgentCore"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which description matches Amazon Bedrock AgentCore?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A data labeling workforce for training datasets",
+          "correct": false,
+          "rationale": "Data labeling is the job of SageMaker Ground Truth, not AgentCore."
+        },
+        {
+          "id": "b",
+          "text": "A relational database engine for storing agent state",
+          "correct": false,
+          "rationale": "AgentCore offers a Memory service, but it is not a database engine."
+        },
+        {
+          "id": "c",
+          "text": "A service that translates text between languages",
+          "correct": false,
+          "rationale": "Translation is handled by Amazon Translate."
+        },
+        {
+          "id": "d",
+          "text": "A platform to deploy and operate agents securely at scale, using any framework and model",
+          "correct": true,
+          "rationale": "AgentCore provides modular services such as Runtime, Memory, Gateway, Identity, and Observability for running agents without managing infrastructure."
+        }
+      ],
+      "explanation": "Amazon Bedrock AgentCore is an agentic platform for building, deploying, and operating agents securely at scale. Its modular services, including Runtime, Memory, Gateway, Identity, Code Interpreter, Browser, and Observability, can be used together or independently. It works with open-source frameworks such as LangGraph and Strands Agents and with models in or outside Amazon Bedrock, so teams are not locked into one framework.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+          "title": "Overview - Amazon Bedrock AgentCore"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/strands-agents.html",
+          "title": "Strands Agents - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which description best matches Amazon Quick?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A managed database for vector embeddings",
+          "correct": false,
+          "rationale": "Vector storage is provided by database and search services, not Amazon Quick."
+        },
+        {
+          "id": "b",
+          "text": "An AI-powered assistant for work that supports research, business insights, and automation",
+          "correct": true,
+          "rationale": "AWS describes Amazon Quick as an AI-powered assistant for work that connects to your apps and data and takes action for you."
+        },
+        {
+          "id": "c",
+          "text": "A hardware accelerator for training large models",
+          "correct": false,
+          "rationale": "AWS Trainium is an example of ML accelerators. Amazon Quick is an application, not hardware."
+        },
+        {
+          "id": "d",
+          "text": "A service for hosting open-weight models on dedicated endpoints",
+          "correct": false,
+          "rationale": "Hosting models on endpoints describes SageMaker AI, not Amazon Quick."
+        }
+      ],
+      "explanation": "Amazon Quick is an AI-powered assistant for work. It helps employees with research, business insights, automation, and building apps without code, by connecting to the company's applications and data. It is an example of a ready-to-use AWS generative AI application, in contrast to Bedrock or SageMaker AI, which are platforms for developers building their own applications.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS tool is described as an IDE for AI-native coding that brings engineering rigor to building production-ready software?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Kiro",
+          "correct": true,
+          "rationale": "Kiro is the AWS IDE for AI-native software development."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena is an interactive query service for data in Amazon S3, not an IDE."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition analyzes images and video. It is not a development environment."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex builds conversational chatbot interfaces. It is not an IDE."
+        }
+      ],
+      "explanation": "Kiro is an AWS integrated development environment built for AI-native coding. AWS positions it as a way to bring engineering rigor to AI-assisted development so that teams can build production-ready software at scale. It belongs to the group of AWS tools that use generative AI to speed up software work, rather than a service used to host or serve models in your own application.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A data science team wants full control over the training infrastructure, instance types, and hosting of its own foundation model. Which service is the best fit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock on-demand inference",
+          "correct": false,
+          "rationale": "On-demand inference uses provider-hosted models. It does not give control of training infrastructure or instance types."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Quick",
+          "correct": false,
+          "rationale": "Amazon Quick is an assistant for work, not a platform for training and hosting models."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker AI",
+          "correct": true,
+          "rationale": "SageMaker AI lets teams build, train, and deploy their own models and foundation models with chosen infrastructure and workflows."
+        },
+        {
+          "id": "d",
+          "text": "AWS Lambda",
+          "correct": false,
+          "rationale": "Lambda runs short serverless functions and is not designed for training or hosting large models."
+        }
+      ],
+      "explanation": "Amazon SageMaker AI is a managed service to build, train, and deploy ML models and foundation models, while letting teams choose instance types, training setups, and hosting configuration. This control comes with more operational responsibility than a serverless API like Amazon Bedrock. The exam often contrasts the two: Bedrock for ease of use and speed, SageMaker AI when you need deep control or your own models.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html",
+          "title": "Amazon SageMaker JumpStart Foundation Models - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A startup with no machine learning engineers wants to launch a generative AI feature quickly. Which advantage of using Amazon Bedrock best supports this goal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It exposes pretrained foundation models through an API, which lowers the barrier to entry and speeds time to market",
+          "correct": true,
+          "rationale": "Bedrock removes the need to train or host models, so developers can build with API calls."
+        },
+        {
+          "id": "b",
+          "text": "It requires teams to provision GPU clusters before the first request",
+          "correct": false,
+          "rationale": "Bedrock is fully managed and serverless, so no GPU clusters are provisioned by the customer."
+        },
+        {
+          "id": "c",
+          "text": "It requires the team to train a foundation model from scratch",
+          "correct": false,
+          "rationale": "Training from scratch is the opposite of the Bedrock approach and would slow launch."
+        },
+        {
+          "id": "d",
+          "text": "It guarantees the lowest possible cost for every workload",
+          "correct": false,
+          "rationale": "No service guarantees the lowest cost for all workloads, and cost depends on model choice and usage."
+        }
+      ],
+      "explanation": "AWS managed generative AI services lower the barrier to entry. With Amazon Bedrock, developers call foundation models through an API and do not need ML expertise, training data, or GPU infrastructure. That shortens development time and speeds time to market, and teams can try several models to match business needs. Cost-effectiveness comes from paying for usage rather than owning infrastructure, but it is not guaranteed for every workload.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A compliance officer asks whether prompts and responses sent to Amazon Bedrock will be used to train the underlying models. What is the correct answer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes, all prompts are used to retrain models every night",
+          "correct": false,
+          "rationale": "Bedrock does not use customer prompts this way."
+        },
+        {
+          "id": "b",
+          "text": "Yes, unless the company disables training in AWS Budgets",
+          "correct": false,
+          "rationale": "AWS Budgets tracks cost and has no setting for model training."
+        },
+        {
+          "id": "c",
+          "text": "Only if the company uses the AWS Free Tier",
+          "correct": false,
+          "rationale": "The data handling policy does not depend on the Free Tier."
+        },
+        {
+          "id": "d",
+          "text": "No, Amazon Bedrock does not store or use customer data to train models",
+          "correct": true,
+          "rationale": "AWS states that Bedrock never stores or uses your data to train models, and data is encrypted in transit and at rest."
+        }
+      ],
+      "explanation": "Data privacy is a core benefit of building on AWS generative AI services. AWS states that Amazon Bedrock never stores or uses customer data to train models, encrypts data in transit and at rest, and uses identity-based policies to control access. Combined with monitoring, logging, and compliance coverage for standards such as ISO, SOC, and GDPR, this helps customers meet security and governance requirements for sensitive workloads.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/",
+          "title": "Amazon Bedrock – Build genAI applications and agents at production scale – AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company's chatbot traffic is unpredictable and sometimes idle for days. It wants to avoid any upfront commitment and pay only for what it uses. Which Amazon Bedrock option fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Provisioned Throughput with a 6-month commitment",
+          "correct": false,
+          "rationale": "This requires a term commitment and hourly billing even when traffic is idle."
+        },
+        {
+          "id": "b",
+          "text": "On-demand pricing, billed per token",
+          "correct": true,
+          "rationale": "On-demand has no commitment and bills usage, typically per input and output token."
+        },
+        {
+          "id": "c",
+          "text": "Purchasing model units with no usage",
+          "correct": false,
+          "rationale": "Model units are the Provisioned Throughput capacity unit and are billed hourly regardless of use."
+        },
+        {
+          "id": "d",
+          "text": "Training a new model from scratch",
+          "correct": false,
+          "rationale": "Training a model adds cost and does not fit variable chat traffic."
+        }
+      ],
+      "explanation": "Amazon Bedrock offers several pricing modes. On-demand charges per unit of usage, usually per input token and per output token for text models, with no commitment. This is the best fit for variable, unpredictable, or low-volume workloads. Provisioned Throughput reserves capacity at an hourly rate and makes sense only when traffic is steady and high enough to use that capacity.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company fine-tuned a model in Amazon Bedrock and now needs to serve it for a steady production workload. What must the company do to use the customized model for inference?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deploy it on AWS Lambda",
+          "correct": false,
+          "rationale": "Lambda is not how Bedrock customized models are served."
+        },
+        {
+          "id": "b",
+          "text": "Export it and host it in Amazon Quick",
+          "correct": false,
+          "rationale": "Amazon Quick is an assistant for work, not a hosting target for customized models."
+        },
+        {
+          "id": "c",
+          "text": "Purchase Provisioned Throughput for the model",
+          "correct": true,
+          "rationale": "A customized model in Bedrock requires Provisioned Throughput before it can be used, billed hourly by model units."
+        },
+        {
+          "id": "d",
+          "text": "Use on-demand pricing at the base model rate",
+          "correct": false,
+          "rationale": "The documentation states that customized models must use Provisioned Throughput."
+        }
+      ],
+      "explanation": "In Amazon Bedrock, if you customize a model you must purchase Provisioned Throughput to use it. Provisioned Throughput is billed hourly by the number of model units, and the price per hour depends on the model, the number of model units, and the commitment length: no commitment, one month, or six months. Longer commitments cost less per hour. This is a key cost tradeoff of using custom models.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html",
+          "title": "Increase model invocation capacity with Provisioned Throughput in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team has built an agent with the LangGraph framework and needs a secure, serverless place to run it with isolated sessions, without managing infrastructure. Which service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock AgentCore Runtime",
+          "correct": true,
+          "rationale": "AgentCore Runtime is a serverless environment for deploying agents built with frameworks such as LangGraph, with session isolation."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker JumpStart",
+          "correct": false,
+          "rationale": "JumpStart provides pretrained models, not a runtime for agents built with agent frameworks."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Quick",
+          "correct": false,
+          "rationale": "Amazon Quick is an assistant for work, not a hosting platform for custom agents."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Comprehend",
+          "correct": false,
+          "rationale": "Comprehend analyzes text and does not host agents."
+        }
+      ],
+      "explanation": "Amazon Bedrock AgentCore Runtime is a serverless runtime for deploying and scaling agents and tools. It works with open-source frameworks, including LangGraph, CrewAI, LlamaIndex, and Strands Agents, and with models inside or outside Amazon Bedrock. It provides session isolation and built-in identity, so teams do not manage infrastructure. Other AgentCore services such as Memory, Gateway, and Observability can be added as needed.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+          "title": "Overview - Amazon Bedrock AgentCore"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-frameworks/strands-agents.html",
+          "title": "Strands Agents - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0013",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO are advantages of building applications with AWS managed generative AI services?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lower barrier to entry because teams use pretrained models through APIs",
+          "correct": true,
+          "rationale": "Managed services let teams build without training models or running GPU clusters."
+        },
+        {
+          "id": "b",
+          "text": "Faster speed to market because model hosting is handled by AWS",
+          "correct": true,
+          "rationale": "Not having to build the infrastructure shortens delivery time."
+        },
+        {
+          "id": "c",
+          "text": "Customers must patch the model-serving hosts themselves",
+          "correct": false,
+          "rationale": "In a fully managed service AWS operates the serving infrastructure."
+        },
+        {
+          "id": "d",
+          "text": "Customers must purchase GPU hardware in advance",
+          "correct": false,
+          "rationale": "Managed services use pay-for-usage options and need no hardware purchase."
+        },
+        {
+          "id": "e",
+          "text": "Model outputs are guaranteed to be free of errors",
+          "correct": false,
+          "rationale": "Foundation models can still produce inaccurate output, so no service can guarantee error-free output."
+        }
+      ],
+      "explanation": "Managed generative AI services such as Amazon Bedrock reduce the work needed to adopt generative AI. Teams access pretrained models through APIs, which lowers the barrier to entry for developers without ML expertise and speeds time to market. Efficiency and cost-effectiveness come from paying for usage instead of buying and operating hardware. These services do not remove the need for evaluation, because models can still make mistakes.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0014",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO are benefits of AWS infrastructure for secure, compliant generative AI applications?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Customers no longer have any responsibility for compliance",
+          "correct": false,
+          "rationale": "Compliance is a shared responsibility, and customers must still configure and use services appropriately."
+        },
+        {
+          "id": "b",
+          "text": "Data is encrypted in transit and at rest",
+          "correct": true,
+          "rationale": "AWS states that Amazon Bedrock encrypts data in transit and at rest."
+        },
+        {
+          "id": "c",
+          "text": "Identity-based policies control who can access models and data",
+          "correct": true,
+          "rationale": "Access is controlled through AWS identity-based policies."
+        },
+        {
+          "id": "d",
+          "text": "Customer prompts are shared publicly to improve models for all users",
+          "correct": false,
+          "rationale": "Bedrock does not use customer data to train models."
+        },
+        {
+          "id": "e",
+          "text": "Monitoring and logging are unnecessary on AWS",
+          "correct": false,
+          "rationale": "Monitoring and logging remain important and are provided as built-in capabilities for governance and audit."
+        }
+      ],
+      "explanation": "AWS infrastructure supports security and compliance for generative AI through encryption in transit and at rest, identity-based access control, built-in monitoring and logging, and coverage under standards such as ISO, SOC, and GDPR. Customers still carry responsibilities under the shared responsibility model, such as configuring access and handling their own data appropriately. Responsible AI features such as guardrails add safety on top of this foundation.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/",
+          "title": "Amazon Bedrock – Build genAI applications and agents at production scale – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An application hits capacity limits at peak times, and the team wants Amazon Bedrock to route requests to other Regions to increase available capacity instead of buying Provisioned Throughput. Which feature should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock Batch inference",
+          "correct": false,
+          "rationale": "Batch processes requests asynchronously at a lower rate. It does not increase real-time capacity."
+        },
+        {
+          "id": "b",
+          "text": "AgentCore Memory",
+          "correct": false,
+          "rationale": "Memory stores agent context and does not affect model capacity."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker JumpStart",
+          "correct": false,
+          "rationale": "JumpStart provides models to deploy, not Bedrock request routing."
+        },
+        {
+          "id": "d",
+          "text": "Cross-Region inference",
+          "correct": true,
+          "rationale": "Cross-Region inference routes requests to other Regions to increase available capacity, and pricing varies by routing scope."
+        }
+      ],
+      "explanation": "Regional coverage and availability affect both performance and cost. Cross-Region inference in Amazon Bedrock lets requests be routed to other Regions, either within a geography or globally, to gain more capacity and resilience at peak times. Pricing depends on the routing scope. This option adds capacity without a reservation, whereas Provisioned Throughput reserves dedicated model units at an hourly price.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to block harmful content and enforce safety policies on prompts and responses for its generative AI chatbot. Which Amazon Bedrock capability supports this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock Provisioned Throughput",
+          "correct": false,
+          "rationale": "Provisioned Throughput reserves capacity and does not filter content."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock Guardrails",
+          "correct": true,
+          "rationale": "Guardrails apply configurable safeguards to prompts and responses and support responsible AI."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock Batch inference",
+          "correct": false,
+          "rationale": "Batch inference handles asynchronous large workloads and offers no content safeguards."
+        },
+        {
+          "id": "d",
+          "text": "Cross-Region inference",
+          "correct": false,
+          "rationale": "Cross-Region inference affects capacity, not content safety."
+        }
+      ],
+      "explanation": "Safety and responsibility are benefits of building on AWS. Amazon Bedrock Guardrails let you configure safeguards, such as filtering harmful content and denying specific topics, for model inputs and outputs, and they work with the models available in Bedrock. Guardrails support responsible AI practices alongside the AWS Well-Architected Responsible AI guidance. Capacity features such as Provisioned Throughput or Cross-Region inference do not provide content safety.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/",
+          "title": "Amazon Bedrock – Build genAI applications and agents at production scale – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/ai/generative-ai/",
+          "title": "Generative AI on AWS – Generative AI, LLMs, and Foundation Models – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company must summarize millions of archived documents overnight. Results are not needed in real time, and the lowest cost matters most. Which Amazon Bedrock pricing option is best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "On-demand inference with the Priority tier",
+          "correct": false,
+          "rationale": "Priority costs more than Standard in return for higher service priority, which the workload does not need."
+        },
+        {
+          "id": "b",
+          "text": "Provisioned Throughput with a 6-month commitment",
+          "correct": false,
+          "rationale": "A 6-month reservation is billed hourly and is wasteful for a one-time overnight job."
+        },
+        {
+          "id": "c",
+          "text": "Batch inference",
+          "correct": true,
+          "rationale": "Batch processes large sets of requests asynchronously at a lower rate than on-demand, for supported models."
+        },
+        {
+          "id": "d",
+          "text": "Training a custom model from scratch",
+          "correct": false,
+          "rationale": "Training a model is far more costly than inference and is not required to summarize documents."
+        }
+      ],
+      "explanation": "Matching the pricing mode to the workload is a central cost tradeoff. Batch inference in Amazon Bedrock handles large sets of requests asynchronously at a lower rate than on-demand, but it is available only for certain models and results are not instant. Real-time apps with variable traffic fit on-demand, while steady, high-volume traffic that needs guaranteed throughput fits Provisioned Throughput. Priority tiers raise cost for faster handling.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A team needs to deploy an openly available foundation model on endpoints it controls, choosing instance types, and then fine-tune it with its own data. Which choice fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker JumpStart",
+          "correct": true,
+          "rationale": "JumpStart provides foundation models that can be deployed to SageMaker AI endpoints with chosen instances and customized with fine-tuning."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Quick",
+          "correct": false,
+          "rationale": "Amazon Quick is an assistant for work, not a place to deploy and tune models."
+        },
+        {
+          "id": "c",
+          "text": "Kiro",
+          "correct": false,
+          "rationale": "Kiro is an IDE for AI-native coding and does not host models."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock on-demand with no customization",
+          "correct": false,
+          "rationale": "On-demand Bedrock does not give control over instance types or endpoints."
+        }
+      ],
+      "explanation": "Both Amazon Bedrock and Amazon SageMaker AI can supply foundation models, but they differ in control. Bedrock is a managed API with minimal operations. SageMaker JumpStart lets you select a model, deploy it to endpoints with instance types you choose, and fine-tune it, which fits teams that want that control and can take on more operational work. The requirement for endpoints and instance choice points to JumpStart.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html",
+          "title": "Amazon SageMaker JumpStart Foundation Models - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "Which TWO statements about Amazon Bedrock Provisioned Throughput are correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is billed only per input and output token",
+          "correct": false,
+          "rationale": "Per-token billing describes on-demand pricing, not Provisioned Throughput."
+        },
+        {
+          "id": "b",
+          "text": "It is billed hourly for the model units purchased, whether or not they are fully used",
+          "correct": true,
+          "rationale": "Provisioned Throughput bills hourly until it is deleted."
+        },
+        {
+          "id": "c",
+          "text": "A one-month commitment can be deleted at any time",
+          "correct": false,
+          "rationale": "A one-month term cannot be deleted before it ends."
+        },
+        {
+          "id": "d",
+          "text": "Customized models can skip it and use on-demand pricing",
+          "correct": false,
+          "rationale": "Customized models must use Provisioned Throughput."
+        },
+        {
+          "id": "e",
+          "text": "Longer commitment terms reduce the hourly price",
+          "correct": true,
+          "rationale": "Commitment options are none, one month, or six months, and longer terms are cheaper per hour."
+        }
+      ],
+      "explanation": "Provisioned Throughput reserves capacity for a model at a fixed cost, measured in model units and billed hourly until you delete it. You choose no commitment, one month, or six months, and longer commitments lower the hourly price but cannot be canceled early. It suits steady, high-volume traffic and is required for customized models. Variable workloads are usually cheaper on-demand, where billing follows tokens used.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html",
+          "title": "Increase model invocation capacity with Provisioned Throughput in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-2.3-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which THREE factors affect the cost of running a generative AI workload on Amazon Bedrock?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Customizing a model removes the need to pay for inference",
+          "correct": false,
+          "rationale": "Customized models still incur inference charges, through Provisioned Throughput."
+        },
+        {
+          "id": "b",
+          "text": "Input and output tokens are priced separately for many text models",
+          "correct": true,
+          "rationale": "Token-based pricing separates input and output tokens."
+        },
+        {
+          "id": "c",
+          "text": "Batch inference is always more expensive than on-demand",
+          "correct": false,
+          "rationale": "Batch is priced at a lower rate than on-demand, for supported models."
+        },
+        {
+          "id": "d",
+          "text": "The Priority tier costs more than Standard for higher service priority",
+          "correct": true,
+          "rationale": "Priority trades higher cost for faster service priority."
+        },
+        {
+          "id": "e",
+          "text": "All models cost the same regardless of provider or size",
+          "correct": false,
+          "rationale": "Prices differ by model, which is why model choice is a cost lever."
+        },
+        {
+          "id": "f",
+          "text": "The Flex tier costs less than Standard for lower priority",
+          "correct": true,
+          "rationale": "Flex suits workloads that tolerate delay."
+        }
+      ],
+      "explanation": "Bedrock cost depends on several choices. Many text models use token-based pricing, with input and output tokens charged separately. Service tiers trade price for responsiveness: Priority costs more for higher service priority, and Flex costs less for delay-tolerant work. Other modes include batch, provisioned throughput, and cross-Region inference, and model choice also changes prices. Customization adds training, storage, and inference costs rather than removing them.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/bedrock/pricing/",
+          "title": "Amazon Bedrock Pricing"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html",
+          "title": "Increase model invocation capacity with Provisioned Throughput in Amazon Bedrock - Amazon Bedrock"
+        }
+      ]
+    }
+  ]
+}

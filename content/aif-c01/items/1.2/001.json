@@ -1,0 +1,928 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "1.2",
+  "items": [
+    {
+      "id": "aif-c01-1.2-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A call center stores recorded customer calls and wants to convert the audio into text transcripts. Which AWS service should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Polly",
+          "correct": false,
+          "rationale": "Amazon Polly converts text into speech, which is the opposite direction from this requirement."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Transcribe",
+          "correct": true,
+          "rationale": "Amazon Transcribe is the managed speech recognition service that converts audio into text."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Translate",
+          "correct": false,
+          "rationale": "Amazon Translate converts text from one language to another and does not process audio."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Comprehend",
+          "correct": false,
+          "rationale": "Amazon Comprehend analyzes text for sentiment and entities but cannot transcribe audio."
+        }
+      ],
+      "explanation": "Speech recognition turns spoken audio into written text. Amazon Transcribe is the AWS managed service for this, and it needs no ML expertise because it is exposed as an API. The transcripts can then feed other services, such as Amazon Comprehend for sentiment analysis. Amazon Polly performs the reverse task, text to speech, while Amazon Translate changes the language of existing text.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/transcribe/",
+          "title": "Amazon Transcribe – Speech to Text - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants its mobile app to read written articles aloud to users in a natural-sounding voice. Which AWS service provides this capability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "rationale": "Amazon Transcribe converts speech into text, so it would not read text aloud."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Amazon Lex builds conversational chatbots and is not the service for narrating articles."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Kendra",
+          "correct": false,
+          "rationale": "Amazon Kendra provides intelligent search over documents and does not generate speech."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Polly",
+          "correct": true,
+          "rationale": "Amazon Polly turns text into lifelike speech, which fits reading articles aloud."
+        }
+      ],
+      "explanation": "Text-to-speech is the capability of generating spoken audio from written text. Amazon Polly provides this as a managed service with many voices and languages, so developers can add narration to apps without training a model. The other services handle different tasks: Amazon Transcribe does speech to text, Amazon Lex handles conversations, and Amazon Kendra handles search.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/polly/",
+          "title": "AI Voice Generator and Text-to-Speech Tool - Amazon Polly - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A retailer needs to convert product descriptions from English into several other languages for its international websites. Which AWS service is designed for this task?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Translate",
+          "correct": true,
+          "rationale": "Amazon Translate is the managed neural machine translation service for converting text between languages."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Polly",
+          "correct": false,
+          "rationale": "Amazon Polly generates spoken audio from text and does not translate between languages."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Comprehend",
+          "correct": false,
+          "rationale": "Amazon Comprehend extracts insights such as entities and sentiment but does not translate text."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "rationale": "Amazon Transcribe converts audio to text and is not used for translating written descriptions."
+        }
+      ],
+      "explanation": "Machine translation is an NLP capability that converts text from a source language to a target language. Amazon Translate offers it as a managed service called through an API, which suits localizing content such as product descriptions at scale. Comprehend analyzes the meaning of text, Polly speaks it, and Transcribe converts audio into text; none of them translate.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/translate/",
+          "title": "Machine Translation Service — Amazon Translate — Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/nlp/",
+          "title": "What is Natural Language Processing? - NLP Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to train a model that labels each incoming email as either spam or not spam. Which ML technique does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Regression",
+          "correct": false,
+          "rationale": "Regression predicts a continuous numeric value, not a category such as spam or not spam."
+        },
+        {
+          "id": "b",
+          "text": "Clustering",
+          "correct": false,
+          "rationale": "Clustering groups unlabeled data, but this problem predicts predefined labels."
+        },
+        {
+          "id": "c",
+          "text": "Classification",
+          "correct": true,
+          "rationale": "Classification assigns each input to one of a set of predefined categories, here spam or not spam."
+        },
+        {
+          "id": "d",
+          "text": "Dimensionality reduction",
+          "correct": false,
+          "rationale": "Dimensionality reduction reduces the number of features and does not assign labels to emails."
+        }
+      ],
+      "explanation": "Supervised learning problems split into two main types. Classification predicts a discrete category, such as spam or not spam, and regression predicts a continuous number, such as a price. Because the possible answers here are a fixed set of labels learned from labeled examples, this is classification. Clustering is unsupervised and finds groups when no labels exist.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A real estate company wants to predict the selling price of a house from its size, location and age. Which ML technique fits this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Classification",
+          "correct": false,
+          "rationale": "Classification predicts categories, but a selling price is a continuous number."
+        },
+        {
+          "id": "b",
+          "text": "Regression",
+          "correct": true,
+          "rationale": "Regression predicts a continuous numeric value, such as a selling price, from input features."
+        },
+        {
+          "id": "c",
+          "text": "Clustering",
+          "correct": false,
+          "rationale": "Clustering groups similar records without labels and does not predict a numeric target."
+        },
+        {
+          "id": "d",
+          "text": "Anomaly detection",
+          "correct": false,
+          "rationale": "Anomaly detection finds unusual records and does not estimate a price for each house."
+        }
+      ],
+      "explanation": "When the value to predict is a number on a continuous scale, such as a price, temperature or demand, the technique is regression. The model learns the relationship between input features and a known numeric target from historical data. Classification would be appropriate only if the goal were a category, for example whether a house sells above or below the asking price.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A manufacturer wants to analyze photos from an assembly line to find damaged parts automatically. Which AI application area does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Speech recognition",
+          "correct": false,
+          "rationale": "Speech recognition handles audio, but this scenario analyzes photos."
+        },
+        {
+          "id": "b",
+          "text": "Natural language processing",
+          "correct": false,
+          "rationale": "Natural language processing works with human language text, not images of parts."
+        },
+        {
+          "id": "c",
+          "text": "Recommendation systems",
+          "correct": false,
+          "rationale": "Recommendation systems suggest items to users and do not inspect images for damage."
+        },
+        {
+          "id": "d",
+          "text": "Computer vision",
+          "correct": true,
+          "rationale": "Computer vision enables systems to interpret images and video, such as detecting defects in photos."
+        }
+      ],
+      "explanation": "Computer vision is the field of AI that extracts meaning from images and video. Typical uses include defect detection on production lines, object and face recognition, and content moderation. Speech recognition works on audio, NLP works on language, and recommendation systems predict user preferences, so none of them match the image inspection requirement.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/computer-vision/",
+          "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A marketing team has purchase data for thousands of customers but no predefined segment labels. The team wants to discover natural groups of similar customers. Which technique should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Clustering",
+          "correct": true,
+          "rationale": "Clustering is unsupervised and finds natural groupings in data that has no labels."
+        },
+        {
+          "id": "b",
+          "text": "Classification",
+          "correct": false,
+          "rationale": "Classification requires labeled examples, and the team has no predefined segments."
+        },
+        {
+          "id": "c",
+          "text": "Regression",
+          "correct": false,
+          "rationale": "Regression predicts a numeric value, but the goal here is to discover groups."
+        },
+        {
+          "id": "d",
+          "text": "Supervised image recognition",
+          "correct": false,
+          "rationale": "Image recognition is a supervised vision task and the data here is purchase records."
+        }
+      ],
+      "explanation": "The absence of labels is the key signal. Unsupervised learning finds structure in unlabeled data, and clustering is the common technique for grouping similar items, such as customer segmentation. Classification and regression are supervised techniques that need a known target value in the training data. Once clusters are found, the business can name and act on each segment.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/unsupervised-learning/",
+          "title": "What Is Unsupervised Learning? - Unsupervised Machine Learning Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to determine whether thousands of customer reviews are positive, negative or neutral, and to pull out the product names mentioned. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Amazon Lex builds conversational interfaces and does not analyze review text for sentiment."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Polly",
+          "correct": false,
+          "rationale": "Amazon Polly generates speech and does not extract sentiment or entities from text."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Comprehend",
+          "correct": true,
+          "rationale": "Amazon Comprehend detects sentiment and entities in text without requiring model training."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "rationale": "Amazon Transcribe handles audio input, whereas the reviews are already written text."
+        }
+      ],
+      "explanation": "Amazon Comprehend is a managed NLP service that finds insights in text, including sentiment, entities, key phrases and the dominant language. It is called through an API, so the company does not need to build or train a model. Transcribe would only be needed first if the reviews were recorded audio, and Lex and Polly address conversation and speech output.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/comprehend/",
+          "title": "Natural Language Processing – Amazon Comprehend – AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/nlp/",
+          "title": "What is Natural Language Processing? - NLP Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A payroll system must compute income tax withholding using a formula defined exactly by law, and the result must be identical every time for the same inputs. Which approach is most appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Train a regression model on past payroll results",
+          "correct": false,
+          "rationale": "A model only estimates outcomes and could produce results that differ from the legal formula."
+        },
+        {
+          "id": "b",
+          "text": "Implement the formula as deterministic code",
+          "correct": true,
+          "rationale": "A fixed legal formula needs an exact, repeatable result, which deterministic code provides."
+        },
+        {
+          "id": "c",
+          "text": "Use a foundation model to generate each result",
+          "correct": false,
+          "rationale": "A foundation model is probabilistic and could return different answers for identical inputs."
+        },
+        {
+          "id": "d",
+          "text": "Train a clustering model on employee records",
+          "correct": false,
+          "rationale": "Clustering groups similar records and cannot compute an exact legally defined amount."
+        }
+      ],
+      "explanation": "AI/ML models learn patterns and output predictions, which carry some error. When a task requires a specific, exact outcome defined by explicit rules, such as a legally defined calculation, ordinary deterministic code is the correct and cheaper solution. ML is better when rules are too complex or unknown to write down but examples of the right answer exist.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A small business manually reviews about ten supplier invoices per month. A consultant proposes building a custom ML model to automate this. Which factor most strongly argues against the proposal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Invoices contain text that ML cannot process",
+          "correct": false,
+          "rationale": "ML and managed AI services can process text from documents, so this is not a valid objection."
+        },
+        {
+          "id": "b",
+          "text": "ML can only be used with image data",
+          "correct": false,
+          "rationale": "ML works with many data types, so this statement is incorrect."
+        },
+        {
+          "id": "c",
+          "text": "Automation always reduces accuracy",
+          "correct": false,
+          "rationale": "Automation does not always reduce accuracy, and accuracy is not the main issue in this scenario."
+        },
+        {
+          "id": "d",
+          "text": "The cost of building and running the model outweighs the benefit",
+          "correct": true,
+          "rationale": "At ten invoices a month, the savings are tiny compared with the cost of data, development and operation."
+        }
+      ],
+      "explanation": "A cost-benefit analysis should come before any AI project. Building, hosting and monitoring a model costs money and effort, so it pays off when it removes large manual workloads or enables something people cannot do at scale. For a very low-volume task the manual process is cheaper, so ML is not appropriate here even though it is technically feasible.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A support team receives millions of tickets each month and wants to route each ticket to the correct department without hiring more staff. Which benefit of AI/ML does this scenario highlight?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scalability and automation of a repetitive task",
+          "correct": true,
+          "rationale": "A model can classify very large ticket volumes automatically, which people could not handle at this scale."
+        },
+        {
+          "id": "b",
+          "text": "Guaranteed identical output for every input",
+          "correct": false,
+          "rationale": "ML models make probabilistic predictions and do not guarantee identical, exact results."
+        },
+        {
+          "id": "c",
+          "text": "Removal of the need for any training data",
+          "correct": false,
+          "rationale": "Supervised models rely on training data, so this benefit does not apply."
+        },
+        {
+          "id": "d",
+          "text": "Elimination of all prediction errors",
+          "correct": false,
+          "rationale": "ML models still make some errors, so error-free predictions are not a benefit."
+        }
+      ],
+      "explanation": "AI/ML adds value when it can apply learned judgment to very large volumes of work, automating repetitive tasks and scaling beyond what a team can do manually. Ticket routing is a classification problem, and the model can send low-confidence cases to humans. Models do not remove errors or the need for data, so the benefit is scale and automation, not perfection.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An online streaming company wants to suggest shows to each subscriber based on the viewing history of similar subscribers. Which real-world AI application does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Computer vision",
+          "correct": false,
+          "rationale": "Computer vision interprets images and video content, not viewing history patterns."
+        },
+        {
+          "id": "b",
+          "text": "Speech recognition",
+          "correct": false,
+          "rationale": "Speech recognition converts audio to text and is unrelated to suggesting shows."
+        },
+        {
+          "id": "c",
+          "text": "A recommendation system",
+          "correct": true,
+          "rationale": "Recommendation systems suggest items to users based on patterns in behavior of similar users."
+        },
+        {
+          "id": "d",
+          "text": "Machine translation",
+          "correct": false,
+          "rationale": "Machine translation converts text between languages and does not suggest content."
+        }
+      ],
+      "explanation": "Recommendation systems learn from user behavior, such as purchases and views, to suggest items a person is likely to want. They are widely used for streaming, retail and news feeds, and they typically learn from patterns shared among similar users. The scenario does not involve images, audio or language conversion.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A utility company wants to use several years of historical electricity usage data to estimate next month's demand. Which AI application does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Speech recognition",
+          "correct": false,
+          "rationale": "Speech recognition converts audio to text, but this scenario uses numeric usage history."
+        },
+        {
+          "id": "b",
+          "text": "Forecasting",
+          "correct": true,
+          "rationale": "Forecasting uses historical data to predict future values such as demand."
+        },
+        {
+          "id": "c",
+          "text": "Object detection",
+          "correct": false,
+          "rationale": "Object detection locates items in images, and no images are involved here."
+        },
+        {
+          "id": "d",
+          "text": "Sentiment analysis",
+          "correct": false,
+          "rationale": "Sentiment analysis classifies opinions in text and does not predict future numbers."
+        }
+      ],
+      "explanation": "Forecasting is a common ML use case in which a model learns patterns, such as trends and seasonality, from historical data and predicts future values. Demand planning, inventory and capacity planning are typical examples. Predicting a numeric value over time is closely related to regression, which is why the technique is often described as a regression-style problem.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants employees to ask natural-language questions and get answers from internal documents stored in several repositories, such as wikis and file shares. Which AWS service is designed for this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Polly",
+          "correct": false,
+          "rationale": "Amazon Polly synthesizes speech and does not search internal documents."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Translate",
+          "correct": false,
+          "rationale": "Amazon Translate converts languages and does not index or search content repositories."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "rationale": "Amazon Transcribe converts audio to text and does not search internal document repositories."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Kendra",
+          "correct": true,
+          "rationale": "Amazon Kendra is an intelligent enterprise search service that answers natural-language questions from connected content."
+        }
+      ],
+      "explanation": "Amazon Kendra is a managed intelligent search service that connects to enterprise data sources and lets users ask questions in natural language rather than relying on keywords. It is often used to build an internal knowledge base for employees, and it can supply relevant passages to generative AI applications. The other services handle speech, translation or audio transcription.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/kendra/",
+          "title": "Enterprise Search Engine - Amazon Kendra - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A data science team needs to build, train and deploy a custom ML model on its own proprietary data when no prebuilt AI service meets the need. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker AI",
+          "correct": true,
+          "rationale": "Amazon SageMaker AI is the managed service for building, training and deploying custom ML models."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Polly",
+          "correct": false,
+          "rationale": "Amazon Polly is a prebuilt text-to-speech service and cannot be trained on proprietary data for a custom task."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Translate",
+          "correct": false,
+          "rationale": "Amazon Translate is a prebuilt translation service rather than a platform for custom model development."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Transcribe",
+          "correct": false,
+          "rationale": "Amazon Transcribe is a prebuilt speech recognition service and not a general model-building platform."
+        }
+      ],
+      "explanation": "AWS offers prebuilt AI services, which expose capabilities such as translation or speech recognition through APIs, and Amazon SageMaker AI, which gives data scientists and developers the tools to build, train and deploy their own models. Choose a prebuilt service when it satisfies the requirement, and choose SageMaker AI when you need a custom model trained on your own data.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A bank must explain to regulators and applicants exactly which input factors led to each loan decision, using a structured table of applicant data. Which approach is most appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A large generative foundation model prompted with applicant data",
+          "correct": false,
+          "rationale": "A foundation model is harder to explain and is probabilistic, which conflicts with the strict explainability requirement."
+        },
+        {
+          "id": "b",
+          "text": "A deep neural network trained on the applicant data",
+          "correct": false,
+          "rationale": "A deep neural network is difficult to interpret, so it does not meet the requirement to explain each factor."
+        },
+        {
+          "id": "c",
+          "text": "An interpretable traditional ML model such as a decision tree or linear model",
+          "correct": true,
+          "rationale": "Interpretable models show how each feature contributes, and they fit structured tabular data well."
+        },
+        {
+          "id": "d",
+          "text": "An unsupervised clustering model",
+          "correct": false,
+          "rationale": "Clustering does not learn from labeled loan outcomes, so it cannot make explainable approval decisions."
+        }
+      ],
+      "explanation": "The requirements decide between traditional ML and foundation models. Regulated decisions that need explainability, on structured data with labeled outcomes, favor simpler traditional models such as linear models or decision trees, because their feature contributions can be inspected. They are also usually cheaper and faster to run. Foundation models are better for open-ended generative tasks, but they are harder to explain.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which scenarios are good candidates for applying AI/ML?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Computing a fixed shipping fee from a published rate table",
+          "correct": false,
+          "rationale": "A published table gives an exact answer, so a lookup or rule is simpler and exact."
+        },
+        {
+          "id": "b",
+          "text": "Printing a report of last month's totals from a database",
+          "correct": false,
+          "rationale": "This is a simple deterministic query that needs no model."
+        },
+        {
+          "id": "c",
+          "text": "Flagging potentially fraudulent card transactions in real time at large volume",
+          "correct": true,
+          "rationale": "Fraud patterns are hard to write as rules, and a model can score huge transaction volumes quickly."
+        },
+        {
+          "id": "d",
+          "text": "Checking that a password meets a stated length rule",
+          "correct": false,
+          "rationale": "A stated rule can be checked exactly with code and does not require learning."
+        },
+        {
+          "id": "e",
+          "text": "Helping doctors by highlighting suspicious areas in medical scans for review",
+          "correct": true,
+          "rationale": "A vision model can assist human decision making by pointing out areas for an expert to check."
+        }
+      ],
+      "explanation": "AI/ML is most valuable when patterns are complex, data is plentiful, and the task benefits from scale or from assisting human judgment. Fraud detection and medical image screening are classic cases, since the model supports people and handles volume. Exact calculations, lookups and fixed rule checks have a precisely defined correct answer, so deterministic code is more reliable and cheaper.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/computer-vision/",
+          "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "A company is evaluating foundation models (FMs) instead of traditional ML models. For which requirements is an FM the more appropriate choice?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Generating draft marketing text and summarizing long documents with little task-specific training data",
+          "correct": true,
+          "rationale": "FMs are pre-trained on broad data, so they handle open-ended generation and summarization with few examples."
+        },
+        {
+          "id": "b",
+          "text": "Producing a decision whose every contributing factor must be audited by a regulator",
+          "correct": false,
+          "rationale": "Strict explainability favors interpretable traditional models rather than large, opaque FMs."
+        },
+        {
+          "id": "c",
+          "text": "Predicting a numeric value from a small, structured table at the lowest possible cost per prediction",
+          "correct": false,
+          "rationale": "A small traditional regression model is typically cheaper and faster for this narrow tabular task."
+        },
+        {
+          "id": "d",
+          "text": "Supporting many different language tasks from one model without training a separate model for each",
+          "correct": true,
+          "rationale": "A single FM can be adapted to many tasks, such as Q&A, summarization and classification."
+        },
+        {
+          "id": "e",
+          "text": "Running on a tiny device with no network connection and very limited memory",
+          "correct": false,
+          "rationale": "Large FMs need substantial compute, so a compact traditional model suits the constraint better."
+        }
+      ],
+      "explanation": "Foundation models are large pre-trained models that can be adapted to many tasks, which makes them strong for generative and open-ended language work and for cases with little labeled data. Traditional ML models usually win when regulation demands explainability, when the task is narrow and tabular, or when operational limits such as cost, latency or hardware restrict model size.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "A company is reviewing proposed AI projects. For which proposals is deterministic code or the existing manual process preferable to an ML solution?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Detecting product defects in thousands of daily images from a production line",
+          "correct": false,
+          "rationale": "This is a high-volume pattern recognition task where a vision model adds clear value."
+        },
+        {
+          "id": "b",
+          "text": "Calculating each customer's invoice total from fixed unit prices and quantities",
+          "correct": true,
+          "rationale": "The correct invoice total is exactly defined, so arithmetic code is better than a prediction."
+        },
+        {
+          "id": "c",
+          "text": "Segmenting customers into groups based on browsing behavior",
+          "correct": false,
+          "rationale": "This is an unsupervised clustering problem, which is a good fit for ML."
+        },
+        {
+          "id": "d",
+          "text": "Automating a task performed twice a year by one employee in under an hour",
+          "correct": true,
+          "rationale": "The effort and cost of building and maintaining a model far exceed the small benefit."
+        },
+        {
+          "id": "e",
+          "text": "Converting thousands of recorded interviews into text transcripts",
+          "correct": false,
+          "rationale": "Speech recognition is a good AI use case and a managed service already provides it."
+        }
+      ],
+      "explanation": "Good AI projects combine a pattern-based problem, enough data, and enough volume or value to justify the cost. Exact calculations should use deterministic code because a model only approximates. Very rare, small tasks fail the cost-benefit test, since development and operation costs would exceed the savings.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.2-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which examples are real-world applications of AI?",
+      "options": [
+        {
+          "id": "a",
+          "text": "An AI agent that plans steps and calls tools to resolve a customer request",
+          "correct": true,
+          "rationale": "Agentic AI systems pursue a goal by planning actions and using tools, so this is an AI application."
+        },
+        {
+          "id": "b",
+          "text": "A spreadsheet formula that adds a column of numbers",
+          "correct": false,
+          "rationale": "Summing numbers is a fixed arithmetic operation and involves no learning from data."
+        },
+        {
+          "id": "c",
+          "text": "A knowledge base that lets staff ask questions answered from company documents",
+          "correct": true,
+          "rationale": "A knowledge base that answers questions from documents is a common AI application using language understanding."
+        },
+        {
+          "id": "d",
+          "text": "A scheduled job that copies files to a backup bucket every night",
+          "correct": false,
+          "rationale": "Copying files on a schedule is automation without any AI capability."
+        },
+        {
+          "id": "e",
+          "text": "A firewall rule that blocks a fixed list of IP addresses",
+          "correct": false,
+          "rationale": "A static block list applies a fixed rule and does not learn patterns from data."
+        },
+        {
+          "id": "f",
+          "text": "A model that predicts next quarter's sales from historical figures",
+          "correct": true,
+          "rationale": "Forecasting learns trends from historical data to predict future values, a standard ML use."
+        }
+      ],
+      "explanation": "Real-world AI applications include computer vision, NLP, speech recognition, recommendation systems, fraud detection, forecasting, knowledge bases and agentic AI. What they share is that a system learns from data or interprets language, images or goals rather than just following a fixed rule. Fixed arithmetic, scheduled copy jobs and static block lists are ordinary automation, not AI.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/artificial-intelligence/",
+          "title": "What is AI? - Artificial Intelligence Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/nlp/",
+          "title": "What is Natural Language Processing? - NLP Explained - AWS"
+        }
+      ]
+    }
+  ]
+}

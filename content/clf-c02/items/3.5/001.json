@@ -1,0 +1,892 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.5",
+  "items": [
+    {
+      "id": "clf-c02-3.5-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants a logically isolated section of the AWS Cloud where it can launch resources in a virtual network that it defines. Which AWS service provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Direct Connect",
+          "correct": false,
+          "rationale": "Direct Connect is a dedicated network link from on premises to AWS, not an isolated virtual network for launching resources."
+        },
+        {
+          "id": "b",
+          "text": "Amazon VPC",
+          "correct": true,
+          "rationale": "Amazon VPC lets you define a virtual network, including IP ranges, subnets and route tables, and launch AWS resources into it."
+        },
+        {
+          "id": "c",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront is a content delivery network that caches content at edge locations; it does not host a private network."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Route 53",
+          "correct": false,
+          "rationale": "Route 53 is a DNS service and does not provide an isolated network for launching resources."
+        }
+      ],
+      "explanation": "Amazon Virtual Private Cloud (Amazon VPC) gives you a logically isolated virtual network in the AWS Cloud. You choose the IP address range, create subnets, configure route tables and gateways, and then launch resources such as Amazon EC2 instances into it. It is the foundation that most other AWS network services build on. Connectivity services such as AWS Direct Connect and DNS services such as Amazon Route 53 work alongside a VPC but do not replace it.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
+          "title": "What is Amazon VPC? - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement describes a subnet in an Amazon VPC?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A virtual firewall that controls traffic to a single instance",
+          "correct": false,
+          "rationale": "That describes a security group, which filters traffic at the instance level rather than defining an IP range."
+        },
+        {
+          "id": "b",
+          "text": "A managed service that translates domain names to IP addresses",
+          "correct": false,
+          "rationale": "That describes Amazon Route 53, which is a DNS service and not a VPC component."
+        },
+        {
+          "id": "c",
+          "text": "A range of IP addresses in the VPC that resides in one Availability Zone",
+          "correct": true,
+          "rationale": "A subnet is a segment of the VPC IP range and cannot span Availability Zones, so resources are placed in a specific zone."
+        },
+        {
+          "id": "d",
+          "text": "A dedicated connection between a VPC and an on-premises network",
+          "correct": false,
+          "rationale": "That describes connectivity such as AWS Direct Connect or AWS Site-to-Site VPN, not a subnet."
+        }
+      ],
+      "explanation": "A VPC is divided into subnets, each of which is a range of IP addresses within the VPC CIDR block. A subnet lives entirely in one Availability Zone, so architects create subnets in multiple zones for high availability. Resources such as Amazon EC2 instances are launched into a subnet. Whether a subnet is public or private depends on its route table, not on its name. Security groups, network ACLs and gateways are separate components that work with subnets.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html",
+          "title": "Subnets for your VPC - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which VPC component allows resources in a public subnet to communicate with the internet?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Internet gateway",
+          "correct": true,
+          "rationale": "An internet gateway is a horizontally scaled VPC component that enables communication between the VPC and the internet."
+        },
+        {
+          "id": "b",
+          "text": "Network ACL",
+          "correct": false,
+          "rationale": "A network ACL filters subnet traffic but does not provide a path to the internet."
+        },
+        {
+          "id": "c",
+          "text": "Security group",
+          "correct": false,
+          "rationale": "A security group controls traffic at the instance level and does not connect the VPC to the internet."
+        },
+        {
+          "id": "d",
+          "text": "AWS Transit Gateway",
+          "correct": false,
+          "rationale": "Transit Gateway connects VPCs and on-premises networks to each other, not to the public internet by itself."
+        }
+      ],
+      "explanation": "An internet gateway is the VPC component that connects a VPC to the internet. For a subnet to be public, its route table needs a route that sends internet-bound traffic to the internet gateway, and the instance needs a public IP address. Network ACLs and security groups only filter traffic that already has a path. Transit Gateway links networks together, which is a different purpose from providing internet access.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html",
+          "title": "Enable internet access for a VPC using an internet gateway - Amazon Virtual Private Cloud"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
+          "title": "What is Amazon VPC? - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service is a highly available and scalable Domain Name System (DNS) web service?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront delivers content from edge locations; it is not a DNS service."
+        },
+        {
+          "id": "b",
+          "text": "AWS Direct Connect",
+          "correct": false,
+          "rationale": "Direct Connect provides a dedicated network connection and does not resolve domain names."
+        },
+        {
+          "id": "c",
+          "text": "Elastic Load Balancing",
+          "correct": false,
+          "rationale": "Elastic Load Balancing distributes traffic across targets but does not manage DNS records for domains."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Route 53",
+          "correct": true,
+          "rationale": "Route 53 translates domain names to IP addresses, registers domains and can route traffic based on health and policy."
+        }
+      ],
+      "explanation": "Amazon Route 53 is AWS's highly available and scalable DNS web service. It connects user requests to infrastructure by translating names such as example.com into IP addresses. It can also register domain names and perform health checks on endpoints. The exam commonly distinguishes it from CloudFront, which caches content, and from Elastic Load Balancing, which spreads traffic across targets inside a Region.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html",
+          "title": "What is Amazon Route 53? - Amazon Route 53"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service establishes a dedicated private network connection from a company's data center to AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Site-to-Site VPN",
+          "correct": false,
+          "rationale": "Site-to-Site VPN creates encrypted tunnels over the public internet rather than a dedicated physical connection."
+        },
+        {
+          "id": "b",
+          "text": "AWS Direct Connect",
+          "correct": true,
+          "rationale": "Direct Connect links your network to AWS over a dedicated fiber connection, bypassing internet service providers."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Route 53",
+          "correct": false,
+          "rationale": "Route 53 is a DNS service and does not connect networks."
+        },
+        {
+          "id": "d",
+          "text": "Amazon VPC",
+          "correct": false,
+          "rationale": "A VPC is the virtual network in AWS; it does not itself connect an on-premises data center."
+        }
+      ],
+      "explanation": "AWS Direct Connect creates a dedicated network connection between your premises and an AWS Direct Connect location. Virtual interfaces then give access to your VPC or to public AWS services such as Amazon S3, bypassing internet service providers. Because traffic does not traverse the public internet, performance is more consistent than with an internet-based connection. AWS Site-to-Site VPN is the alternative that uses encrypted tunnels over the internet.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html",
+          "title": "What is Direct Connect? - AWS Direct Connect"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement about security groups in Amazon VPC is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They operate at the subnet level and support deny rules",
+          "correct": false,
+          "rationale": "Subnet-level filtering with deny rules describes network ACLs, not security groups."
+        },
+        {
+          "id": "b",
+          "text": "They are stateless, so return traffic needs its own rule",
+          "correct": false,
+          "rationale": "Security groups are stateful; only network ACLs are stateless."
+        },
+        {
+          "id": "c",
+          "text": "They act as a stateful virtual firewall for resources such as EC2 instances",
+          "correct": true,
+          "rationale": "Security groups are stateful and apply to resources, so responses to allowed traffic are automatically permitted."
+        },
+        {
+          "id": "d",
+          "text": "They scan instances for software vulnerabilities",
+          "correct": false,
+          "rationale": "Scanning for vulnerabilities is what Amazon Inspector does."
+        }
+      ],
+      "explanation": "A security group acts as a virtual firewall for resources such as Amazon EC2 instances. It is stateful, meaning that if inbound traffic is allowed, the response is automatically allowed regardless of outbound rules. Security groups contain only allow rules. Network ACLs, by contrast, work at the subnet level and are stateless. Amazon Inspector is a separate vulnerability management service and does not filter traffic.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html",
+          "title": "Control traffic to your AWS resources using security groups - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must block traffic from a specific range of malicious IP addresses before it reaches any resource in a subnet. Which VPC feature should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Network ACL",
+          "correct": true,
+          "rationale": "Network ACLs operate at the subnet level and support explicit deny rules, so they can block a range of addresses."
+        },
+        {
+          "id": "b",
+          "text": "Security group",
+          "correct": false,
+          "rationale": "Security groups only contain allow rules and cannot explicitly deny an address range."
+        },
+        {
+          "id": "c",
+          "text": "Internet gateway",
+          "correct": false,
+          "rationale": "An internet gateway provides internet access and has no filtering rules."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector finds vulnerabilities and exposure but does not block traffic."
+        }
+      ],
+      "explanation": "Network access control lists (network ACLs) filter traffic at the subnet boundary and can contain both allow and deny rules, evaluated in numbered order. That makes them the right tool for blocking a known bad address range for every resource in a subnet. Security groups only have allow rules, so they can limit access but cannot explicitly deny a source. Internet gateways and Amazon Inspector do not filter traffic.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
+          "title": "Control subnet traffic with network access control lists - Amazon Virtual Private Cloud"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html",
+          "title": "Control traffic to your AWS resources using security groups - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company needs to connect its on-premises network to a VPC quickly, using encrypted tunnels over the existing internet connection. Which service meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Direct Connect",
+          "correct": false,
+          "rationale": "Direct Connect needs a dedicated physical connection that takes time to provision and is not internet-based."
+        },
+        {
+          "id": "b",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront is a content delivery network and does not connect networks."
+        },
+        {
+          "id": "c",
+          "text": "Elastic Load Balancing",
+          "correct": false,
+          "rationale": "Elastic Load Balancing distributes traffic to targets and does not link a data center to AWS."
+        },
+        {
+          "id": "d",
+          "text": "AWS Site-to-Site VPN",
+          "correct": true,
+          "rationale": "Site-to-Site VPN creates encrypted IPsec tunnels between an on-premises network and a VPC over the internet."
+        }
+      ],
+      "explanation": "AWS Site-to-Site VPN connects an on-premises network to a VPC through encrypted tunnels that run over the public internet. It can be set up quickly because no physical circuit must be installed. AWS Direct Connect offers a dedicated private link with more consistent performance but takes longer to provision. When the requirement is speed of setup and encryption over an existing connection, the VPN is the better fit.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
+          "title": "What is AWS Site-to-Site VPN? - AWS Site-to-Site VPN"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs an application in two AWS Regions and wants Amazon Route 53 to send each user to the Region that responds fastest. Which routing policy should it choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Simple routing",
+          "correct": false,
+          "rationale": "Simple routing returns the same record values and does not consider user latency."
+        },
+        {
+          "id": "b",
+          "text": "Latency-based routing",
+          "correct": true,
+          "rationale": "Latency-based routing directs users to the Region that provides the lowest network latency for them."
+        },
+        {
+          "id": "c",
+          "text": "Weighted routing",
+          "correct": false,
+          "rationale": "Weighted routing splits traffic by assigned proportions, not by measured response time."
+        },
+        {
+          "id": "d",
+          "text": "Failover routing",
+          "correct": false,
+          "rationale": "Failover routing sends traffic to a standby only when the primary is unhealthy."
+        }
+      ],
+      "explanation": "Amazon Route 53 supports several routing policies. Latency-based routing evaluates latency between the user and each AWS Region where resources run, then answers with the Region that gives the lowest latency. Weighted routing divides traffic by percentages, which suits gradual rollouts. Failover routing supports active-passive designs using health checks. Simple routing has no logic to prefer one endpoint over another.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html",
+          "title": "What is Amazon Route 53? - Amazon Route 53"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A security team wants to automatically scan Amazon EC2 instances for software vulnerabilities and unintended network exposure. Which service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Network ACLs",
+          "correct": false,
+          "rationale": "Network ACLs filter subnet traffic but do not scan instances for vulnerabilities."
+        },
+        {
+          "id": "b",
+          "text": "Security groups",
+          "correct": false,
+          "rationale": "Security groups filter traffic to instances but do not report vulnerabilities."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Inspector",
+          "correct": true,
+          "rationale": "Amazon Inspector continually scans EC2 instances, container images and Lambda functions for vulnerabilities and network exposure."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Route 53",
+          "correct": false,
+          "rationale": "Route 53 resolves DNS names and has no vulnerability scanning capability."
+        }
+      ],
+      "explanation": "Amazon Inspector is a vulnerability management service. It automatically discovers Amazon EC2 instances, container images in Amazon ECR and AWS Lambda functions, and scans them for software vulnerabilities and unintended network exposure. Each issue becomes a finding with remediation guidance. Security groups and network ACLs enforce traffic rules, which is prevention at the network layer, whereas Inspector assesses and reports weaknesses.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
+          "title": "What is Amazon Inspector? - Amazon Inspector"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company serves static website content to users worldwide and wants to reduce latency by delivering it from locations close to the users. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon CloudFront",
+          "correct": true,
+          "rationale": "CloudFront caches content at edge locations around the world, so users receive it from a nearby location."
+        },
+        {
+          "id": "b",
+          "text": "AWS Site-to-Site VPN",
+          "correct": false,
+          "rationale": "Site-to-Site VPN connects private networks and does not cache or distribute web content."
+        },
+        {
+          "id": "c",
+          "text": "Network ACLs",
+          "correct": false,
+          "rationale": "Network ACLs filter subnet traffic and do not accelerate content delivery."
+        },
+        {
+          "id": "d",
+          "text": "AWS Transit Gateway",
+          "correct": false,
+          "rationale": "Transit Gateway interconnects VPCs and on-premises networks and is not a content delivery service."
+        }
+      ],
+      "explanation": "Amazon CloudFront is a content delivery network (CDN) that delivers content with low latency from edge locations close to viewers. It caches copies of content such as images, video and web pages, and fetches from an origin like Amazon S3 only when needed. Using it reduces load on the origin and improves the experience for global users. Private connectivity services do not serve end users on the internet.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html",
+          "title": "What is Amazon CloudFront? - Amazon CloudFront"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company has several Amazon EC2 instances that must share incoming web traffic so that no single instance is overloaded. Which AWS service distributes the traffic across them?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Route 53 hosted zone",
+          "correct": false,
+          "rationale": "A hosted zone stores DNS records; it is not a traffic distribution device for instances."
+        },
+        {
+          "id": "b",
+          "text": "AWS Direct Connect",
+          "correct": false,
+          "rationale": "Direct Connect is a private connection to AWS and does not distribute traffic among instances."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector scans for vulnerabilities and does not handle traffic."
+        },
+        {
+          "id": "d",
+          "text": "Elastic Load Balancing",
+          "correct": true,
+          "rationale": "Elastic Load Balancing automatically distributes incoming traffic across multiple targets such as EC2 instances."
+        }
+      ],
+      "explanation": "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers and IP addresses, in one or more Availability Zones. It monitors target health and sends traffic only to healthy targets. This improves availability and lets an application scale. DNS services like Amazon Route 53 can steer users to endpoints, but the load balancer handles distribution among instances.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html",
+          "title": "What is Elastic Load Balancing? - Elastic Load Balancing"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company has dozens of VPCs and on-premises networks that all need to communicate. It wants to avoid managing a mesh of individual connections. Which service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Transit Gateway",
+          "correct": true,
+          "rationale": "Transit Gateway acts as a central hub that interconnects many VPCs and on-premises networks."
+        },
+        {
+          "id": "b",
+          "text": "Internet gateway",
+          "correct": false,
+          "rationale": "An internet gateway connects a VPC to the internet and does not interconnect private networks."
+        },
+        {
+          "id": "c",
+          "text": "Network ACL",
+          "correct": false,
+          "rationale": "A network ACL filters subnet traffic and does not route between networks."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront delivers content to end users and does not connect private networks."
+        }
+      ],
+      "explanation": "AWS Transit Gateway is a network transit hub. Instead of creating a separate connection between every pair of VPCs, you attach each VPC and on-premises network to the gateway, which routes traffic between them. This is often described as a hub-and-spoke model and greatly simplifies large networks. Internet gateways and CloudFront serve internet-facing traffic and are not designed for interconnecting private networks.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html",
+          "title": "What is AWS Transit Gateway for Amazon VPC? - Amazon VPC"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company transfers large volumes of data between its data center and AWS every day. It requires consistent network performance and does not want the traffic to cross the public internet. Which option best meets these requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Site-to-Site VPN",
+          "correct": false,
+          "rationale": "A VPN runs over the public internet, so performance can vary, which fails the stated requirement."
+        },
+        {
+          "id": "b",
+          "text": "Internet gateway",
+          "correct": false,
+          "rationale": "An internet gateway uses the public internet and offers no private path from a data center."
+        },
+        {
+          "id": "c",
+          "text": "AWS Direct Connect",
+          "correct": true,
+          "rationale": "Direct Connect provides a dedicated private connection that bypasses the internet and gives more consistent performance."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront accelerates content delivery to viewers and does not provide a data center connection."
+        }
+      ],
+      "explanation": "Both AWS Site-to-Site VPN and AWS Direct Connect link an on-premises network to AWS, so the stated requirements decide. A VPN is encrypted but travels over the public internet, so bandwidth and latency can fluctuate. Direct Connect uses a dedicated fiber connection to an AWS location, bypassing internet service providers, which delivers more consistent network performance for large, steady data transfers.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html",
+          "title": "What is Direct Connect? - AWS Direct Connect"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
+          "title": "What is AWS Site-to-Site VPN? - AWS Site-to-Site VPN"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company allows inbound HTTPS traffic to a subnet through a network ACL but forgets to add an outbound rule for the response traffic. Which statement explains why the web server cannot reply?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Network ACLs are stateless, so return traffic needs an explicit outbound rule",
+          "correct": true,
+          "rationale": "Network ACLs do not remember previous traffic, so responses must be allowed by their own rule."
+        },
+        {
+          "id": "b",
+          "text": "Network ACLs are stateful, so the reply was blocked by the security group",
+          "correct": false,
+          "rationale": "Network ACLs are not stateful; the stated cause does not match how they work."
+        },
+        {
+          "id": "c",
+          "text": "Network ACLs allow only inbound rules, so outbound traffic is always blocked",
+          "correct": false,
+          "rationale": "Network ACLs have both inbound and outbound rules, and either can allow or deny traffic."
+        },
+        {
+          "id": "d",
+          "text": "Network ACLs apply only to the internet gateway, not to the subnet",
+          "correct": false,
+          "rationale": "Network ACLs are associated with subnets and evaluate traffic entering and leaving them."
+        }
+      ],
+      "explanation": "Network ACLs are stateless: they do not track connections, so a rule that allows traffic in does not automatically allow the response out. You must create matching inbound and outbound rules, remembering that response traffic often uses temporary ephemeral ports. Security groups are stateful and automatically allow return traffic for permitted requests. This difference between stateless and stateful filtering is a frequent exam topic.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
+          "title": "Control subnet traffic with network access control lists - Amazon Virtual Private Cloud"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html",
+          "title": "Control traffic to your AWS resources using security groups - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "An architect reviews a VPC design. Which condition makes a subnet a public subnet?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It contains an Amazon EC2 instance with a security group",
+          "correct": false,
+          "rationale": "Every subnet can hold instances with security groups, so this does not distinguish public from private."
+        },
+        {
+          "id": "b",
+          "text": "It is associated with the default network ACL",
+          "correct": false,
+          "rationale": "The default network ACL applies to subnets regardless of whether they are public or private."
+        },
+        {
+          "id": "c",
+          "text": "It is located in more than one Availability Zone",
+          "correct": false,
+          "rationale": "A subnet cannot span multiple Availability Zones."
+        },
+        {
+          "id": "d",
+          "text": "Its route table has a route to an internet gateway",
+          "correct": true,
+          "rationale": "A subnet is public when its route table sends internet-bound traffic to an internet gateway."
+        }
+      ],
+      "explanation": "What makes a subnet public is its route table. If the route table contains a route that sends internet-bound traffic to an internet gateway, the subnet is public; without that route it is private. Instances in a public subnet also need public IP addresses to be reachable from the internet. Security groups, network ACLs and Availability Zone placement apply to both subnet types and do not decide whether a subnet is public.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html",
+          "title": "Subnets for your VPC - Amazon Virtual Private Cloud"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html",
+          "title": "Enable internet access for a VPC using an internet gateway - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which components are part of an Amazon VPC?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Subnets",
+          "correct": true,
+          "rationale": "Subnets divide the VPC IP range and are a core VPC component."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Inspector is a vulnerability management service, not a component of a VPC."
+        },
+        {
+          "id": "c",
+          "text": "AWS Direct Connect",
+          "correct": false,
+          "rationale": "Direct Connect is a separate connectivity service that can attach to a VPC but is not part of it."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront is a content delivery service that operates at edge locations, outside the VPC."
+        },
+        {
+          "id": "e",
+          "text": "Internet gateway",
+          "correct": true,
+          "rationale": "An internet gateway attaches to a VPC to enable internet access."
+        }
+      ],
+      "explanation": "A VPC is built from components such as subnets, route tables, internet gateways, NAT gateways, security groups and network ACLs. Subnets segment the address range, and an internet gateway provides a path to the internet. Services such as Amazon Inspector, AWS Direct Connect and Amazon CloudFront interact with VPC resources or connect to a VPC, but they are separate services and not components inside it.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
+          "title": "What is Amazon VPC? - Amazon Virtual Private Cloud"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html",
+          "title": "Subnets for your VPC - Amazon Virtual Private Cloud"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html",
+          "title": "Enable internet access for a VPC using an internet gateway - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company wants to connect its corporate network to AWS. Which services provide network connectivity between an on-premises network and AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Route 53",
+          "correct": false,
+          "rationale": "Route 53 resolves DNS names and does not carry network traffic between sites."
+        },
+        {
+          "id": "b",
+          "text": "AWS Site-to-Site VPN",
+          "correct": true,
+          "rationale": "Site-to-Site VPN connects an on-premises network to AWS using encrypted tunnels over the internet."
+        },
+        {
+          "id": "c",
+          "text": "Elastic Load Balancing",
+          "correct": false,
+          "rationale": "Elastic Load Balancing spreads traffic across targets and does not link networks."
+        },
+        {
+          "id": "d",
+          "text": "AWS Direct Connect",
+          "correct": true,
+          "rationale": "Direct Connect links an on-premises network to AWS through a dedicated private connection."
+        },
+        {
+          "id": "e",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront distributes content to viewers and is not a network link to a corporate site."
+        }
+      ],
+      "explanation": "The two main options for connecting an on-premises network to AWS are AWS Site-to-Site VPN and AWS Direct Connect. The VPN uses encrypted tunnels across the public internet and is quick to set up. Direct Connect uses a dedicated private connection and offers more consistent performance. Route 53, CloudFront and Elastic Load Balancing are network services, but they handle DNS, content delivery and traffic distribution rather than site-to-site connectivity.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html",
+          "title": "What is AWS Site-to-Site VPN? - AWS Site-to-Site VPN"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html",
+          "title": "What is Direct Connect? - AWS Direct Connect"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "Which statements correctly describe how VPC traffic filtering works?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Network ACLs can contain explicit deny rules",
+          "correct": true,
+          "rationale": "Network ACLs allow or deny traffic, so they can explicitly block sources."
+        },
+        {
+          "id": "b",
+          "text": "Security groups apply at the subnet level",
+          "correct": false,
+          "rationale": "Security groups apply to resources such as instances; subnet-level filtering is done by network ACLs."
+        },
+        {
+          "id": "c",
+          "text": "Security group rules are processed in numbered order",
+          "correct": false,
+          "rationale": "Numbered, ordered rules belong to network ACLs; security groups evaluate all rules together."
+        },
+        {
+          "id": "d",
+          "text": "Responses to allowed inbound traffic are automatically permitted by a security group",
+          "correct": true,
+          "rationale": "Security groups are stateful, so return traffic for an allowed request is permitted automatically."
+        },
+        {
+          "id": "e",
+          "text": "Network ACLs are stateful",
+          "correct": false,
+          "rationale": "Network ACLs are stateless and need explicit rules for return traffic."
+        }
+      ],
+      "explanation": "Security groups and network ACLs both filter traffic but differ in important ways. Security groups protect resources such as EC2 instances, contain only allow rules, evaluate all rules before deciding, and are stateful. Network ACLs protect subnets, support allow and deny rules evaluated in numbered order, and are stateless. Using them together provides layered defense inside a VPC.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html",
+          "title": "Control traffic to your AWS resources using security groups - Amazon Virtual Private Cloud"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html",
+          "title": "Control subnet traffic with network access control lists - Amazon Virtual Private Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.5-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 2,
+      "stem": "Which capabilities does Amazon Route 53 provide?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Domain name registration",
+          "correct": true,
+          "rationale": "Route 53 can register domain names as well as host DNS records for them."
+        },
+        {
+          "id": "b",
+          "text": "Dedicated fiber connections to AWS",
+          "correct": false,
+          "rationale": "Dedicated fiber connections are provided by AWS Direct Connect."
+        },
+        {
+          "id": "c",
+          "text": "Health checks on application endpoints",
+          "correct": true,
+          "rationale": "Route 53 health checks monitor endpoints and support routing decisions such as failover."
+        },
+        {
+          "id": "d",
+          "text": "Scanning instances for software vulnerabilities",
+          "correct": false,
+          "rationale": "Vulnerability scanning is provided by Amazon Inspector."
+        },
+        {
+          "id": "e",
+          "text": "Filtering traffic at the subnet boundary",
+          "correct": false,
+          "rationale": "Subnet-level filtering is done by network ACLs."
+        },
+        {
+          "id": "f",
+          "text": "DNS routing policies such as weighted and latency-based",
+          "correct": true,
+          "rationale": "Route 53 routing policies decide how DNS queries are answered, for example by weight or latency."
+        }
+      ],
+      "explanation": "Amazon Route 53 combines three main functions: domain registration, DNS routing and health checking. It translates domain names into IP addresses, can answer queries using policies such as weighted, latency-based or failover, and can monitor endpoint health to avoid sending users to unhealthy resources. Dedicated connectivity, vulnerability scanning and subnet filtering belong to AWS Direct Connect, Amazon Inspector and network ACLs respectively.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html",
+          "title": "What is Amazon Route 53? - Amazon Route 53"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,908 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "1.3",
+  "items": [
+    {
+      "id": "clf-c02-1.3-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company is planning its move to the cloud and wants structured guidance and best practices for the whole transformation. What does the AWS Cloud Adoption Framework (AWS CAF) provide?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A managed service that automatically migrates servers to AWS",
+          "correct": false,
+          "rationale": "AWS CAF is guidance, not a migration service. Servers are migrated with tools such as AWS Application Migration Service."
+        },
+        {
+          "id": "b",
+          "text": "A pricing calculator that estimates monthly costs",
+          "correct": false,
+          "rationale": "Cost estimates come from pricing tools. AWS CAF covers organizational and technical planning for adoption."
+        },
+        {
+          "id": "c",
+          "text": "Guidance and best practices organized into perspectives for cloud adoption",
+          "correct": true,
+          "rationale": "AWS CAF groups capabilities into perspectives so organizations can plan and manage their cloud transformation."
+        },
+        {
+          "id": "d",
+          "text": "A compliance report portal for third-party audit documents",
+          "correct": false,
+          "rationale": "Audit reports are available through AWS Artifact. AWS CAF does not provide compliance documents."
+        }
+      ],
+      "explanation": "The AWS Cloud Adoption Framework is a set of guidance and best practices that helps organizations plan and run a successful cloud adoption. It organizes capabilities into perspectives such as Business, People, Governance, Platform, Security, and Operations. Because it is guidance rather than a tool, it does not migrate workloads, estimate prices, or deliver audit reports. Teams use it to find gaps and decide what to improve first.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html",
+          "title": "An Overview of the AWS Cloud Adoption Framework"
+        },
+        {
+          "url": "https://aws.amazon.com/cloud-adoption-framework/",
+          "title": "AWS Cloud Adoption Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS CAF perspective helps ensure that cloud investments accelerate digital transformation and align with business outcomes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Business",
+          "correct": true,
+          "rationale": "The Business perspective links cloud investments to business strategy and desired outcomes."
+        },
+        {
+          "id": "b",
+          "text": "Platform",
+          "correct": false,
+          "rationale": "The Platform perspective covers designing and building cloud architecture, not aligning investment with strategy."
+        },
+        {
+          "id": "c",
+          "text": "Security",
+          "correct": false,
+          "rationale": "The Security perspective covers protecting data and workloads, not aligning investment with outcomes."
+        },
+        {
+          "id": "d",
+          "text": "Operations",
+          "correct": false,
+          "rationale": "The Operations perspective covers running and monitoring workloads, not business alignment."
+        }
+      ],
+      "explanation": "The AWS CAF Business perspective ensures that cloud investments accelerate digital transformation ambitions and business outcomes. It involves strategy, product, and insight capabilities. The other perspectives focus on specific areas: Platform on architecture, Security on protection, and Operations on running workloads. When a question mentions aligning cloud with business goals or strategy, think Business perspective.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-caf-business-perspective/aws-caf-business-perspective.html",
+          "title": "AWS Cloud Adoption Framework: Business Perspective"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html",
+          "title": "An Overview of the AWS Cloud Adoption Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company moves its servers to AWS exactly as they are, with no changes to the applications. Which migration strategy does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Refactor",
+          "correct": false,
+          "rationale": "Refactor re-architects the application to use cloud-native features, which involves significant change."
+        },
+        {
+          "id": "b",
+          "text": "Repurchase",
+          "correct": false,
+          "rationale": "Repurchase replaces the application with a different product, often SaaS."
+        },
+        {
+          "id": "c",
+          "text": "Retire",
+          "correct": false,
+          "rationale": "Retire decommissions workloads that are no longer needed rather than moving them."
+        },
+        {
+          "id": "d",
+          "text": "Rehost",
+          "correct": true,
+          "rationale": "Rehost, also called lift and shift, moves servers as they are with no application changes."
+        }
+      ],
+      "explanation": "Rehost, often called lift and shift, moves applications to AWS without modifying them. It is usually the fastest strategy and a common choice when a company must exit a data center quickly. Optimization can happen after the move. Refactor and Repurchase involve changing or replacing the application, and Retire removes workloads altogether.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/cloud-migration/",
+          "title": "What is Cloud Migration? - Cloud Migration Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "During a portfolio assessment, a company finds an application that nobody uses anymore. Which migration strategy applies to this application?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Retain",
+          "correct": false,
+          "rationale": "Retain keeps a workload in place for now, which is not the goal for an unused application."
+        },
+        {
+          "id": "b",
+          "text": "Retire",
+          "correct": true,
+          "rationale": "Retire decommissions applications that are no longer needed instead of paying to migrate them."
+        },
+        {
+          "id": "c",
+          "text": "Relocate",
+          "correct": false,
+          "rationale": "Relocate moves workloads at the hypervisor level, which is wasted effort for an unused application."
+        },
+        {
+          "id": "d",
+          "text": "Replatform",
+          "correct": false,
+          "rationale": "Replatform migrates with small optimizations, which is unnecessary for an unused application."
+        }
+      ],
+      "explanation": "During a migration assessment, some applications turn out to be unused or redundant. The Retire strategy decommissions them, which reduces cost and shrinks the migration scope. Retain would keep the application running where it is, and the other strategies would spend effort moving something nobody needs. Retiring workloads early is a common way to lower the total cost of a migration.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is the primary purpose of AWS Database Migration Service (AWS DMS)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Backing up files from on-premises servers to Amazon S3",
+          "correct": false,
+          "rationale": "File backup is not the purpose of AWS DMS, which is built for databases."
+        },
+        {
+          "id": "b",
+          "text": "Monitoring database performance across AWS Regions",
+          "correct": false,
+          "rationale": "Performance monitoring uses other tools. AWS DMS is a migration and replication service."
+        },
+        {
+          "id": "c",
+          "text": "Migrating databases to AWS with minimal downtime",
+          "correct": true,
+          "rationale": "AWS DMS migrates databases and can keep the source operational while it replicates changes."
+        },
+        {
+          "id": "d",
+          "text": "Hosting a managed data warehouse for analytics",
+          "correct": false,
+          "rationale": "Data warehousing is the role of Amazon Redshift, not AWS DMS."
+        }
+      ],
+      "explanation": "AWS Database Migration Service helps you migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, which minimizes downtime for applications that depend on it. It supports moves between the same engine type and between different engines. After the move, the service can also replicate ongoing changes. It does not host databases or warehouses itself.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+          "title": "What is AWS Database Migration Service? - AWS Database Migration Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company has a large amount of data in a location with limited network bandwidth. It wants to move the data to AWS using a physical device. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Direct Connect",
+          "correct": false,
+          "rationale": "AWS Direct Connect provides a dedicated network connection, not a physical device for offline transfer."
+        },
+        {
+          "id": "b",
+          "text": "AWS Snowball",
+          "correct": true,
+          "rationale": "AWS Snowball is a physical device used to transfer large amounts of data offline to AWS."
+        },
+        {
+          "id": "c",
+          "text": "AWS Database Migration Service",
+          "correct": false,
+          "rationale": "AWS DMS migrates databases over the network and does not ship physical devices."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "Amazon CloudFront is a content delivery network, not a data migration tool."
+        }
+      ],
+      "explanation": "AWS Snowball is a family of physical devices that AWS ships to you for moving large datasets into AWS when network transfer would take too long or is not practical. You load the data, ship the device back, and AWS imports it. Network-based options such as AWS DMS or a dedicated connection require sufficient bandwidth. The physical device approach is the key clue in the question.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/snowball/",
+          "title": "AWS Snowball | Secure Edge Computing and Offline Data Transfer | Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/migration-and-modernization/",
+          "title": "AWS Migration & Modernization | Cloud Transformation"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs VMware workloads in its data center and wants to move them to AWS at the hypervisor level without rewriting or converting the applications. Which migration strategy fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Relocate",
+          "correct": true,
+          "rationale": "Relocate moves workloads at the hypervisor level, such as VMware to VMware Cloud on AWS."
+        },
+        {
+          "id": "b",
+          "text": "Repurchase",
+          "correct": false,
+          "rationale": "Repurchase replaces the application with another product and does not preserve the VMware workloads."
+        },
+        {
+          "id": "c",
+          "text": "Replatform",
+          "correct": false,
+          "rationale": "Replatform applies optimizations such as moving to a managed database, which changes the platform."
+        },
+        {
+          "id": "d",
+          "text": "Refactor",
+          "correct": false,
+          "rationale": "Refactor re-architects applications, which the company wants to avoid."
+        }
+      ],
+      "explanation": "Relocate is the strategy for moving infrastructure to the cloud at the hypervisor level, for example moving VMware workloads to VMware Cloud on AWS. There are no changes to the operating system or application and no new hardware purchases. Repurchase, Replatform, and Refactor all alter the application or its platform, which conflicts with the requirement to avoid conversion.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to replace its self-managed on-premises CRM application with a software as a service (SaaS) product. Which migration strategy does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rehost",
+          "correct": false,
+          "rationale": "Rehost moves the existing application as is, rather than replacing it."
+        },
+        {
+          "id": "b",
+          "text": "Retain",
+          "correct": false,
+          "rationale": "Retain keeps the application on premises, which is the opposite of the goal."
+        },
+        {
+          "id": "c",
+          "text": "Repurchase",
+          "correct": true,
+          "rationale": "Repurchase replaces an existing application with a different product, commonly SaaS."
+        },
+        {
+          "id": "d",
+          "text": "Relocate",
+          "correct": false,
+          "rationale": "Relocate moves virtual machines at the hypervisor level and keeps the application."
+        }
+      ],
+      "explanation": "Repurchase, sometimes called drop and shop, means replacing an existing application with a different product, typically a SaaS offering. The company stops maintaining the old software and its infrastructure. Rehost and Relocate keep the same application running on AWS, and Retain leaves it in place. Look for words like replace, SaaS, or new licensing model to identify Repurchase.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/cloud-migration/",
+          "title": "What is Cloud Migration? - Cloud Migration Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must migrate a production database to AWS while the application keeps running and users continue writing data until the cutover. Which approach meets this requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Export the database to files and ship them on AWS Snowball",
+          "correct": false,
+          "rationale": "Offline transfer leaves a gap in changes made after the export, which causes downtime or data loss."
+        },
+        {
+          "id": "b",
+          "text": "Use AWS DMS with ongoing replication from the source to the target",
+          "correct": true,
+          "rationale": "AWS DMS replicates ongoing changes to the target while the source stays operational, then you cut over."
+        },
+        {
+          "id": "c",
+          "text": "Stop the application and copy the database manually",
+          "correct": false,
+          "rationale": "Stopping the application causes extended downtime, which the company wants to avoid."
+        },
+        {
+          "id": "d",
+          "text": "Rebuild the database from a nightly backup on the target",
+          "correct": false,
+          "rationale": "A nightly backup would miss changes made since the backup was taken."
+        }
+      ],
+      "explanation": "Database replication is the key idea for minimal-downtime migrations. AWS DMS performs a full load of existing data and then continuously replicates changes from the source database to the target. The application keeps working against the source until the team decides to cut over. Approaches based on exports or backups capture only a point in time, so changes made afterward are lost or require downtime.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+          "title": "What is AWS Database Migration Service? - AWS Database Migration Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company is migrating an on-premises Oracle database to an Amazon Aurora PostgreSQL database. The source and target use different database engines. Which AWS service helps with this migration?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Snowball",
+          "correct": false,
+          "rationale": "AWS Snowball transfers data offline and does not convert schemas between engines."
+        },
+        {
+          "id": "b",
+          "text": "AWS Application Migration Service",
+          "correct": false,
+          "rationale": "AWS Application Migration Service rehosts servers rather than migrating between database engines."
+        },
+        {
+          "id": "c",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "AWS Trusted Advisor gives best-practice checks and does not migrate databases."
+        },
+        {
+          "id": "d",
+          "text": "AWS Database Migration Service",
+          "correct": true,
+          "rationale": "AWS DMS supports migrations between different database engines, with schema conversion tooling."
+        }
+      ],
+      "explanation": "AWS Database Migration Service supports both homogeneous migrations, where the engine stays the same, and heterogeneous migrations, such as Oracle to PostgreSQL. For heterogeneous moves, schema conversion tooling helps convert the database schema and code before data is migrated. Server migration and offline transfer tools do not understand database engines, and Trusted Advisor only provides recommendations.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+          "title": "What is AWS Database Migration Service? - AWS Database Migration Service"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An executive wants cloud adoption to help the company reduce its carbon footprint and strengthen its sustainability reporting. Which AWS CAF business outcome does this goal represent?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Improved ESG performance",
+          "correct": true,
+          "rationale": "ESG stands for environmental, social, and governance, which covers sustainability goals."
+        },
+        {
+          "id": "b",
+          "text": "Increased revenue",
+          "correct": false,
+          "rationale": "Increased revenue concerns growing sales and new products, not sustainability."
+        },
+        {
+          "id": "c",
+          "text": "Reduced business risk",
+          "correct": false,
+          "rationale": "Reduced business risk concerns security, resilience, and compliance exposure."
+        },
+        {
+          "id": "d",
+          "text": "Increased operational efficiency",
+          "correct": false,
+          "rationale": "Operational efficiency concerns faster, cheaper operations rather than sustainability goals."
+        }
+      ],
+      "explanation": "AWS CAF links cloud adoption to four business outcomes: reduced business risk, improved environmental, social, and governance (ESG) performance, increased revenue, and increased operational efficiency. A goal about carbon footprint and sustainability reporting falls under ESG performance. Matching the stated goal to the right outcome is a common exam pattern.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-caf-business-perspective/aws-caf-business-perspective.html",
+          "title": "AWS Cloud Adoption Framework: Business Perspective"
+        },
+        {
+          "url": "https://aws.amazon.com/cloud-adoption-framework/",
+          "title": "AWS Cloud Adoption Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company moves its self-managed MySQL database on Amazon EC2 to Amazon RDS for MySQL with no changes to the application code. Which migration strategy does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rehost",
+          "correct": false,
+          "rationale": "Rehost moves the server as is. Moving to a managed service changes the platform."
+        },
+        {
+          "id": "b",
+          "text": "Replatform",
+          "correct": true,
+          "rationale": "Replatform makes small cloud optimizations, such as moving to a managed database, without changing the core architecture."
+        },
+        {
+          "id": "c",
+          "text": "Refactor",
+          "correct": false,
+          "rationale": "Refactor re-architects the application, which does not happen here."
+        },
+        {
+          "id": "d",
+          "text": "Retire",
+          "correct": false,
+          "rationale": "Retire decommissions a workload, but this database is still in use."
+        }
+      ],
+      "explanation": "Replatform, sometimes called lift, tinker, and shift, moves a workload while making a few cloud optimizations without changing its core architecture. Swapping a self-managed database for Amazon RDS reduces administration work while the application code stays the same. Rehost would keep the database on a server unchanged, and Refactor would redesign the application itself.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/cloud-migration/",
+          "title": "What is Cloud Migration? - Cloud Migration Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company lacks in-house migration experience and wants AWS experts to work alongside its team during the migration. Which resource should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Artifact",
+          "correct": false,
+          "rationale": "AWS Artifact provides compliance reports and agreements, not migration assistance."
+        },
+        {
+          "id": "b",
+          "text": "AWS Trusted Advisor",
+          "correct": false,
+          "rationale": "AWS Trusted Advisor provides automated best-practice checks, not hands-on experts."
+        },
+        {
+          "id": "c",
+          "text": "AWS Professional Services",
+          "correct": true,
+          "rationale": "AWS Professional Services is a team of AWS experts who work with customers on cloud adoption and migration projects."
+        },
+        {
+          "id": "d",
+          "text": "AWS Budgets",
+          "correct": false,
+          "rationale": "AWS Budgets tracks spending against thresholds and does not offer migration expertise."
+        }
+      ],
+      "explanation": "Several resources support the migration journey. AWS Professional Services provides AWS experts who partner with your team on projects, and AWS Partners offer consulting and tooling. AWS Prescriptive Guidance supplies strategies and patterns, and the AWS Migration Acceleration Program offers methodology and funding. Tools such as AWS Budgets and AWS Trusted Advisor help with cost and best practices but do not supply migration staff.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/migration-and-modernization/",
+          "title": "AWS Migration & Modernization | Cloud Transformation"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/cloud-migration/",
+          "title": "What is Cloud Migration? - Cloud Migration Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company must keep a regulated application in its data center for another two years because of a contract. It wants to migrate it later and revisit the decision then. Which migration strategy applies now?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Retire",
+          "correct": false,
+          "rationale": "Retire decommissions the application, but the company still needs it."
+        },
+        {
+          "id": "b",
+          "text": "Refactor",
+          "correct": false,
+          "rationale": "Refactor re-architects the application, which is not planned now."
+        },
+        {
+          "id": "c",
+          "text": "Rehost",
+          "correct": false,
+          "rationale": "Rehost moves the application now, which the contract prevents."
+        },
+        {
+          "id": "d",
+          "text": "Retain",
+          "correct": true,
+          "rationale": "Retain keeps the workload where it is for now and revisits the decision later."
+        }
+      ],
+      "explanation": "Retain means keeping an application in its current environment, often because of compliance, contractual, or readiness constraints, and revisiting it later. It differs from Retire because the application is still needed. The other strategies all involve acting on the workload now. Distinguishing Retain from Retire depends on whether the application is still required.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company has a monolithic application that cannot scale during peak demand. It wants to break the application into microservices that use serverless services, even though this requires significant development effort. Which migration strategy fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rehost",
+          "correct": false,
+          "rationale": "Rehost keeps the monolith unchanged, so the scaling limit would remain."
+        },
+        {
+          "id": "b",
+          "text": "Replatform",
+          "correct": false,
+          "rationale": "Replatform makes small optimizations but does not break the application into microservices."
+        },
+        {
+          "id": "c",
+          "text": "Refactor",
+          "correct": true,
+          "rationale": "Refactor re-architects the application to use cloud-native features such as microservices and serverless."
+        },
+        {
+          "id": "d",
+          "text": "Repurchase",
+          "correct": false,
+          "rationale": "Repurchase replaces the application with another product, not a redesign of the existing one."
+        }
+      ],
+      "explanation": "Refactor, also called re-architect, changes the application's design to take full advantage of cloud-native capabilities such as microservices and serverless computing. It takes the most effort but can deliver the greatest long-term gains in scalability and agility. Rehost and Replatform keep the architecture largely unchanged, so the scaling problem would remain, and Repurchase swaps the product altogether.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/cloud-migration/",
+          "title": "What is Cloud Migration? - Cloud Migration Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must move hundreds of on-premises servers to AWS with minimal cutover downtime. It wants continuous replication of the servers to AWS until it is ready to switch over. Which AWS service should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Application Migration Service",
+          "correct": true,
+          "rationale": "It rehosts servers by continuously replicating them to AWS, which supports a short cutover."
+        },
+        {
+          "id": "b",
+          "text": "AWS Database Migration Service",
+          "correct": false,
+          "rationale": "AWS DMS migrates databases and does not replicate whole servers."
+        },
+        {
+          "id": "c",
+          "text": "AWS Snowball",
+          "correct": false,
+          "rationale": "Snowball moves data offline in batches and does not provide continuous server replication."
+        },
+        {
+          "id": "d",
+          "text": "AWS Cloud Adoption Framework",
+          "correct": false,
+          "rationale": "AWS CAF is planning guidance and does not replicate servers."
+        }
+      ],
+      "explanation": "AWS Application Migration Service, which is now AWS Transform MGN, performs rehosting by continuously replicating source servers to AWS. You test the replicated servers and then cut over, which keeps downtime short. AWS DMS is for databases, Snowball for offline data transfer, and AWS CAF is a planning framework rather than a tool.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html",
+          "title": "What Is AWS Transform MGN? - AWS Transform MGN"
+        },
+        {
+          "url": "https://aws.amazon.com/migration-and-modernization/",
+          "title": "AWS Migration & Modernization | Cloud Transformation"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which of the following are perspectives of the AWS Cloud Adoption Framework (AWS CAF)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Compliance",
+          "correct": false,
+          "rationale": "Compliance is not one of the six AWS CAF perspectives."
+        },
+        {
+          "id": "b",
+          "text": "People",
+          "correct": true,
+          "rationale": "People is a perspective that covers skills, culture, and organizational change."
+        },
+        {
+          "id": "c",
+          "text": "Networking",
+          "correct": false,
+          "rationale": "Networking is not an AWS CAF perspective."
+        },
+        {
+          "id": "d",
+          "text": "Governance",
+          "correct": true,
+          "rationale": "Governance is a perspective that covers managing cloud initiatives, risk, and cost."
+        },
+        {
+          "id": "e",
+          "text": "Finance",
+          "correct": false,
+          "rationale": "Finance is not a separate AWS CAF perspective."
+        }
+      ],
+      "explanation": "AWS CAF has six perspectives: Business, People, Governance, Platform, Security, and Operations. Each groups related capabilities and is typically owned by different stakeholders. People and Governance are two of them. Compliance, networking, and finance are topics that appear within capabilities, but they are not perspectives on their own.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html",
+          "title": "An Overview of the AWS Cloud Adoption Framework"
+        },
+        {
+          "url": "https://aws.amazon.com/cloud-adoption-framework/",
+          "title": "AWS Cloud Adoption Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which of the following are business outcomes that AWS CAF links to cloud adoption?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduced business risk",
+          "correct": true,
+          "rationale": "Reducing business risk is one of the four business outcomes AWS CAF highlights."
+        },
+        {
+          "id": "b",
+          "text": "Longer hardware procurement cycles",
+          "correct": false,
+          "rationale": "Cloud adoption shortens procurement, so this is the opposite of a benefit."
+        },
+        {
+          "id": "c",
+          "text": "Higher fixed capital expenses",
+          "correct": false,
+          "rationale": "The cloud shifts spending toward variable costs, so this is not a benefit."
+        },
+        {
+          "id": "d",
+          "text": "A single AWS Region for all workloads",
+          "correct": false,
+          "rationale": "Region count is a design decision and not a business outcome."
+        },
+        {
+          "id": "e",
+          "text": "Increased revenue",
+          "correct": true,
+          "rationale": "Increased revenue is one of the four business outcomes AWS CAF highlights."
+        }
+      ],
+      "explanation": "AWS CAF describes four business outcomes: reduced business risk, improved ESG performance, increased revenue, and increased operational efficiency. Reduced risk and increased revenue are two of them. Longer procurement cycles and higher fixed capital expenses run counter to cloud benefits, and Region count is an architectural choice.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-caf-business-perspective/aws-caf-business-perspective.html",
+          "title": "AWS Cloud Adoption Framework: Business Perspective"
+        },
+        {
+          "url": "https://aws.amazon.com/cloud-adoption-framework/",
+          "title": "AWS Cloud Adoption Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "A company classifies its applications during migration planning. Which strategies result in a workload not being moved to AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Retire",
+          "correct": true,
+          "rationale": "Retire decommissions the workload, so nothing is moved."
+        },
+        {
+          "id": "b",
+          "text": "Rehost",
+          "correct": false,
+          "rationale": "Rehost moves the workload to AWS as is."
+        },
+        {
+          "id": "c",
+          "text": "Retain",
+          "correct": true,
+          "rationale": "Retain leaves the workload in its current environment for now."
+        },
+        {
+          "id": "d",
+          "text": "Repurchase",
+          "correct": false,
+          "rationale": "Repurchase replaces the workload with a new product, often in the cloud."
+        },
+        {
+          "id": "e",
+          "text": "Refactor",
+          "correct": false,
+          "rationale": "Refactor re-architects the workload and then runs it on AWS."
+        }
+      ],
+      "explanation": "Of the seven common strategies, Retire and Retain are the two that do not move a workload to AWS. Retire turns the workload off because it is no longer needed. Retain keeps it where it is, usually temporarily. Rehost and Refactor both run the workload on AWS, and Repurchase replaces it with another product.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.3-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which of the following are resources that support an organization on its AWS migration journey?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Shield",
+          "correct": false,
+          "rationale": "AWS Shield protects against DDoS attacks and is not a migration resource."
+        },
+        {
+          "id": "b",
+          "text": "AWS Prescriptive Guidance",
+          "correct": true,
+          "rationale": "It provides migration strategies, guides, and patterns that support planning and execution."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Inspector",
+          "correct": false,
+          "rationale": "Amazon Inspector scans for vulnerabilities and is not a migration resource."
+        },
+        {
+          "id": "d",
+          "text": "AWS Professional Services",
+          "correct": true,
+          "rationale": "It provides AWS experts who work with your team on migration projects."
+        },
+        {
+          "id": "e",
+          "text": "Amazon Detective",
+          "correct": false,
+          "rationale": "Amazon Detective investigates security findings and is not a migration resource."
+        },
+        {
+          "id": "f",
+          "text": "AWS Migration Acceleration Program",
+          "correct": true,
+          "rationale": "It provides methodology, tooling, and funding that help speed up migrations."
+        }
+      ],
+      "explanation": "AWS offers several resources for the migration journey: Prescriptive Guidance for strategies and patterns, Professional Services and AWS Partners for expert help, and the AWS Migration Acceleration Program for methodology and funding. AWS Shield, Amazon Inspector, and Amazon Detective are security services. They are valuable after migration but do not guide or accelerate it.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/migration-and-modernization/",
+          "title": "AWS Migration & Modernization | Cloud Transformation"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html",
+          "title": "About the migration strategies - AWS Prescriptive Guidance"
+        }
+      ]
+    }
+  ]
+}

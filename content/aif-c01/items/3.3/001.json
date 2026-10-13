@@ -1,0 +1,896 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.3",
+  "items": [
+    {
+      "id": "aif-c01-3.3-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to understand how a foundation model first acquires its broad language abilities. Which training stage provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fine-tuning on a small labeled dataset",
+          "correct": false,
+          "rationale": "Fine-tuning comes after the base model already exists and adapts it to a narrower task."
+        },
+        {
+          "id": "b",
+          "text": "Pre-training on large, diverse datasets",
+          "correct": true,
+          "rationale": "Pre-training teaches the model general patterns from very large amounts of varied data, which gives it broad capabilities."
+        },
+        {
+          "id": "c",
+          "text": "Model distillation from a teacher model",
+          "correct": false,
+          "rationale": "Distillation transfers knowledge into a smaller student and does not create the original broad abilities."
+        },
+        {
+          "id": "d",
+          "text": "Prompt engineering at inference time",
+          "correct": false,
+          "rationale": "Prompting changes the input at inference time and does not train the model at all."
+        }
+      ],
+      "explanation": "A foundation model is built in stages. Pre-training is the first and most expensive stage: the model learns general language or image patterns from very large, diverse datasets, often using self-supervised objectives. The result is a base model that can handle many tasks. Later stages such as fine-tuning, continued pre-training and distillation start from that base model and adapt or compress it. Prompt engineering changes only the input, not the model weights.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-fine-tuning.html",
+          "title": "Customize a model with fine-tuning in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models.html",
+          "title": "Amazon SageMaker JumpStart Foundation Models - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement best describes fine-tuning a foundation model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Training a new model from scratch on public data",
+          "correct": false,
+          "rationale": "Training from scratch is pre-training, which needs far more data and compute than fine-tuning."
+        },
+        {
+          "id": "b",
+          "text": "Retrieving documents at query time to add context",
+          "correct": false,
+          "rationale": "Retrieving documents at query time is retrieval augmented generation, which leaves the model weights unchanged."
+        },
+        {
+          "id": "c",
+          "text": "Further training a pre-trained model on task-specific data",
+          "correct": true,
+          "rationale": "Fine-tuning updates a pre-trained model's weights using a smaller, task-specific dataset to improve performance on that task."
+        },
+        {
+          "id": "d",
+          "text": "Reducing model size by removing unused parameters",
+          "correct": false,
+          "rationale": "Shrinking a model is a different goal and is not what fine-tuning means."
+        }
+      ],
+      "explanation": "Fine-tuning takes a model that was already pre-trained and continues training it on a smaller dataset that represents the target task or domain. The weights are updated, so the model itself changes, unlike prompting or retrieval augmented generation. Because it starts from existing knowledge, fine-tuning needs much less data and compute than pre-training. Amazon Bedrock and Amazon SageMaker JumpStart both offer ways to fine-tune supported foundation models.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-fine-tuning.html",
+          "title": "Customize a model with fine-tuning in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-fine-tune.html",
+          "title": "Fine-Tune a Model - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is the goal of model distillation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Transfer knowledge from a larger teacher model to a smaller student model",
+          "correct": true,
+          "rationale": "Distillation trains a smaller, faster, cheaper student to imitate a larger teacher for a specific use case."
+        },
+        {
+          "id": "b",
+          "text": "Increase the number of parameters in the base model",
+          "correct": false,
+          "rationale": "Distillation produces a smaller model, not a larger one."
+        },
+        {
+          "id": "c",
+          "text": "Collect human rankings to build a reward model",
+          "correct": false,
+          "rationale": "Human rankings and reward models belong to RLHF, not distillation."
+        },
+        {
+          "id": "d",
+          "text": "Label raw data so it can be used for training",
+          "correct": false,
+          "rationale": "Labeling prepares data and is not what distillation does."
+        }
+      ],
+      "explanation": "Model distillation transfers knowledge from a larger, more capable teacher model to a smaller student model. In Amazon Bedrock, the service generates teacher responses to your prompts, which can include synthetic data, and then fine-tunes the student with them. The student becomes faster and cheaper to run while improving on your specific use case, which is why distillation is chosen when latency and cost matter.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html",
+          "title": "Customize a model with distillation in Amazon Bedrock - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What type of training data does fine-tuning a text model in Amazon Bedrock typically use for a non-conversational task?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unlabeled images stored in a data lake",
+          "correct": false,
+          "rationale": "Unlabeled images do not suit a text fine-tuning job that needs desired outputs."
+        },
+        {
+          "id": "b",
+          "text": "Real-time clickstream events from a stream",
+          "correct": false,
+          "rationale": "Clickstream events are not prompt and completion examples for a text model."
+        },
+        {
+          "id": "c",
+          "text": "Raw model weights from another provider",
+          "correct": false,
+          "rationale": "Weights are not training data; the job produces new custom weights."
+        },
+        {
+          "id": "d",
+          "text": "Labeled prompt and completion pairs in JSONL files",
+          "correct": true,
+          "rationale": "Fine-tuning data is supplied as JSONL where each record pairs an input prompt with the expected completion."
+        }
+      ],
+      "explanation": "Fine-tuning is supervised: each training example shows the model an input and the output you want. For non-conversational text tasks in Amazon Bedrock, you provide a .jsonl file in which every line is a JSON object with a prompt field and a completion field. Conversational models use a message format instead. You must provide at least a training dataset, and an optional validation dataset can be added to monitor quality.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which description matches reinforcement learning from human feedback (RLHF)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Compressing a model by removing low-value weights",
+          "correct": false,
+          "rationale": "Compressing weights is model pruning or quantization and does not involve human feedback."
+        },
+        {
+          "id": "b",
+          "text": "Using human preference rankings to train a reward model that guides the language model",
+          "correct": true,
+          "rationale": "RLHF has humans rank model responses, trains a reward model on those rankings, and uses it to optimize the language model."
+        },
+        {
+          "id": "c",
+          "text": "Training only on data that has no labels",
+          "correct": false,
+          "rationale": "Learning from unlabeled data is self-supervised learning, not RLHF."
+        },
+        {
+          "id": "d",
+          "text": "Copying a teacher model's outputs into a student",
+          "correct": false,
+          "rationale": "Copying teacher outputs is distillation, which does not use human preference rankings."
+        }
+      ],
+      "explanation": "RLHF aligns a model with human preferences. People write or rank responses, a separate reward model learns to predict which responses people prefer, and the language model is then optimized to produce responses that earn high reward. It is commonly applied after supervised fine-tuning to make outputs more helpful and safe. Because it depends on human judgments, it is more costly than ordinary fine-tuning on labeled examples.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/reinforcement-learning-from-human-feedback/",
+          "title": "What is RLHF? - Reinforcement Learning from Human Feedback Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A data scientist reuses a model trained on one task as the starting point for a related task with little data. Which technique is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data augmentation",
+          "correct": false,
+          "rationale": "Data augmentation creates extra training samples and does not reuse a trained model."
+        },
+        {
+          "id": "b",
+          "text": "Feature scaling",
+          "correct": false,
+          "rationale": "Feature scaling normalizes input values and is unrelated to reusing a trained model."
+        },
+        {
+          "id": "c",
+          "text": "Transfer learning",
+          "correct": true,
+          "rationale": "Transfer learning reuses knowledge from a model trained on one task to improve learning on a related task."
+        },
+        {
+          "id": "d",
+          "text": "Hyperparameter tuning",
+          "correct": false,
+          "rationale": "Hyperparameter tuning searches for training settings and does not transfer learned knowledge."
+        }
+      ],
+      "explanation": "Transfer learning applies knowledge a model gained on one problem to a different but related problem. Instead of starting from random weights, you start from a pre-trained model and train further on the new task, which cuts the data, time and compute needed. Fine-tuning a foundation model is a form of transfer learning, since the foundation model's broad pre-trained knowledge is carried into the specialized task.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/transfer-learning/",
+          "title": "What is Transfer Learning? - Transfer Learning in Machine Learning Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company has 5,000 labeled examples that pair customer questions with the exact answer style it wants. It wants the model to reliably follow that response style. Which approach fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Instruction tuning with the labeled prompt-response pairs",
+          "correct": true,
+          "rationale": "Instruction tuning trains on prompt-response pairs so the model learns to follow instructions and respond in the desired style."
+        },
+        {
+          "id": "b",
+          "text": "Continued pre-training on the questions only",
+          "correct": false,
+          "rationale": "Continued pre-training uses unlabeled text and does not teach a specific answer style from examples."
+        },
+        {
+          "id": "c",
+          "text": "Pre-training a new model from scratch",
+          "correct": false,
+          "rationale": "Pre-training from scratch is far too costly for a response-style problem."
+        },
+        {
+          "id": "d",
+          "text": "Distilling a larger model without any examples",
+          "correct": false,
+          "rationale": "Distillation shrinks a model for cost and speed and is not the first choice for teaching a style."
+        }
+      ],
+      "explanation": "Instruction tuning is a form of fine-tuning in which the training data are instructions or prompts paired with the desired responses. Because the examples demonstrate the exact behavior wanted, the model learns to follow instructions and match a format or tone. Labeled pairs are the key requirement. Continued pre-training works on unlabeled text to add knowledge, and pre-training from scratch is unnecessary when a capable base model exists.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-fine-tuning.html",
+          "title": "Customize a model with fine-tuning in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A legal company has a large collection of unlabeled contracts and wants the model to learn the domain's vocabulary and concepts. Which method should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Instruction tuning with prompt-response pairs",
+          "correct": false,
+          "rationale": "Instruction tuning needs labeled pairs, which this company does not have."
+        },
+        {
+          "id": "b",
+          "text": "RLHF with human rankings",
+          "correct": false,
+          "rationale": "RLHF needs human rankings of responses, which is unnecessary for adding domain vocabulary."
+        },
+        {
+          "id": "c",
+          "text": "Prompt caching of common clauses",
+          "correct": false,
+          "rationale": "Caching prompts reduces cost and latency but does not teach the model new domain knowledge."
+        },
+        {
+          "id": "d",
+          "text": "Continued pre-training on the unlabeled contracts",
+          "correct": true,
+          "rationale": "Continued pre-training keeps training on unlabeled domain text so the model absorbs the domain's language."
+        }
+      ],
+      "explanation": "Continued pre-training extends the original pre-training objective on additional unlabeled data from a specific domain, such as law or medicine. It is the right fit when the goal is to teach vocabulary and concepts and there are no labeled examples. Instruction tuning, by contrast, needs prompt-response pairs to shape behavior. Teams often run continued pre-training first and fine-tune on labeled examples afterward.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-fine-tuning.html",
+          "title": "Customize a model with fine-tuning in Amazon Bedrock - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "In Amazon Bedrock Model Distillation, which description of the roles is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The student generates responses that retrain the teacher",
+          "correct": false,
+          "rationale": "The direction is reversed because the teacher produces responses used to train the student."
+        },
+        {
+          "id": "b",
+          "text": "The teacher model generates responses used to fine-tune the smaller student model",
+          "correct": true,
+          "rationale": "Bedrock generates teacher responses to your prompts and uses them to fine-tune the student model."
+        },
+        {
+          "id": "c",
+          "text": "Both models are trained from scratch on the same corpus",
+          "correct": false,
+          "rationale": "Distillation does not retrain both models from scratch; it fine-tunes the student."
+        },
+        {
+          "id": "d",
+          "text": "The teacher is deleted after the student finishes training",
+          "correct": false,
+          "rationale": "Nothing in the workflow deletes the teacher model."
+        }
+      ],
+      "explanation": "In distillation, the teacher is a larger, more capable model and the student is a smaller, faster one. Amazon Bedrock takes your prompts, or prompt-response pairs from invocation logs, gets the teacher's responses, optionally adds synthetic data, and then fine-tunes the student on those responses. Only the student model changes. The outcome is a model that approaches the teacher's quality on your use case at lower cost and latency.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html",
+          "title": "Customize a model with distillation in Amazon Bedrock - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0010",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A team is curating a dataset to fine-tune a foundation model. Which two actions improve dataset quality?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Remove duplicate and incorrect records",
+          "correct": true,
+          "rationale": "Duplicates and errors teach the model wrong patterns, so removing them improves quality."
+        },
+        {
+          "id": "b",
+          "text": "Include unverified web text to increase volume",
+          "correct": false,
+          "rationale": "Unverified text adds noise and can introduce inaccurate or harmful content."
+        },
+        {
+          "id": "c",
+          "text": "Mix the test set into the training set",
+          "correct": false,
+          "rationale": "Leaking test data into training makes evaluation results misleading."
+        },
+        {
+          "id": "d",
+          "text": "Keep only examples that look easiest to label",
+          "correct": false,
+          "rationale": "Selecting only easy examples makes the data unrepresentative of real requests."
+        },
+        {
+          "id": "e",
+          "text": "Ensure examples reflect the real requests users will send",
+          "correct": true,
+          "rationale": "Representative data makes the fine-tuned model perform well on the inputs it will actually see."
+        }
+      ],
+      "explanation": "Fine-tuning quality depends on data quality more than on sheer volume. Curation means removing duplicates, errors and contradictory examples, and making sure the data represents the real inputs and the variety of cases the model will face. Keep a held-out evaluation set separate from training data, otherwise measured performance overstates real performance. Adding large amounts of unchecked data usually hurts rather than helps.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/data-labeling/",
+          "title": "What is Data Labeling? - Data Labeling Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A fine-tuned model performs well for retail customers but poorly for business customers, who were barely present in the training data. What should the team do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduce the number of training epochs",
+          "correct": false,
+          "rationale": "Fewer epochs do not add the missing customer type to the data."
+        },
+        {
+          "id": "b",
+          "text": "Fine-tune again with a lower validation split",
+          "correct": false,
+          "rationale": "Changing the validation split does not fix a gap in the training examples."
+        },
+        {
+          "id": "c",
+          "text": "Add representative examples of business customers to the training data",
+          "correct": true,
+          "rationale": "The model underperforms on a group it rarely saw, so adding representative examples fixes the gap."
+        },
+        {
+          "id": "d",
+          "text": "Switch to a larger base model without changing the data",
+          "correct": false,
+          "rationale": "A larger model with the same skewed data is likely to show the same gap."
+        }
+      ],
+      "explanation": "Representativeness means the training data reflects the full range of users, topics and situations the model will meet in production. When a group is underrepresented, the fine-tuned model tends to do worse on it. The fix is to collect and label more examples from that group rather than to change training settings or model size. Checking performance across segments during evaluation helps reveal these gaps early.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/data-labeling/",
+          "title": "What is Data Labeling? - Data Labeling Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "Training data for a fine-tuning job contains customer names and account numbers. Which action best supports data governance before training?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Identify and remove or anonymize sensitive data according to company policy",
+          "correct": true,
+          "rationale": "Governance requires controlling sensitive data, so remove or anonymize it before it enters training."
+        },
+        {
+          "id": "b",
+          "text": "Upload the data unchanged and rely on the model to ignore it",
+          "correct": false,
+          "rationale": "Models can memorize and reproduce training content, so ignoring sensitive data is not safe."
+        },
+        {
+          "id": "c",
+          "text": "Increase the batch size to reduce exposure",
+          "correct": false,
+          "rationale": "Batch size is a training setting and has no effect on privacy."
+        },
+        {
+          "id": "d",
+          "text": "Share the raw data with the base model provider for review",
+          "correct": false,
+          "rationale": "Sending raw sensitive data to other parties creates more exposure and is unnecessary."
+        }
+      ],
+      "explanation": "Data governance covers where training data comes from, who may use it, and how sensitive content is handled. Because a fine-tuned model can memorize and reveal examples it was trained on, personal and confidential data should be identified and removed or anonymized, and access to the dataset should be controlled. Establishing provenance and approval for datasets before training is part of the same discipline.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/data-labeling/",
+          "title": "What is Data Labeling? - Data Labeling Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team has thousands of raw support tickets but no target responses. It wants to fine-tune a model to answer tickets. What must it do first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Start the fine-tuning job and let the model generate the labels",
+          "correct": false,
+          "rationale": "Fine-tuning needs desired outputs in the dataset up front, so it cannot generate its own labels."
+        },
+        {
+          "id": "b",
+          "text": "Create prompt-response pairs by having people write or review the answers",
+          "correct": true,
+          "rationale": "Supervised fine-tuning requires labeled examples, which human annotators can create or validate."
+        },
+        {
+          "id": "c",
+          "text": "Convert the tickets to embeddings and train on them",
+          "correct": false,
+          "rationale": "Embeddings are numerical representations and are not target responses."
+        },
+        {
+          "id": "d",
+          "text": "Reduce the dataset to a single ticket category only",
+          "correct": false,
+          "rationale": "Reducing categories does not supply any target responses."
+        }
+      ],
+      "explanation": "Supervised fine-tuning learns from examples that show the desired output for each input, so raw inputs alone are not enough. Data labeling is the process of adding that missing information, such as the correct response to each ticket, often by human annotators or reviewers working to clear guidelines. Consistent, accurate labels matter because the model learns whatever pattern the labels show, including mistakes.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/data-labeling/",
+          "title": "What is Data Labeling? - Data Labeling Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0014",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which two sources can Amazon Bedrock Model Distillation use as input data to create a distilled model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prompts that you provide in JSONL files",
+          "correct": true,
+          "rationale": "Distillation uses your prompts to generate teacher responses for training the student."
+        },
+        {
+          "id": "b",
+          "text": "A reward model trained on human rankings",
+          "correct": false,
+          "rationale": "A reward model is part of RLHF and is not a distillation input."
+        },
+        {
+          "id": "c",
+          "text": "Invocation logs that contain prompts and teacher responses",
+          "correct": true,
+          "rationale": "Existing prompt-response pairs from invocation logs can be used to fine-tune the student."
+        },
+        {
+          "id": "d",
+          "text": "The student model's original pre-training corpus",
+          "correct": false,
+          "rationale": "Bedrock does not require access to the pre-training corpus."
+        },
+        {
+          "id": "e",
+          "text": "Model weights exported from another customer's account",
+          "correct": false,
+          "rationale": "Distillation does not use another customer's model weights, and your data is private."
+        }
+      ],
+      "explanation": "Amazon Bedrock Model Distillation needs prompts rather than finished labels. You can provide your own prompts, optionally with a few labeled prompt-response pairs as golden examples, or you can point the job at invocation logs from earlier teacher-model calls. With logs, Bedrock can reuse the recorded responses instead of regenerating them. The resulting distilled model is accessible only to you.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html",
+          "title": "Customize a model with distillation in Amazon Bedrock - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0015",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 2,
+      "stem": "Which three steps are part of the RLHF process?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Delete the pre-trained model before training",
+          "correct": false,
+          "rationale": "Deleting the base model is not a step; RLHF builds on a pre-trained model."
+        },
+        {
+          "id": "b",
+          "text": "Humans write demonstration prompts and responses for supervised fine-tuning",
+          "correct": true,
+          "rationale": "Human-written examples provide the initial data used to adapt the base model."
+        },
+        {
+          "id": "c",
+          "text": "Convert all training text to uppercase",
+          "correct": false,
+          "rationale": "Changing case is not an RLHF step."
+        },
+        {
+          "id": "d",
+          "text": "Humans rank multiple responses to the same prompt to train a reward model",
+          "correct": true,
+          "rationale": "Rankings let the reward model learn which responses people prefer."
+        },
+        {
+          "id": "e",
+          "text": "Compress the model to a smaller student",
+          "correct": false,
+          "rationale": "Compression is distillation, which is a different technique."
+        },
+        {
+          "id": "f",
+          "text": "Optimize the language model using the reward model's scores",
+          "correct": true,
+          "rationale": "The policy is optimized to produce responses that earn higher reward."
+        }
+      ],
+      "explanation": "RLHF combines supervised learning with reinforcement learning. First, humans produce high-quality prompts and responses that adapt the base model. Next, humans rank several model answers to each prompt, and a reward model learns to predict those preferences. Finally, the language model is optimized against the reward model so its outputs score higher. The approach relies on scalable, consistent human feedback.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/reinforcement-learning-from-human-feedback/",
+          "title": "What is RLHF? - Reinforcement Learning from Human Feedback Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company has 2 million unlabeled internal documents and 300 prompt-response examples. It wants a model that knows its terminology and answers in a set format. Which sequence is best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fine-tune on the 300 examples, then pre-train from scratch",
+          "correct": false,
+          "rationale": "Pre-training from scratch afterward would discard the fine-tuning and is unnecessary."
+        },
+        {
+          "id": "b",
+          "text": "Distill the base model, then use RLHF on the documents",
+          "correct": false,
+          "rationale": "Neither step uses the unlabeled documents to teach terminology, so the goals are not met."
+        },
+        {
+          "id": "c",
+          "text": "Continued pre-training on the documents, then fine-tune on the examples",
+          "correct": true,
+          "rationale": "Continued pre-training teaches terminology from unlabeled text, and fine-tuning then shapes the answer format."
+        },
+        {
+          "id": "d",
+          "text": "Use only the 300 examples with no further training steps",
+          "correct": false,
+          "rationale": "300 examples alone do not teach broad internal terminology as well as the large document set would."
+        }
+      ],
+      "explanation": "The two datasets serve different purposes. The large unlabeled corpus is suited to continued pre-training, which adds domain knowledge and vocabulary. The small labeled set is suited to fine-tuning or instruction tuning, which teaches the model how to respond. Running continued pre-training first and fine-tuning second uses each dataset where it is strongest, and neither requires the cost of training a model from scratch.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-fine-tuning.html",
+          "title": "Customize a model with fine-tuning in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A fine-tuned model gives inconsistent answers. Review shows many near-identical prompts paired with contradictory completions written by different annotators. What is the best fix?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add more epochs so the model memorizes the data",
+          "correct": false,
+          "rationale": "More epochs would make the model learn the contradictions more strongly."
+        },
+        {
+          "id": "b",
+          "text": "Reconcile the contradictory labels and apply consistent labeling guidelines",
+          "correct": true,
+          "rationale": "The model learns whatever the labels show, so consistent, curated labels remove the source of inconsistency."
+        },
+        {
+          "id": "c",
+          "text": "Double the dataset size with additional unreviewed records",
+          "correct": false,
+          "rationale": "Adding unreviewed records is likely to add more inconsistency."
+        },
+        {
+          "id": "d",
+          "text": "Remove the validation dataset to save training time",
+          "correct": false,
+          "rationale": "Removing validation data hides problems and does not address the labels."
+        }
+      ],
+      "explanation": "A fine-tuned model reflects its training data. Contradictory completions for similar prompts teach the model that either answer is acceptable, so its outputs vary. The remedy is data curation: define clear labeling guidelines, resolve conflicts, and review a sample for quality. A smaller dataset of consistent, high-quality examples generally beats a larger noisy one. Training longer or adding unchecked data would reinforce the problem.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/data-labeling/",
+          "title": "What is Data Labeling? - Data Labeling Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "During fine-tuning on a small dataset, training loss keeps falling but loss on the validation dataset starts rising. What does this indicate, and what is a sensible response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Underfitting; increase the learning rate and stop validating",
+          "correct": false,
+          "rationale": "Falling training loss shows the model is fitting the training data, so this is not underfitting."
+        },
+        {
+          "id": "b",
+          "text": "Data governance failure; delete the training bucket",
+          "correct": false,
+          "rationale": "Rising validation loss is a model-fit signal, not evidence of a governance failure."
+        },
+        {
+          "id": "c",
+          "text": "Hardware failure; rerun on a different instance type",
+          "correct": false,
+          "rationale": "A divergence between training and validation loss is not caused by hardware."
+        },
+        {
+          "id": "d",
+          "text": "Overfitting; reduce epochs or add more diverse training data",
+          "correct": true,
+          "rationale": "The model is memorizing training examples and generalizing worse, so training less or adding varied data helps."
+        }
+      ],
+      "explanation": "When training loss declines while validation loss rises, the model is overfitting: it memorizes the training examples instead of learning patterns that generalize. A held-out validation dataset exists to catch this. Typical responses are to train for fewer epochs, adjust hyperparameters, or add more diverse, representative data. This is a common risk when fine-tuning with small datasets.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-fine-tuning.html",
+          "title": "Customize a model with fine-tuning in Amazon Bedrock - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+          "title": "Prepare data for fine-tuning your models - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0019",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company stores prompts and responses from a large model in Amazon Bedrock invocation logs. It wants a cheaper, lower-latency model for the same task. Which approach is the best fit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Distill the large model into a smaller student using the invocation logs",
+          "correct": true,
+          "rationale": "Distillation can reuse logged teacher responses to fine-tune a smaller, cheaper student for this use case."
+        },
+        {
+          "id": "b",
+          "text": "Pre-train a new foundation model from scratch",
+          "correct": false,
+          "rationale": "Pre-training from scratch is costly and does not reuse the logged responses."
+        },
+        {
+          "id": "c",
+          "text": "Run continued pre-training on the logged responses",
+          "correct": false,
+          "rationale": "Continued pre-training does not produce a smaller model, so cost and latency would not improve."
+        },
+        {
+          "id": "d",
+          "text": "Apply RLHF using the logged responses as rankings",
+          "correct": false,
+          "rationale": "The logs hold no human rankings, and RLHF does not make a model smaller."
+        }
+      ],
+      "explanation": "The stated goal is a smaller, faster, cheaper model for a known task, and the company already holds teacher outputs. That matches distillation. Amazon Bedrock Model Distillation can use invocation logs as the source of prompts or prompt-response pairs, then fine-tunes a smaller student on them. The teacher model in the job must match the model recorded in the logs when the logged responses are reused.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-distillation.html",
+          "title": "Customize a model with distillation in Amazon Bedrock - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.3-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A team already uses supervised fine-tuning on labeled examples. Which two reasons justify adding RLHF afterward?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To align outputs with human preferences such as helpfulness and safety",
+          "correct": true,
+          "rationale": "RLHF optimizes toward the qualities people prefer, which are hard to capture by labels alone."
+        },
+        {
+          "id": "b",
+          "text": "To remove the need for any human involvement",
+          "correct": false,
+          "rationale": "RLHF depends on human feedback, so it does not remove humans."
+        },
+        {
+          "id": "c",
+          "text": "To capture preferences that are hard to express as a single correct answer",
+          "correct": true,
+          "rationale": "Rankings let humans express which of several acceptable answers is better, which labeled pairs cannot easily do."
+        },
+        {
+          "id": "d",
+          "text": "To shrink the model for lower inference cost",
+          "correct": false,
+          "rationale": "Shrinking a model is distillation, not RLHF."
+        },
+        {
+          "id": "e",
+          "text": "To teach the model new domain vocabulary from unlabeled text",
+          "correct": false,
+          "rationale": "Teaching vocabulary from unlabeled text is continued pre-training."
+        }
+      ],
+      "explanation": "Supervised fine-tuning teaches a model to imitate example answers, but many qualities, such as tone, helpfulness and safety, are better judged by comparing answers than by writing a single perfect one. RLHF captures those comparisons through human rankings and a reward model, then steers the language model toward preferred outputs. It adds cost because it requires ongoing human feedback.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/reinforcement-learning-from-human-feedback/",
+          "title": "What is RLHF? - Reinforcement Learning from Human Feedback Explained - AWS"
+        }
+      ]
+    }
+  ]
+}

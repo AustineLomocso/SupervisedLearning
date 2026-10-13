@@ -1,0 +1,884 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.4",
+  "items": [
+    {
+      "id": "aif-c01-3.4-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants to compare several foundation models on summarization by running each one against a standard, published set of prompts with reference answers. Which evaluation approach does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Human-in-the-loop evaluation",
+          "correct": false,
+          "rationale": "This approach relies on people rating outputs, not on a fixed published dataset scored automatically."
+        },
+        {
+          "id": "b",
+          "text": "Prompt caching",
+          "correct": false,
+          "rationale": "Prompt caching reduces cost and latency for repeated prompt prefixes; it does not measure model quality."
+        },
+        {
+          "id": "c",
+          "text": "Benchmark dataset evaluation",
+          "correct": true,
+          "rationale": "Running models against a standard dataset with known reference answers gives a repeatable, comparable score across models."
+        },
+        {
+          "id": "d",
+          "text": "Model distillation",
+          "correct": false,
+          "rationale": "Distillation trains a smaller model from a larger one; it is not an evaluation method."
+        }
+      ],
+      "explanation": "Benchmark datasets are curated collections of prompts, often with reference answers, used to score models consistently. Because every model sees the same inputs, results are comparable and repeatable, and scoring can be automated with metrics. Amazon Bedrock evaluation jobs support built-in datasets as well as your own custom prompt datasets. Benchmarks measure general or task-level ability, so teams often add custom datasets or human review to check fit for a specific use case.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Amazon Bedrock capability lets a team create automatic, judge-model, or human-based jobs to assess how well a foundation model performs a task?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock Model Evaluation",
+          "correct": true,
+          "rationale": "Bedrock evaluations compute metrics for models and support automatic, LLM-judge and human worker evaluation jobs."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock Guardrails",
+          "correct": false,
+          "rationale": "Guardrails filter and constrain model inputs and outputs at runtime; they are not an evaluation job feature."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock Provisioned Throughput",
+          "correct": false,
+          "rationale": "Provisioned Throughput reserves model capacity for consistent performance, not quality assessment."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Bedrock Prompt Management",
+          "correct": false,
+          "rationale": "Prompt Management stores and versions prompts; it does not score model responses."
+        }
+      ],
+      "explanation": "Amazon Bedrock Model Evaluation lets you assess foundation models without building your own tooling. You can run programmatic (automatic) jobs with built-in or custom prompt datasets, jobs that use a second LLM as a judge, or jobs that use human workers such as your employees or subject-matter experts. Results are reported as metrics and scores that help you compare models before choosing one for an application.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0003",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A company is evaluating a chatbot model whose main quality concern is a subjective brand voice. Which TWO approaches best assess this quality?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Compute only the BLEU score against one reference answer",
+          "correct": false,
+          "rationale": "BLEU measures n-gram overlap with a reference and cannot reliably judge tone or brand voice."
+        },
+        {
+          "id": "b",
+          "text": "Have employees or subject-matter experts rate responses in a human-based evaluation job",
+          "correct": true,
+          "rationale": "People can judge subjective qualities such as brand voice that numeric overlap metrics cannot capture."
+        },
+        {
+          "id": "c",
+          "text": "Monitor GPU utilization during inference",
+          "correct": false,
+          "rationale": "Hardware utilization describes resource use, not response quality."
+        },
+        {
+          "id": "d",
+          "text": "Run a judge-model evaluation using a custom metric or the professional style and tone metric",
+          "correct": true,
+          "rationale": "A judge LLM can score tone and style at scale against criteria you define, including custom metrics."
+        },
+        {
+          "id": "e",
+          "text": "Compare average output token counts across models",
+          "correct": false,
+          "rationale": "Length says little about whether the tone matches the brand."
+        }
+      ],
+      "explanation": "Subjective qualities like tone, style and brand voice are hard to capture with overlap metrics. Human-in-the-loop evaluation brings reviewers into the process to rate or compare responses on criteria you set. An LLM-as-a-judge job complements it by scoring every response against rubric-like metrics, including built-in ones such as professional style and tone or custom metrics, at far lower effort. Many teams combine both, using the judge for scale and humans to validate it.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-metrics.html",
+          "title": "Use metrics to understand model performance - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A team must score thousands of model responses each night, wants a written justification for every score, and cannot staff reviewers to read each response. Which evaluation approach fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A model evaluation job that uses human workers",
+          "correct": false,
+          "rationale": "Human workers give valuable ratings but do not scale to thousands of nightly responses without large staffing."
+        },
+        {
+          "id": "b",
+          "text": "A model evaluation job that uses a judge model",
+          "correct": true,
+          "rationale": "A second LLM scores every response and returns an explanation, so it scales without human reviewers."
+        },
+        {
+          "id": "c",
+          "text": "Only automatic metrics from a built-in dataset",
+          "correct": false,
+          "rationale": "These produce numeric scores but no per-response written justification of the judgement."
+        },
+        {
+          "id": "d",
+          "text": "Manual spot checks by the development team",
+          "correct": false,
+          "rationale": "Spot checks cover only a small sample and are not consistent or scalable."
+        }
+      ],
+      "explanation": "Judge-model evaluation uses a second LLM to score each response against metrics and explain its score. That makes it much cheaper and faster than human review while still evaluating qualities, such as helpfulness or coherence, that simple overlap metrics miss. Human evaluation remains the gold standard for nuance, but it is slow and costly at volume. The requirement for explanations at scale, with no reviewers available, points to the judge-based approach.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-metrics.html",
+          "title": "Use metrics to understand model performance - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which metric is commonly used to evaluate text summarization by measuring how much of a reference summary's content appears in the generated summary?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mean squared error",
+          "correct": false,
+          "rationale": "Mean squared error measures numeric prediction error in regression tasks, not text overlap."
+        },
+        {
+          "id": "b",
+          "text": "Area under the ROC curve",
+          "correct": false,
+          "rationale": "AUC evaluates binary classifier ranking quality, not generated text."
+        },
+        {
+          "id": "c",
+          "text": "Silhouette score",
+          "correct": false,
+          "rationale": "Silhouette score evaluates cluster quality in unsupervised learning."
+        },
+        {
+          "id": "d",
+          "text": "ROUGE",
+          "correct": true,
+          "rationale": "ROUGE is recall-oriented: it measures overlap of n-grams or sequences between generated and reference summaries."
+        }
+      ],
+      "explanation": "ROUGE (Recall-Oriented Understudy for Gisting Evaluation) compares generated text with one or more human-written references by counting overlapping words, n-grams or sequences. Because it emphasizes recall, it asks how much of the reference content the output captured, which suits summarization. Its main weakness is that it rewards surface wording rather than meaning, so a correct paraphrase can score poorly.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-foundation-model-evaluate.html",
+          "title": "Understand options for evaluating large language models with SageMaker Clarify - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which metric is most associated with evaluating machine translation by comparing the precision of n-gram matches against reference translations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "BLEU",
+          "correct": true,
+          "rationale": "BLEU scores how many n-grams in the output match reference translations, making it the classic translation metric."
+        },
+        {
+          "id": "b",
+          "text": "Root mean squared error",
+          "correct": false,
+          "rationale": "RMSE measures error in numeric regression predictions, not translated text."
+        },
+        {
+          "id": "c",
+          "text": "Recall at k",
+          "correct": false,
+          "rationale": "Recall at k measures retrieval or recommendation hits, not translation precision."
+        },
+        {
+          "id": "d",
+          "text": "Perplexity of the training set",
+          "correct": false,
+          "rationale": "Perplexity describes how well a language model predicts text; it does not compare output to reference translations."
+        }
+      ],
+      "explanation": "BLEU (Bilingual Evaluation Understudy) was designed for machine translation. It computes precision over n-gram matches between the generated text and one or more reference translations, with a penalty for outputs that are too short. Like ROUGE it is reference-based and surface-level, so it can undervalue fluent translations that use different wording from the reference.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-foundation-model-evaluate.html",
+          "title": "Understand options for evaluating large language models with SageMaker Clarify - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team finds that correct paraphrased answers receive low ROUGE scores because the wording differs from the reference. Which metric better captures similarity in meaning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "BLEU",
+          "correct": false,
+          "rationale": "BLEU also relies on n-gram overlap, so it would penalize paraphrases in the same way."
+        },
+        {
+          "id": "b",
+          "text": "Exact match accuracy",
+          "correct": false,
+          "rationale": "Exact match is stricter than ROUGE and would mark any rewording as wrong."
+        },
+        {
+          "id": "c",
+          "text": "BERTScore",
+          "correct": true,
+          "rationale": "BERTScore compares contextual embeddings of tokens, so it credits paraphrases that are semantically similar."
+        },
+        {
+          "id": "d",
+          "text": "Response length ratio",
+          "correct": false,
+          "rationale": "Length comparison says nothing about whether meanings agree."
+        }
+      ],
+      "explanation": "Overlap metrics such as ROUGE and BLEU count shared words, so equivalent answers phrased differently look wrong. BERTScore instead compares the contextual embeddings of generated and reference tokens, measuring semantic similarity. That makes it more tolerant of paraphrase, although it still needs reference text. For open-ended qualities with no single reference, LLM-as-a-judge or human review is often added.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-foundation-model-evaluate.html",
+          "title": "Understand options for evaluating large language models with SageMaker Clarify - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-metrics.html",
+          "title": "Use metrics to understand model performance - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "In an Amazon Bedrock judge-model evaluation, which built-in metric identifies whether a response contains information that is not found in the provided context?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Completeness",
+          "correct": false,
+          "rationale": "Completeness measures whether the response answers every question in the prompt, not whether it invents content."
+        },
+        {
+          "id": "b",
+          "text": "Faithfulness",
+          "correct": true,
+          "rationale": "Faithfulness checks whether the response sticks to the available context rather than adding unsupported information."
+        },
+        {
+          "id": "c",
+          "text": "Refusal",
+          "correct": false,
+          "rationale": "Refusal detects whether the model declines the request, which is unrelated to unsupported claims."
+        },
+        {
+          "id": "d",
+          "text": "Stereotyping",
+          "correct": false,
+          "rationale": "Stereotyping looks for stereotypes in the response, not for grounding in context."
+        }
+      ],
+      "explanation": "Bedrock offers built-in judge metrics including correctness, completeness, faithfulness, helpfulness, logical coherence, relevance, following instructions, professional style and tone, harmfulness, stereotyping and refusal. Faithfulness is the grounding metric: it flags content that is not supported by the context supplied in the prompt, which makes it useful for summarization and retrieval-based answers. You can also define custom metrics.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-metrics.html",
+          "title": "Use metrics to understand model performance - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0009",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO are built-in metrics that Amazon Bedrock provides for evaluation jobs that use an LLM as a judge?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Mean squared error",
+          "correct": false,
+          "rationale": "Mean squared error is a regression metric, not a judge-based text quality metric."
+        },
+        {
+          "id": "b",
+          "text": "Tokens per second",
+          "correct": false,
+          "rationale": "Throughput describes speed, not response quality."
+        },
+        {
+          "id": "c",
+          "text": "Logical coherence",
+          "correct": true,
+          "rationale": "Logical coherence is a built-in judge metric that looks for gaps, inconsistencies and contradictions in a response."
+        },
+        {
+          "id": "d",
+          "text": "Gradient norm",
+          "correct": false,
+          "rationale": "Gradient norm is a training diagnostic, not an evaluation metric for generated responses."
+        },
+        {
+          "id": "e",
+          "text": "Harmfulness",
+          "correct": true,
+          "rationale": "Harmfulness is a built-in judge metric that evaluates whether a response contains harmful content."
+        }
+      ],
+      "explanation": "In a judge-based Bedrock job, the evaluator model scores each response against metrics that describe response quality and responsibility. Built-in options include correctness, completeness, faithfulness, helpfulness, logical coherence, relevance, following instructions, professional style and tone, harmfulness, stereotyping and refusal. Classical ML metrics such as mean squared error, and operational numbers such as speed, belong to other kinds of assessment.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-metrics.html",
+          "title": "Use metrics to understand model performance - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company summarizes legal documents with a foundation model. It wants to measure how much reference content the summaries capture and also detect statements unsupported by the source text. Which pairing fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ROUGE for coverage and a faithfulness judge metric for unsupported claims",
+          "correct": true,
+          "rationale": "ROUGE measures recall of reference content and faithfulness flags information not found in the source context."
+        },
+        {
+          "id": "b",
+          "text": "BLEU for coverage and accuracy for unsupported claims",
+          "correct": false,
+          "rationale": "BLEU is precision-oriented and built for translation, and accuracy does not flag unsupported statements."
+        },
+        {
+          "id": "c",
+          "text": "Perplexity for coverage and latency for unsupported claims",
+          "correct": false,
+          "rationale": "Neither perplexity nor latency measures content coverage or grounding."
+        },
+        {
+          "id": "d",
+          "text": "Stereotyping for coverage and refusal for unsupported claims",
+          "correct": false,
+          "rationale": "These judge metrics look for stereotypes and declined requests, not coverage or grounding."
+        }
+      ],
+      "explanation": "Good evaluation matches each metric to the question being asked. Coverage of reference content is a recall question, which ROUGE addresses by comparing a summary with reference summaries. Hallucination or unsupported content is a grounding question, which the Bedrock judge metric faithfulness addresses by checking whether the response contains information not found in the provided context. Using both gives a fuller picture than either alone.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-metrics.html",
+          "title": "Use metrics to understand model performance - Amazon Bedrock"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-foundation-model-evaluate.html",
+          "title": "Understand options for evaluating large language models with SageMaker Clarify - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company deploys a foundation model-based code assistant to improve developer productivity. Which measure best shows that the model meets this business objective?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Number of parameters in the model",
+          "correct": false,
+          "rationale": "Model size is a technical property and says nothing about developer productivity."
+        },
+        {
+          "id": "b",
+          "text": "Reduction in time developers take to complete tasks",
+          "correct": true,
+          "rationale": "Time saved per task directly reflects the productivity objective in real use."
+        },
+        {
+          "id": "c",
+          "text": "Training loss during pre-training",
+          "correct": false,
+          "rationale": "Training loss describes learning progress, not benefit to developers."
+        },
+        {
+          "id": "d",
+          "text": "Size of the context window",
+          "correct": false,
+          "rationale": "Context window is a model capability, not evidence of business impact."
+        }
+      ],
+      "explanation": "Technical metrics show how a model behaves, but a business objective is met only when outcomes improve. For a productivity goal, compare the work before and after, for example time to complete tasks or output per developer. Pair these outcome measures with quality metrics so a faster assistant is not also a less accurate one.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A retailer launches a foundation model shopping assistant and wants to know whether it increases user engagement. Which comparison is most appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "BERTScore against reference answers",
+          "correct": false,
+          "rationale": "BERTScore measures semantic similarity to references, not how users behave."
+        },
+        {
+          "id": "b",
+          "text": "The model temperature setting",
+          "correct": false,
+          "rationale": "Temperature is an inference parameter, not a measurement of engagement."
+        },
+        {
+          "id": "c",
+          "text": "Average number of tokens per request",
+          "correct": false,
+          "rationale": "Token counts relate to cost and length, not user engagement."
+        },
+        {
+          "id": "d",
+          "text": "Session length and return-visit rate compared with a baseline",
+          "correct": true,
+          "rationale": "Engagement is behavior; comparing it with a baseline shows whether the assistant changed it."
+        }
+      ],
+      "explanation": "User engagement is a business outcome measured from usage behavior, such as how long sessions last, how often users return, or how often they act on suggestions. Compare these figures with a baseline, such as users without the assistant or the period before launch, to attribute change to the feature. Model quality metrics are still useful, but they cannot show engagement on their own.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A model scores very well on a public benchmark, but the company's support team finds it often mislabels internal ticket categories. What best determines whether the model meets the business objective?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Evaluate it on a custom prompt dataset built from real company tasks with expected answers",
+          "correct": true,
+          "rationale": "A dataset drawn from the actual task tests the behavior the business cares about."
+        },
+        {
+          "id": "b",
+          "text": "Select the model with the highest public leaderboard rank",
+          "correct": false,
+          "rationale": "Public rankings reflect general tasks and have already proved a poor guide here."
+        },
+        {
+          "id": "c",
+          "text": "Raise the temperature to diversify the answers",
+          "correct": false,
+          "rationale": "Higher temperature makes outputs more random and does not measure task fit."
+        },
+        {
+          "id": "d",
+          "text": "Choose the model with the most parameters",
+          "correct": false,
+          "rationale": "Size does not guarantee accuracy on a specific internal task."
+        }
+      ],
+      "explanation": "Public benchmarks measure general ability, which may not transfer to a company-specific task. Bedrock evaluation jobs accept a custom prompt dataset, so teams can build one from real examples, such as historical tickets with correct labels, and score candidate models on exactly the work they must do. This ties evaluation to the business objective rather than to a leaderboard.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to evaluate whether its Amazon Bedrock knowledge base retrieves relevant passages and generates useful answers. Which approach should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A model evaluation using only ROUGE on the base model",
+          "correct": false,
+          "rationale": "This would ignore the retrieval step and the knowledge base entirely."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock Guardrails word filters",
+          "correct": false,
+          "rationale": "Guardrails filter content at runtime and do not measure retrieval or answer quality."
+        },
+        {
+          "id": "c",
+          "text": "A RAG evaluation job with prompts and expected ground truth",
+          "correct": true,
+          "rationale": "Bedrock RAG evaluations score retrieval and generation using a dataset with ground truth for each query."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudWatch dashboards for invocation counts",
+          "correct": false,
+          "rationale": "Invocation counts show usage volume, not whether answers are relevant or grounded."
+        }
+      ],
+      "explanation": "A retrieval-augmented generation application has two parts to test: retrieval of relevant content and generation of an answer from it. Amazon Bedrock evaluations can run RAG evaluations with an LLM judge, using a dataset of queries along with ground truth for the expected retrieved text and responses. Scoring both parts helps locate whether a poor answer comes from weak retrieval or weak generation.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0015",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "A team has built an agent on Amazon Bedrock AgentCore and wants to assess it. Which TWO capabilities help?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock AgentCore Evaluations, which scores agent behavior with built-in or custom evaluators",
+          "correct": true,
+          "rationale": "AgentCore Evaluations uses LLM-as-a-judge techniques to score agent traces for quality."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Bedrock AgentCore Observability, which traces each step of an agent run",
+          "correct": true,
+          "rationale": "Observability exposes execution paths, intermediate outputs, latency and errors for inspection."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock Provisioned Throughput",
+          "correct": false,
+          "rationale": "Provisioned Throughput reserves model capacity and does not evaluate agent behavior."
+        },
+        {
+          "id": "d",
+          "text": "Computing BLEU on the agent API responses only",
+          "correct": false,
+          "rationale": "BLEU compares text to a reference translation and ignores the agent steps, tool use and workflow."
+        },
+        {
+          "id": "e",
+          "text": "AWS Budgets alerts",
+          "correct": false,
+          "rationale": "Budgets track spend and do not assess agent quality or trace behavior."
+        }
+      ],
+      "explanation": "Agents act in several steps: reasoning, calling tools and producing answers. Evaluating only the final text misses much of that behavior. Amazon Bedrock AgentCore Evaluations scores agents using LLM-as-a-judge techniques with built-in or custom evaluators, while AgentCore Observability provides traces, metrics and dashboards in Amazon CloudWatch for debugging bottlenecks and failures. Together they cover quality and operational performance.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html",
+          "title": "Evaluate agent performance with Amazon Bedrock AgentCore Evaluations - Amazon Bedrock AgentCore"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html",
+          "title": "Observe your agent applications on Amazon Bedrock AgentCore Observability - Amazon Bedrock AgentCore"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A production agent on Amazon Bedrock AgentCore needs quality scoring of its behavior and a way to investigate why specific sessions are slow. Which combination meets both needs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AgentCore Observability only",
+          "correct": false,
+          "rationale": "Observability shows traces and metrics but does not itself score response quality with evaluators."
+        },
+        {
+          "id": "b",
+          "text": "AgentCore Evaluations for quality scores and AgentCore Observability for latency traces",
+          "correct": true,
+          "rationale": "Evaluations judge agent quality, and Observability shows step-by-step traces and latency."
+        },
+        {
+          "id": "c",
+          "text": "A Bedrock model evaluation job on the base model only",
+          "correct": false,
+          "rationale": "This tests the foundation model alone and does not capture agent steps or session latency."
+        },
+        {
+          "id": "d",
+          "text": "SageMaker Clarify bias reports",
+          "correct": false,
+          "rationale": "Clarify reports assess bias, not agent quality scoring or session latency."
+        }
+      ],
+      "explanation": "Agent applications need two kinds of insight. Quality evaluation asks whether the agent did the right thing, and AgentCore Evaluations scores traces with built-in or custom evaluators. Observability asks how the agent ran, and AgentCore Observability records spans, latency, token usage and errors in Amazon CloudWatch. Evaluating the base model alone misses tool use and orchestration, which is where agent problems often appear.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html",
+          "title": "Evaluate agent performance with Amazon Bedrock AgentCore Evaluations - Amazon Bedrock AgentCore"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html",
+          "title": "Observe your agent applications on Amazon Bedrock AgentCore Observability - Amazon Bedrock AgentCore"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team built a multi-step workflow in which a foundation model extracts data, calls a tool, and then writes a summary. Some outputs are wrong. What is the best way to find the cause?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Score only the final summary with BLEU",
+          "correct": false,
+          "rationale": "Final-output scoring cannot show whether extraction, the tool call, or summarizing caused the error."
+        },
+        {
+          "id": "b",
+          "text": "Run the base model once on a public benchmark",
+          "correct": false,
+          "rationale": "A benchmark of the base model does not exercise this workflow."
+        },
+        {
+          "id": "c",
+          "text": "Evaluate each step and the end-to-end result using traces of intermediate outputs",
+          "correct": true,
+          "rationale": "Step-level evaluation shows which stage introduces errors, while end-to-end results confirm overall quality."
+        },
+        {
+          "id": "d",
+          "text": "Increase the maximum output tokens",
+          "correct": false,
+          "rationale": "This changes response length and does not diagnose the failing step."
+        }
+      ],
+      "explanation": "Applications built from foundation models, such as RAG pipelines, agents and workflows, are more than a single model call. A wrong answer may come from retrieval, a tool call, or generation. Evaluate components individually as well as the whole, using traces to inspect intermediate outputs. Services such as AgentCore Evaluations and AgentCore Observability support this for agents.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html",
+          "title": "Evaluate agent performance with Amazon Bedrock AgentCore Evaluations - Amazon Bedrock AgentCore"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html",
+          "title": "Observe your agent applications on Amazon Bedrock AgentCore Observability - Amazon Bedrock AgentCore"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0018",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which metric measures the percentage of user requests that an AI application successfully completes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Task completion rate",
+          "correct": true,
+          "rationale": "Task completion rate shows how often the application finishes the user request, a core business alignment metric."
+        },
+        {
+          "id": "b",
+          "text": "BLEU score",
+          "correct": false,
+          "rationale": "BLEU measures n-gram overlap with reference translations, not how many tasks users complete."
+        },
+        {
+          "id": "c",
+          "text": "Perplexity",
+          "correct": false,
+          "rationale": "Perplexity describes how well a language model predicts text."
+        },
+        {
+          "id": "d",
+          "text": "Context window size",
+          "correct": false,
+          "rationale": "Context window size is a model capability, not an outcome measure."
+        }
+      ],
+      "explanation": "Business alignment metrics tie an AI application to goals such as efficiency and customer outcomes. Task completion rate reports the share of requests the application handles successfully, for example a booking made or an issue resolved. Along with user satisfaction and cost per interaction, it tells the business whether the application delivers value, which model-centric metrics alone cannot show.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 2,
+      "stem": "A company runs an FM-powered customer service assistant. Which THREE metrics best show alignment with its business objectives?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Task completion rate",
+          "correct": true,
+          "rationale": "It shows how many customer requests the assistant actually resolves."
+        },
+        {
+          "id": "b",
+          "text": "ROUGE-L score on a test set",
+          "correct": false,
+          "rationale": "ROUGE-L is a text overlap metric for model quality, not a business outcome."
+        },
+        {
+          "id": "c",
+          "text": "User satisfaction score",
+          "correct": true,
+          "rationale": "It shows how customers perceive the assistance, a direct business outcome."
+        },
+        {
+          "id": "d",
+          "text": "Number of model parameters",
+          "correct": false,
+          "rationale": "Parameter count is a technical property with no direct link to business results."
+        },
+        {
+          "id": "e",
+          "text": "Cost per interaction",
+          "correct": true,
+          "rationale": "It shows the efficiency and economics of running the assistant."
+        },
+        {
+          "id": "f",
+          "text": "Perplexity on training data",
+          "correct": false,
+          "rationale": "Perplexity describes language modeling fit, not customer or cost outcomes."
+        }
+      ],
+      "explanation": "Technical metrics like ROUGE or perplexity describe model behavior, while business alignment metrics describe results the organization cares about. For a support assistant, useful examples are task completion rate (how many requests are resolved), user satisfaction (how customers rate the experience), and cost per interaction (what each conversation costs to serve). Tracking both kinds lets teams tell whether better model scores translate into better business outcomes.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-3.4-0020",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "Two candidate models each complete 90% of tasks for a support assistant. Model A has slightly higher user satisfaction at three times the cost per interaction. The business goal is the lowest cost per interaction while meeting a satisfaction target that both models exceed. Which should the company choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model B, because it meets the satisfaction target at a lower cost per interaction",
+          "correct": true,
+          "rationale": "Both models meet the target, so cost per interaction is the deciding business metric."
+        },
+        {
+          "id": "b",
+          "text": "Model A, because it has the highest satisfaction",
+          "correct": false,
+          "rationale": "Higher satisfaction above the target does not serve the stated goal of lowest cost."
+        },
+        {
+          "id": "c",
+          "text": "Whichever has the higher ROUGE score",
+          "correct": false,
+          "rationale": "ROUGE is a model quality metric and does not decide between models on cost or satisfaction targets."
+        },
+        {
+          "id": "d",
+          "text": "Whichever model has more parameters",
+          "correct": false,
+          "rationale": "Size is not a business metric and usually increases cost."
+        }
+      ],
+      "explanation": "When models perform similarly on task completion, business alignment metrics decide. Here the objective is stated explicitly: minimize cost per interaction subject to a satisfaction threshold. Both models clear the threshold, so the cheaper model is the better fit even though the other scores slightly higher on satisfaction. Defining targets for completion rate, satisfaction and cost before evaluation makes such trade-offs objective.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation.html",
+          "title": "Evaluate the performance of Amazon Bedrock resources - Amazon Bedrock"
+        }
+      ]
+    }
+  ]
+}

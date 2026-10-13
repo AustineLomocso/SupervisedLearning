@@ -1,0 +1,880 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.7",
+  "items": [
+    {
+      "id": "clf-c02-3.7-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service helps data scientists and developers build, train, and deploy machine learning models?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena runs SQL queries on data in Amazon S3. It does not build or train machine learning models."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker AI",
+          "correct": true,
+          "rationale": "SageMaker AI is a fully managed service that covers preparing data and building, training, and deploying ML models."
+        },
+        {
+          "id": "c",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "Glue prepares and moves data with ETL jobs. It is not the service for training and hosting models."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Kinesis Data Streams",
+          "correct": false,
+          "rationale": "Kinesis Data Streams ingests real-time data records. It does not train or host ML models."
+        }
+      ],
+      "explanation": "Amazon SageMaker AI is the AWS machine learning platform for teams that want to create their own models. It provides managed tools for each stage of the ML workflow, including preparing data, building and training models, and deploying them to endpoints for predictions. This differs from services that only prepare, query, or stream data. On the exam, a stated need to build, train, or deploy custom ML models points to SageMaker AI.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service can a company use to build conversational chatbots that understand voice and text?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition analyzes images and videos. It does not build conversational interfaces."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a data warehouse for analytics. It has no conversational interface capability."
+        },
+        {
+          "id": "c",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "Glue is a data integration service for ETL and cataloging. It does not create chatbots."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex",
+          "correct": true,
+          "rationale": "Lex lets you build conversational interfaces, such as chatbots, using voice and text with natural language understanding."
+        }
+      ],
+      "explanation": "Amazon Lex is the AWS service for building conversational interfaces that accept both voice and text. It provides automatic speech recognition and natural language understanding, so a bot can work out what a user wants and respond. Typical uses include customer service chatbots and voice assistants. Other AI services handle different data types: Amazon Rekognition works with images and video, while analytics services like Amazon Redshift and AWS Glue deal with stored data.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/lexv2/latest/dg/what-is.html",
+          "title": "What is Amazon Lex V2? - Amazon Lex"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service analyzes images and videos to detect objects, text, and faces?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Rekognition",
+          "correct": true,
+          "rationale": "Rekognition is a deep learning image and video analysis service that detects objects, text, and faces without ML expertise."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex builds chatbots from voice and text input. It does not analyze images or video."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena queries structured data in Amazon S3 with SQL. It does not analyze image content."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Kinesis Data Streams",
+          "correct": false,
+          "rationale": "Kinesis Data Streams ingests streaming records. It does not perform computer vision on image content."
+        }
+      ],
+      "explanation": "Amazon Rekognition adds computer vision to applications through a simple API, with no machine learning expertise needed. It can detect objects, scenes, text, and unsafe content, and it can analyze and compare faces in images and video stored in Amazon S3. These ready-made AI services let you use trained models directly instead of building them. Image and video analysis is the clue for Rekognition on the exam.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html",
+          "title": "What is Amazon Rekognition? - Amazon Rekognition"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service lets a user run standard SQL queries directly on data stored in Amazon S3?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex builds conversational bots. It does not query stored data."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition analyzes image and video content. It is not a SQL query engine."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Athena",
+          "correct": true,
+          "rationale": "Athena is an interactive query service that uses standard SQL to analyze data in Amazon S3 without loading it elsewhere."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker AI",
+          "correct": false,
+          "rationale": "SageMaker AI builds and trains ML models. It is not meant for ad hoc SQL queries on S3 data."
+        }
+      ],
+      "explanation": "Amazon Athena is a serverless, interactive query service. You point it at data in Amazon S3, define the table structure, and run standard SQL with no servers to manage. You pay for the queries you run. Athena suits ad hoc analysis of logs and other files where you do not want to build a data warehouse or move the data first. A request to query S3 data with SQL is the usual cue for Athena.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html",
+          "title": "What is Amazon Athena? - Amazon Athena"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service is a fully managed data warehouse designed for large-scale analytic queries?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Quick Sight",
+          "correct": false,
+          "rationale": "Quick Sight visualizes data in dashboards. It does not store and process warehouse data itself."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": true,
+          "rationale": "Redshift is a managed data warehouse built for running complex analytic SQL queries on large datasets."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex is a chatbot service. It is not a data warehouse."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition analyzes images and video. It does not provide warehouse storage or analytic SQL."
+        }
+      ],
+      "explanation": "Amazon Redshift is the AWS data warehouse service. It stores structured and semi-structured data in a columnar format and runs complex analytic SQL queries across very large datasets, which is why it fits business reporting. It is different from Amazon Athena, which queries files in place in Amazon S3, and from Amazon Quick Sight, which only visualizes data held in sources such as Redshift. A data warehouse requirement points to Redshift.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html",
+          "title": "What is Amazon Redshift? - Amazon Redshift"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS service provides interactive dashboards and data visualizations for business intelligence?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "Glue prepares and catalogs data through ETL. It does not provide dashboards."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Kinesis Data Streams",
+          "correct": false,
+          "rationale": "Kinesis Data Streams ingests real-time records. It does not create visualizations."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena runs SQL queries. It returns results but does not build dashboards."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Quick Sight",
+          "correct": true,
+          "rationale": "Quick Sight is the business intelligence feature of Amazon Quick for building interactive dashboards from connected data sources."
+        }
+      ],
+      "explanation": "Amazon Quick Sight is the business intelligence capability within Amazon Quick. It connects to data sources, lets users build interactive dashboards and visualizations, and can embed analytics in applications. It is the presentation layer of an analytics solution. Services like Amazon Athena, AWS Glue, and Amazon Kinesis Data Streams query, prepare, or ingest data, but none of them is the visualization tool.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/quick/latest/userguide/what-is.html",
+          "title": "What is Amazon Quick? - Amazon Quick"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company collects website clickstream events from millions of users and needs to ingest them continuously so applications can process them within seconds. Which AWS service should the company use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Kinesis Data Streams",
+          "correct": true,
+          "rationale": "Kinesis Data Streams collects and processes large streams of records in real time, which suits clickstream ingestion."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena queries data already stored in Amazon S3. It does not ingest continuous event streams."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Quick Sight",
+          "correct": false,
+          "rationale": "Quick Sight visualizes data. It is not an ingestion service for streaming records."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex builds conversational bots. It does not collect clickstream data."
+        }
+      ],
+      "explanation": "Amazon Kinesis Data Streams collects and processes large streams of data records in real time. Producers such as web servers push events into a stream, and consuming applications read them within a second or so to build metrics, alerts, or feeds to other services. Typical data includes application logs, market data feeds, and web clickstreams. Batch-oriented services like Athena work on data already at rest, so continuous ingestion is the clue for Kinesis.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
+          "title": "What is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to add generative AI features to an application by using foundation models from several providers through one API, without managing any infrastructure. Which AWS service meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition offers image and video analysis, not access to a choice of foundation models."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift is a data warehouse. It does not provide foundation models."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock",
+          "correct": true,
+          "rationale": "Bedrock is a fully managed service that gives API access to foundation models from leading AI companies for generative AI applications."
+        },
+        {
+          "id": "d",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "Glue is a data integration service. It does not host foundation models."
+        }
+      ],
+      "explanation": "Amazon Bedrock is a fully managed service that provides secure access to foundation models from Amazon and other leading AI companies through a single set of APIs. Teams use it to build and scale generative AI applications without provisioning or managing model infrastructure. Services such as Amazon Rekognition provide task-specific AI, while Bedrock is the choice when the requirement is access to a range of foundation models.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A retailer wants a bot on its website and phone line that can take orders by recognizing what customers say or type. Which AWS service is designed for this task?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena queries data in Amazon S3. It cannot interpret customer speech or text."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Kinesis Data Streams",
+          "correct": false,
+          "rationale": "Kinesis Data Streams moves streaming data. It does not understand customer intent."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "Redshift stores and analyzes warehouse data. It does not build conversational bots."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex",
+          "correct": true,
+          "rationale": "Lex provides speech recognition and natural language understanding to build bots that handle voice and text interactions."
+        }
+      ],
+      "explanation": "Amazon Lex builds conversational interfaces that interpret what users say or type. It identifies the user's intent, collects needed details, such as an order item, and returns a response, across channels such as web chat and telephone. Because it is a managed AI service, no machine learning expertise is needed. The analytics services in the other options handle data storage, queries, or streaming rather than language understanding.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/lexv2/latest/dg/what-is.html",
+          "title": "What is Amazon Lex V2? - Amazon Lex"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A data team needs to automatically discover the schema of files in Amazon S3 and record it in a central metadata catalog. Which AWS Glue feature does this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Glue Studio visual editor",
+          "correct": false,
+          "rationale": "Glue Studio is a graphical interface for authoring jobs. It is not the component that infers schemas."
+        },
+        {
+          "id": "b",
+          "text": "AWS Glue job triggers",
+          "correct": false,
+          "rationale": "Triggers start jobs and crawlers on a schedule or event. They do not infer schemas."
+        },
+        {
+          "id": "c",
+          "text": "AWS Glue Data Catalog queries",
+          "correct": false,
+          "rationale": "The Data Catalog stores metadata, but something has to populate it by inspecting the data."
+        },
+        {
+          "id": "d",
+          "text": "AWS Glue crawlers",
+          "correct": true,
+          "rationale": "Crawlers scan data stores, infer schema information, and add it to the AWS Glue Data Catalog automatically."
+        }
+      ],
+      "explanation": "AWS Glue keeps a central AWS Glue Data Catalog of metadata about your data. Crawlers connect to a data store such as Amazon S3, work out the schema, and write table definitions into the catalog automatically. Other services, including Amazon Athena and Amazon Redshift Spectrum, can then query the cataloged data. Triggers and the visual editor support running and authoring jobs, but only crawlers perform discovery.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html",
+          "title": "What is AWS Glue? - AWS Glue"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An analyst must run occasional ad hoc SQL queries on log files in Amazon S3, wants no infrastructure to manage, and prefers to pay only for the queries run. Which service is the best fit?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Athena",
+          "correct": true,
+          "rationale": "Athena is serverless, queries S3 data with SQL, and charges for the queries that you run."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Redshift",
+          "correct": false,
+          "rationale": "A Redshift data warehouse suits repeated heavy analytics and would add setup and loading for occasional queries."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex builds chatbots and cannot query log files."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker AI",
+          "correct": false,
+          "rationale": "SageMaker AI is for building ML models, not for ad hoc SQL on logs."
+        }
+      ],
+      "explanation": "Amazon Athena is serverless, so there are no clusters to provision, and it reads data in place in Amazon S3 using standard SQL. Pricing is based on the queries you run, which makes it economical for occasional analysis. Amazon Redshift is better when you need a persistent data warehouse for frequent, complex workloads. When a question stresses ad hoc queries, data in S3, and no infrastructure, choose Athena.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html",
+          "title": "What is Amazon Athena? - Amazon Athena"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html",
+          "title": "What is Amazon Redshift? - Amazon Redshift"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A security team uploads photos to Amazon S3 and needs to automatically flag images that contain inappropriate content. Which AWS service can do this without custom model training?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena runs SQL on structured data and does not inspect the content of images."
+        },
+        {
+          "id": "b",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "Glue transforms and catalogs data. It does not moderate image content."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition",
+          "correct": true,
+          "rationale": "Rekognition detects explicit, inappropriate, and violent content in images and video with a ready-made API."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex handles voice and text conversations. It does not analyze photos."
+        }
+      ],
+      "explanation": "Amazon Rekognition includes content moderation, which detects unsafe or inappropriate content in images and videos stored in Amazon S3. It is a pretrained deep learning service, so you call an API instead of collecting data and training a model. It also returns labels and confidence scores to support filtering of user-generated content. Choose Rekognition whenever the input is images or video and the task is detection or analysis.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html",
+          "title": "What is Amazon Rekognition? - Amazon Rekognition"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants business users to explore interactive dashboards built on data in Amazon Athena and Amazon Redshift, with no coding. Which service should the company choose?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "Glue prepares and moves data. It is not a dashboarding tool for business users."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Quick Sight",
+          "correct": true,
+          "rationale": "Quick Sight connects to data sources such as Athena and Redshift and lets users build interactive dashboards."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Kinesis Data Streams",
+          "correct": false,
+          "rationale": "Kinesis Data Streams ingests streaming data and does not produce dashboards."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex builds chatbots and is not a business intelligence tool."
+        }
+      ],
+      "explanation": "Amazon Quick Sight, a feature of Amazon Quick, provides interactive data visualization and business intelligence. It connects to data sources such as Amazon Athena and Amazon Redshift so that analysts and business users can build and share dashboards without writing code. It sits at the end of an analytics pipeline, turning stored or queried data into charts. The other options ingest or prepare data rather than present it.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/quick/latest/userguide/what-is.html",
+          "title": "What is Amazon Quick? - Amazon Quick"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A data science team must train a model with its own algorithm on proprietary data and then host it at a scalable endpoint. A separate team wants only to prompt an existing foundation model. Which service fits the data science team?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock",
+          "correct": false,
+          "rationale": "Bedrock serves foundation models through an API, which suits the prompting team more than custom algorithm training."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex builds conversational bots and is not a general ML training platform."
+        },
+        {
+          "id": "c",
+          "text": "Amazon SageMaker AI",
+          "correct": true,
+          "rationale": "SageMaker AI lets teams build, train, and deploy their own models with managed infrastructure and endpoints."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition provides prebuilt image analysis and does not train models using a custom algorithm."
+        }
+      ],
+      "explanation": "Both Amazon SageMaker AI and Amazon Bedrock support AI workloads, but they serve different needs. SageMaker AI is a managed platform for building, training, and deploying your own machine learning models, including those using custom algorithms and data. Bedrock gives API access to existing foundation models for generative AI applications. The stated requirement to train a model with a custom algorithm and host it decides in favor of SageMaker AI.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
+          "title": "Overview - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "Raw CSV files land in Amazon S3 each night. A company must convert them to a columnar format and register them in a catalog before analysts query them, using a serverless service. Which service performs this work?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Quick Sight",
+          "correct": false,
+          "rationale": "Quick Sight visualizes data and does not run the transformation jobs."
+        },
+        {
+          "id": "b",
+          "text": "AWS Glue",
+          "correct": true,
+          "rationale": "Glue is a serverless data integration service that runs ETL jobs and maintains the Data Catalog."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition analyzes images and video and does not transform CSV files."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex builds conversational bots and has no ETL capability."
+        }
+      ],
+      "explanation": "AWS Glue is a serverless data integration service. Its ETL jobs extract data from sources such as Amazon S3, transform it, for example by converting CSV files to a columnar format, and load it into a target, while the AWS Glue Data Catalog stores the table metadata. Athena then queries the prepared data. The question describes preparation of data before analysis, which is the role of Glue rather than a query or visualization service.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html",
+          "title": "What is AWS Glue? - AWS Glue"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html",
+          "title": "What is Amazon Athena? - Amazon Athena"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company stores sales data in Amazon S3 and wants non-technical users to see dashboards without the company building a data warehouse. Which combination of services meets this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Athena to query the data and Amazon Quick Sight to visualize it",
+          "correct": true,
+          "rationale": "Athena queries S3 data directly and Quick Sight builds dashboards on the results, so no warehouse is needed."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Lex to query the data and Amazon Rekognition to visualize it",
+          "correct": false,
+          "rationale": "Neither Lex nor Rekognition queries tabular data or builds dashboards."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Kinesis Data Streams to query the data and AWS Glue to visualize it",
+          "correct": false,
+          "rationale": "Kinesis Data Streams ingests streams and Glue prepares data, so neither queries or visualizes."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker AI to query the data and Amazon Redshift to visualize it",
+          "correct": false,
+          "rationale": "SageMaker AI builds ML models and Redshift stores warehouse data, so neither fits the roles stated."
+        }
+      ],
+      "explanation": "A common serverless analytics pattern pairs Amazon Athena with Amazon Quick Sight. Athena runs SQL directly on files in Amazon S3, so no data warehouse has to be built or loaded. Quick Sight connects to Athena and presents the results as interactive dashboards for business users. Each service has one clear role: Athena queries, Quick Sight visualizes. Without the warehouse requirement, Amazon Redshift would be a candidate for the storage layer.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html",
+          "title": "What is Amazon Athena? - Amazon Athena"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/quick/latest/userguide/what-is.html",
+          "title": "What is Amazon Quick? - Amazon Quick"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO services are AWS artificial intelligence and machine learning services?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker AI",
+          "correct": true,
+          "rationale": "SageMaker AI is a managed platform to build, train, and deploy ML models."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Athena",
+          "correct": false,
+          "rationale": "Athena is an analytics service that queries data in Amazon S3 with SQL."
+        },
+        {
+          "id": "c",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "Glue is an analytics data integration service for ETL and cataloging."
+        },
+        {
+          "id": "d",
+          "text": "Amazon Lex",
+          "correct": true,
+          "rationale": "Lex is an AI service for building conversational voice and text interfaces."
+        },
+        {
+          "id": "e",
+          "text": "Amazon Kinesis Data Streams",
+          "correct": false,
+          "rationale": "Kinesis Data Streams is an analytics streaming service, not an AI service."
+        }
+      ],
+      "explanation": "Amazon SageMaker AI and Amazon Lex are AI and machine learning services. SageMaker AI is a platform for building, training, and deploying models, and Lex is a ready-made service for conversational bots. Amazon Athena, AWS Glue, and Amazon Kinesis Data Streams are analytics services that query, prepare, or stream data. Separating AI and ML services from analytics services is a basic skill for this exam task.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/lexv2/latest/dg/what-is.html",
+          "title": "What is Amazon Lex V2? - Amazon Lex"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO services are AWS analytics services?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Rekognition",
+          "correct": false,
+          "rationale": "Rekognition is an AI service for image and video analysis."
+        },
+        {
+          "id": "b",
+          "text": "Amazon Athena",
+          "correct": true,
+          "rationale": "Athena is an analytics service for SQL queries on data in Amazon S3."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Lex",
+          "correct": false,
+          "rationale": "Lex is an AI service for conversational interfaces, not an analytics service."
+        },
+        {
+          "id": "d",
+          "text": "Amazon SageMaker AI",
+          "correct": false,
+          "rationale": "SageMaker AI is a machine learning platform rather than an analytics service."
+        },
+        {
+          "id": "e",
+          "text": "Amazon Kinesis Data Streams",
+          "correct": true,
+          "rationale": "Kinesis Data Streams is an analytics service for real-time streaming data."
+        }
+      ],
+      "explanation": "Amazon Athena and Amazon Kinesis Data Streams are analytics services. Athena queries data at rest in Amazon S3 with SQL, while Kinesis Data Streams collects and processes streaming records in real time. Amazon Rekognition, Amazon Lex, and Amazon SageMaker AI belong in the AI and ML category. Other analytics services in scope include AWS Glue, Amazon Redshift, and Amazon Quick Sight.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html",
+          "title": "What is Amazon Athena? - Amazon Athena"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
+          "title": "What is Amazon Kinesis Data Streams? - Amazon Kinesis Data Streams"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO tasks can Amazon Rekognition perform?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Convert speech in audio files into text",
+          "correct": false,
+          "rationale": "Rekognition works on images and video, not audio transcription."
+        },
+        {
+          "id": "b",
+          "text": "Build a chatbot that answers customer calls",
+          "correct": false,
+          "rationale": "Building chatbots is the role of Amazon Lex."
+        },
+        {
+          "id": "c",
+          "text": "Run ETL jobs that load data into a data lake",
+          "correct": false,
+          "rationale": "Running ETL jobs is the role of AWS Glue."
+        },
+        {
+          "id": "d",
+          "text": "Detect text in images",
+          "correct": true,
+          "rationale": "Rekognition can detect and recognize printed and handwritten text in images."
+        },
+        {
+          "id": "e",
+          "text": "Compare faces for identity verification",
+          "correct": true,
+          "rationale": "Rekognition can detect, analyze, and compare faces for user verification."
+        }
+      ],
+      "explanation": "Amazon Rekognition provides deep learning based image and video analysis through an API. Among its capabilities are detecting objects, scenes, and text, moderating unsafe content, and detecting, analyzing, and comparing faces for identity verification. Building chatbots belongs to Amazon Lex, and ETL belongs to AWS Glue. Matching each task to the service whose input type fits, such as images and video, is the key exam skill.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html",
+          "title": "What is Amazon Rekognition? - Amazon Rekognition"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.7-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which THREE capabilities does AWS Glue provide?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hosting foundation models for generative AI",
+          "correct": false,
+          "rationale": "Hosting foundation models is the role of Amazon Bedrock."
+        },
+        {
+          "id": "b",
+          "text": "Automatically inferring schemas and recording them in the Data Catalog",
+          "correct": true,
+          "rationale": "Glue crawlers infer schema information and add it to the AWS Glue Data Catalog."
+        },
+        {
+          "id": "c",
+          "text": "Building interactive dashboards for business users",
+          "correct": false,
+          "rationale": "Dashboards are built with Amazon Quick Sight, not Glue."
+        },
+        {
+          "id": "d",
+          "text": "Running serverless ETL jobs that transform data",
+          "correct": true,
+          "rationale": "Glue runs ETL jobs on a serverless Apache Spark based engine with no infrastructure to manage."
+        },
+        {
+          "id": "e",
+          "text": "Building voice and text chatbots",
+          "correct": false,
+          "rationale": "Chatbots are built with Amazon Lex."
+        },
+        {
+          "id": "f",
+          "text": "Starting jobs on a schedule or after an event",
+          "correct": true,
+          "rationale": "Glue jobs can be run on a schedule, on demand, or through event-based triggers."
+        }
+      ],
+      "explanation": "AWS Glue is a serverless data integration service. Crawlers discover data and populate the AWS Glue Data Catalog, ETL jobs extract, transform, and load data, and jobs can run on a schedule, on demand, or from event-based triggers. Glue does not build dashboards, host foundation models, or create chatbots, which are the jobs of Amazon Quick Sight, Amazon Bedrock, and Amazon Lex. It sits between raw data and the services that analyze it.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html",
+          "title": "What is AWS Glue? - AWS Glue"
+        }
+      ]
+    }
+  ]
+}

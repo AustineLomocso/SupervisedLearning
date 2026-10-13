@@ -1,0 +1,936 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "1.3",
+  "items": [
+    {
+      "id": "aif-c01-1.3-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A data scientist cleans raw records, removes duplicates and creates new input columns from existing ones. Which stage of the ML pipeline does this work belong to?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model deployment",
+          "correct": false,
+          "rationale": "Deployment exposes a trained model for predictions; it does not clean or reshape data."
+        },
+        {
+          "id": "b",
+          "text": "Data preparation and feature engineering",
+          "correct": true,
+          "rationale": "Cleaning data and deriving new input columns is exactly the preparation and feature engineering stage."
+        },
+        {
+          "id": "c",
+          "text": "Model monitoring",
+          "correct": false,
+          "rationale": "Monitoring tracks live model quality after release and does not prepare training data."
+        },
+        {
+          "id": "d",
+          "text": "Model evaluation",
+          "correct": false,
+          "rationale": "Evaluation measures a trained model on unseen data rather than preparing inputs."
+        }
+      ],
+      "explanation": "An ML pipeline is a repeatable sequence of stages: data collection, data preparation and feature engineering, training, evaluation, deployment and monitoring. Data preparation covers gathering data from sources, cleaning and aggregating it, and engineering features that a model can learn from. Training starts only after this stage produces usable data. Later stages such as deployment and monitoring work with the finished model. Good preparation strongly influences model quality, so it is treated as its own stage.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/mlops/",
+          "title": "What is MLOps? - Machine Learning Operations Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A team wants to avoid the cost of training a model from scratch. Which source of a foundation model lets them start from a model that others have already trained and released publicly?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A custom model trained only on the team's own data",
+          "correct": false,
+          "rationale": "Training a custom model from scratch is the costly path the team wants to avoid."
+        },
+        {
+          "id": "b",
+          "text": "An open source pre-trained model",
+          "correct": true,
+          "rationale": "Open source pre-trained models are released publicly and can be used directly or fine-tuned, saving time and compute."
+        },
+        {
+          "id": "c",
+          "text": "A rule-based decision tree written by hand",
+          "correct": false,
+          "rationale": "A hand-written rule set is not a foundation model and involves no pre-training."
+        },
+        {
+          "id": "d",
+          "text": "A model trained on random labels",
+          "correct": false,
+          "rationale": "Random labels would teach nothing useful and is not a legitimate model source."
+        }
+      ],
+      "explanation": "Foundation models come from several sources. You can use open source pre-trained models, access proprietary pre-trained models through a managed service, or train a custom model yourself. Open source pre-trained models are published for anyone to use, and teams often fine-tune them with their own data. This reduces the compute, data and time needed compared with training from scratch. Training custom models is justified when no existing model fits the task.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/sagemaker/ai/",
+          "title": "Machine Learning Service – Amazon Sagemaker AI – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company deploys a model on its own endpoint and chooses the instance types, scaling rules and patching schedule. Which method of using a model in production does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Managed API service",
+          "correct": false,
+          "rationale": "With a managed API service the provider runs the infrastructure, so the company would not choose instances or patching."
+        },
+        {
+          "id": "b",
+          "text": "Self-hosted API",
+          "correct": true,
+          "rationale": "In a self-hosted API the team deploys the model and is responsible for hosting, scaling and maintenance."
+        },
+        {
+          "id": "c",
+          "text": "Batch labeling",
+          "correct": false,
+          "rationale": "Batch labeling is about annotating data and is not a way to serve a model."
+        },
+        {
+          "id": "d",
+          "text": "Feature store lookup",
+          "correct": false,
+          "rationale": "A feature store holds reusable features for training and inference and does not serve the model."
+        }
+      ],
+      "explanation": "There are two broad ways to use a model in production. A managed API service lets you call a model while the provider handles infrastructure, scaling and maintenance. A self-hosted API means you deploy the model to endpoints you configure, such as a SageMaker AI endpoint, and you decide on instance types, scaling and updates. Self-hosting gives more control and supports custom models, but it brings more operational work.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement best describes MLOps?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Applying DevOps-style practices to automate and monitor the ML lifecycle",
+          "correct": true,
+          "rationale": "MLOps brings automation, version control and monitoring to building, deploying and maintaining ML systems."
+        },
+        {
+          "id": "b",
+          "text": "A technique for labeling images by hand",
+          "correct": false,
+          "rationale": "Manual labeling is a data task and not what MLOps refers to."
+        },
+        {
+          "id": "c",
+          "text": "A pricing model for pay-as-you-go ML services",
+          "correct": false,
+          "rationale": "MLOps is a set of practices, not a billing option."
+        },
+        {
+          "id": "d",
+          "text": "A type of neural network architecture",
+          "correct": false,
+          "rationale": "MLOps is an operating practice and not a model architecture."
+        }
+      ],
+      "explanation": "MLOps, or machine learning operations, applies ideas from DevOps to ML systems. It covers version control of code, data and models, automation of data preparation, training, validation and deployment, continuous monitoring, and governance. The goal is faster, more reliable delivery of models and consistent quality over time. It is a set of practices and tooling rather than a single service or algorithm.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/mlops/",
+          "title": "What is MLOps? - Machine Learning Operations Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mlops-checklist/introduction.html",
+          "title": "Evaluating your ML project with the MLOps checklist - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "In a classification model, which metric measures the share of items predicted as positive that are actually positive?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recall",
+          "correct": false,
+          "rationale": "Recall measures the share of actual positives that the model found, not the share of predictions that were correct."
+        },
+        {
+          "id": "b",
+          "text": "Precision",
+          "correct": true,
+          "rationale": "Precision is true positives divided by all items predicted positive."
+        },
+        {
+          "id": "c",
+          "text": "Latency",
+          "correct": false,
+          "rationale": "Latency measures response time and is not a classification quality metric."
+        },
+        {
+          "id": "d",
+          "text": "Throughput",
+          "correct": false,
+          "rationale": "Throughput measures how many requests are processed over time and says nothing about correctness."
+        }
+      ],
+      "explanation": "Precision answers the question: of everything the model flagged as positive, how much was truly positive? A high-precision model produces few false positives. Recall asks the opposite question about actual positives that were missed. Accuracy counts all correct predictions, and the F1 score combines precision and recall. Operational measures such as latency and throughput describe speed, not prediction quality.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html",
+          "title": "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which metric measures the share of all real positive cases that a classification model correctly finds?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recall",
+          "correct": true,
+          "rationale": "Recall is true positives divided by all actual positives, so it shows how many real cases were caught."
+        },
+        {
+          "id": "b",
+          "text": "Precision",
+          "correct": false,
+          "rationale": "Precision looks at predicted positives, not at all real positives."
+        },
+        {
+          "id": "c",
+          "text": "Cost per user",
+          "correct": false,
+          "rationale": "Cost per user is a business metric and does not describe classification correctness."
+        },
+        {
+          "id": "d",
+          "text": "Return on investment",
+          "correct": false,
+          "rationale": "ROI is a business metric comparing benefit to cost, not a model performance metric."
+        }
+      ],
+      "explanation": "Recall, also called sensitivity, is the fraction of actual positive cases that the model identifies. It matters when missing a positive is costly, such as failing to detect a disease or a fraudulent transaction. Precision focuses on how many predicted positives were right. Business metrics such as cost per user and ROI evaluate value to the organization rather than prediction behavior.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html",
+          "title": "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A data science team needs a managed service to build, train and deploy its own custom ML models. Which AWS service should they use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon Bedrock",
+          "correct": false,
+          "rationale": "Amazon Bedrock provides managed access to foundation models through an API; it is not the main service for building and training custom models."
+        },
+        {
+          "id": "b",
+          "text": "Amazon SageMaker AI",
+          "correct": true,
+          "rationale": "Amazon SageMaker AI is a managed service to build, train and deploy ML models, including custom ones."
+        },
+        {
+          "id": "c",
+          "text": "AWS CloudTrail",
+          "correct": false,
+          "rationale": "CloudTrail records API activity for auditing and does not build or train models."
+        },
+        {
+          "id": "d",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront is a content delivery network and has no role in model development."
+        }
+      ],
+      "explanation": "Amazon SageMaker AI supports the main stages of the ML lifecycle in one managed service: preparing data, building and training models, tuning them, deploying them to endpoints and monitoring them. It suits teams that create custom models. Amazon Bedrock is the better fit when you want to consume existing foundation models through an API. Services such as CloudTrail and CloudFront support security and delivery but do not develop models.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://aws.amazon.com/sagemaker/ai/",
+          "title": "Machine Learning Service – Amazon Sagemaker AI – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to add text generation to an application using existing foundation models. It wants a managed API with no model servers to operate. Which AWS service fits best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Amazon SageMaker AI training jobs",
+          "correct": false,
+          "rationale": "Training jobs create custom models and require you to manage the resulting hosting; they do not offer ready foundation model APIs."
+        },
+        {
+          "id": "b",
+          "text": "Amazon EC2 with a self-installed open source model",
+          "correct": false,
+          "rationale": "This is a self-hosted approach that requires managing servers, scaling and patching."
+        },
+        {
+          "id": "c",
+          "text": "Amazon Bedrock",
+          "correct": true,
+          "rationale": "Amazon Bedrock gives managed API access to foundation models without provisioning or running model servers."
+        },
+        {
+          "id": "d",
+          "text": "AWS Glue",
+          "correct": false,
+          "rationale": "AWS Glue prepares and moves data but does not serve foundation models."
+        }
+      ],
+      "explanation": "Amazon Bedrock is a managed service that exposes foundation models through an API, so applications can generate text without the company managing model infrastructure. This is the managed API approach to using a model in production. Hosting an open source model on EC2 is self-hosted and adds operations work. SageMaker AI training jobs are for creating custom models, and AWS Glue is a data integration service.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/sagemaker/ai/",
+          "title": "Machine Learning Service – Amazon Sagemaker AI – AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A fraud detection model's accuracy slowly declines several months after launch because customer behavior has changed. Which MLOps practice addresses this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model monitoring with re-training when quality drops",
+          "correct": true,
+          "rationale": "Monitoring detects drift from live data, and re-training refreshes the model on newer data."
+        },
+        {
+          "id": "b",
+          "text": "Increasing the size of the training instance",
+          "correct": false,
+          "rationale": "A bigger instance speeds training but does not fix a model that no longer matches current data."
+        },
+        {
+          "id": "c",
+          "text": "Deleting the model registry",
+          "correct": false,
+          "rationale": "Removing the registry loses version history and does nothing about drift."
+        },
+        {
+          "id": "d",
+          "text": "Disabling logging of predictions",
+          "correct": false,
+          "rationale": "Without logged predictions, drift becomes harder to detect rather than fixed."
+        }
+      ],
+      "explanation": "Models degrade when production data drifts away from the data used in training. MLOps handles this with continuous monitoring of data quality and model quality, alerts when thresholds are crossed, and automated or scheduled re-training. Services such as SageMaker Model Monitor track data quality, model quality, bias drift and feature attribution drift. Hardware changes do not correct a stale model.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/mlops/",
+          "title": "What is MLOps? - Machine Learning Operations Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html",
+          "title": "Data and model quality monitoring with Amazon SageMaker Model Monitor - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A bank's model flags fraud, which occurs in about 0.5 percent of transactions. A model that labels every transaction as legitimate reaches 99.5 percent accuracy. Which metric would best expose that the model is useless?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accuracy",
+          "correct": false,
+          "rationale": "Accuracy is the misleading number here because of class imbalance."
+        },
+        {
+          "id": "b",
+          "text": "Recall",
+          "correct": true,
+          "rationale": "Recall would be near zero because the model finds none of the real fraud cases."
+        },
+        {
+          "id": "c",
+          "text": "Latency",
+          "correct": false,
+          "rationale": "Latency measures speed and does not reveal missed fraud."
+        },
+        {
+          "id": "d",
+          "text": "Cost per user",
+          "correct": false,
+          "rationale": "Cost per user is a business metric and does not show whether fraud is detected."
+        }
+      ],
+      "explanation": "With highly imbalanced classes, accuracy can look excellent while the model learns nothing useful. Recall measures how many real positives are found, so a model that never flags fraud scores close to zero. Precision and the F1 score are also better than accuracy for this situation. Always match the metric to the cost of different errors rather than relying on overall accuracy.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html",
+          "title": "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company is judging a customer support assistant. Which of the following is a business metric rather than a model performance metric?",
+      "options": [
+        {
+          "id": "a",
+          "text": "F1 score",
+          "correct": false,
+          "rationale": "F1 score combines precision and recall and is a model performance metric."
+        },
+        {
+          "id": "b",
+          "text": "Precision",
+          "correct": false,
+          "rationale": "Precision describes prediction correctness and is a model metric."
+        },
+        {
+          "id": "c",
+          "text": "Customer feedback ratings",
+          "correct": true,
+          "rationale": "Customer feedback reflects value to the organization and its users, so it is a business metric."
+        },
+        {
+          "id": "d",
+          "text": "Recall",
+          "correct": false,
+          "rationale": "Recall is a model performance metric that describes missed positives."
+        }
+      ],
+      "explanation": "Model performance metrics, such as accuracy, precision, recall and F1 score, describe how well predictions match known outcomes. Business metrics describe whether the solution delivers value, such as cost per user, development costs, customer feedback and return on investment. Exam questions often ask you to separate the two, because a model can score well technically and still fail to justify its cost.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html",
+          "title": "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mlops-checklist/introduction.html",
+          "title": "Evaluating your ML project with the MLOps checklist - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A startup needs a working summarization feature quickly and has little labeled data and a small budget. Which approach to sourcing the model is most appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Train a large custom model from scratch",
+          "correct": false,
+          "rationale": "Training from scratch needs lots of data, compute and time, which the startup lacks."
+        },
+        {
+          "id": "b",
+          "text": "Use a pre-trained foundation model and customize it only if needed",
+          "correct": true,
+          "rationale": "A pre-trained model delivers results quickly with little data, and fine-tuning can be added later."
+        },
+        {
+          "id": "c",
+          "text": "Wait until enough data is collected to train a model",
+          "correct": false,
+          "rationale": "Waiting delays the feature and ignores available pre-trained options."
+        },
+        {
+          "id": "d",
+          "text": "Build a hand-coded rules engine for summaries",
+          "correct": false,
+          "rationale": "Rule engines cannot generate quality summaries and are costly to maintain."
+        }
+      ],
+      "explanation": "Pre-trained foundation models already capture broad language knowledge, so they are the fast, economical choice for common tasks such as summarization. Teams can use them as they are, add retrieval or prompting, or fine-tune with a smaller dataset. Training custom models is better reserved for cases where no available model fits the task or where proprietary data demands it.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/sagemaker/ai/",
+          "title": "Machine Learning Service – Amazon Sagemaker AI – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "Before deploying a newly trained model, a team compares its predictions with a held-out dataset the model has never seen. Which pipeline stage is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data collection",
+          "correct": false,
+          "rationale": "Data collection gathers raw data and does not test a trained model."
+        },
+        {
+          "id": "b",
+          "text": "Model evaluation",
+          "correct": true,
+          "rationale": "Evaluation measures performance on held-out data before the model is deployed."
+        },
+        {
+          "id": "c",
+          "text": "Feature engineering",
+          "correct": false,
+          "rationale": "Feature engineering shapes inputs before training and does not test results."
+        },
+        {
+          "id": "d",
+          "text": "Production monitoring",
+          "correct": false,
+          "rationale": "Monitoring watches the deployed model on live traffic, which comes after release."
+        }
+      ],
+      "explanation": "Evaluation sits between training and deployment. The team computes metrics such as accuracy, precision, recall or F1 on data that was kept out of training, which shows how well the model is likely to generalize. Only models that meet agreed thresholds should proceed to deployment. Monitoring performs a similar check later on real traffic to catch drift.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/mlops/",
+          "title": "What is MLOps? - Machine Learning Operations Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html",
+          "title": "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A retailer must score 40 million customer records overnight to prepare next-day marketing lists. Instant responses are not required. Which approach to using the model suits this need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A real-time endpoint called once per record",
+          "correct": false,
+          "rationale": "Per-record real-time calls are costly and unnecessary when no immediate response is needed."
+        },
+        {
+          "id": "b",
+          "text": "Batch inference over the whole dataset",
+          "correct": true,
+          "rationale": "Batch inference scores large datasets in one scheduled job and fits overnight workloads."
+        },
+        {
+          "id": "c",
+          "text": "Retraining the model for every record",
+          "correct": false,
+          "rationale": "Retraining per record is impractical and unrelated to scoring."
+        },
+        {
+          "id": "d",
+          "text": "Manual review of each prediction",
+          "correct": false,
+          "rationale": "Manual review cannot scale to millions of records."
+        }
+      ],
+      "explanation": "The way a model is used depends on latency needs. Real-time endpoints answer individual requests with low latency, and they stay provisioned to do so. Batch inference processes a large set of inputs in one job and writes results out, which is more efficient when predictions are needed on a schedule rather than instantly. SageMaker AI supports both styles of inference.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
+          "title": "What is Amazon SageMaker AI? - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0015",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO practices are part of MLOps for creating repeatable ML processes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Automating data preparation, training and deployment in a pipeline",
+          "correct": true,
+          "rationale": "Automated pipelines make runs repeatable and reduce manual error."
+        },
+        {
+          "id": "b",
+          "text": "Copying notebooks between engineers by email",
+          "correct": false,
+          "rationale": "Ad hoc sharing is not version controlled and makes results hard to reproduce."
+        },
+        {
+          "id": "c",
+          "text": "Retraining only when someone remembers to",
+          "correct": false,
+          "rationale": "Unplanned retraining is not a repeatable process."
+        },
+        {
+          "id": "d",
+          "text": "Tracking experiments and versioning code, data and models",
+          "correct": true,
+          "rationale": "Versioning and experiment tracking let teams reproduce, audit and roll back results."
+        },
+        {
+          "id": "e",
+          "text": "Skipping validation to speed releases",
+          "correct": false,
+          "rationale": "Skipping validation hurts production readiness and quality."
+        }
+      ],
+      "explanation": "MLOps aims for repeatable, scalable and governed ML delivery. Automation of the stages from data ingestion to deployment removes manual steps and can be triggered by code changes, data changes or schedules. Version control and experiment tracking record which data, code and parameters produced each model so results can be reproduced and audited. Informal sharing, irregular retraining and skipped validation work against these goals.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/mlops/",
+          "title": "What is MLOps? - Machine Learning Operations Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mlops-checklist/introduction.html",
+          "title": "Evaluating your ML project with the MLOps checklist - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team needs a central place to track multiple versions of a model and mark which ones are approved for release. Which MLOps component provides this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model registry",
+          "correct": true,
+          "rationale": "A model registry stores versions and metadata and records approval status for deployment."
+        },
+        {
+          "id": "b",
+          "text": "Load balancer",
+          "correct": false,
+          "rationale": "A load balancer distributes traffic and does not track model versions."
+        },
+        {
+          "id": "c",
+          "text": "Data capture bucket",
+          "correct": false,
+          "rationale": "Captured inference data supports monitoring but does not manage model versions."
+        },
+        {
+          "id": "d",
+          "text": "Experiment notebook",
+          "correct": false,
+          "rationale": "A notebook holds code and results for an individual experiment, not a managed version catalog."
+        }
+      ],
+      "explanation": "A model registry is a core MLOps component that catalogs trained models, their versions, lineage and approval state. It helps teams promote models to production in a controlled way and roll back when needed. Together with experiment tracking, metadata management and pipeline orchestration, it supports repeatable and governed releases and helps limit technical debt.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/mlops/",
+          "title": "What is MLOps? - Machine Learning Operations Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mlops-checklist/introduction.html",
+          "title": "Evaluating your ML project with the MLOps checklist - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0017",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "A team evaluates a new chatbot built on a foundation model. Which TWO measures are business metrics?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cost per user",
+          "correct": true,
+          "rationale": "Cost per user shows the financial efficiency of serving the solution, so it is a business metric."
+        },
+        {
+          "id": "b",
+          "text": "F1 score on a labeled test set",
+          "correct": false,
+          "rationale": "F1 score is a model performance metric."
+        },
+        {
+          "id": "c",
+          "text": "Precision on a labeled test set",
+          "correct": false,
+          "rationale": "Precision is a model performance metric."
+        },
+        {
+          "id": "d",
+          "text": "Customer feedback and satisfaction",
+          "correct": true,
+          "rationale": "Customer feedback shows real-world value, so it is a business metric."
+        },
+        {
+          "id": "e",
+          "text": "Accuracy on a labeled test set",
+          "correct": false,
+          "rationale": "Accuracy is a model performance metric."
+        }
+      ],
+      "explanation": "Evaluation uses both model metrics and business metrics. Model metrics such as accuracy, precision, recall and F1 score compare predictions with labeled outcomes. Business metrics tie the solution to organizational goals: cost per user, development costs, customer feedback and return on investment. A complete evaluation needs both, since a technically strong model can still be too expensive or disliked by users.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html",
+          "title": "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mlops-checklist/introduction.html",
+          "title": "Evaluating your ML project with the MLOps checklist - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "Which TWO are benefits of starting from a pre-trained foundation model instead of training a custom model from scratch?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Lower compute cost and faster time to a working solution",
+          "correct": true,
+          "rationale": "Reusing existing training avoids repeating the most expensive phase."
+        },
+        {
+          "id": "b",
+          "text": "A guarantee of higher accuracy than any custom model",
+          "correct": false,
+          "rationale": "No such guarantee exists; a custom or fine-tuned model can outperform on a specific task."
+        },
+        {
+          "id": "c",
+          "text": "Less training data needed to reach useful performance",
+          "correct": true,
+          "rationale": "Pre-trained models already encode broad knowledge, so adaptation needs far less data."
+        },
+        {
+          "id": "d",
+          "text": "No need to evaluate the model before production",
+          "correct": false,
+          "rationale": "Every model still needs evaluation on the target task."
+        },
+        {
+          "id": "e",
+          "text": "Removal of all hosting decisions",
+          "correct": false,
+          "rationale": "Hosting choices remain, such as managed API versus self-hosted endpoint."
+        }
+      ],
+      "explanation": "Pre-trained foundation models have already absorbed broad knowledge from large datasets. Reusing them cuts the compute, time and data you need, which is why they are the usual starting point. They do not remove the need for evaluation against your own task and business metrics, and they do not decide how you serve the model. Fine-tuning can improve fit when needed.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/sagemaker/ai/",
+          "title": "Machine Learning Service – Amazon Sagemaker AI – AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which THREE are components of a mature MLOps setup?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Experiment tracking for training runs",
+          "correct": true,
+          "rationale": "Tracking runs records parameters and results so work can be reproduced and compared."
+        },
+        {
+          "id": "b",
+          "text": "Manually configured one-off environments",
+          "correct": false,
+          "rationale": "Hand-built environments are inconsistent and add technical debt."
+        },
+        {
+          "id": "c",
+          "text": "A model registry for versions",
+          "correct": true,
+          "rationale": "A registry manages model versions and approvals."
+        },
+        {
+          "id": "d",
+          "text": "Untracked local copies of datasets",
+          "correct": false,
+          "rationale": "Untracked data breaks reproducibility and auditing."
+        },
+        {
+          "id": "e",
+          "text": "Infrastructure as code for consistent environments",
+          "correct": true,
+          "rationale": "Infrastructure as code makes environments repeatable and scalable."
+        },
+        {
+          "id": "f",
+          "text": "Deleting earlier model versions after each release",
+          "correct": false,
+          "rationale": "Deleting versions removes the ability to roll back or audit."
+        }
+      ],
+      "explanation": "MLOps components make ML delivery repeatable and manageable. These include experiment tracking, a source repository for pipeline code, reusable modular components, a model registry, metadata management, a pipeline orchestrator and infrastructure as code. They reduce technical debt and support production readiness. Manual environments, untracked datasets and discarded model versions create the opposite: hidden dependencies and irreproducible results.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/mlops/",
+          "title": "What is MLOps? - Machine Learning Operations Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/mlops-checklist/introduction.html",
+          "title": "Evaluating your ML project with the MLOps checklist - AWS Prescriptive Guidance"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.3-0020",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "An email filter must avoid blocking legitimate messages and also avoid letting spam through. The team wants one number that balances both types of error. Which metric should they use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Accuracy",
+          "correct": false,
+          "rationale": "Accuracy can hide imbalance between classes and does not weigh the two error types explicitly."
+        },
+        {
+          "id": "b",
+          "text": "Recall alone",
+          "correct": false,
+          "rationale": "Recall alone ignores blocked legitimate messages, so it does not balance both errors."
+        },
+        {
+          "id": "c",
+          "text": "Return on investment",
+          "correct": false,
+          "rationale": "ROI is a business metric and not a classification balance metric."
+        },
+        {
+          "id": "d",
+          "text": "F1 score",
+          "correct": true,
+          "rationale": "F1 score is the harmonic mean of precision and recall, so it balances false positives and false negatives."
+        }
+      ],
+      "explanation": "When both false positives and false negatives matter, a single metric that combines precision and recall is useful. The F1 score is their harmonic mean, so it drops when either one is low. Recall alone would reward a filter that blocks too much, and accuracy can mislead when spam is rarer than legitimate mail. Business metrics such as ROI answer a different question about value.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html",
+          "title": "Machine Learning Lens - AWS Well-Architected Framework - Machine Learning Lens"
+        }
+      ]
+    }
+  ]
+}

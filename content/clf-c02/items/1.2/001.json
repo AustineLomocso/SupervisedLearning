@@ -1,0 +1,917 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "1.2",
+  "items": [
+    {
+      "id": "clf-c02-1.2-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "A company wants a consistent set of best practices for evaluating how well its cloud workloads are designed. Which AWS resource provides this guidance?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Shared Responsibility Model",
+          "correct": false,
+          "rationale": "This model divides security duties between AWS and the customer. It does not review workload design across multiple areas."
+        },
+        {
+          "id": "b",
+          "text": "AWS Well-Architected Framework",
+          "correct": true,
+          "rationale": "The framework gives best practices, organized into pillars, that help you evaluate and improve workload architectures."
+        },
+        {
+          "id": "c",
+          "text": "AWS Free Tier",
+          "correct": false,
+          "rationale": "The Free Tier offers limited free usage of services. It provides no architectural review guidance."
+        },
+        {
+          "id": "d",
+          "text": "AWS Service Level Agreement",
+          "correct": false,
+          "rationale": "SLAs describe availability commitments for individual services. They do not define design best practices."
+        }
+      ],
+      "explanation": "The AWS Well-Architected Framework documents design principles and best practices for building secure, reliable, efficient, cost-effective and sustainable workloads. It is organized into pillars, and each pillar poses questions that help you find risks in your architecture. Customers use it to compare a workload with proven practices and to decide where to improve first. It is guidance, not a service that changes your resources.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "How many pillars does the current AWS Well-Architected Framework include?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Four",
+          "correct": false,
+          "rationale": "Four is too few. The framework covers more areas than this, including sustainability."
+        },
+        {
+          "id": "b",
+          "text": "Five",
+          "correct": false,
+          "rationale": "Five was the count before the sustainability pillar was added."
+        },
+        {
+          "id": "c",
+          "text": "Six",
+          "correct": true,
+          "rationale": "Correct. The pillars are operational excellence, security, reliability, performance efficiency, cost optimization and sustainability."
+        },
+        {
+          "id": "d",
+          "text": "Seven",
+          "correct": false,
+          "rationale": "No seventh pillar exists. Compliance and scalability are not pillars."
+        }
+      ],
+      "explanation": "The framework has six pillars: operational excellence, security, reliability, performance efficiency, cost optimization and sustainability. Sustainability was added after the original five, so older study material may list only five. Remembering the full list matters because exam questions often ask you to match a scenario to one specific pillar or to identify which pillar a given practice belongs under.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Well-Architected pillar focuses on protecting data, systems and assets?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Security",
+          "correct": true,
+          "rationale": "Correct. The security pillar covers identity, traceability, data protection and incident preparation."
+        },
+        {
+          "id": "b",
+          "text": "Reliability",
+          "correct": false,
+          "rationale": "Reliability concerns recovering from failure and meeting availability goals, not protecting data."
+        },
+        {
+          "id": "c",
+          "text": "Cost optimization",
+          "correct": false,
+          "rationale": "Cost optimization is about avoiding unnecessary spending rather than protecting assets."
+        },
+        {
+          "id": "d",
+          "text": "Operational excellence",
+          "correct": false,
+          "rationale": "Operational excellence is about running and improving operations, not primarily protection."
+        }
+      ],
+      "explanation": "The security pillar describes how to protect information, systems and assets while delivering business value. Its design principles include a strong identity foundation, enabling traceability, applying security at all layers, automating security best practices, protecting data in transit and at rest, keeping people away from data, and preparing for security events. These principles help you apply least privilege and detect problems early.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/security.html",
+          "title": "Security - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Well-Architected pillar addresses minimizing the environmental impact of running cloud workloads?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cost optimization",
+          "correct": false,
+          "rationale": "This pillar targets spending, although efficiency can lower both cost and emissions."
+        },
+        {
+          "id": "b",
+          "text": "Performance efficiency",
+          "correct": false,
+          "rationale": "This pillar covers choosing suitable resources for requirements, not environmental goals."
+        },
+        {
+          "id": "c",
+          "text": "Reliability",
+          "correct": false,
+          "rationale": "Reliability covers recovery and availability, not environmental impact."
+        },
+        {
+          "id": "d",
+          "text": "Sustainability",
+          "correct": true,
+          "rationale": "Correct. The sustainability pillar focuses on reducing the environmental impact of workloads."
+        }
+      ],
+      "explanation": "The sustainability pillar is about minimizing the environmental impact of running cloud workloads. Its design principles include understanding your impact, setting sustainability goals, maximizing utilization, adopting more efficient hardware and software, using managed services, and reducing the downstream impact of your workloads. It is the newest pillar and a common source of exam questions because it is easy to confuse with cost optimization.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/sustainability.html",
+          "title": "Sustainability - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which Well-Architected pillar is about running and monitoring systems and continually improving processes and procedures?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Security",
+          "correct": false,
+          "rationale": "Security protects data and systems rather than focusing on running and improving operations."
+        },
+        {
+          "id": "b",
+          "text": "Operational excellence",
+          "correct": true,
+          "rationale": "Correct. This pillar covers running workloads, monitoring them, and improving operations over time."
+        },
+        {
+          "id": "c",
+          "text": "Sustainability",
+          "correct": false,
+          "rationale": "Sustainability addresses environmental impact, not operational processes."
+        },
+        {
+          "id": "d",
+          "text": "Reliability",
+          "correct": false,
+          "rationale": "Reliability concerns recovering from failure and meeting availability needs."
+        }
+      ],
+      "explanation": "Operational excellence is the ability to support development, run workloads effectively, gain insight into their operation, and continuously improve supporting processes. Its principles include performing operations as code, making frequent, small, reversible changes, refining operations procedures often, anticipating failure, and learning from all operational failures. It focuses on how teams operate, not on a specific AWS service.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Under the cost optimization pillar, what does adopting a consumption model mean?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reserving all capacity for peak demand in advance",
+          "correct": false,
+          "rationale": "This is the traditional approach and wastes money when demand is lower than peak."
+        },
+        {
+          "id": "b",
+          "text": "Buying hardware outright to avoid usage charges",
+          "correct": false,
+          "rationale": "Buying hardware is a fixed capital expense, the opposite of paying for consumption."
+        },
+        {
+          "id": "c",
+          "text": "Paying only for the computing resources you use",
+          "correct": true,
+          "rationale": "Correct. You pay for what you consume and can scale usage up or down."
+        },
+        {
+          "id": "d",
+          "text": "Paying a flat monthly fee regardless of usage",
+          "correct": false,
+          "rationale": "A flat fee is not tied to consumption, so it does not match this principle."
+        }
+      ],
+      "explanation": "Adopting a consumption model is a cost optimization design principle: you pay only for the computing resources you require and increase or decrease usage as business needs change. You do not need to forecast demand far ahead or buy capacity for peak load. Other principles in the pillar include implementing cloud financial management, measuring overall efficiency, avoiding spending on undifferentiated heavy lifting, and analyzing and attributing expenditure.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company designs a workload so that failed components are replaced automatically and recovery procedures are tested regularly. Which pillar does this most directly support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reliability",
+          "correct": true,
+          "rationale": "Correct. Automatic recovery and recovery testing are core reliability principles."
+        },
+        {
+          "id": "b",
+          "text": "Cost optimization",
+          "correct": false,
+          "rationale": "Cost optimization concerns avoiding unnecessary spend, not recovery from failure."
+        },
+        {
+          "id": "c",
+          "text": "Sustainability",
+          "correct": false,
+          "rationale": "Sustainability concerns environmental impact, which this scenario does not describe."
+        },
+        {
+          "id": "d",
+          "text": "Performance efficiency",
+          "correct": false,
+          "rationale": "This pillar concerns matching resources to requirements, not recovering from failures."
+        }
+      ],
+      "explanation": "The reliability pillar covers a workload's ability to perform its intended function correctly and consistently, and to recover from failures. Its design principles include automatically recovering from failure, testing recovery procedures, scaling horizontally to increase aggregate availability, stopping guessing capacity, and managing change through automation. Replacing failed components and rehearsing recovery are direct applications of these principles.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team load-tests several instance types and tries serverless options to find the best fit for each component. Which pillar does this support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Security",
+          "correct": false,
+          "rationale": "Security concerns protecting data and access, not matching resource types to workload needs."
+        },
+        {
+          "id": "b",
+          "text": "Operational excellence",
+          "correct": false,
+          "rationale": "Operational excellence focuses on running and improving operations rather than selecting resource types."
+        },
+        {
+          "id": "c",
+          "text": "Cost optimization",
+          "correct": false,
+          "rationale": "Cost is one possible outcome, but the described activity is selecting suitable resources through experiments."
+        },
+        {
+          "id": "d",
+          "text": "Performance efficiency",
+          "correct": true,
+          "rationale": "Correct. Experimenting and using serverless are principles for using resources efficiently."
+        }
+      ],
+      "explanation": "The performance efficiency pillar is about using computing resources efficiently to meet system requirements and maintaining that efficiency as demand and technologies evolve. Its design principles include democratizing advanced technologies, going global in minutes, using serverless architectures, experimenting more often, and considering mechanical sympathy. Comparing instance types through testing is a practical way to apply experimentation.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/performance-efficiency.html",
+          "title": "Performance efficiency - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A finance team wants engineering to see which application teams generate each part of the AWS bill. Which pillar principle does this reflect?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keeping people away from data",
+          "correct": false,
+          "rationale": "This security principle limits direct access to data and is unrelated to expense visibility."
+        },
+        {
+          "id": "b",
+          "text": "Analyzing and attributing expenditure",
+          "correct": true,
+          "rationale": "Correct. Attributing spend to workloads and owners is a cost optimization principle."
+        },
+        {
+          "id": "c",
+          "text": "Scaling horizontally",
+          "correct": false,
+          "rationale": "This reliability principle improves availability and does not address billing visibility."
+        },
+        {
+          "id": "d",
+          "text": "Going global in minutes",
+          "correct": false,
+          "rationale": "This performance principle expands geographic reach and does not address cost visibility."
+        }
+      ],
+      "explanation": "Cost optimization includes the principle of analyzing and attributing expenditure. Cloud makes it easier to identify the usage and cost of each workload accurately, so you can see the return on investment and let owners reduce costs. Combined with cloud financial management and measuring overall efficiency, this visibility helps teams avoid unnecessary spending.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0010",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company chooses managed services and raises the utilization of its compute resources to reduce the energy needed for its workloads. Which pillar does this support?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Operational excellence",
+          "correct": false,
+          "rationale": "Operational excellence concerns running and improving operations, not energy use."
+        },
+        {
+          "id": "b",
+          "text": "Reliability",
+          "correct": false,
+          "rationale": "Reliability concerns failure recovery, and higher utilization does not address it."
+        },
+        {
+          "id": "c",
+          "text": "Sustainability",
+          "correct": true,
+          "rationale": "Correct. Maximizing utilization and using managed services are sustainability principles."
+        },
+        {
+          "id": "d",
+          "text": "Security",
+          "correct": false,
+          "rationale": "Security concerns protecting data and systems and is unrelated to energy use."
+        }
+      ],
+      "explanation": "Sustainability design principles include maximizing utilization so that provisioned resources do little idle work, and using managed services so that shared infrastructure serves many customers efficiently. Adopting more efficient hardware and software and reducing downstream impact also help. These practices lower the energy and resources needed per unit of work, which is the pillar's goal.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/sustainability.html",
+          "title": "Sustainability - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A team makes frequent, small, reversible changes and performs operations as code. Which Well-Architected pillar do these practices belong to?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Operational excellence",
+          "correct": true,
+          "rationale": "Correct. Operations as code and small reversible changes are operational excellence principles."
+        },
+        {
+          "id": "b",
+          "text": "Security",
+          "correct": false,
+          "rationale": "Security principles involve identity, traceability and data protection."
+        },
+        {
+          "id": "c",
+          "text": "Cost optimization",
+          "correct": false,
+          "rationale": "Cost optimization principles involve spending, such as the consumption model."
+        },
+        {
+          "id": "d",
+          "text": "Performance efficiency",
+          "correct": false,
+          "rationale": "Performance efficiency principles involve choosing and testing suitable resources."
+        }
+      ],
+      "explanation": "Operational excellence principles include performing operations as code, making frequent, small, reversible changes, refining operations procedures often, anticipating failure, and learning from all operational failures. Defining the environment in code lets teams apply the same engineering discipline used for applications and reduces human error. Small reversible changes limit the impact of mistakes and speed up learning.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "An architect applies the principles of encrypting data in transit and at rest and enabling traceability of actions. Which pillar are these principles part of?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reliability",
+          "correct": false,
+          "rationale": "Reliability principles cover recovery and scaling, not encryption or traceability."
+        },
+        {
+          "id": "b",
+          "text": "Sustainability",
+          "correct": false,
+          "rationale": "Sustainability principles cover environmental impact, not encryption."
+        },
+        {
+          "id": "c",
+          "text": "Operational excellence",
+          "correct": false,
+          "rationale": "Operations can use logs, but encryption and traceability are defined as security principles."
+        },
+        {
+          "id": "d",
+          "text": "Security",
+          "correct": true,
+          "rationale": "Correct. Protecting data and enabling traceability are listed security design principles."
+        }
+      ],
+      "explanation": "The security pillar's design principles include implementing a strong identity foundation, enabling traceability, applying security at all layers, automating security best practices, protecting data in transit and at rest, keeping people away from data, and preparing for security events. Traceability means monitoring, alerting and auditing actions and changes to the environment so you can investigate issues.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/security.html",
+          "title": "Security - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "Which statement correctly distinguishes the reliability pillar from the performance efficiency pillar?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reliability focuses on selecting resource types, while performance efficiency focuses on failure recovery.",
+          "correct": false,
+          "rationale": "This reverses the two pillars' definitions."
+        },
+        {
+          "id": "b",
+          "text": "Reliability focuses on recovering from failure and meeting availability goals, while performance efficiency focuses on using resources suited to requirements.",
+          "correct": true,
+          "rationale": "Correct. The first is about resilience and the second about fit and efficiency of resources."
+        },
+        {
+          "id": "c",
+          "text": "Reliability focuses on lowering spend, while performance efficiency focuses on protecting data.",
+          "correct": false,
+          "rationale": "Lowering spend belongs to cost optimization and data protection belongs to security."
+        },
+        {
+          "id": "d",
+          "text": "Reliability focuses on environmental impact, while performance efficiency focuses on audits.",
+          "correct": false,
+          "rationale": "Environmental impact belongs to sustainability, and neither pillar centers on audits."
+        }
+      ],
+      "explanation": "Reliability and performance efficiency both involve scaling, which makes them easy to confuse. Reliability asks whether the workload keeps working and recovers from failure, using practices like multiple Availability Zones and tested recovery. Performance efficiency asks whether you are using the right type and size of resources for the requirements, and whether you keep adapting as needs and technologies change.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/performance-efficiency.html",
+          "title": "Performance efficiency - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0014",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants to compare its workload against AWS-recommended design practices to identify risks and areas for improvement. Which approach should it use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Calculate its Reserved Instance savings",
+          "correct": false,
+          "rationale": "This is a cost exercise and does not review design practices across areas."
+        },
+        {
+          "id": "b",
+          "text": "Enable AWS Free Tier alerts",
+          "correct": false,
+          "rationale": "Free Tier alerts track usage thresholds and are not an architecture review."
+        },
+        {
+          "id": "c",
+          "text": "Review the workload against the AWS Well-Architected Framework",
+          "correct": true,
+          "rationale": "Correct. The framework's questions across six pillars highlight risks and improvements."
+        },
+        {
+          "id": "d",
+          "text": "Open a support case for each service",
+          "correct": false,
+          "rationale": "Support cases resolve specific issues and do not systematically compare designs to best practices."
+        }
+      ],
+      "explanation": "Reviewing a workload against the AWS Well-Architected Framework lets a team answer pillar-by-pillar questions about its design, operations and costs. The answers reveal risks and trade-offs, which the team can then prioritize for improvement. Reviews are best repeated as the workload evolves, rather than treated as a one-time activity.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company automates access to data so that employees rarely handle sensitive records directly. Which pillar's principle is this, and why not operational excellence?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Security, because keeping people away from data reduces the risk of mishandling or modification",
+          "correct": true,
+          "rationale": "Correct. This is a security principle, even though it relies on automation."
+        },
+        {
+          "id": "b",
+          "text": "Operational excellence, because any automation counts as operations as code",
+          "correct": false,
+          "rationale": "Automation alone does not make a principle part of operational excellence. This one targets data protection."
+        },
+        {
+          "id": "c",
+          "text": "Reliability, because automated tools improve failover",
+          "correct": false,
+          "rationale": "The scenario concerns data exposure, not failover."
+        },
+        {
+          "id": "d",
+          "text": "Cost optimization, because automation saves labor",
+          "correct": false,
+          "rationale": "Cost savings may follow, but the stated goal is limiting human access to data."
+        }
+      ],
+      "explanation": "Keeping people away from data is a security design principle: reduce or eliminate direct access to data by using mechanisms and tools, which lowers the risk of mishandling, modification or human error. Operational excellence also favors automation, but it applies it to running and improving operations. When the scenario's goal is protecting data, security is the best match.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/security.html",
+          "title": "Security - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company serves customers on several continents and decides to deploy its workload in AWS Regions close to them within minutes to reduce latency. Which pillar principle does this match best?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reliability, because multiple Regions always improve availability",
+          "correct": false,
+          "rationale": "Multi-Region use can improve availability, but the goal stated here is lower latency."
+        },
+        {
+          "id": "b",
+          "text": "Cost optimization, because Regions have different prices",
+          "correct": false,
+          "rationale": "Pricing is not the stated goal in this scenario."
+        },
+        {
+          "id": "c",
+          "text": "Sustainability, because nearby Regions reduce data travel",
+          "correct": false,
+          "rationale": "This may help, but the described goal is customer latency."
+        },
+        {
+          "id": "d",
+          "text": "Performance efficiency, because going global in minutes improves the user experience",
+          "correct": true,
+          "rationale": "Correct. Going global in minutes is a performance efficiency design principle."
+        }
+      ],
+      "explanation": "Going global in minutes is a performance efficiency design principle: deploying workloads in multiple Regions lets you provide lower latency and a better experience at minimal cost. Other pillars might benefit as side effects, so read the stated goal. Here the requirement is latency for distant users, which maps to performance efficiency rather than to reliability, cost or sustainability.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/performance-efficiency.html",
+          "title": "Performance efficiency - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "Which statement correctly distinguishes cost optimization from sustainability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cost optimization targets avoiding unnecessary spending, while sustainability targets minimizing environmental impact, though both reward high utilization.",
+          "correct": true,
+          "rationale": "Correct. The goals differ even though the practices often overlap."
+        },
+        {
+          "id": "b",
+          "text": "Cost optimization targets minimizing environmental impact, while sustainability targets avoiding unnecessary spending.",
+          "correct": false,
+          "rationale": "This reverses the pillars' goals."
+        },
+        {
+          "id": "c",
+          "text": "Both pillars focus only on protecting data.",
+          "correct": false,
+          "rationale": "Data protection is the security pillar."
+        },
+        {
+          "id": "d",
+          "text": "Both pillars focus only on recovery from failure.",
+          "correct": false,
+          "rationale": "Recovery from failure is the reliability pillar."
+        }
+      ],
+      "explanation": "Cost optimization and sustainability often recommend similar actions, such as right-sizing and removing idle resources, which makes them easy to confuse. The difference is the objective. Cost optimization aims to deliver business value at the lowest price point and avoid unnecessary costs. Sustainability aims to minimize the environmental impact of running workloads. Read the scenario to see whether the stated goal is money or environmental impact.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-optimization.html",
+          "title": "Cost optimization - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/sustainability.html",
+          "title": "Sustainability - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which of the following are pillars of the AWS Well-Architected Framework?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scalability",
+          "correct": false,
+          "rationale": "Scalability is a cloud benefit but not one of the six pillars."
+        },
+        {
+          "id": "b",
+          "text": "Reliability",
+          "correct": true,
+          "rationale": "Correct. Reliability is one of the six pillars."
+        },
+        {
+          "id": "c",
+          "text": "Elasticity",
+          "correct": false,
+          "rationale": "Elasticity is a cloud benefit but not a pillar."
+        },
+        {
+          "id": "d",
+          "text": "Agility",
+          "correct": false,
+          "rationale": "Agility is a cloud benefit but not a pillar."
+        },
+        {
+          "id": "e",
+          "text": "Security",
+          "correct": true,
+          "rationale": "Correct. Security is one of the six pillars."
+        }
+      ],
+      "explanation": "The six pillars are operational excellence, security, reliability, performance efficiency, cost optimization and sustainability. Scalability, elasticity and agility are important benefits of the cloud that relate to several pillars, but they are not pillars themselves. Distinguishing cloud benefits from framework pillars is a common exam requirement.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0019",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which design principles belong to the reliability pillar?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Automatically recover from failure",
+          "correct": true,
+          "rationale": "Correct. Recovering automatically from failure is a reliability principle."
+        },
+        {
+          "id": "b",
+          "text": "Perform operations as code",
+          "correct": false,
+          "rationale": "This is an operational excellence principle."
+        },
+        {
+          "id": "c",
+          "text": "Scale horizontally to increase aggregate workload availability",
+          "correct": true,
+          "rationale": "Correct. Spreading load across many smaller resources reduces the impact of a single failure."
+        },
+        {
+          "id": "d",
+          "text": "Go global in minutes",
+          "correct": false,
+          "rationale": "This is a performance efficiency principle."
+        },
+        {
+          "id": "e",
+          "text": "Adopt a consumption model",
+          "correct": false,
+          "rationale": "This is a cost optimization principle."
+        }
+      ],
+      "explanation": "Reliability design principles include automatically recovering from failure, testing recovery procedures, scaling horizontally to increase aggregate workload availability, stopping guessing capacity, and managing change in automation. The other options belong to different pillars: operations as code to operational excellence, going global in minutes to performance efficiency, and the consumption model to cost optimization.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "Which actions support the security pillar rather than another pillar?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Maximize the utilization of provisioned resources",
+          "correct": false,
+          "rationale": "This is a sustainability principle."
+        },
+        {
+          "id": "b",
+          "text": "Experiment more often with new resource types",
+          "correct": false,
+          "rationale": "This is a performance efficiency principle."
+        },
+        {
+          "id": "c",
+          "text": "Enable traceability of actions and changes",
+          "correct": true,
+          "rationale": "Correct. Monitoring and auditing actions is a security principle."
+        },
+        {
+          "id": "d",
+          "text": "Protect data in transit and at rest",
+          "correct": true,
+          "rationale": "Correct. Data protection is a core security principle."
+        },
+        {
+          "id": "e",
+          "text": "Stop guessing capacity needs",
+          "correct": false,
+          "rationale": "This is a reliability principle."
+        }
+      ],
+      "explanation": "Security principles include enabling traceability and protecting data both in transit and at rest, along with a strong identity foundation and preparing for security events. Maximizing utilization supports sustainability, experimenting supports performance efficiency, and not guessing capacity supports reliability. Matching each principle to its home pillar is the skill the exam tests when asked how pillars differ.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/security.html",
+          "title": "Security - AWS Well-Architected Framework"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html",
+          "title": "The pillars of the framework - AWS Well-Architected Framework"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.2-0021",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "A company wants to reduce the environmental impact of its workloads. Which actions align with the sustainability pillar?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Right-size resources to maximize utilization",
+          "correct": true,
+          "rationale": "Correct. Higher utilization reduces idle resources and energy use."
+        },
+        {
+          "id": "b",
+          "text": "Provision the largest instance size to guarantee headroom",
+          "correct": false,
+          "rationale": "Oversized, idle capacity wastes energy and conflicts with maximizing utilization."
+        },
+        {
+          "id": "c",
+          "text": "Use managed services to share infrastructure efficiently",
+          "correct": true,
+          "rationale": "Correct. Managed services let AWS run shared resources at higher efficiency."
+        },
+        {
+          "id": "d",
+          "text": "Keep all data permanently on the highest-performance storage",
+          "correct": false,
+          "rationale": "Unneeded high-performance storage uses more resources than the data requires."
+        },
+        {
+          "id": "e",
+          "text": "Run duplicate idle environments in extra Regions",
+          "correct": false,
+          "rationale": "Idle duplicate environments add resource use without helping sustainability."
+        },
+        {
+          "id": "f",
+          "text": "Adopt more efficient hardware and software offerings",
+          "correct": true,
+          "rationale": "Correct. Newer, more efficient offerings reduce the resources needed per unit of work."
+        }
+      ],
+      "explanation": "Sustainability design principles include maximizing utilization, using managed services, and adopting more efficient hardware and software. Together they reduce the resources and energy needed for each unit of work. Oversizing, keeping everything on premium storage and running idle duplicate environments all increase resource use without added benefit, so they work against the pillar.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/sustainability.html",
+          "title": "Sustainability - AWS Well-Architected Framework"
+        }
+      ]
+    }
+  ]
+}

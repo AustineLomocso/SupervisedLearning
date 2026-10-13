@@ -16,7 +16,15 @@
     "lint": "oxlint --deny-warnings",
     "typecheck": "tsc -p jsconfig.json",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "build:index": "node tools/build-index.mjs",
+    "predev": "npm run build:index",
+    "prebuild": "npm run build:index",
+    "pretest": "npm run build:index",
+    "pretypecheck": "npm run build:index",
+    "validate:content": "node tools/validate-content.mjs",
+    "content:stats": "node tools/content-stats.mjs",
+    "check:links": "node tools/check-links.mjs"
   },
   "dependencies": {
     "dexie": "^4.4.6",
@@ -43,6 +51,7 @@
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
     "vite": "^8.3.4",
-    "vitest": "^5.0.4"
+    "vitest": "^5.0.4",
+    "zod": "^4.6.7"
   }
 }

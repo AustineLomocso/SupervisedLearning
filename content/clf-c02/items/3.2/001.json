@@ -1,0 +1,932 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "3.2",
+  "items": [
+    {
+      "id": "clf-c02-3.2-0001",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is an AWS Availability Zone?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A caching site that delivers content close to viewers",
+          "correct": false,
+          "rationale": "That describes an edge location, which is used by services such as Amazon CloudFront rather than to run general workloads."
+        },
+        {
+          "id": "b",
+          "text": "A geographic area that contains several Regions",
+          "correct": false,
+          "rationale": "The hierarchy is reversed: a Region contains Availability Zones, not the other way around."
+        },
+        {
+          "id": "c",
+          "text": "One or more discrete data centers with redundant power and networking",
+          "correct": true,
+          "rationale": "An Availability Zone is made up of one or more data centers in a Region, each zone with its own independent power, cooling, and networking."
+        },
+        {
+          "id": "d",
+          "text": "A private connection between a company and AWS",
+          "correct": false,
+          "rationale": "That describes a dedicated network link, not a unit of AWS global infrastructure."
+        }
+      ],
+      "explanation": "AWS global infrastructure is organized in layers. A Region is a geographic area, and each Region contains multiple Availability Zones. An Availability Zone consists of one or more discrete data centers with redundant power, networking, and connectivity, and zones in a Region are physically separated from one another. Customers launch resources into specific Availability Zones to build resilient applications. Edge locations are a different layer used to cache and deliver content close to users.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+          "title": "Global Infrastructure Regions & AZs"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0002",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which statement best describes an AWS Region?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A physical location in the world where AWS clusters data centers into multiple Availability Zones",
+          "correct": true,
+          "rationale": "A Region is a geographic location that contains multiple, isolated Availability Zones."
+        },
+        {
+          "id": "b",
+          "text": "A single data center that hosts all of a customer's resources",
+          "correct": false,
+          "rationale": "Regions contain multiple Availability Zones, each made up of one or more data centers, so a Region is not a single data center."
+        },
+        {
+          "id": "c",
+          "text": "A network of caching servers that deliver web content",
+          "correct": false,
+          "rationale": "That describes the edge location network used by Amazon CloudFront."
+        },
+        {
+          "id": "d",
+          "text": "A virtual network that a customer defines in their account",
+          "correct": false,
+          "rationale": "That describes a virtual private cloud, which is a customer-defined network inside a Region."
+        }
+      ],
+      "explanation": "A Region is a separate geographic area where AWS operates infrastructure. Every Region has multiple Availability Zones, and Regions are isolated from each other so that a problem in one does not spread to another. Customers choose the Region for each resource, which lets them control where their data lives and how close it is to users. Because Regions are independent, services and data in one Region are not automatically available in another.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html",
+          "title": "Regions and Zones - Amazon Elastic Compute Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0003",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Which AWS global infrastructure component is used to cache content close to end users?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Availability Zone",
+          "correct": false,
+          "rationale": "Availability Zones host workloads inside a Region and are not a global content caching layer."
+        },
+        {
+          "id": "b",
+          "text": "AWS Region",
+          "correct": false,
+          "rationale": "A Region is a geographic area for running resources, not a distributed caching network."
+        },
+        {
+          "id": "c",
+          "text": "Edge location",
+          "correct": true,
+          "rationale": "Edge locations are sites around the world where services such as Amazon CloudFront cache copies of content near viewers."
+        },
+        {
+          "id": "d",
+          "text": "AWS Outposts rack",
+          "correct": false,
+          "rationale": "Outposts extends AWS infrastructure to a customer's own site and is not a content delivery cache."
+        }
+      ],
+      "explanation": "Edge locations are points of presence spread across the world. Amazon CloudFront uses them to hold cached copies of content, such as web pages, images, and video, so a request is served from a nearby site instead of travelling to the origin. This reduces latency and offloads traffic from the origin. Edge locations are separate from Regions and Availability Zones, and customers do not normally run general compute workloads in them.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html",
+          "title": "What is Amazon CloudFront? - Amazon CloudFront"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0004",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is the minimum number of Availability Zones in each AWS Region described on the AWS global infrastructure page?",
+      "options": [
+        {
+          "id": "a",
+          "text": "One",
+          "correct": false,
+          "rationale": "A single zone would not allow customers to spread workloads for resilience, so Regions have more than one."
+        },
+        {
+          "id": "b",
+          "text": "Two",
+          "correct": false,
+          "rationale": "Many people recall two as the minimum for high availability designs, but each Region has at least three."
+        },
+        {
+          "id": "c",
+          "text": "Three",
+          "correct": true,
+          "rationale": "Each AWS Region has a minimum of three Availability Zones, which supports resilient multi-AZ designs."
+        },
+        {
+          "id": "d",
+          "text": "Six",
+          "correct": false,
+          "rationale": "Six is the maximum seen in some Regions, not the minimum for every Region."
+        }
+      ],
+      "explanation": "Every AWS Region is built with a minimum of three Availability Zones. Having several zones lets customers spread an application and its data across physically separate locations and keep running if one zone is impaired. Zones within a Region are connected by high-bandwidth, low-latency networking, so synchronous replication between them is practical. The exact number of Regions and zones grows over time, so rely on the principle of multiple zones rather than a memorized total.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+          "title": "Global Infrastructure Regions & AZs"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0005",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "What is high availability in the context of a cloud workload?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keeping a workload running with minimal downtime when components fail",
+          "correct": true,
+          "rationale": "High availability means designing so the workload keeps operating despite failures of individual components."
+        },
+        {
+          "id": "b",
+          "text": "Storing every file in the lowest cost storage tier",
+          "correct": false,
+          "rationale": "This relates to cost optimization and storage tiers, not to keeping a workload operating."
+        },
+        {
+          "id": "c",
+          "text": "Restricting access to the workload to a single administrator",
+          "correct": false,
+          "rationale": "Limiting access relates to security, not availability."
+        },
+        {
+          "id": "d",
+          "text": "Increasing the CPU size of a single server",
+          "correct": false,
+          "rationale": "A bigger server is still a single point of failure, so it does not provide high availability."
+        }
+      ],
+      "explanation": "High availability is the ability of a system to remain operational and accessible for a very high proportion of time, even when parts of it fail. It is achieved by removing single points of failure, usually through redundancy such as running copies of a workload in more than one Availability Zone, with automatic failover or load balancing. Scaling up one server does not help, because that server remains a single point of failure.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0006",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "stem": "Why can Availability Zones in the same Region fail independently of one another?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They are separated physically and have independent power, cooling, and networking",
+          "correct": true,
+          "rationale": "Availability Zones are designed so a failure such as a power outage in one zone is not shared by the others."
+        },
+        {
+          "id": "b",
+          "text": "They all share a single data center and power source",
+          "correct": false,
+          "rationale": "Sharing a power source would create the very single point of failure that Availability Zones are designed to avoid."
+        },
+        {
+          "id": "c",
+          "text": "They are located in different countries",
+          "correct": false,
+          "rationale": "Zones in a Region are within about 100 km of each other, not in different countries."
+        },
+        {
+          "id": "d",
+          "text": "They are managed by different AWS accounts",
+          "correct": false,
+          "rationale": "Account ownership has no bearing on the physical isolation of zones."
+        }
+      ],
+      "explanation": "Availability Zones are engineered so they do not share single points of failure. Each zone has independent power, cooling, physical security, and network connectivity, and zones are separated by meaningful distance, yet sit close enough for low-latency, synchronous replication. A fire, flood, or power outage affecting one zone is therefore unlikely to affect another in the same Region. This is why spreading an application across zones improves availability.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+          "title": "Global Infrastructure Regions & AZs"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0007",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs a web application on Amazon EC2 instances and wants it to stay available if one Availability Zone becomes unavailable. What should the company do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Launch all instances in one Availability Zone on larger instance types",
+          "correct": false,
+          "rationale": "Larger instances do not remove the dependency on a single zone, which remains a single point of failure."
+        },
+        {
+          "id": "b",
+          "text": "Run instances in multiple Availability Zones in the same Region",
+          "correct": true,
+          "rationale": "Distributing instances across zones keeps the application serving traffic if one zone fails."
+        },
+        {
+          "id": "c",
+          "text": "Move the instances to an edge location",
+          "correct": false,
+          "rationale": "Edge locations cache content and do not host general EC2 workloads."
+        },
+        {
+          "id": "d",
+          "text": "Take regular manual snapshots of the instances",
+          "correct": false,
+          "rationale": "Snapshots help recovery but do not keep the application running during a zone failure."
+        }
+      ],
+      "explanation": "To achieve high availability on AWS, spread the workload across multiple Availability Zones in a Region and place a load balancer in front. Because zones do not share single points of failure, the instances in the remaining zones continue to serve requests when one zone is impaired. Backups and bigger instances help with other goals but do not remove the dependency on one zone.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html",
+          "title": "Regions and Zones - Amazon Elastic Compute Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0008",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company must keep customer data within a specific country because of local regulations. Which action best supports this data sovereignty requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use Amazon CloudFront to cache the data worldwide",
+          "correct": false,
+          "rationale": "Caching data in edge locations around the world spreads copies to many countries, the opposite of the requirement."
+        },
+        {
+          "id": "b",
+          "text": "Deploy in multiple Availability Zones of any Region",
+          "correct": false,
+          "rationale": "Availability Zones improve availability but the Region still determines the country where the data is stored."
+        },
+        {
+          "id": "c",
+          "text": "Store and process the data in an AWS Region located in that country",
+          "correct": true,
+          "rationale": "Customers choose the Region, and data stays in the chosen Region unless the customer moves it."
+        },
+        {
+          "id": "d",
+          "text": "Replicate the data to every available Region",
+          "correct": false,
+          "rationale": "Replicating everywhere would put data in other countries and violate the requirement."
+        }
+      ],
+      "explanation": "AWS Regions are isolated geographic areas, and customers control which Region holds their resources. Content stored in a Region stays there unless the customer chooses to replicate or move it. When laws require data to remain within a country or jurisdiction, selecting a Region in that location is the primary way to meet the requirement. Availability Zones and edge locations do not change where the primary data resides.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/",
+          "title": "Global Infrastructure - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0009",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company wants its application to recover if an entire AWS Region becomes unavailable. Which approach meets this disaster recovery need?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add more Amazon EC2 instances in the same Availability Zone",
+          "correct": false,
+          "rationale": "Extra instances in one zone offer no protection from a Region-wide event."
+        },
+        {
+          "id": "b",
+          "text": "Add a second Availability Zone in the same Region",
+          "correct": false,
+          "rationale": "Zones in the same Region share a geography and can both be affected by a Region-level issue."
+        },
+        {
+          "id": "c",
+          "text": "Increase the cache time-to-live at edge locations",
+          "correct": false,
+          "rationale": "Caching helps content delivery but does not provide a recovery environment for the application."
+        },
+        {
+          "id": "d",
+          "text": "Deploy a copy of the workload in a second AWS Region",
+          "correct": true,
+          "rationale": "A second Region is isolated from the first, so it can take over if the original Region is unavailable."
+        }
+      ],
+      "explanation": "Multi-AZ designs protect against failure of a zone, but a disaster that affects a whole Region requires resources in another Region. Using multiple Regions is the standard approach for disaster recovery and business continuity: data is replicated to, and a standby or active copy of the workload runs in, a second Region. Because Regions are isolated from each other, the second one is unaffected by problems in the first.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html",
+          "title": "Regions and Zones - Amazon Elastic Compute Cloud"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0010",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO are benefits of using edge locations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "They reduce latency by serving content from sites near users",
+          "correct": true,
+          "rationale": "Serving cached content from a nearby site shortens the path to the viewer."
+        },
+        {
+          "id": "b",
+          "text": "They provide unlimited storage for application databases",
+          "correct": false,
+          "rationale": "Edge locations cache content and are not a place to host primary databases."
+        },
+        {
+          "id": "c",
+          "text": "They guarantee that data never leaves a single country",
+          "correct": false,
+          "rationale": "Edge caching distributes copies globally, so it does not enforce data residency."
+        },
+        {
+          "id": "d",
+          "text": "They run all of a customer's Amazon EC2 instances",
+          "correct": false,
+          "rationale": "EC2 instances run in Availability Zones in a Region, not in edge locations."
+        },
+        {
+          "id": "e",
+          "text": "They reduce load on the origin by answering repeat requests from cache",
+          "correct": true,
+          "rationale": "Cache hits are answered at the edge, so fewer requests reach the origin."
+        }
+      ],
+      "explanation": "Edge locations are used by services such as Amazon CloudFront to store cached copies of content near viewers. The first benefit is lower latency and higher transfer rates, because requests travel a shorter distance and over the AWS network. The second is reduced origin load and better availability, because many requests are answered from cache. Edge locations are not a place to host databases or regular compute, and they do not control data residency.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html",
+          "title": "What is Amazon CloudFront? - Amazon CloudFront"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0011",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "Which statement correctly describes the relationship among Regions, Availability Zones, and edge locations?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A Region contains multiple Availability Zones, while edge locations are separate sites that cache content globally",
+          "correct": true,
+          "rationale": "Availability Zones live inside a Region, and edge locations form a separate global network of points of presence."
+        },
+        {
+          "id": "b",
+          "text": "An Availability Zone contains multiple Regions",
+          "correct": false,
+          "rationale": "The hierarchy is the reverse: Regions contain Availability Zones."
+        },
+        {
+          "id": "c",
+          "text": "Edge locations are Availability Zones inside each Region",
+          "correct": false,
+          "rationale": "Edge locations are not the same as Availability Zones and are not used to run Region workloads."
+        },
+        {
+          "id": "d",
+          "text": "A Region is a single data center within an edge location",
+          "correct": false,
+          "rationale": "A Region is made up of multiple Availability Zones and is much larger than one data center."
+        }
+      ],
+      "explanation": "Think of AWS global infrastructure as layers. Regions are geographic areas. Each Region has multiple, isolated Availability Zones, each of which is one or more data centers. Edge locations are a distinct, much larger set of points of presence around the world used for content delivery and related services, and they connect back to Regions and origins over the AWS network. Knowing which layer hosts workloads and which caches content is a frequent exam theme.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+          "title": "Global Infrastructure Regions & AZs"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0012",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company's customers are mostly in Asia, but the application runs in a Region in North America. Users report slow response times. What should the company do to reduce latency for these users?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Move the application to an AWS Region closer to the users",
+          "correct": true,
+          "rationale": "Placing resources in a Region near users reduces the network distance and therefore latency."
+        },
+        {
+          "id": "b",
+          "text": "Add more Availability Zones in the North America Region",
+          "correct": false,
+          "rationale": "More zones in the same Region does not shorten the distance to users in Asia."
+        },
+        {
+          "id": "c",
+          "text": "Increase the size of the Amazon EC2 instance",
+          "correct": false,
+          "rationale": "A larger instance does not reduce network latency caused by distance."
+        },
+        {
+          "id": "d",
+          "text": "Enable data encryption on the application",
+          "correct": false,
+          "rationale": "Encryption supports security and does not improve response time."
+        }
+      ],
+      "explanation": "Latency is strongly affected by the physical distance between users and the application. Choosing an AWS Region close to the main user base is one of the most direct ways to reduce it. For static or cacheable content, Amazon CloudFront edge locations can add further improvement. Adding zones or larger instances in a distant Region leaves the network distance unchanged.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/",
+          "title": "Global Infrastructure - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0013",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company runs an application in one Availability Zone with a single Amazon EC2 instance and has had an outage when that zone lost power. What is the main design problem?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The instance is located in too many Regions",
+          "correct": false,
+          "rationale": "The application is in a single zone, so the problem is too little redundancy, not too many Regions."
+        },
+        {
+          "id": "b",
+          "text": "The workload has a single point of failure in one Availability Zone",
+          "correct": true,
+          "rationale": "Everything depends on one zone and one instance, so a failure there takes down the application."
+        },
+        {
+          "id": "c",
+          "text": "The workload has no edge location nearby",
+          "correct": false,
+          "rationale": "Edge locations are for content caching and are unrelated to a power outage in a zone."
+        },
+        {
+          "id": "d",
+          "text": "The workload is using the AWS global network",
+          "correct": false,
+          "rationale": "The AWS network is not a cause of a zone-level power failure."
+        }
+      ],
+      "explanation": "Placing all resources in one Availability Zone creates a single point of failure. If power, networking, or another problem affects that zone, the whole application is affected. The fix is redundancy: run resources in at least two Availability Zones and use a load balancer or similar mechanism to route traffic to healthy ones. Because zones are isolated from each other, one zone failing does not take the others down.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+          "title": "Global Infrastructure Regions & AZs"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0014",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "stem": "Which TWO are valid reasons for a company to use multiple AWS Regions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "To serve users in different parts of the world with lower latency",
+          "correct": true,
+          "rationale": "Resources in Regions near each user group shorten network paths."
+        },
+        {
+          "id": "b",
+          "text": "To avoid needing any Availability Zones",
+          "correct": false,
+          "rationale": "Each Region always uses Availability Zones, so multiple Regions do not remove them."
+        },
+        {
+          "id": "c",
+          "text": "To provide disaster recovery and business continuity if one Region fails",
+          "correct": true,
+          "rationale": "A second Region stays available when the primary Region is impaired."
+        },
+        {
+          "id": "d",
+          "text": "To make a single server faster",
+          "correct": false,
+          "rationale": "Spreading across Regions does not improve the speed of one server."
+        },
+        {
+          "id": "e",
+          "text": "To eliminate the need for security controls",
+          "correct": false,
+          "rationale": "Security controls are still required in every Region."
+        }
+      ],
+      "explanation": "Multiple Regions are used for specific business needs. Common reasons include disaster recovery and business continuity, low latency for geographically dispersed users, and data sovereignty requirements that call for data in particular countries. Multi-Region designs add cost and complexity, so they are chosen when those needs exist. They do not replace the need for Availability Zones or security controls.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/",
+          "title": "Global Infrastructure - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0015",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A company needs AWS infrastructure running in its own on-premises data center because of low latency and local data processing needs. Which AWS offering extends AWS infrastructure to that location?",
+      "options": [
+        {
+          "id": "a",
+          "text": "AWS Outposts",
+          "correct": true,
+          "rationale": "Outposts brings AWS infrastructure and services to a customer's own site for local processing and low latency needs."
+        },
+        {
+          "id": "b",
+          "text": "Amazon CloudFront",
+          "correct": false,
+          "rationale": "CloudFront delivers content from edge locations and does not run AWS infrastructure on premises."
+        },
+        {
+          "id": "c",
+          "text": "AWS Region",
+          "correct": false,
+          "rationale": "Regions are located in AWS facilities and cannot be placed in a customer data center."
+        },
+        {
+          "id": "d",
+          "text": "Availability Zone",
+          "correct": false,
+          "rationale": "Zones are part of a Region and are not deployed at customer sites."
+        }
+      ],
+      "explanation": "AWS Outposts is a fully managed offering that extends AWS infrastructure, services, and APIs to a customer's on-premises or edge location. It suits workloads that need low latency to on-premises systems or must process data locally. Regions, Availability Zones, and edge locations are AWS-operated parts of the global infrastructure, whereas Outposts places AWS-managed hardware at the customer's site.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/outposts/",
+          "title": "On Premises Private Cloud - AWS Outposts - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/",
+          "title": "Global Infrastructure - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0016",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "stem": "A user requests an image through Amazon CloudFront, and the nearest edge location does not have it cached. What happens next?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The request fails with an error",
+          "correct": false,
+          "rationale": "CloudFront does not fail on a cache miss and gets the object from the origin."
+        },
+        {
+          "id": "b",
+          "text": "CloudFront retrieves the object from the configured origin and caches it",
+          "correct": true,
+          "rationale": "On a cache miss the edge location fetches the object from the origin, serves it, and keeps a copy for later requests."
+        },
+        {
+          "id": "c",
+          "text": "The user is redirected to a different Region",
+          "correct": false,
+          "rationale": "CloudFront retrieves content from the origin and does not redirect users between Regions."
+        },
+        {
+          "id": "d",
+          "text": "The edge location deletes the distribution",
+          "correct": false,
+          "rationale": "A cache miss has no effect on the distribution configuration."
+        }
+      ],
+      "explanation": "CloudFront routes each request to the edge location with the lowest latency. If that location already holds the object, it is delivered immediately. If not, CloudFront retrieves it from the origin you defined, such as an Amazon S3 bucket or a web server, returns it to the viewer, and stores a copy so later requests are served quickly. This is how edge locations reduce latency and origin load.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html",
+          "title": "What is Amazon CloudFront? - Amazon CloudFront"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0017",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company needs its database to keep running through the loss of one data center facility with the least operational complexity. Which design is MOST appropriate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use one Availability Zone with a larger instance",
+          "correct": false,
+          "rationale": "A single zone still has a single point of failure, so a facility loss causes an outage."
+        },
+        {
+          "id": "b",
+          "text": "Deploy resources across multiple Availability Zones in one Region",
+          "correct": true,
+          "rationale": "Multiple zones remove the single facility dependency without the added cost and complexity of another Region."
+        },
+        {
+          "id": "c",
+          "text": "Replicate to edge locations around the world",
+          "correct": false,
+          "rationale": "Edge locations are for content caching and are not used to host database replicas."
+        },
+        {
+          "id": "d",
+          "text": "Deploy across three Regions with active replication",
+          "correct": false,
+          "rationale": "Three Regions would also work but add cost and complexity beyond what a zone-level failure requires."
+        }
+      ],
+      "explanation": "Match the redundancy level to the failure you must survive. A failure of a data center or zone is addressed by using multiple Availability Zones in the same Region, which are close enough for low-latency replication. A multi-Region design protects against Region-wide events but costs more and is more complex to run. Because the stated requirement is only the loss of one facility, multi-AZ is the best fit.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+          "title": "Global Infrastructure Regions & AZs"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0018",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "stem": "Which TWO statements about Availability Zones are correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Availability Zones in a Region are connected by low-latency, high-bandwidth networking",
+          "correct": true,
+          "rationale": "Fast links between zones enable synchronous replication across them."
+        },
+        {
+          "id": "b",
+          "text": "All Availability Zones in a Region share the same power source",
+          "correct": false,
+          "rationale": "Zones have independent power so that one outage does not affect the others."
+        },
+        {
+          "id": "c",
+          "text": "A Region has at least three Availability Zones",
+          "correct": true,
+          "rationale": "Each Region has a minimum of three zones."
+        },
+        {
+          "id": "d",
+          "text": "Availability Zones are always in different Regions",
+          "correct": false,
+          "rationale": "Zones are contained within a single Region."
+        },
+        {
+          "id": "e",
+          "text": "Availability Zones are the same as edge locations",
+          "correct": false,
+          "rationale": "They are distinct components with different purposes."
+        }
+      ],
+      "explanation": "Availability Zones are physically separate but close enough within a Region to be linked by redundant, dedicated, low-latency fiber. Each Region has at least three of them. They have independent power, cooling, and physical security, which is why failures are contained. Edge locations are a separate concept, and zones always belong to exactly one Region.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/regions_az/",
+          "title": "Global Infrastructure Regions & AZs"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0019",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "stem": "A company must remain operational even if an entire AWS Region is unavailable, and it also wants users in Europe and North America to have low latency. Which approach meets BOTH needs?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add more Availability Zones in a single Region",
+          "correct": false,
+          "rationale": "All zones are still in one Region, so a Region-wide event would affect them and distant users keep high latency."
+        },
+        {
+          "id": "b",
+          "text": "Place all resources in an edge location",
+          "correct": false,
+          "rationale": "Edge locations cache content and do not run full application stacks."
+        },
+        {
+          "id": "c",
+          "text": "Run the application in multiple Regions, one near each user group",
+          "correct": true,
+          "rationale": "Multiple Regions give disaster recovery and bring the application close to users in each geography."
+        },
+        {
+          "id": "d",
+          "text": "Use a single Region with a larger Amazon EC2 instance",
+          "correct": false,
+          "rationale": "One Region remains a single point of failure and distance still causes latency."
+        }
+      ],
+      "explanation": "Two requirements point to multiple Regions. Surviving a Region-wide outage needs a workload in a different, isolated Region, and low latency for users on two continents needs resources close to each group. Multiple Availability Zones help only within a Region, and edge locations help only with cacheable content. A multi-Region architecture satisfies both, at the cost of more complexity.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/about-aws/global-infrastructure/",
+          "title": "Global Infrastructure - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-3.2-0020",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "stem": "Which THREE actions help a company improve the high availability of a workload on AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Distribute instances across multiple Availability Zones",
+          "correct": true,
+          "rationale": "Spreading across zones means one zone failing does not stop the workload."
+        },
+        {
+          "id": "b",
+          "text": "Place all resources in a single Availability Zone to keep traffic local",
+          "correct": false,
+          "rationale": "This creates a single point of failure and reduces availability."
+        },
+        {
+          "id": "c",
+          "text": "Use a load balancer to route traffic to healthy instances",
+          "correct": true,
+          "rationale": "A load balancer sends requests only to instances that are healthy, hiding individual failures."
+        },
+        {
+          "id": "d",
+          "text": "Keep a single large server that handles all requests",
+          "correct": false,
+          "rationale": "One server is a single point of failure regardless of its size."
+        },
+        {
+          "id": "e",
+          "text": "Remove single points of failure by adding redundant components",
+          "correct": true,
+          "rationale": "Redundancy lets another component take over when one fails."
+        },
+        {
+          "id": "f",
+          "text": "Disable health checks to reduce overhead",
+          "correct": false,
+          "rationale": "Without health checks, failed resources keep receiving traffic."
+        }
+      ],
+      "explanation": "High availability relies on eliminating single points of failure. Redundant components, instances placed in multiple Availability Zones, and a load balancer that detects unhealthy targets and routes around them all allow a workload to continue operating through failures. Concentrating everything in one zone or on one large server, or turning off health checks, makes failures more likely to cause downtime.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/high-availability/",
+          "title": "What is High Availability? - High Availability Systems Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html",
+          "title": "Regions and Zones - Amazon Elastic Compute Cloud"
+        }
+      ]
+    }
+  ]
+}
