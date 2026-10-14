@@ -111,3 +111,22 @@ export async function listAttempts(certId, filter = {}) {
 export function listInProgress(certId) {
   return listAttempts(certId, { status: 'in_progress' })
 }
+
+/**
+ * Remembers which question the learner is on (the answers themselves go through
+ * saveResponse). A plain update is safe here: "currentIndex" has no dots.
+ * @param {string} attemptId
+ * @param {number} currentIndex
+ */
+export async function saveCurrentIndex(attemptId, currentIndex) {
+  const count = await db.attempts.update(attemptId, { currentIndex })
+  if (count === 0) throw new Error(`Attempt not found: ${attemptId}`)
+}
+
+/**
+ * Discards an attempt (the dashboard's "Discard" for an unfinished test).
+ * @param {string} attemptId
+ */
+export async function deleteAttempt(attemptId) {
+  await db.attempts.delete(attemptId)
+}

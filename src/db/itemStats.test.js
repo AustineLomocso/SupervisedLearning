@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest'
+import { db } from './db.js'
 import { resetDb } from '../test/resetDb.js'
-import { getStatsForCert, getStatsForSubdomain, recordAnswer } from './itemStats.js'
+import { getStatsForCert, getStatsForSubdomain, recordAnswer, recordAnswers } from './itemStats.js'
 
 /** @param {object} [overrides] */
 const answer = (overrides = {}) => ({
@@ -60,5 +61,52 @@ describe('queries', () => {
       'clf-c02-1.1-0001',
       'clf-c02-1.2-0001',
     ])
+  })
+})
+
+describe('recordAnswers', () => {
+  /** @param {string} itemId @param {boolean} correct @param {number} at */
+  const answer = (itemId, correct, at) => ({
+    itemId,
+    certId: 'clf-c02',
+    subdomainId: 'clf-c02/1.1',
+    itemVersion: 1,
+    correct,
+    at,
+  })
+
+  it('records a batch in one go', async () => {
+    await recordAnswers([
+      answer('clf-c02-1.1-0001', true, 10),
+      answer('clf-c02-1.1-0002', false, 20),
+    ])
+    const rows = await db.itemStats.toArray()
+    expect(rows.map((row) => [row.itemId, row.seenCount, row.lastCorrect]).sort()).toEqual([
+      ['clf-c02-1.1-0001', 1, true],
+      ['clf-c02-1.1-0002', 1, false],
+    ])
+  })
+
+  it('counts the same item twice when it repeats in a batch', async () => {
+    await recordAnswers([
+      answer('clf-c02-1.1-0001', true, 10),
+      answer('clf-c02-1.1-0001', false, 20),
+    ])
+    expect(await db.itemStats.get('clf-c02-1.1-0001')).toMatchObject({
+      seenCount: 2,
+      correctCount: 1,
+      lastSeenAt: 20,
+      lastCorrect: false,
+    })
+  })
+
+  it('rolls back with an enclosing transaction', async () => {
+    await expect(
+      db.transaction('rw', [db.attempts, db.itemStats], async () => {
+        await recordAnswers([answer('clf-c02-1.1-0001', true, 10)])
+        throw new Error('abort')
+      }),
+    ).rejects.toThrow('abort')
+    expect(await db.itemStats.count()).toBe(0)
   })
 })

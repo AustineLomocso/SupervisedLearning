@@ -2,9 +2,11 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { resetDb } from '../test/resetDb.js'
 import {
   createAttempt,
+  deleteAttempt,
   getAttempt,
   listAttempts,
   listInProgress,
+  saveCurrentIndex,
   saveResponse,
   submitAttempt,
 } from './attempts.js'
@@ -121,5 +123,39 @@ describe('listAttempts', () => {
     expect((await listAttempts('clf-c02', { status: 'submitted' })).map((a) => a.id)).toEqual([
       older.id,
     ])
+  })
+})
+
+describe('deleteAttempt', () => {
+  it('removes the attempt', async () => {
+    const attempt = await createAttempt({
+      certId: 'clf-c02',
+      kind: 'pre',
+      scopeId: 'clf-c02/1.1',
+      mode: 'study',
+      itemIds: ['clf-c02-1.1-0001'],
+      optionOrder: {},
+    })
+    await deleteAttempt(attempt.id)
+    expect(await getAttempt(attempt.id)).toBeUndefined()
+  })
+})
+
+describe('saveCurrentIndex', () => {
+  it('remembers where the learner is', async () => {
+    const attempt = await createAttempt({
+      certId: 'clf-c02',
+      kind: 'pre',
+      scopeId: 'clf-c02/1.1',
+      mode: 'study',
+      itemIds: ['clf-c02-1.1-0001', 'clf-c02-1.1-0002'],
+      optionOrder: {},
+    })
+    await saveCurrentIndex(attempt.id, 1)
+    expect((await getAttempt(attempt.id))?.currentIndex).toBe(1)
+  })
+
+  it('complains about an unknown attempt', async () => {
+    await expect(saveCurrentIndex('missing', 1)).rejects.toThrow('Attempt not found')
   })
 })
