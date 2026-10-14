@@ -67,3 +67,26 @@ describe('Markdown', () => {
     expect(container.querySelector('script, b')).toBeNull()
   })
 })
+
+describe('Markdown inline variant', () => {
+  it('renders question text without heading ids, so many can share a page', () => {
+    render(
+      <>
+        <Markdown variant="inline">{'## Same heading'}</Markdown>
+        <Markdown variant="inline">{'## Same heading'}</Markdown>
+      </>,
+    )
+    for (const heading of screen.getAllByRole('heading', { name: 'Same heading' })) {
+      expect(heading).not.toHaveAttribute('id')
+    }
+  })
+
+  it('still renders formatting and drops raw HTML', () => {
+    const { container } = render(
+      <Markdown variant="inline">{'Use `aws s3 ls` and **bold** <b>raw</b>'}</Markdown>,
+    )
+    expect(screen.getByText('aws s3 ls').tagName).toBe('CODE')
+    expect(screen.getByText('bold').tagName).toBe('STRONG')
+    expect(container.querySelector('b')).toBeNull()
+  })
+})
