@@ -55,7 +55,12 @@ describe('buildCertIndex', () => {
         1.2: { '001': ['tst-c01-1.2-0001', 'tst-c01-1.2-0002'] },
         2.1: { '001': ['tst-c01-2.1-0001'] },
       },
+      retired: { 'tst-c01-2.1-0002': '2.1/001' },
     })
+  })
+
+  it('has an empty retired map when nothing is retired', () => {
+    expect(buildCertIndex(makeContent().certs[0]).retired).toEqual({})
   })
 
   it('gives tasks without items an empty shard map', () => {

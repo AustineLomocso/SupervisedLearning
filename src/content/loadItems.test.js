@@ -20,6 +20,7 @@ const INDEX = {
     1.1: { '001': ['tst-c01-1.1-0001', 'tst-c01-1.1-0002'], '002': ['tst-c01-1.1-0026'] },
     1.2: { '001': ['tst-c01-1.2-0001'] },
   },
+  retired: { 'tst-c01-1.2-0002': '1.2/001' },
 }
 
 const P11A = '/content/tst-c01/items/1.1/001.json'
@@ -55,6 +56,17 @@ function setup(cacheSize) {
 }
 
 describe('createItemLoader', () => {
+  it('still loads a retired item through the index', async () => {
+    const { loader, shards } = setup()
+    shards[P12].mockResolvedValue({
+      schemaVersion: 1,
+      subdomain: '1.2',
+      items: [item('tst-c01-1.2-0001'), { ...item('tst-c01-1.2-0002'), retired: true }],
+    })
+    const [loaded] = await loader.loadItems('tst-c01', ['tst-c01-1.2-0002'])
+    expect(loaded).toMatchObject({ id: 'tst-c01-1.2-0002', certId: 'tst-c01', taskCode: '1.2' })
+  })
+
   it('returns items in the requested order, tagged with cert and task', async () => {
     const { loader } = setup()
     const items = await loader.loadItems('tst-c01', ['tst-c01-1.2-0001', 'tst-c01-1.1-0002'])

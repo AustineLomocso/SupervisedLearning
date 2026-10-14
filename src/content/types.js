@@ -55,6 +55,7 @@
  * @typedef {object} CertIndex
  * @property {Record<string, string[]>} objectives
  * @property {Record<string, Record<string, string[]>>} shards
+ * @property {Record<string, string>} retired retired item id → "<task>/<shardNo>"; still loadable
  */
 
 export {}
