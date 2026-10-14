@@ -8,7 +8,7 @@ A 100% frontend React + Vite study app for the AWS CLF-C02 and AIF-C01 exams, de
 
 - The design spec is `docs/superpowers/specs/2026-10-13-aws-cert-review-design.md`. Read it before changing anything user-facing.
 - Phase plans are in `docs/superpowers/plans/`.
-- Phases 1 (app shell, data layer), 2 (content engine, seed content) and 3 (curriculum UI) are done. Phase 4 (exam engine), 5 (deploy), and 6 (bulk content) are not built yet. Until Phase 4, the test setup page’s Start button is disabled on purpose.
+- Phases 1 (app shell, data layer), 2 (content engine, seed content), 3 (curriculum UI) and 4 (exam engine) are done. Phase 5 (deploy) and 6 (bulk content) are not built yet.
 
 ## Commands
 
@@ -87,6 +87,21 @@ Theme logic is duplicated on purpose in the inline script in `index.html` (it ru
 - Table-of-contents links use `focus()` + `scrollIntoView()`, never `#id` navigation (the HashRouter reason as the skip link).
 - Confirmations use `window.confirm`, because jsdom has no `<dialog>.showModal`. Tests spy on it.
 - `e2e/a11y.spec.js` runs axe (WCAG 2.1 A/AA) on every page in both themes. Fix violations at the source; don’t exclude elements.
+
+**Exam engine (Phase 4).**
+
+- `src/engine/` holds pure logic (no DB): `rng.js` (seeded), `blueprint.js` (largest-remainder allocation, even spreading), `selectItems.js` (unseen-first), `drill.js`, `grading.js` (`isCorrect`, `finalizeResponses`, `scoreAttempt`, `buildResult`) and `scaledScore.js`. `startTest.js` orchestrates selection, shard loading and `createAttempt`.
+- `src/db/session.js` is the only place answers are applied:
+  - `lockAnswer` (Study mode) saves the response and `itemStats` in one transaction.
+  - `saveSelection` and `toggleMarked` (Exam mode) save ungraded changes.
+  - `finishAttempt` grades everything, records `itemStats` for items not already locked, and stores the result atomically. Afterwards it calls `requestPersistence()`.
+- Unanswered questions count as wrong in the score, in mastery and in `itemStats`.
+- Selection draws only from the cert index’s `shards` (active ids). The index’s `retired` map keeps withdrawn items loadable so old attempts still resume and show results.
+- The runner (`routes/AttemptPage.jsx`) redirects a submitted attempt to its results; results redirect an unfinished attempt to the runner. A timed attempt past its deadline auto-finishes when opened.
+- Question text and explanations use `<Markdown variant="inline">` (no heading ids, so many can share a page).
+- Component tests that need questions mock `content/loadItems.js` and use `src/test/itemFactories.js`.
+- Test timing: Vitest’s `testTimeout` is 15 s and Testing Library’s `asyncUtilTimeout` is 10 s (both set once, in `vite.config.js` and `src/test/setup.js`), because the first visit to a lazy route is slow on a busy machine. Data written through Dexie reaches the page via live queries a moment later, so assert it with `waitFor`.
+- In Playwright, `getByRole('radio', { name: '5' })` also matches ‘15’: pass `exact: true`.
 
 **Routing.** `createHashRouter`, because GitHub Pages has no rewrites.
 
