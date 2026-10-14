@@ -16,7 +16,6 @@ describe('routes', () => {
     ['/clf-c02/s/1.1/review', 'Define the benefits of the AWS Cloud'],
     ['/clf-c02/test/new?kind=diagnostic', 'Diagnostic Exam'],
     ['/aif-c01/test/new?kind=pre&scope=2.1', 'Pre-Test'],
-    ['/attempt/abc/results', 'Results'],
   ])('%s renders its page', async (path, heading) => {
     renderRoute(path)
     expect(
@@ -33,6 +32,7 @@ describe('routes', () => {
     '/clf-c02/test/new?kind=quiz',
     '/attempt',
     '/attempt/abc',
+    '/attempt/abc/results',
     '/clf-c02/test/new?kind=pre',
     '/clf-c02/test/new?kind=pre&scope=9.9',
     '/clf-c02/test/new?kind=diagnostic&scope=1.1',

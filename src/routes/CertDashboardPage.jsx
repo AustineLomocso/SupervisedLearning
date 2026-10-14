@@ -7,7 +7,8 @@ import { NO_MASTERY, poolMastery, recommendNext } from '../engine/mastery.js'
 import { TEST_KIND_LABELS } from '../engine/testKinds.js'
 import { useCert } from '../hooks/useCert.js'
 import { useCertProgress } from '../hooks/useCertProgress.js'
-import { describeMastery, formatWeight } from '../lib/format.js'
+import { deleteAttempt } from '../db/attempts.js'
+import { describeMastery, formatDate, formatWeight } from '../lib/format.js'
 
 /** @typedef {import('../content/certs.js').CertSummary} CertSummary */
 /** @typedef {import('../hooks/useCertProgress.js').CertProgress} CertProgress */
@@ -41,6 +42,9 @@ function DashboardBody({ cert, progress }) {
   const isNew = progress.answeredCount === 0
   return (
     <>
+      <InProgress
+        attempts={progress.attempts.filter((attempt) => attempt.status === 'in_progress')}
+      />
       <section aria-labelledby="exams-heading" className="mt-6">
         <h2 id="exams-heading" className="text-xl font-semibold">
           Practice exams
@@ -127,5 +131,66 @@ function DashboardBody({ cert, progress }) {
         </ul>
       </section>
     </>
+  )
+}
+
+/** @param {{ attempts: import('../db/types.js').Attempt[] }} props */
+function InProgress({ attempts }) {
+  if (attempts.length === 0) return null
+  return (
+    <section aria-labelledby="inprogress-heading" className="mt-6">
+      <h2 id="inprogress-heading" className="text-xl font-semibold">
+        In progress
+      </h2>
+      <ul aria-label="Unfinished tests" className="mt-3 space-y-2">
+        {attempts.map((attempt) => {
+          const label = TEST_KIND_LABELS[attempt.kind]
+          const answered = Object.values(attempt.responses).filter(
+            (response) => response.selected.length > 0,
+          ).length
+          const started = formatDate(attempt.startedAt)
+          return (
+            <li
+              key={attempt.id}
+              className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-200 p-3 dark:border-slate-800"
+            >
+              <div>
+                <p className="font-medium">{label}</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Started {started} · {answered} of {attempt.itemIds.length} answered
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <Link
+                  to={`/attempt/${attempt.id}`}
+                  aria-label={`Resume ${label} started ${started}`}
+                  className={buttonClass('primary')}
+                >
+                  Resume
+                </Link>
+                <button
+                  type="button"
+                  aria-label={`Discard ${label} started ${started}`}
+                  onClick={() => {
+                    if (
+                      window.confirm(
+                        'Discard this unfinished test? Your answers in it will be lost.',
+                      )
+                    ) {
+                      deleteAttempt(attempt.id).catch((error) =>
+                        console.error('Failed to discard attempt', error),
+                      )
+                    }
+                  }}
+                  className={buttonClass('danger')}
+                >
+                  Discard
+                </button>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+    </section>
   )
 }
