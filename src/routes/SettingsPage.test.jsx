@@ -45,4 +45,13 @@ describe('SettingsPage', () => {
     render(<SettingsPage />)
     expect(await screen.findByText(/can’t protect stored progress/)).toBeInTheDocument()
   })
+
+  it('groups backup, reports and reset sections', async () => {
+    stubStorage({ persisted: async () => true })
+    render(<SettingsPage />)
+    for (const name of ['Backup', 'My reports', 'Reset progress']) {
+      expect(screen.getByRole('heading', { level: 2, name })).toBeInTheDocument()
+    }
+    expect(await screen.findByText(/haven’t reported any questions/)).toBeInTheDocument()
+  })
 })

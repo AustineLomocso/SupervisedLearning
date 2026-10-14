@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react'
+import BackupSection from '../components/settings/BackupSection.jsx'
+import ReportsSection from '../components/settings/ReportsSection.jsx'
+import ResetSection from '../components/settings/ResetSection.jsx'
 import { getPersistenceStatus, requestPersistence } from '../db/persist.js'
 import { useUiStore } from '../stores/useUiStore.js'
 
@@ -78,6 +81,9 @@ export default function SettingsPage() {
           </button>
         )}
       </section>
+      <BackupSection />
+      <ReportsSection />
+      <ResetSection />
     </>
   )
 }

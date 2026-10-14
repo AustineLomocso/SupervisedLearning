@@ -19,15 +19,21 @@ describe('routes', () => {
     expect(await screen.findByRole('heading', { level: 1, name: heading })).toBeInTheDocument()
   })
 
-  it.each(['/saa-c03', '/clf-c02/nope', '/clf-c02/test/new?kind=quiz', '/attempt'])(
-    '%s shows the not-found page',
-    async (path) => {
-      renderRoute(path)
-      expect(
-        await screen.findByRole('heading', { level: 1, name: 'Page not found' }),
-      ).toBeInTheDocument()
-    },
-  )
+  it.each([
+    '/saa-c03',
+    '/clf-c02/nope',
+    '/clf-c02/test/new?kind=quiz',
+    '/attempt',
+    '/clf-c02/test/new?kind=pre',
+    '/clf-c02/test/new?kind=pre&scope=9.9',
+    '/clf-c02/test/new?kind=diagnostic&scope=1.1',
+    '/clf-c02/test/new?kind=domain&scope=7',
+  ])('%s shows the not-found page', async (path) => {
+    renderRoute(path)
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'Page not found' }),
+    ).toBeInTheDocument()
+  })
 
   it('breadcrumbs trace the curriculum path', async () => {
     renderRoute('/clf-c02/s/1.1/review')

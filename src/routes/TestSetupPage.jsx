@@ -1,5 +1,7 @@
 import { useSearchParams } from 'react-router-dom'
-import { isTestKind, TEST_KIND_LABELS } from '../engine/testKinds.js'
+import TestSetupForm from '../components/test/TestSetupForm.jsx'
+import { resolveTestScope } from '../engine/testConfig.js'
+import { isTestKind } from '../engine/testKinds.js'
 import { useCert } from '../hooks/useCert.js'
 import NotFoundPage from './NotFoundPage.jsx'
 
@@ -8,14 +10,8 @@ export default function TestSetupPage() {
   const [searchParams] = useSearchParams()
   const kind = searchParams.get('kind')
   if (!isTestKind(kind)) return <NotFoundPage />
-  const scope = searchParams.get('scope')
-  return (
-    <>
-      <h1 className="text-3xl font-bold">{TEST_KIND_LABELS[kind]}</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
-        {cert.code}
-        {scope ? ` · ${scope}` : ''}
-      </p>
-    </>
-  )
+  const scope = resolveTestScope(cert, kind, searchParams.get('scope'))
+  if (!scope) return <NotFoundPage />
+  // Remount on a new kind or scope so the form's defaults reset.
+  return <TestSetupForm key={`${kind}:${scope.scopeId}`} cert={cert} kind={kind} scope={scope} />
 }
