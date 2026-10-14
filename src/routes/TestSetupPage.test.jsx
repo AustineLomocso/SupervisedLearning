@@ -17,7 +17,7 @@ describe('TestSetupPage', () => {
     ])
     expect(screen.getByRole('radio', { name: '10' })).toBeChecked()
     expect(screen.getByText(/^Untimed/)).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /^Start/ })).toBeDisabled()
+    expect(screen.getByRole('button', { name: /^Start/ })).toBeEnabled()
   })
 
   it('turns off lengths longer than the question pool', async () => {
