@@ -8,7 +8,7 @@ A 100% frontend React + Vite study app for the AWS CLF-C02 and AIF-C01 exams, de
 
 - The design spec is `docs/superpowers/specs/2026-10-13-aws-cert-review-design.md`. Read it before changing anything user-facing.
 - Phase plans are in `docs/superpowers/plans/`.
-- Phases 1 (app shell, data layer) and 2 (content engine, seed content) are done. Phase 3 (curriculum UI), 4 (exam engine), 5 (deploy), and 6 (bulk content) are not built yet.
+- Phases 1 (app shell, data layer), 2 (content engine, seed content) and 3 (curriculum UI) are done. Phase 4 (exam engine), 5 (deploy), and 6 (bulk content) are not built yet. Until Phase 4, the test setup page’s Start button is disabled on purpose.
 
 ## Commands
 
@@ -72,6 +72,21 @@ A 100% frontend React + Vite study app for the AWS CLF-C02 and AIF-C01 exams, de
 - `useSessionStore`: the active attempt cursor and the capped multiple-response selection.
 
 Theme logic is duplicated on purpose in the inline script in `index.html` (it runs before React to avoid a flash of the wrong theme) and in `applyTheme`. Keep the two equivalent.
+
+**Curriculum UI (Phase 3).**
+
+- Pages read progress through `hooks/useCertProgress.js` (`useLiveQuery` over attempts and review marks), so they update live. Derivations are pure functions in `src/engine/`:
+  - `mastery.js`: last-20-answers window, bands, `poolMastery`, `recommendNext`.
+  - `subdomainStatus.js`: Pre-Test/Review/Post-Test status and the next step.
+  - `testConfig.js`: `kind`/`scope` validation and length choices.
+- Mastery reads `attempt.responses`, not `itemStats`, because `itemStats` keeps only the latest result per item.
+- Mastery bands always render icon + label + percentage (`components/curriculum/`). Never color alone.
+- Lessons render through `components/markdown/Markdown.jsx` (react-markdown + remark-gfm + rehype-slug; raw HTML is dropped).
+  - `MermaidBlock` imports `mermaid` only when a diagram mounts, and redraws on theme change via `useIsDark`.
+  - Any Vitest file that renders a lesson must `vi.mock('mermaid')`.
+- Table-of-contents links use `focus()` + `scrollIntoView()`, never `#id` navigation (the HashRouter reason as the skip link).
+- Confirmations use `window.confirm`, because jsdom has no `<dialog>.showModal`. Tests spy on it.
+- `e2e/a11y.spec.js` runs axe (WCAG 2.1 A/AA) on every page in both themes. Fix violations at the source; don’t exclude elements.
 
 **Routing.** `createHashRouter`, because GitHub Pages has no rewrites.
 

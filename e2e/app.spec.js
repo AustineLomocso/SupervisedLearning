@@ -12,7 +12,10 @@ test('home lists both certifications and opens a dashboard', async ({ page }) =>
 
 test('a deep link survives a full reload', async ({ page }) => {
   await page.goto('./#/aif-c01/s/2.1/review')
-  const heading = page.getByRole('heading', { level: 1, name: 'Review: Task 2.1' })
+  const heading = page.getByRole('heading', {
+    level: 1,
+    name: 'Explain the basic concepts of generative AI (GenAI)',
+  })
   await expect(heading).toBeVisible()
   await page.reload()
   await expect(heading).toBeVisible()

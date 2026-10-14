@@ -28,3 +28,65 @@
     scroll-behavior: auto !important;
   }
 }
+
+@layer components {
+  .lesson {
+    @apply leading-7;
+  }
+  .lesson h1 {
+    @apply text-3xl leading-tight font-bold;
+  }
+  .lesson h2 {
+    @apply mt-10 scroll-mt-4 text-2xl font-semibold;
+  }
+  .lesson h3 {
+    @apply mt-6 scroll-mt-4 text-xl font-semibold;
+  }
+  .lesson p,
+  .lesson ul,
+  .lesson ol,
+  .lesson pre,
+  .lesson .table-wrap {
+    @apply mt-4;
+  }
+  .lesson ul {
+    @apply list-disc pl-6;
+  }
+  .lesson ol {
+    @apply list-decimal pl-6;
+  }
+  .lesson li + li {
+    @apply mt-1;
+  }
+  .lesson a {
+    @apply font-medium text-amber-700 underline underline-offset-2 dark:text-amber-400;
+  }
+  .lesson strong {
+    @apply font-semibold;
+  }
+  .lesson code {
+    @apply rounded bg-slate-100 px-1 py-0.5 text-sm dark:bg-slate-800;
+  }
+  .lesson pre {
+    @apply overflow-x-auto rounded bg-slate-100 p-4 dark:bg-slate-800;
+  }
+  .lesson pre code {
+    @apply bg-transparent p-0;
+  }
+  .lesson .table-wrap {
+    @apply overflow-x-auto;
+  }
+  .lesson table {
+    @apply w-full border-collapse text-left text-sm;
+  }
+  .lesson th,
+  .lesson td {
+    @apply border border-slate-300 px-3 py-2 align-top dark:border-slate-700;
+  }
+  .lesson th {
+    @apply bg-slate-100 font-semibold dark:bg-slate-800;
+  }
+  .mermaid-diagram svg {
+    @apply mx-auto h-auto max-w-full;
+  }
+}

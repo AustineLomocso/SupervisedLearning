@@ -18,3 +18,16 @@ export function subdomainId(certId, taskCode) {
 export function domainId(certId, domainNo) {
   return `${certId}/d${domainNo}`
 }
+
+// Same shape the content schema enforces: "<cert>-<task>-NNNN".
+const ITEM_ID = /^([a-z]{3}-c\d{2})-(\d+\.\d+)-\d{4}$/
+
+/**
+ * Splits a permanent item id such as "clf-c02-1.1-0042" into its cert and task.
+ * @param {string} itemId
+ * @returns {{ certId: string, taskCode: string } | null}
+ */
+export function parseItemId(itemId) {
+  const match = ITEM_ID.exec(itemId)
+  return match ? { certId: match[1], taskCode: match[2] } : null
+}
