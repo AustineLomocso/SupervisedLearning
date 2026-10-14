@@ -7,7 +7,7 @@ describe('routes', () => {
     ['/', 'AWS Practitioner Exam Prep'],
     ['/settings', 'Settings'],
     ['/clf-c02', 'CLF-C02: AWS Certified Cloud Practitioner'],
-    ['/aif-c01/d/3', 'Domain 3'],
+    ['/aif-c01/d/3', 'Domain 3: Applications of Foundation Models'],
     ['/clf-c02/s/1.1', 'Task 1.1'],
     ['/clf-c02/s/1.1/review', 'Review: Task 1.1'],
     ['/clf-c02/test/new?kind=diagnostic', 'Diagnostic Exam'],
@@ -19,7 +19,7 @@ describe('routes', () => {
     expect(await screen.findByRole('heading', { level: 1, name: heading })).toBeInTheDocument()
   })
 
-  it.each(['/saa-c03', '/clf-c02/nope', '/clf-c02/test/new?kind=quiz', '/attempt'])(
+  it.each(['/saa-c03', '/clf-c02/nope', '/clf-c02/d/9', '/clf-c02/test/new?kind=quiz', '/attempt'])(
     '%s shows the not-found page',
     async (path) => {
       renderRoute(path)
