@@ -216,7 +216,8 @@ describe('AttemptPage in Exam mode', () => {
         correct: null,
       }),
     )
-    expect(screen.getByRole('radio', { name: 'Amazon S3' })).toBeChecked()
+    // The saved change reaches the page through a live query, a moment after the write.
+    await waitFor(() => expect(screen.getByRole('radio', { name: 'Amazon S3' })).toBeChecked())
   })
 
   it('marks a question for review', async () => {
