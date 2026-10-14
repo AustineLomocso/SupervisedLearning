@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import CertCard from '../components/curriculum/CertCard.jsx'
 import { CERTS } from '../content/certs.js'
 
 export default function HomePage() {
@@ -12,18 +12,24 @@ export default function HomePage() {
       <ul className="mt-6 grid gap-4 sm:grid-cols-2">
         {CERTS.map((cert) => (
           <li key={cert.id}>
-            <Link
-              to={`/${cert.id}`}
-              className="block rounded-lg border border-slate-200 p-5 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-600"
-            >
-              <span className="block text-sm font-semibold tracking-wide text-amber-700 dark:text-amber-400">
-                {cert.code}
-              </span>
-              <span className="mt-1 block text-lg font-medium">{cert.title}</span>
-            </Link>
+            <CertCard cert={cert} />
           </li>
         ))}
       </ul>
+      <aside
+        aria-label="About this app"
+        className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm dark:border-slate-800 dark:bg-slate-900"
+      >
+        <p>
+          <strong>Not affiliated with AWS.</strong> This is an independent study aid, not an
+          official AWS product.
+        </p>
+        <p className="mt-2">
+          <strong>AI-generated content.</strong> Questions and lessons were written with AI and may
+          contain mistakes. Check the linked AWS documentation, and use “Report issue” on any
+          question to flag a problem.
+        </p>
+      </aside>
     </>
   )
 }
