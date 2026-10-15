@@ -31,7 +31,7 @@ export default function AppShell() {
         id="main"
         ref={mainRef}
         tabIndex={-1}
-        className="mx-auto w-full max-w-5xl flex-1 px-4 py-6 outline-none"
+        className="mx-auto min-h-screen w-full max-w-5xl flex-1 px-4 py-6 outline-none"
       >
         <Outlet />
       </main>

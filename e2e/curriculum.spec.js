@@ -13,6 +13,8 @@ test('guided path: dashboard → task → lesson → mark reviewed', async ({ pa
   await expect(
     page.getByRole('heading', { level: 1, name: 'Define the benefits of the AWS Cloud' }),
   ).toBeVisible()
+  // Diagrams are drawn only once they come near the screen.
+  await page.locator('.mermaid-diagram').scrollIntoViewIfNeeded()
   await expect(page.locator('.mermaid-diagram svg')).toBeVisible()
 
   await page.getByRole('button', { name: 'Mark as reviewed' }).click()

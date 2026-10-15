@@ -1,13 +1,16 @@
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { useIsDark } from '../../hooks/useIsDark.js'
 
 /** @typedef {typeof import('mermaid').default} Mermaid */
 /** @typedef {{ status: 'loading' } | { status: 'ready', svg: string } | { status: 'error' }} DiagramState */
 
+/** Start drawing a little before the diagram scrolls into view. */
+const NEAR_VIEWPORT_MARGIN = '200px'
+
 /** @type {Promise<Mermaid> | null} */
 let mermaidModule = null
 
-/** Mermaid is large, so it is downloaded only when a diagram is actually on screen. */
+/** Mermaid is large, so it is downloaded only when the first diagram comes near the screen. */
 function loadMermaid() {
   if (!mermaidModule) {
     mermaidModule = import('mermaid').then((module) => module.default)
@@ -20,17 +23,48 @@ function loadMermaid() {
 }
 
 /**
- * Renders a ```mermaid fence as an SVG diagram in the current theme. Lesson authors are
- * trusted, and securityLevel "strict" still strips scripts and click handlers.
+ * True once the element is within NEAR_VIEWPORT_MARGIN of the viewport (and stays true).
+ * Without IntersectionObserver (old browsers, jsdom) it is true straight away.
+ * @param {import('react').RefObject<Element | null>} ref
+ */
+function useNearViewport(ref) {
+  const [near, setNear] = useState(() => typeof IntersectionObserver === 'undefined')
+  useEffect(() => {
+    const element = ref.current
+    if (near || !element) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setNear(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: NEAR_VIEWPORT_MARGIN },
+    )
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [near, ref])
+  return near
+}
+
+/**
+ * Renders a ```mermaid fence as an SVG diagram in the current theme. Drawing is deferred
+ * until the diagram nears the screen: Mermaid's download and layout block the main thread
+ * for hundreds of milliseconds, which a learner reading the top of a lesson doesn't need yet.
+ * Lesson authors are trusted, and securityLevel "strict" still strips scripts and click
+ * handlers.
  * @param {{ code: string }} props
  */
 export default function MermaidBlock({ code }) {
   const dark = useIsDark()
   // Mermaid uses the id in CSS selectors, so strip the punctuation React puts in useId values.
   const id = `mermaid-${useId().replace(/[^\w-]/g, '')}`
+  const placeholderRef = useRef(/** @type {HTMLElement | null} */ (null))
+  const near = useNearViewport(placeholderRef)
   const [state, setState] = useState(/** @type {DiagramState} */ ({ status: 'loading' }))
 
   useEffect(() => {
+    if (!near) return
     let cancelled = false
     loadMermaid()
       .then(async (mermaid) => {
@@ -49,10 +83,18 @@ export default function MermaidBlock({ code }) {
     return () => {
       cancelled = true
     }
-  }, [code, dark, id])
+  }, [near, code, dark, id])
 
   if (state.status === 'loading') {
-    return <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">Loading diagram…</p>
+    // Holds roughly a diagram's height so the text below doesn't jump when it is drawn.
+    return (
+      <figure
+        ref={placeholderRef}
+        className="mermaid-diagram mt-4 flex min-h-64 items-center justify-center rounded border border-dashed border-slate-300 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300"
+      >
+        Loading diagram…
+      </figure>
+    )
   }
   if (state.status === 'error') {
     return (

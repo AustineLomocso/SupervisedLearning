@@ -51,3 +51,58 @@ describe('MermaidBlock', () => {
     expect(screen.getByText(/A --> B/)).toBeInTheDocument()
   })
 })
+
+describe('MermaidBlock below the fold', () => {
+  /** A stand-in IntersectionObserver whose callback the test triggers by hand. */
+  class FakeObserver {
+    /** @type {FakeObserver[]} */
+    static instances = []
+
+    /**
+     * @param {(entries: { isIntersecting: boolean }[]) => void} callback
+     * @param {IntersectionObserverInit} options
+     */
+    constructor(callback, options) {
+      this.callback = callback
+      this.options = options
+      this.observe = vi.fn()
+      this.disconnect = vi.fn()
+      FakeObserver.instances.push(this)
+    }
+
+    /** @param {boolean} isIntersecting */
+    fire(isIntersecting) {
+      act(() => this.callback([{ isIntersecting }]))
+    }
+  }
+
+  beforeEach(() => {
+    FakeObserver.instances = []
+    vi.stubGlobal('IntersectionObserver', FakeObserver)
+  })
+
+  afterEach(() => vi.unstubAllGlobals())
+
+  it('waits to draw until the diagram comes near the screen', async () => {
+    render(<MermaidBlock code={CODE} />)
+    const placeholder = screen.getByText('Loading diagram…')
+    const [observer] = FakeObserver.instances
+    expect(observer.options).toEqual({ rootMargin: '200px' })
+    expect(observer.observe).toHaveBeenCalledWith(placeholder)
+
+    observer.fire(false)
+    await new Promise((resolve) => setTimeout(resolve, 20))
+    expect(mermaid.render).not.toHaveBeenCalled()
+
+    observer.fire(true)
+    expect(await screen.findByTestId('diagram')).toBeInTheDocument()
+    expect(observer.disconnect).toHaveBeenCalled()
+  })
+
+  it('reserves space for the diagram while it waits', () => {
+    render(<MermaidBlock code={CODE} />)
+    const placeholder = screen.getByText('Loading diagram…')
+    expect(placeholder.tagName).toBe('FIGURE')
+    expect(placeholder).toHaveClass('mermaid-diagram', 'min-h-64')
+  })
+})
