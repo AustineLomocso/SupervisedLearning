@@ -24,6 +24,8 @@
     "pretypecheck": "npm run build:index",
     "validate:content": "node tools/validate-content.mjs",
     "content:stats": "node tools/content-stats.mjs",
+    "blind:export": "node tools/blind-export.mjs",
+    "blind:compare": "node tools/blind-compare.mjs",
     "check:links": "node tools/check-links.mjs",
     "check:size": "node tools/check-size.mjs"
   },
