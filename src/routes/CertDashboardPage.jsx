@@ -21,10 +21,10 @@ export default function CertDashboardPage() {
   const progress = useCertProgress(cert.id)
   return (
     <>
-      <h1 className="text-3xl font-bold">
+      <h1 className="text-[28px] leading-tight font-bold">
         {cert.code}: {cert.title}
       </h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-ink-muted">
         The real exam has {cert.exam.questions} questions in {cert.exam.minutes} minutes. A scaled
         score of {cert.exam.passScaled} passes.
       </p>
@@ -46,7 +46,7 @@ function DashboardBody({ cert, progress }) {
         attempts={progress.attempts.filter((attempt) => attempt.status === 'in_progress')}
       />
       <section aria-labelledby="exams-heading" className="mt-6">
-        <h2 id="exams-heading" className="text-xl font-semibold">
+        <h2 id="exams-heading" className="text-lg font-bold">
           Practice exams
         </h2>
         {isNew && (
@@ -67,17 +67,17 @@ function DashboardBody({ cert, progress }) {
       </section>
 
       <section aria-labelledby="next-heading" className="mt-8">
-        <h2 id="next-heading" className="text-xl font-semibold">
+        <h2 id="next-heading" className="text-lg font-bold">
           Recommended next
         </h2>
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+        <p className="mt-1 text-sm text-ink-muted">
           The tasks with the most to gain, weighted by how much of the exam their domain covers.
         </p>
         <ol aria-labelledby="next-heading" className="mt-3 space-y-2">
           {recommendNext(cert, progress.mastery).map(({ subdomain, domain, mastery }) => (
             <li
               key={subdomain.id}
-              className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-lg border border-slate-200 p-3 dark:border-slate-800"
+              className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl bg-surface-alt p-3"
             >
               <div>
                 <Link
@@ -86,7 +86,7 @@ function DashboardBody({ cert, progress }) {
                 >
                   Task {subdomain.code}: {subdomain.title}
                 </Link>
-                <p className="text-sm text-slate-600 dark:text-slate-300">
+                <p className="text-sm text-ink-muted">
                   Domain {domain.no}: {domain.title}
                 </p>
               </div>
@@ -101,7 +101,7 @@ function DashboardBody({ cert, progress }) {
       </div>
 
       <section aria-labelledby="domains-heading" className="mt-8">
-        <h2 id="domains-heading" className="text-xl font-semibold">
+        <h2 id="domains-heading" className="text-lg font-bold">
           Domains
         </h2>
         <ul className="mt-3 grid gap-4 sm:grid-cols-2">
@@ -113,12 +113,12 @@ function DashboardBody({ cert, progress }) {
               <li key={domain.id}>
                 <Link
                   to={`/${cert.id}/d/${domain.no}`}
-                  className="block h-full rounded-lg border border-slate-200 p-4 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-600"
+                  className="block h-full rounded-2xl bg-surface p-5 shadow-container hover:bg-surface-alt"
                 >
                   <span className="block font-semibold">
                     Domain {domain.no}: {domain.title}
                   </span>
-                  <span className="mt-1 block text-sm text-slate-600 dark:text-slate-300">
+                  <span className="mt-1 block text-sm text-ink-muted">
                     {formatWeight(domain.weight)} of the exam · {domain.subdomains.length} tasks
                   </span>
                   <span className="mt-1 block text-sm">
@@ -139,7 +139,7 @@ function InProgress({ attempts }) {
   if (attempts.length === 0) return null
   return (
     <section aria-labelledby="inprogress-heading" className="mt-6">
-      <h2 id="inprogress-heading" className="text-xl font-semibold">
+      <h2 id="inprogress-heading" className="text-lg font-bold">
         In progress
       </h2>
       <ul aria-label="Unfinished tests" className="mt-3 space-y-2">
@@ -152,11 +152,11 @@ function InProgress({ attempts }) {
           return (
             <li
               key={attempt.id}
-              className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-200 p-3 dark:border-slate-800"
+              className="flex flex-wrap items-center justify-between gap-3 rounded-xl bg-surface-alt p-3"
             >
               <div>
                 <p className="font-medium">{label}</p>
-                <p className="text-sm text-slate-600 dark:text-slate-300">
+                <p className="text-sm text-ink-muted">
                   Started {started} · {answered} of {attempt.itemIds.length} answered
                 </p>
               </div>

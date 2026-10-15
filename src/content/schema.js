@@ -90,6 +90,8 @@ export const ItemSchema = z.strictObject({
   options: z.array(OptionSchema).min(4).max(6),
   explanation: z.string().trim().min(100),
   references: z.array(ReferenceSchema).min(1).max(3),
+  // 0-based index into the task's `objectives` in blueprint.json (metadata for coverage checks).
+  objective: z.number().int().min(0).optional(),
   retired: z.boolean().optional(),
 })
 

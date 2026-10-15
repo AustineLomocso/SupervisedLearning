@@ -169,3 +169,46 @@ Concise study notes of about 600–900 words. The validator warns outside 400–
   pricing and support-plan pages on aws.amazon.com are fine.
 - Run `npm run check:links` after adding URLs. Fix every ✗, and replace each ↪ redirect
   with its final URL.
+
+## Bulk batches (Phase 6, Milestone 1: 50 questions per task)
+
+Milestone 1 grows every task from about 20 questions to 50. A batch is one task: 30 new
+questions, written by one generator and then checked by a separate blind reviewer.
+
+### What a batch contains
+
+- **Where:** 5 questions fill `001.json` up to 25 (4 for CLF-C02 task 1.2, which has 21), and
+  25 go into a new `002.json`. Ids continue from the task's highest id.
+- **Mix of the new 30:** 24 `single` and 6 `multiple` (five "2 of 5", one "3 of 6");
+  difficulty 9 / 15 / 6 at levels 1 / 2 / 3. With the seed, the task ends at 50 questions:
+  40 single and 10 multiple, difficulty 15 / 25 / 10.
+- **Objective tags (checked as warnings):** every active question in the task carries
+  `"objective": N`, the 0-based index of the blueprint objective it mainly tests. The
+  generator tags the existing seed questions too (a metadata change: do not bump `version`).
+  Spread rule: every objective has at least 2 questions and none has more than 40% of the
+  task. Aim for the exam's emphasis, not a perfectly even split.
+- **No repeats:** read every existing stem in the task first. A new question must test a new
+  fact, or the same fact from a clearly different angle (different scenario and different
+  correct answer). The validator warns at 0.8 trigram similarity, but that only catches
+  near-copies.
+- **Sources:** use only the task's `references.json` entries, and confirm facts there before
+  writing them. Never write a question you cannot support from those pages.
+
+### Blind-solve review
+
+1. The generator runs `npm run blind:export -- <cert> <task> --from <first new id> --out
+<file>`. The export has no answer key, rationales or explanations.
+2. A separate reviewer who has not seen the shard files answers every question from the
+   export, the lesson and `references.json` only, writing
+   `{ "<id>": { "answer": ["a"], "note": "…" } }`. Start the note with `AMBIGUOUS:` for any
+   question where two options looked defensible, even if the reviewer picked one; `blind:compare`
+   fails on those too.
+3. `npm run blind:compare -- <cert> <task> <answers.json> --from <first new id>` must exit 0.
+   For each disagreement the generator decides:
+   - the key is wrong → fix the key and its rationales;
+   - the wording is ambiguous or a distractor is also defensible → reword the stem or replace
+     the distractor, so exactly one answer set is defensible;
+   - the reviewer was wrong → leave the question, and say why in the log.
+     Questions that were changed are blind-solved again.
+4. Record each batch in `docs/content-review/milestone-1.md`: how many questions disagreed,
+   what was fixed, and anything left for later.

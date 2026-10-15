@@ -69,7 +69,7 @@ export default function TestSetupForm({ cert, kind, scope }) {
   return (
     <>
       <h1 className="text-3xl font-bold">{TEST_KIND_LABELS[kind]}</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">{scope.label}</p>
+      <p className="mt-2 text-ink-muted">{scope.label}</p>
       <form className="mt-6 max-w-xl space-y-6" onSubmit={handleStart}>
         {examKind ? (
           <p>{cert.exam.questions} questions, weighted by domain like the real exam.</p>
@@ -80,7 +80,7 @@ export default function TestSetupForm({ cert, kind, scope }) {
               {choices.map(({ value, available }) => (
                 <label
                   key={value}
-                  className={`flex items-center gap-2 rounded border px-3 py-2 ${available ? 'cursor-pointer border-slate-300 dark:border-slate-700' : 'border-slate-200 text-slate-500 dark:border-slate-800 dark:text-slate-400'}`}
+                  className={`flex items-center gap-2 rounded border px-3 py-2 ${available ? 'cursor-pointer border-line-strong' : 'border-line text-ink-muted'}`}
                 >
                   <input
                     type="radio"
@@ -95,7 +95,7 @@ export default function TestSetupForm({ cert, kind, scope }) {
               ))}
             </div>
             {choices.some((choice) => !choice.available) && (
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+              <p className="mt-2 text-sm text-ink-muted">
                 Only {scope.poolSize} questions are available here, so longer tests are turned off.
               </p>
             )}
@@ -119,10 +119,7 @@ export default function TestSetupForm({ cert, kind, scope }) {
                     />
                     {option.label}
                   </label>
-                  <p
-                    id={`${idPrefix}-${option.value}`}
-                    className="ml-6 text-sm text-slate-600 dark:text-slate-300"
-                  >
+                  <p id={`${idPrefix}-${option.value}`} className="ml-6 text-sm text-ink-muted">
                     {modeHints[option.value]}
                   </p>
                 </div>
@@ -142,7 +139,7 @@ export default function TestSetupForm({ cert, kind, scope }) {
             {starting ? 'Starting…' : `Start ${TEST_KIND_LABELS[kind]}`}
           </button>
           {error && (
-            <p role="alert" className="mt-2 text-red-700 dark:text-red-400">
+            <p role="alert" className="mt-2 text-error">
               {error}
             </p>
           )}

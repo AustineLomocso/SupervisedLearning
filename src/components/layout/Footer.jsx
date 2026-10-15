@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 text-xs text-slate-600 dark:border-slate-800 dark:text-slate-400">
-      <div className="mx-auto w-full max-w-5xl space-y-2 px-4 py-6">
+    <footer className="bg-topnav text-xs text-[#d1d5db]">
+      <div className="mx-auto w-full max-w-6xl space-y-2 px-4 py-6">
         <p>
           This is an independent study aid. It is not affiliated with, endorsed by, or sponsored by
           Amazon Web Services, Inc. AWS and related marks are trademarks of Amazon.com, Inc. or its

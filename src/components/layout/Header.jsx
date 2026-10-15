@@ -2,17 +2,18 @@ import { Link, NavLink } from 'react-router-dom'
 
 /** @param {{ isActive: boolean }} state */
 function navLinkClass({ isActive }) {
-  const base = 'rounded px-3 py-2 text-sm font-medium'
+  const base = 'block border-b-2 px-3 py-3 text-sm font-bold'
   return isActive
-    ? `${base} bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white`
-    : `${base} text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white`
+    ? `${base} border-[#ff9900] text-white`
+    : `${base} border-transparent text-[#d1d5db] hover:text-white`
 }
 
 export default function Header() {
   return (
-    <header className="border-b border-slate-200 dark:border-slate-800">
-      <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-4 px-4 py-3">
-        <Link to="/" className="text-lg font-bold">
+    <header className="bg-topnav text-white">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4">
+        <Link to="/" className="flex items-center gap-2 py-3 text-lg font-bold">
+          <span aria-hidden="true" className="size-4 rounded-sm bg-[#ff9900]" />
           AWS Practitioner Prep
         </Link>
         <nav aria-label="Main">

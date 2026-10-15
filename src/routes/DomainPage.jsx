@@ -20,10 +20,10 @@ export default function DomainPage() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold">
+      <h1 className="text-[28px] leading-tight font-bold">
         Domain {domain.no}: {domain.title}
       </h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-300">
+      <p className="mt-2 text-ink-muted">
         {formatWeight(domain.weight)} of the exam · {domain.subdomains.length} tasks ·{' '}
         {domain.itemCount} questions
       </p>
@@ -37,14 +37,11 @@ export default function DomainPage() {
       </p>
 
       <section aria-labelledby="tasks-heading" className="mt-8">
-        <h2 id="tasks-heading" className="text-xl font-semibold">
+        <h2 id="tasks-heading" className="text-lg font-bold">
           Tasks
         </h2>
         {progress ? (
-          <ol
-            aria-labelledby="tasks-heading"
-            className="mt-2 divide-y divide-slate-200 dark:divide-slate-800"
-          >
+          <ol aria-labelledby="tasks-heading" className="mt-2 divide-y divide-line">
             {domain.subdomains.map((sub) => {
               const status = deriveSubdomainStatus(
                 sub.id,

@@ -23,7 +23,7 @@ export default function TableOfContents({ entries }) {
                 target?.scrollIntoView({ block: 'start' })
                 target?.focus({ preventScroll: true })
               }}
-              className="text-slate-600 underline-offset-2 hover:text-slate-900 hover:underline dark:text-slate-300 dark:hover:text-white"
+              className="text-ink-muted underline-offset-2 hover:text-accent hover:underline"
             >
               {entry.text}
             </a>

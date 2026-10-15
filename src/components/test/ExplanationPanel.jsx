@@ -27,13 +27,13 @@ export default function ExplanationPanel({ item, order, selected, correct, focus
   return (
     <section
       aria-labelledby={headingId}
-      className="mt-6 rounded-lg border border-slate-300 p-4 dark:border-slate-700"
+      className="mt-6 rounded-2xl bg-surface p-4 shadow-container"
     >
       <output className="flex items-center gap-2 text-lg font-bold">
         {correct ? (
-          <CheckCircleIcon className="size-6 text-emerald-700 dark:text-emerald-400" />
+          <CheckCircleIcon className="size-6 text-success" />
         ) : (
-          <AlertCircleIcon className="size-6 text-red-700 dark:text-red-400" />
+          <AlertCircleIcon className="size-6 text-error" />
         )}
         {correct ? 'Correct' : 'Incorrect'}
       </output>

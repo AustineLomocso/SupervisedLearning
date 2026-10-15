@@ -16,11 +16,11 @@ export default function QuestionCard({ item, index, total, children }) {
   const headingId = useId()
   return (
     <section aria-labelledby={headingId}>
-      <h2 id={headingId} className="text-sm font-semibold text-slate-600 dark:text-slate-300">
+      <h2 id={headingId} className="text-sm font-semibold text-ink-muted">
         Question {index + 1} of {total}
       </h2>
       {item.selectCount > 1 && (
-        <p className="mt-2 inline-block rounded bg-amber-100 px-2 py-0.5 text-sm font-semibold text-amber-900 dark:bg-amber-900/40 dark:text-amber-100">
+        <p className="mt-2 inline-block rounded-full bg-warning-bg px-2 py-0.5 text-sm font-semibold text-warning">
           Choose {countWord(item.selectCount)}
         </p>
       )}

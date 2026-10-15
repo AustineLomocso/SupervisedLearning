@@ -27,7 +27,7 @@ export default function OptionList({ item, order, selected, locked, onToggle }) 
           return (
             <label
               key={option.id}
-              className={`flex items-start gap-3 rounded-lg border p-3 ${checked ? 'border-slate-900 bg-slate-50 dark:border-slate-100 dark:bg-slate-900' : 'border-slate-300 dark:border-slate-700'} ${unavailable || locked ? 'opacity-70' : 'cursor-pointer hover:border-slate-500'}`}
+              className={`flex items-start gap-3 rounded-xl border-2 p-3 ${checked ? 'border-accent bg-surface-alt' : 'border-line-strong bg-surface'} ${unavailable || locked ? 'opacity-70' : 'cursor-pointer hover:border-accent'}`}
             >
               <input
                 type={multiple ? 'checkbox' : 'radio'}
@@ -40,7 +40,7 @@ export default function OptionList({ item, order, selected, locked, onToggle }) 
               />
               <span
                 aria-hidden="true"
-                className="flex size-6 shrink-0 items-center justify-center rounded border border-slate-400 text-sm font-semibold"
+                className="flex size-6 shrink-0 items-center justify-center rounded border border-line-strong text-sm font-semibold"
               >
                 {OPTION_LETTERS[position]}
               </span>
@@ -50,7 +50,7 @@ export default function OptionList({ item, order, selected, locked, onToggle }) 
         })}
       </div>
       {multiple && (
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-300" aria-live="polite">
+        <p className="mt-2 text-sm text-ink-muted" aria-live="polite">
           {selected.length} of {item.selectCount} chosen
         </p>
       )}

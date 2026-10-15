@@ -90,7 +90,7 @@ export default function MermaidBlock({ code }) {
     return (
       <figure
         ref={placeholderRef}
-        className="mermaid-diagram mt-4 flex min-h-64 items-center justify-center rounded border border-dashed border-slate-300 text-sm text-slate-600 dark:border-slate-700 dark:text-slate-300"
+        className="mermaid-diagram mt-4 flex min-h-64 items-center justify-center rounded border border-dashed border-line-strong text-sm text-ink-muted"
       >
         Loading diagram…
       </figure>
@@ -102,7 +102,7 @@ export default function MermaidBlock({ code }) {
         <pre>
           <code>{code}</code>
         </pre>
-        <figcaption className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+        <figcaption className="mt-1 text-sm text-ink-muted">
           This diagram couldn’t be drawn, so its source is shown instead.
         </figcaption>
       </figure>

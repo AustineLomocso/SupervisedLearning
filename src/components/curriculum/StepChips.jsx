@@ -22,12 +22,12 @@ export default function StepChips({ status }) {
         return (
           <li
             key={key}
-            className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs ${done ? 'border-emerald-300 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/50' : 'border-slate-300 dark:border-slate-700'}`}
+            className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs ${done ? 'border-success bg-success-bg' : 'border-line-strong'}`}
           >
             {done ? (
-              <CheckCircleIcon className="size-3.5 text-emerald-700 dark:text-emerald-400" />
+              <CheckCircleIcon className="size-3.5 text-success" />
             ) : (
-              <CircleIcon className="size-3.5 text-slate-500 dark:text-slate-400" />
+              <CircleIcon className="size-3.5 text-ink-muted" />
             )}
             {label}
             <span className="sr-only">{done ? ': done' : ': not done'}</span>

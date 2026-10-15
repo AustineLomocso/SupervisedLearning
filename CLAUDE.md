@@ -103,7 +103,7 @@ Theme logic is duplicated on purpose in the inline script in `index.html` (it ru
 - The runner (`routes/AttemptPage.jsx`) redirects a submitted attempt to its results; results redirect an unfinished attempt to the runner. A timed attempt past its deadline auto-finishes when opened.
 - Question text and explanations use `<Markdown variant="inline">` (no heading ids, so many can share a page).
 - Component tests that need questions mock `content/loadItems.js` and use `src/test/itemFactories.js`.
-- Test timing: Vitest’s `testTimeout` is 15 s and Testing Library’s `asyncUtilTimeout` is 10 s (both set once, in `vite.config.js` and `src/test/setup.js`), because the first visit to a lazy route is slow on a busy machine. Data written through Dexie reaches the page via live queries a moment later, so assert it with `waitFor`.
+- Test timing: Vitest’s `testTimeout` is 30 s and Testing Library’s `asyncUtilTimeout` is 20 s (both set once, in `vite.config.js` and `src/test/setup.js`), because the first visit to a lazy route is slow on a busy machine. Data written through Dexie reaches the page via live queries a moment later, so assert it with `waitFor`.
 - In Playwright, `getByRole('radio', { name: '5' })` also matches ‘15’: pass `exact: true`.
 
 **Routing.** `createHashRouter`, because GitHub Pages has no rewrites.

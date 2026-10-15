@@ -4,8 +4,8 @@ import { CERTS } from '../content/certs.js'
 export default function HomePage() {
   return (
     <>
-      <h1 className="text-3xl font-bold">AWS Practitioner Exam Prep</h1>
-      <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-300">
+      <h1 className="text-[28px] leading-tight font-bold">AWS Practitioner Exam Prep</h1>
+      <p className="mt-2 max-w-2xl text-ink-muted">
         Pick a certification. Start with a diagnostic exam to find your weak areas, work through
         each domain, then finish with a full practice exam.
       </p>
@@ -18,7 +18,7 @@ export default function HomePage() {
       </ul>
       <aside
         aria-label="About this app"
-        className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm dark:border-slate-800 dark:bg-slate-900"
+        className="mt-8 rounded-2xl border-l-4 border-info bg-info-bg p-4 text-sm"
       >
         <p>
           <strong>Not affiliated with AWS.</strong> This is an independent study aid, not an

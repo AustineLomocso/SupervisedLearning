@@ -19,14 +19,14 @@ export default function SubdomainPage() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold">
+      <h1 className="text-[28px] leading-tight font-bold">
         Task {subdomain.code}: {subdomain.title}
       </h1>
       {domain && (
         <p className="mt-2">
           <Link
             to={`/${cert.id}/d/${domain.no}`}
-            className="font-medium text-amber-700 underline underline-offset-2 dark:text-amber-400"
+            className="font-bold text-accent underline underline-offset-2 hover:text-accent-hover"
           >
             Domain {domain.no}: {domain.title}
           </Link>

@@ -28,10 +28,8 @@ export default function AttemptPage() {
   if (state.status === 'error') {
     return (
       <div role="alert">
-        <h1 className="text-3xl font-bold">Couldn’t load this test</h1>
-        <p className="mt-2 text-slate-600 dark:text-slate-300">
-          Check your connection and reload the page.
-        </p>
+        <h1 className="text-[28px] leading-tight font-bold">Couldn’t load this test</h1>
+        <p className="mt-2 text-ink-muted">Check your connection and reload the page.</p>
       </div>
     )
   }
@@ -177,8 +175,8 @@ function Runner({ attempt, items }) {
     <>
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold">{TEST_KIND_LABELS[attempt.kind]}</h1>
-          <p className="mt-1 text-slate-600 dark:text-slate-300">
+          <h1 className="text-[28px] leading-tight font-bold">{TEST_KIND_LABELS[attempt.kind]}</h1>
+          <p className="mt-1 text-ink-muted">
             {cert?.code} · {exam ? 'Exam mode' : 'Study mode'} · Answered {answeredCount} of{' '}
             {items.length}
           </p>
@@ -211,7 +209,7 @@ function Runner({ attempt, items }) {
         )}
 
         {error && (
-          <p role="alert" className="mt-4 text-red-700 dark:text-red-400">
+          <p role="alert" className="mt-4 text-error">
             {error}
           </p>
         )}
@@ -240,7 +238,7 @@ function Runner({ attempt, items }) {
               type="button"
               aria-pressed={marked}
               onClick={() => toggleMarked(attempt.id, item.id, index).catch(reportSaveError)}
-              className={`${buttonClass('secondary')} ${marked ? 'border-amber-500' : ''}`}
+              className={`${buttonClass('secondary')} ${marked ? 'border-warning' : ''}`}
             >
               Mark for review
             </button>
@@ -262,7 +260,7 @@ function Runner({ attempt, items }) {
             {exam ? 'Submit exam' : 'Finish test'}
           </button>
         </div>
-        <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">
+        <p className="mt-4 text-sm text-ink-muted">
           Keyboard: A–F or 1–6 choose an answer{exam ? '' : ', Enter submits'}, N goes to the next
           question.
         </p>

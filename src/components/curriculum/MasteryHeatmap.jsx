@@ -22,10 +22,10 @@ const LEGEND = [
 export default function MasteryHeatmap({ cert, mastery }) {
   return (
     <section aria-labelledby="mastery-heading">
-      <h2 id="mastery-heading" className="text-xl font-semibold">
+      <h2 id="mastery-heading" className="text-lg font-bold">
         Mastery by task
       </h2>
-      <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+      <p className="mt-1 text-sm text-ink-muted">
         Accuracy over your last {MASTERY_WINDOW} answers in each task. A dashed border means fewer
         than {LOW_CONFIDENCE_BELOW} answers so far.
       </p>
@@ -56,7 +56,7 @@ export default function MasteryHeatmap({ cert, mastery }) {
                       <Link
                         to={`/${cert.id}/s/${sub.code}`}
                         title={sub.title}
-                        className={`flex h-full flex-col gap-1 rounded-sm border-2 p-2 hover:ring-2 hover:ring-slate-400 ${BAND_STYLES[current.band].cell} ${current.lowConfidence ? 'border-dashed' : ''}`}
+                        className={`flex h-full flex-col gap-1 rounded-sm border-2 p-2 hover:ring-2 hover:ring-accent ${BAND_STYLES[current.band].cell} ${current.lowConfidence ? 'border-dashed' : ''}`}
                       >
                         <span className="font-semibold tabular-nums">
                           {sub.code}
