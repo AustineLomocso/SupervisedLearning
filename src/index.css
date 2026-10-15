@@ -89,4 +89,12 @@
   .mermaid-diagram svg {
     @apply mx-auto h-auto max-w-full;
   }
+  .lesson-inline > :first-child {
+    @apply mt-0;
+  }
+  .lesson-inline h1,
+  .lesson-inline h2,
+  .lesson-inline h3 {
+    @apply mt-4 text-base font-semibold;
+  }
 }

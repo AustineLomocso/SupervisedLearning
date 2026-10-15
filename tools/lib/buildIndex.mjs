@@ -72,13 +72,30 @@ export function buildManifest(content) {
 }
 
 /**
+ * Retired item id → "<task>/<shardNo>", so old attempts can still load an item after it is
+ * withdrawn. Selection never sees these ids: they are not listed in `shards`.
+ * @param {CertContent} cert
+ * @returns {Record<string, string>}
+ */
+function retiredLocations(cert) {
+  /** @type {Record<string, string>} */
+  const retired = {}
+  for (const shard of cert.shards) {
+    for (const item of shard.data.items) {
+      if (item.retired) retired[item.id] = `${shard.task}/${shard.file.replace(/\.json$/, '')}`
+    }
+  }
+  return retired
+}
+
+/**
  * @param {CertContent} cert
  * @returns {CertIndex}
  */
 export function buildCertIndex(cert) {
   const byTask = activeIdsByTask(cert)
   /** @type {CertIndex} */
-  const index = { objectives: {}, shards: {} }
+  const index = { objectives: {}, shards: {}, retired: retiredLocations(cert) }
   for (const domain of cert.blueprint.domains) {
     for (const sub of domain.subdomains) {
       index.objectives[sub.code] = sub.objectives

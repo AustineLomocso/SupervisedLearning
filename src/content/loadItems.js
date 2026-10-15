@@ -37,6 +37,10 @@ export function createItemLoader({ indexLoaders, shardLoaders, cacheSize = 80 })
             locations.set(id, `/content/${certId}/items/${task}/${shardNo}.json`)
         }
       }
+      // Retired items stay loadable so old attempts can resume and show their results.
+      for (const [id, where] of Object.entries(index.retired ?? {})) {
+        locations.set(id, `/content/${certId}/items/${where}.json`)
+      }
       return { index, locations }
     })
     certs.set(certId, promise)

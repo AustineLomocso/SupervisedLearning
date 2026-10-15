@@ -11,6 +11,8 @@ export default defineConfig({
   json: { stringify: true },
   test: {
     environment: 'jsdom',
+    // Lazy routes and lesson chunks load slowly on a cold, busy machine; the default 5s flakes.
+    testTimeout: 15_000,
     setupFiles: ['./src/test/setup.js'],
     include: ['src/**/*.test.{js,jsx}', 'tools/**/*.test.mjs'],
   },

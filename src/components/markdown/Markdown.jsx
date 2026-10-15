@@ -66,15 +66,17 @@ const COMPONENTS = {
 
 /**
  * Renders authored Markdown: GFM tables, Mermaid diagrams, slugged heading ids. Raw HTML in
- * the source is dropped, not rendered.
- * @param {{ children: string }} props
+ * the source is dropped, not rendered. The "inline" variant is for question text and
+ * explanations: no heading ids (many can share a page) and tighter spacing.
+ * @param {{ children: string, variant?: 'lesson' | 'inline' }} props
  */
-export default function Markdown({ children }) {
+export default function Markdown({ children, variant = 'lesson' }) {
+  const inline = variant === 'inline'
   return (
-    <div className="lesson">
+    <div className={inline ? 'lesson lesson-inline' : 'lesson'}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeSlug]}
+        rehypePlugins={inline ? [] : [rehypeSlug]}
         components={COMPONENTS}
       >
         {children}

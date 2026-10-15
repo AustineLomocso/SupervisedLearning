@@ -33,3 +33,17 @@ export function describeMastery(pooled, taskCount) {
     ? 'Not started yet'
     : `Mastery ${pooled.pct}% · ${pooled.practiced} of ${taskCount} tasks practiced`
 }
+
+/**
+ * @param {number} ms
+ * @returns {string} e.g. "45 s", "12 min 5 s", "1 h 12 min"
+ */
+export function formatDuration(ms) {
+  const total = Math.max(0, Math.round(ms / 1000))
+  const hours = Math.floor(total / 3600)
+  const minutes = Math.floor((total % 3600) / 60)
+  const seconds = total % 60
+  if (hours > 0) return `${hours} h ${minutes} min`
+  if (minutes > 0) return `${minutes} min ${seconds} s`
+  return `${seconds} s`
+}

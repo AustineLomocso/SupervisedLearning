@@ -1,4 +1,6 @@
 import { useId, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { startTest } from '../../engine/startTest.js'
 import { defaultLength, isExamKind, lengthChoices } from '../../engine/testConfig.js'
 import { TEST_KIND_LABELS } from '../../engine/testKinds.js'
 import { buttonClass } from '../ui/styles.js'
@@ -15,8 +17,7 @@ const MODES = [
 ]
 
 /**
- * Length and mode choices before a test. The Start button is wired to the exam engine in
- * Phase 4; until then it stays disabled with a note.
+ * Length and mode choices before a test. Start creates the attempt and opens the runner.
  * @param {{ cert: CertSummary, kind: AttemptKind, scope: TestScope }} props
  */
 export default function TestSetupForm({ cert, kind, scope }) {
@@ -28,6 +29,31 @@ export default function TestSetupForm({ cert, kind, scope }) {
   const [mode, setMode] = useState(/** @type {AttemptMode} */ (examKind ? 'exam' : 'study'))
   const idPrefix = useId()
   const minutes = cert.exam.minutes
+  const navigate = useNavigate()
+  const [starting, setStarting] = useState(false)
+  const [error, setError] = useState('')
+
+  /** @param {import('react').FormEvent} event */
+  async function handleStart(event) {
+    event.preventDefault()
+    if (length === null) return
+    setError('')
+    setStarting(true)
+    try {
+      const attempt = await startTest({
+        cert,
+        kind,
+        scopeId: scope.scopeId,
+        length,
+        mode: examKind ? mode : 'study',
+      })
+      navigate(`/attempt/${attempt.id}`)
+    } catch (cause) {
+      console.error('Failed to start the test', cause)
+      setError('Couldn’t start the test. Please try again.')
+      setStarting(false)
+    }
+  }
 
   /** @type {Record<AttemptMode, string>} */
   const modeHints = {
@@ -44,7 +70,7 @@ export default function TestSetupForm({ cert, kind, scope }) {
     <>
       <h1 className="text-3xl font-bold">{TEST_KIND_LABELS[kind]}</h1>
       <p className="mt-2 text-slate-600 dark:text-slate-300">{scope.label}</p>
-      <form className="mt-6 max-w-xl space-y-6" onSubmit={(event) => event.preventDefault()}>
+      <form className="mt-6 max-w-xl space-y-6" onSubmit={handleStart}>
         {examKind ? (
           <p>{cert.exam.questions} questions, weighted by domain like the real exam.</p>
         ) : (
@@ -110,15 +136,16 @@ export default function TestSetupForm({ cert, kind, scope }) {
         <div>
           <button
             type="submit"
-            disabled
-            aria-describedby={`${idPrefix}-start`}
+            disabled={starting || length === null}
             className={buttonClass('primary')}
           >
-            Start {TEST_KIND_LABELS[kind]}
+            {starting ? 'Starting…' : `Start ${TEST_KIND_LABELS[kind]}`}
           </button>
-          <p id={`${idPrefix}-start`} className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-            Starting tests arrives in the next update of this app.
-          </p>
+          {error && (
+            <p role="alert" className="mt-2 text-red-700 dark:text-red-400">
+              {error}
+            </p>
+          )}
         </div>
       </form>
     </>
