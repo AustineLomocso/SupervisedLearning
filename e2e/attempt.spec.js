@@ -21,6 +21,11 @@ test('Pre-Test: answer, see the explanation, reload and resume', async ({ page }
 
   await page.getByRole('button', { name: 'Next question' }).click()
   await expect(page.getByRole('heading', { level: 2, name: 'Question 2 of 5' })).toBeVisible()
+  // The position is saved a moment after the screen changes; reloading before that would
+  // (correctly) resume at question 1. Wait until it is stored.
+  await expect
+    .poll(async () => (await readAttempts(page)).find((a) => a.kind === 'pre')?.currentIndex)
+    .toBe(1)
   await page.reload()
   await expect(page.getByRole('heading', { level: 2, name: 'Question 2 of 5' })).toBeVisible()
 })
