@@ -8,6 +8,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 0,
       "stem": "A startup wants to avoid buying servers up front and instead pay only for the computing resources it consumes. Which cloud advantage does this describe?",
       "options": [
         {
@@ -53,6 +54,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 0,
       "stem": "AWS aggregates usage from a very large number of customers. Which benefit can customers get as a result?",
       "options": [
         {
@@ -98,6 +100,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 0,
       "stem": "A retailer bought servers sized for its holiday peak, and they sat mostly idle the rest of the year. Which cloud advantage addresses this problem?",
       "options": [
         {
@@ -143,6 +146,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 0,
       "stem": "An IT team spends most of its time racking servers, managing cooling, and replacing failed disks. Which cloud benefit lets the team focus on business projects instead?",
       "options": [
         {
@@ -188,6 +192,7 @@
       "type": "multiple",
       "selectCount": 2,
       "difficulty": 2,
+      "objective": 0,
       "stem": "A company is preparing to migrate from on premises. Which statements describe advantages of the AWS Cloud for this company?",
       "options": [
         {
@@ -239,6 +244,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 3,
+      "objective": 0,
       "stem": "A company is deciding between building a new data center and moving a workload to AWS. Leadership wants low upfront cost, quick experimentation, and no long-term capacity forecasting. Which approach best meets these needs?",
       "options": [
         {
@@ -288,6 +294,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 1,
       "stem": "Which term describes a physical location in the world where AWS clusters multiple data center groups?",
       "options": [
         {
@@ -329,6 +336,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 1,
       "stem": "What is an Availability Zone in AWS?",
       "options": [
         {
@@ -374,6 +382,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 1,
       "stem": "A company has customers in Europe and in Asia and wants each group to experience low latency. How can the company use the AWS global infrastructure to achieve this?",
       "options": [
         {
@@ -419,6 +428,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 1,
       "stem": "A company must launch a pilot of its application for customers in a new country next week. Which benefit of the AWS global infrastructure helps most?",
       "options": [
         {
@@ -464,6 +474,7 @@
       "type": "multiple",
       "selectCount": 2,
       "difficulty": 2,
+      "objective": 1,
       "stem": "Which statements describe benefits of the AWS global infrastructure?",
       "options": [
         {
@@ -515,6 +526,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 1,
       "stem": "Which AWS infrastructure component is used to deliver cached content to end users with low latency?",
       "options": [
         {
@@ -560,6 +572,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 3,
+      "objective": 1,
       "stem": "A company must keep customer data in Germany to meet legal requirements and must continue operating if one data center fails. Which design meets both requirements?",
       "options": [
         {
@@ -609,6 +622,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 2,
       "stem": "Which term describes designing a system so that it keeps operating with minimal downtime when components fail?",
       "options": [
         {
@@ -654,6 +668,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 2,
       "stem": "A company wants its application to add instances automatically when load increases and remove them when load decreases. Which cloud characteristic does this describe?",
       "options": [
         {
@@ -699,6 +714,7 @@
       "type": "multiple",
       "selectCount": 2,
       "difficulty": 2,
+      "objective": 2,
       "stem": "A web application has unpredictable traffic. Which actions provide elasticity for this workload?",
       "options": [
         {
@@ -750,6 +766,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 2,
       "stem": "A development team wants to provision a test environment in minutes, try a new idea, and delete the environment afterward. Which cloud benefit is the team using?",
       "options": [
         {
@@ -795,6 +812,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 3,
+      "objective": 2,
       "stem": "An application runs on a single Amazon EC2 instance in one Availability Zone. A power failure in that zone caused an outage. Which change best improves availability?",
       "options": [
         {
@@ -844,6 +862,7 @@
       "type": "multiple",
       "selectCount": 3,
       "difficulty": 2,
+      "objective": 2,
       "stem": "Which design practices improve the high availability of a workload?",
       "options": [
         {
@@ -901,6 +920,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 3,
+      "objective": 2,
       "stem": "A media site receives ten times its normal traffic during live events and very little otherwise. It wants to stay responsive during events while paying only for capacity that is needed. Which approach best meets these requirements?",
       "options": [
         {
@@ -941,6 +961,242 @@
         {
           "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
           "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0021",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 0,
+      "stem": "A manager new to AWS asks for a one-sentence definition of cloud computing. Which statement best matches how AWS defines it?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Leasing dedicated physical servers in AWS facilities on multi-year contracts",
+          "correct": false,
+          "rationale": "Cloud computing does not require multi-year leases of dedicated hardware; resources are consumed on demand."
+        },
+        {
+          "id": "b",
+          "text": "Outsourcing the staff who run the company’s own data center to AWS",
+          "correct": false,
+          "rationale": "This describes managed outsourcing of an existing facility, not on-demand IT resources delivered by a cloud provider."
+        },
+        {
+          "id": "c",
+          "text": "On-demand IT resources over the internet with pay-as-you-go pricing",
+          "correct": true,
+          "rationale": "Correct. AWS defines cloud computing as the on-demand delivery of IT resources over the internet with pay-as-you-go pricing."
+        },
+        {
+          "id": "d",
+          "text": "Buying preconfigured hardware from AWS to install in the company’s building",
+          "correct": false,
+          "rationale": "Buying and installing hardware keeps the company in the business of owning servers, which is what cloud computing avoids."
+        }
+      ],
+      "explanation": "AWS defines cloud computing as the on-demand delivery of IT resources over the internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, a company accesses compute, storage, databases, and other services as it needs them from a provider such as AWS. Three ideas in the definition matter for the exam: resources are available on demand, they are reached over the internet, and you pay only for what you use. Options that involve long hardware contracts or owning equipment describe traditional IT, not the cloud.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0022",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 0,
+      "stem": "A company has run the same workloads on AWS for several years without negotiating any new contract. During that time, AWS has lowered the prices of several services the company uses. Which advantage of cloud computing does this reflect?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Benefit from massive economies of scale",
+          "correct": true,
+          "rationale": "Correct. Aggregated usage from hundreds of thousands of customers lets AWS achieve higher economies of scale, which translate into lower pay-as-you-go prices."
+        },
+        {
+          "id": "b",
+          "text": "Stop guessing capacity",
+          "correct": false,
+          "rationale": "Stop guessing capacity is about sizing resources to demand, not about the unit price AWS charges."
+        },
+        {
+          "id": "c",
+          "text": "Trade fixed expense for variable expense",
+          "correct": false,
+          "rationale": "This advantage explains paying for consumption instead of upfront investment; it does not explain why the price per unit fell."
+        },
+        {
+          "id": "d",
+          "text": "Go global in minutes",
+          "correct": false,
+          "rationale": "Going global concerns deploying in multiple Regions quickly, which has nothing to do with falling service prices."
+        }
+      ],
+      "explanation": "The advantage called \"benefit from massive economies of scale\" explains how a cloud provider can offer a lower variable cost than a company could achieve on its own. Because AWS aggregates usage from a very large number of customers, it buys and operates infrastructure at enormous scale, and those savings show up as lower pay-as-you-go prices. Customers benefit without doing anything, which is why prices can fall over time without a new contract. Do not confuse this with variable expense, which is about paying only for what you consume rather than about the price level itself.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0023",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 0,
+      "stem": "Developers at a company wait several weeks for new servers to be approved, ordered, and installed. Leadership wants new resources available within minutes so that teams can try more ideas. Which advantage of cloud computing addresses this goal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Benefit from massive economies of scale",
+          "correct": false,
+          "rationale": "Economies of scale lower prices; they do not shorten the time developers wait for resources."
+        },
+        {
+          "id": "b",
+          "text": "Go global in minutes",
+          "correct": false,
+          "rationale": "Going global is about deploying in many Regions to reach users, not about removing internal procurement delays."
+        },
+        {
+          "id": "c",
+          "text": "Stop spending money running and maintaining data centers",
+          "correct": false,
+          "rationale": "This advantage frees staff from facility work, but the scenario is about how quickly developers can obtain resources."
+        },
+        {
+          "id": "d",
+          "text": "Increase speed and agility",
+          "correct": true,
+          "rationale": "Correct. New IT resources are only a click away, so the time to make them available to developers drops from weeks to minutes."
+        }
+      ],
+      "explanation": "The \"increase speed and agility\" advantage describes how the cloud cuts the time to obtain IT resources from weeks to minutes. On premises, a new server may need budget approval, a purchase order, shipping, and installation. In the cloud, a developer provisions it in a few clicks or an API call. Because each experiment costs little time and money, organizations can try more ideas, keep what works, and discard the rest. When a scenario stresses waiting time for resources or the pace of experimentation, agility is usually the answer.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is-cloud-computing/",
+          "title": "What is Cloud Computing? - Cloud Computing Services, Benefits, and Types - AWS"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0024",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "objective": 0,
+      "stem": "A company is comparing the cost of its on-premises data center with the cost of running the same workloads on AWS. Which on-premises costs can it avoid by moving to AWS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Designing the architecture of its own applications",
+          "correct": false,
+          "rationale": "The company still designs its applications on AWS, so this work and its cost remain."
+        },
+        {
+          "id": "b",
+          "text": "Power and cooling for its server rooms",
+          "correct": true,
+          "rationale": "Correct. AWS powers and cools the facilities, so the company stops paying to run its own server rooms."
+        },
+        {
+          "id": "c",
+          "text": "Deciding which employees may access its data",
+          "correct": false,
+          "rationale": "Controlling access to its data remains the customer’s job in the cloud, so this cost does not go away."
+        },
+        {
+          "id": "d",
+          "text": "Writing and testing its application code",
+          "correct": false,
+          "rationale": "Developing and testing application code is the customer’s work whether it runs on premises or on AWS."
+        },
+        {
+          "id": "e",
+          "text": "Periodic purchases to replace aging server hardware",
+          "correct": true,
+          "rationale": "Correct. AWS owns and refreshes the physical servers, so the company no longer buys replacement hardware."
+        }
+      ],
+      "explanation": "When comparing on-premises costs with the cloud, look at what AWS takes over. AWS runs the data centers: it buys and refreshes servers, and it handles the heavy lifting of racking, stacking, and powering them. Those capital purchases and facility costs, such as power and cooling, disappear from the customer’s budget and are replaced by pay-as-you-go charges. Work that belongs to the customer’s own business does not disappear. The company still designs and builds its applications and decides who can access its data. Moving to AWS changes what you spend money on, but it does not remove all IT work.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html",
+          "title": "Six advantages of cloud computing - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html",
+          "title": "Overview of Amazon Web Services"
+        }
+      ]
+    },
+    {
+      "id": "clf-c02-1.1-0025",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 1,
+      "stem": "A company currently runs all of its production systems in a single on-premises data center. What is the main availability benefit of deploying them across multiple Availability Zones in an AWS Region instead?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Users on every continent get the same low latency",
+          "correct": false,
+          "rationale": "Availability Zones are all inside one Region, so they do not bring the workload closer to users on other continents."
+        },
+        {
+          "id": "b",
+          "text": "Zones are separate facilities, so one failure need not stop everything",
+          "correct": true,
+          "rationale": "Correct. Availability Zones are discrete data centers with redundant power and networking in separate facilities, so a workload spread across them can survive the loss of one."
+        },
+        {
+          "id": "c",
+          "text": "AWS takes over responsibility for designing the application’s failover",
+          "correct": false,
+          "rationale": "AWS provides the zones, but the customer still designs the workload to use more than one of them."
+        },
+        {
+          "id": "d",
+          "text": "Data is automatically copied to other AWS Regions",
+          "correct": false,
+          "rationale": "Using multiple Availability Zones does not copy data to other Regions; that requires a deliberate customer choice."
+        }
+      ],
+      "explanation": "Each AWS Region contains multiple Availability Zones. An Availability Zone consists of one or more discrete data centers with redundant power, networking, and connectivity, housed in separate facilities. According to AWS, this lets customers run production applications and databases that are more highly available, fault tolerant, and scalable than would be possible from a single data center. The benefit only applies if the customer actually spreads the workload across zones. Multiple zones protect against a facility failure within a Region; they do not reduce latency for distant users or copy data to other Regions.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/global-infrastructure.html",
+          "title": "Global infrastructure - Overview of Amazon Web Services"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/reliability.html",
+          "title": "Reliability - AWS Well-Architected Framework"
         }
       ]
     }
