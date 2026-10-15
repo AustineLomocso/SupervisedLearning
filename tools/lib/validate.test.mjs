@@ -36,6 +36,31 @@ describe('validateContent', () => {
     expect(run()).toEqual({ errors: [], warnings: [] })
   })
 
+  describe('objective tags', () => {
+    it('accepts a tag that points at one of the task’s objectives', () => {
+      expect(run((c) => (firstItem(c).objective = 1)).errors).toEqual([])
+    })
+
+    it('rejects a tag beyond the task’s objectives', () => {
+      expectMessage(
+        run((c) => (firstItem(c).objective = 2)).errors,
+        'objective 2 is out of range (task 1.1 has 2 objectives, numbered from 0)',
+      )
+    })
+
+    it('rejects a negative or fractional tag through the schema', () => {
+      expectMessage(run((c) => (firstItem(c).objective = -1)).errors, 'objective')
+      expectMessage(run((c) => (firstItem(c).objective = 0.5)).errors, 'objective')
+    })
+
+    it('warns about untagged items in a task where some are tagged', () => {
+      expectMessage(
+        run((c) => (firstItem(c).objective = 0)).warnings,
+        '1 active items have no objective tag',
+      )
+    })
+  })
+
   describe('blueprint', () => {
     it('reports a missing blueprint', () => {
       expectMessage(run((c) => (c.blueprint = null)).errors, 'blueprint.json: file is missing')

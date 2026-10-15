@@ -5,6 +5,7 @@ import {
   ReferencesFileSchema,
   ShardSchema,
 } from '../../src/content/schema.js'
+import { objectiveSpreadIssues } from './objectives.mjs'
 import { jaccard, NEAR_DUPLICATE_THRESHOLD, trigrams } from './similarity.mjs'
 
 /** @typedef {import('./readContent.mjs').Content} Content */
@@ -177,6 +178,7 @@ function checkReferences(references, taskCodes, error) {
  */
 function checkShards(cert, taskCodes, curated, activeByTask, error) {
   const seenIds = new Set()
+  const objectiveCounts = objectiveCountsByTask(cert)
   for (const [task, shards] of Map.groupBy(cert.shards, (shard) => shard.task)) {
     const folder = `items/${task}`
     if (!taskCodes.has(task)) {
@@ -209,10 +211,34 @@ function checkShards(cert, taskCodes, curated, activeByTask, error) {
         if (seenIds.has(item.id)) say('duplicate id')
         seenIds.add(item.id)
         checkItem(item, `${cert.certId}-${task}-`, curated, say)
+        const objectiveCount = objectiveCounts.get(task) ?? 0
+        if (item.objective !== undefined && item.objective >= objectiveCount) {
+          say(
+            `objective ${item.objective} is out of range (task ${task} has ${objectiveCount} objectives, numbered from 0)`,
+          )
+        }
         if (!item.retired) activeByTask.get(task)?.push(item)
       })
     })
   }
+}
+
+/**
+ * How many objectives the blueprint lists per task. Tolerates a broken blueprint (it is
+ * reported elsewhere): unreadable entries just count as zero.
+ * @param {CertContent} cert
+ * @returns {Map<string, number>}
+ */
+function objectiveCountsByTask(cert) {
+  /** @type {Map<string, number>} */
+  const counts = new Map()
+  const domains = Array.isArray(cert.blueprint?.domains) ? cert.blueprint.domains : []
+  for (const domain of domains) {
+    for (const sub of Array.isArray(domain?.subdomains) ? domain.subdomains : []) {
+      counts.set(sub.code, Array.isArray(sub.objectives) ? sub.objectives.length : 0)
+    }
+  }
+  return counts
 }
 
 /**
@@ -301,8 +327,16 @@ function checkLessons(cert, taskCodes, curated, error, warn) {
  */
 function checkCoverage(blueprint, activeByTask, lessonTasks, warn) {
   const [minShare, maxShare] = MR_SHARE_RANGE
+  const objectiveCounts = new Map(
+    blueprint.domains.flatMap((domain) =>
+      domain.subdomains.map((sub) => [sub.code, sub.objectives.length]),
+    ),
+  )
   for (const [task, items] of activeByTask) {
     const folder = `items/${task}`
+    for (const issue of objectiveSpreadIssues(items, objectiveCounts.get(task) ?? 0)) {
+      warn(folder, issue)
+    }
     if (!lessonTasks.has(task)) warn(`review/${task}.md`, 'lesson is missing')
     if (items.length < blueprint.itemTargets.seed) {
       warn(folder, `has ${items.length} items; the seed target is ${blueprint.itemTargets.seed}`)
