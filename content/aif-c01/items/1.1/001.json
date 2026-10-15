@@ -8,6 +8,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 0,
       "stem": "A new team member asks for a short definition of machine learning (ML). Which statement is correct?",
       "options": [
         {
@@ -53,6 +54,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 0,
       "stem": "Which statement best describes deep learning?",
       "options": [
         {
@@ -98,6 +100,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 0,
       "stem": "A retailer wants software that can identify products in photos taken by shoppers. Which field of AI does this task belong to?",
       "options": [
         {
@@ -139,6 +142,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 0,
       "stem": "A company wants to analyze thousands of customer emails to detect whether each message is positive or negative. Which AI field is MOST directly involved?",
       "options": [
         {
@@ -180,6 +184,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 0,
       "stem": "What is a large language model (LLM)?",
       "options": [
         {
@@ -225,6 +230,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 1,
+      "objective": 0,
       "stem": "In the machine learning lifecycle, what happens during training?",
       "options": [
         {
@@ -266,6 +272,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 0,
       "stem": "A bank trains a loan-approval model on historical data in which one demographic group was approved far less often for reasons unrelated to creditworthiness. The model now denies similar applicants from that group. Which concept does this describe?",
       "options": [
         {
@@ -311,6 +318,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 0,
       "stem": "A model scores 99 percent accuracy on its training data but performs poorly on new data it has never seen. Which term describes this condition?",
       "options": [
         {
@@ -352,6 +360,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 3,
+      "objective": 1,
       "stem": "A company wants software that receives a high-level goal such as resolving a customer's billing problem. The software should then plan steps, call internal tools, and adjust its actions with little human guidance. Which type of AI does this describe?",
       "options": [
         {
@@ -397,6 +406,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 1,
       "stem": "Which statement correctly describes the relationship between AI, machine learning, and deep learning?",
       "options": [
         {
@@ -442,6 +452,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 2,
       "stem": "A mobile app sends a user's question to a model and must show an answer within a second, while the user waits. Which type of inferencing fits?",
       "options": [
         {
@@ -487,6 +498,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 3,
+      "objective": 2,
       "stem": "A company must run a model on video files up to 500 MB each. Processing takes several minutes per file, and results are needed soon after upload but not instantly. Which inference option fits BEST?",
       "options": [
         {
@@ -532,6 +544,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 2,
       "stem": "A company has a model that receives traffic only a few times per day, with long idle gaps. The team accepts a delay on the first request after idle time and wants no infrastructure to manage. Which inference type fits?",
       "options": [
         {
@@ -573,6 +586,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 3,
       "stem": "A data scientist has a dataset of customer records in rows and columns, with fields like age, plan type, and monthly spend. How is this data BEST described?",
       "options": [
         {
@@ -618,6 +632,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 4,
       "stem": "A team trains a model to predict whether an email is spam using thousands of emails that people have already marked as spam or not spam. Which type of learning is this?",
       "options": [
         {
@@ -663,6 +678,7 @@
       "type": "single",
       "selectCount": 1,
       "difficulty": 2,
+      "objective": 4,
       "stem": "A company wants to program a warehouse robot to improve its route by trial and error, receiving positive feedback for fast deliveries and penalties for collisions. Which learning approach fits?",
       "options": [
         {
@@ -708,6 +724,7 @@
       "type": "multiple",
       "selectCount": 2,
       "difficulty": 2,
+      "objective": 4,
       "stem": "A data team has unlabeled customer purchase records. Which TWO tasks are examples of unsupervised learning?",
       "options": [
         {
@@ -759,6 +776,7 @@
       "type": "multiple",
       "selectCount": 2,
       "difficulty": 2,
+      "objective": 3,
       "stem": "Which TWO examples are unstructured data?",
       "options": [
         {
@@ -810,6 +828,7 @@
       "type": "multiple",
       "selectCount": 3,
       "difficulty": 3,
+      "objective": 0,
       "stem": "Which THREE statements describe agentic AI?",
       "options": [
         {
@@ -863,6 +882,7 @@
       "type": "multiple",
       "selectCount": 2,
       "difficulty": 3,
+      "objective": 2,
       "stem": "A company needs to score 5 million stored customer records overnight with a trained model. Results are reviewed the next morning, and no user is waiting. Which TWO statements about the right approach are correct?",
       "options": [
         {
@@ -905,6 +925,238 @@
         {
           "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
           "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0021",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 0,
+      "stem": "A fraud detection model has already been trained and deployed. A new card transaction arrives, and the model returns a fraud score for it. What is this step called?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Model training",
+          "correct": false,
+          "rationale": "Training happens earlier, when the algorithm learns patterns from historical data. Scoring a new transaction uses the finished model."
+        },
+        {
+          "id": "b",
+          "text": "Inferencing",
+          "correct": true,
+          "rationale": "Inferencing means using a trained model to produce a prediction for new input, such as a score for a new transaction."
+        },
+        {
+          "id": "c",
+          "text": "Data labeling",
+          "correct": false,
+          "rationale": "Data labeling attaches correct answers to training examples. It does not produce predictions for new transactions."
+        },
+        {
+          "id": "d",
+          "text": "Feature engineering",
+          "correct": false,
+          "rationale": "Feature engineering prepares input variables before training. It is not the act of returning a prediction from a deployed model."
+        }
+      ],
+      "explanation": "The machine learning lifecycle separates two phases. During training, an algorithm adjusts its parameters on historical data until it makes good predictions, and the result is a model. During inferencing, the trained model receives new input it has never seen and returns an output, such as a class, a score or generated text. Inference is what applications call in production, and it can be served in different ways, for example in real time from an endpoint or in batches. When a question describes a model that already exists being applied to fresh data, the answer is inference, not training.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0022",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 0,
+      "stem": "A manager asks what an artificial neural network is. Which description is the most accurate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A database index that links related records so queries run faster",
+          "correct": false,
+          "rationale": "A database index speeds up lookups. It does not learn from data or make predictions."
+        },
+        {
+          "id": "b",
+          "text": "A fixed decision tree that domain experts write by hand for every business rule",
+          "correct": false,
+          "rationale": "Hand-written rules do not learn from data. Neural networks learn their behavior during training."
+        },
+        {
+          "id": "c",
+          "text": "A private network that connects the GPUs used to train a model",
+          "correct": false,
+          "rationale": "This describes computer networking hardware, not the machine learning structure called a neural network."
+        },
+        {
+          "id": "d",
+          "text": "Layers of connected nodes whose connection weights are adjusted during training",
+          "correct": true,
+          "rationale": "A neural network passes input through layers of interconnected nodes, and training adjusts the weights so the outputs become more accurate."
+        }
+      ],
+      "explanation": "An artificial neural network is a machine learning structure loosely inspired by the brain. It is made of layers of connected nodes, often called neurons. Each connection has a weight, and each node applies a mathematical operation to its inputs. During training, the network adjusts these weights to reduce its prediction errors, so the learned knowledge lives in its parameters. Networks with many layers are called deep neural networks, which is where the term deep learning comes from. Neural networks power computer vision, speech recognition and large language models.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/computer-vision/",
+          "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0023",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 0,
+      "stem": "A data scientist runs the XGBoost algorithm on two years of sales data. The job produces an artifact that is saved to Amazon S3 and later deployed to make predictions. What is the saved artifact?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The algorithm itself, unchanged by the training data",
+          "correct": false,
+          "rationale": "The algorithm is the general procedure that was run. It is the same before and after training and holds nothing learned from this data."
+        },
+        {
+          "id": "b",
+          "text": "The raw training dataset in a compressed form",
+          "correct": false,
+          "rationale": "Training does not just compress the input data. It produces learned parameters that generalize to new inputs."
+        },
+        {
+          "id": "c",
+          "text": "A trained model that holds the learned parameters",
+          "correct": true,
+          "rationale": "Training an algorithm on data produces a model. The model stores what was learned and is what gets deployed for inference."
+        },
+        {
+          "id": "d",
+          "text": "An inference endpoint that serves predictions",
+          "correct": false,
+          "rationale": "An endpoint is hosting infrastructure created when a model is deployed. The training job output is the model, not the endpoint."
+        }
+      ],
+      "explanation": "An algorithm and a model are related but different. An algorithm is a general procedure, such as XGBoost, linear regression or k-means, that describes how to learn from data. A model is what you get after running that algorithm on a specific dataset: it captures the learned patterns in its parameters. The same algorithm trained on different data produces different models. In AWS services such as Amazon SageMaker AI, training jobs write model artifacts to Amazon S3, and you then deploy that model to an endpoint or run it in a batch job to get predictions.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0024",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 0,
+      "stem": "A team uses a very simple model to predict delivery times. The relationship in the data is complex, and the model has high error on both the training data and new data. Which term describes this problem?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Overfitting",
+          "correct": false,
+          "rationale": "An overfit model does well on training data and poorly on new data. Here the model does poorly on both."
+        },
+        {
+          "id": "b",
+          "text": "Data drift",
+          "correct": false,
+          "rationale": "Data drift means production data changes over time. The model here is already weak on the data it was trained on."
+        },
+        {
+          "id": "c",
+          "text": "Hallucination",
+          "correct": false,
+          "rationale": "Hallucination describes a generative model producing plausible but false content, not a predictive model with high error."
+        },
+        {
+          "id": "d",
+          "text": "Underfitting",
+          "correct": true,
+          "rationale": "An underfit model is too simple to capture the pattern, so it performs poorly on training data and on new data."
+        }
+      ],
+      "explanation": "Fit describes how well a model captures the real pattern in data. An underfit model is too simple, or trained too little, to learn that pattern, so its error is high everywhere, including on the training set. An overfit model is the opposite: it learns the training data too closely, including noise, so it scores well in training but generalizes poorly. A good fit sits between the two, with low error on training data and similar error on unseen data. Comparing training error with validation error is the quickest way to tell which problem you have.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0025",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "objective": 0,
+      "stem": "A city government is reviewing proposed AI projects. Which TWO projects are computer vision tasks?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tracking and counting vehicles across frames of traffic camera video",
+          "correct": true,
+          "rationale": "Following objects through video frames is object tracking, a computer vision task."
+        },
+        {
+          "id": "b",
+          "text": "Transcribing recorded phone calls to the city help line into text",
+          "correct": false,
+          "rationale": "Converting speech to text is speech recognition, which belongs to natural language processing."
+        },
+        {
+          "id": "c",
+          "text": "Labeling satellite images as forest, farmland, or urban area",
+          "correct": true,
+          "rationale": "Assigning a label to a whole image based on its content is image classification, a computer vision task."
+        },
+        {
+          "id": "d",
+          "text": "Translating public notices from English into several other languages",
+          "correct": false,
+          "rationale": "Machine translation works on human language, so it is a natural language processing task."
+        },
+        {
+          "id": "e",
+          "text": "Forecasting next week's electricity demand from hourly meter readings",
+          "correct": false,
+          "rationale": "This is time-series forecasting on numeric data. No images or video are involved."
+        }
+      ],
+      "explanation": "Computer vision is the field of AI that derives meaningful information from images, video and other visual input. Common tasks include image classification, which gives a whole image a label; object detection, which finds and classifies items in an image; object tracking, which follows detected objects across video frames; and segmentation, which classifies individual pixels. Natural language processing handles human language instead, including speech recognition and translation. Forecasting from numeric readings is a time-series problem. To classify a use case, look first at the type of input data.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/computer-vision/",
+          "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/nlp/",
+          "title": "What is Natural Language Processing? - NLP Explained - AWS"
         }
       ]
     }
