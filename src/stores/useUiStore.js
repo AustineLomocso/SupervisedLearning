@@ -42,6 +42,7 @@ export function watchSystemTheme() {
  * @typedef {object} UiState
  * @property {Theme} theme
  * @property {boolean} storageError true when IndexedDB could not be opened
+ * @property {boolean} updateAvailable true when a deploy has replaced this tab's files
  * @property {(theme: Theme) => void} setTheme
  */
 
@@ -49,6 +50,7 @@ export function watchSystemTheme() {
 export const useUiStore = create((set) => ({
   theme: readStoredTheme(),
   storageError: false,
+  updateAvailable: false,
   setTheme: (theme) => {
     try {
       if (theme === 'system') localStorage.removeItem(THEME_STORAGE_KEY)

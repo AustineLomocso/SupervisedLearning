@@ -5,6 +5,7 @@ import Footer from './Footer.jsx'
 import Header from './Header.jsx'
 import SkipLink from './SkipLink.jsx'
 import StorageWarning from './StorageWarning.jsx'
+import UpdateBanner from './UpdateBanner.jsx'
 
 export default function AppShell() {
   const mainRef = useRef(/** @type {HTMLElement | null} */ (null))
@@ -23,6 +24,7 @@ export default function AppShell() {
     <div className="flex min-h-screen flex-col">
       <SkipLink targetRef={mainRef} />
       <StorageWarning />
+      <UpdateBanner />
       <Header />
       <Breadcrumbs />
       <main

@@ -3,11 +3,13 @@ import { createRoot } from 'react-dom/client'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import { openDatabase } from './db/db.js'
 import './index.css'
+import { watchForStaleChunks } from './lib/staleChunks.js'
 import { routes } from './router.jsx'
 import { applyTheme, useUiStore, watchSystemTheme } from './stores/useUiStore.js'
 
 applyTheme(useUiStore.getState().theme)
 watchSystemTheme()
+watchForStaleChunks()
 
 openDatabase().then((ok) => {
   if (!ok) useUiStore.setState({ storageError: true })
