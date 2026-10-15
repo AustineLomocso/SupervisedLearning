@@ -14,13 +14,11 @@ export default function CertCard({ cert }) {
   return (
     <Link
       to={`/${cert.id}`}
-      className="block h-full rounded-lg border border-slate-200 p-5 hover:border-slate-400 dark:border-slate-800 dark:hover:border-slate-600"
+      className="block h-full rounded-2xl bg-surface p-5 shadow-container hover:bg-surface-alt"
     >
-      <span className="block text-sm font-semibold tracking-wide text-amber-700 dark:text-amber-400">
-        {cert.code}
-      </span>
+      <span className="block text-sm font-semibold tracking-wide text-accent">{cert.code}</span>
       <span className="mt-1 block text-lg font-medium">{cert.title}</span>
-      <span className="mt-2 block text-sm text-slate-600 dark:text-slate-300">
+      <span className="mt-2 block text-sm text-ink-muted">
         {cert.itemCount} questions · {taskCount} tasks
       </span>
       <span className="mt-1 block text-sm">{summary}</span>

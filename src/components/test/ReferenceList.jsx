@@ -13,7 +13,7 @@ export default function ReferenceList({ references }) {
               href={reference.url}
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-amber-700 underline underline-offset-2 dark:text-amber-400"
+              className="font-bold text-accent underline underline-offset-2 hover:text-accent-hover"
             >
               {reference.title} <span className="sr-only">(opens in a new tab)</span>
             </a>

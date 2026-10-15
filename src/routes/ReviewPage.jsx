@@ -28,8 +28,8 @@ export default function ReviewPage() {
   if (lesson.status === 'error') {
     return (
       <div role="alert">
-        <h1 className="text-3xl font-bold">Lesson unavailable</h1>
-        <p className="mt-2 text-slate-600 dark:text-slate-300">
+        <h1 className="text-[28px] leading-tight font-bold">Lesson unavailable</h1>
+        <p className="mt-2 text-ink-muted">
           The lesson failed to load. Check your connection and reload the page.
         </p>
       </div>
@@ -72,7 +72,7 @@ function Lesson({ cert, subdomain, markdown }) {
   const reviewed = typeof reviewedAt === 'number'
   return (
     <>
-      <p className="text-sm font-semibold tracking-wide text-amber-700 dark:text-amber-400">
+      <p className="text-sm font-semibold tracking-wide text-accent">
         Review · Task {subdomain.code}
       </p>
       <div className="mt-2 lg:grid lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-10">
@@ -86,18 +86,15 @@ function Lesson({ cert, subdomain, markdown }) {
         </aside>
       </div>
 
-      <section
-        aria-labelledby="finish-heading"
-        className="mt-10 border-t border-slate-200 pt-6 dark:border-slate-800"
-      >
-        <h2 id="finish-heading" className="text-xl font-semibold">
+      <section aria-labelledby="finish-heading" className="mt-10 border-t border-line pt-6">
+        <h2 id="finish-heading" className="text-lg font-bold">
           Finished reading?
         </h2>
         <output className="mt-2 block">
           {reviewed ? `Marked as reviewed on ${formatDate(reviewedAt)}.` : ''}
         </output>
         {saveFailed && (
-          <p role="alert" className="mt-2 text-red-700 dark:text-red-400">
+          <p role="alert" className="mt-2 text-error">
             Couldn’t save your progress. Your browser may be blocking storage.
           </p>
         )}

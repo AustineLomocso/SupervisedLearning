@@ -3,18 +3,102 @@
 /* Dark mode is driven by a `dark` class on <html> (set by index.html + useUiStore). */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Semantic color tokens, modelled on the AWS Console (Cloudscape) palette. Components use
+   `bg-surface text-ink border-line` etc., so they need no `dark:` twin. */
+:root {
+  --c-page: #f2f3f3;
+  --c-surface: #ffffff;
+  --c-surface-alt: #f2f8fd;
+  --c-topnav: #232f3e;
+  --c-ink: #000716;
+  --c-ink-muted: #5f6b7a;
+  --c-ink-heading: #000716;
+  --c-line: #e9ebed;
+  --c-line-strong: #7d8998;
+  --c-accent: #0a64b9;
+  --c-accent-hover: #033160;
+  --c-on-accent: #ffffff;
+  --c-success: #037f0c;
+  --c-success-bg: #f2fcf3;
+  --c-error: #d91515;
+  --c-error-bg: #fff7f7;
+  --c-warning: #8d6605;
+  --c-warning-bg: #fffce9;
+  --c-info: #0a64b9;
+  --c-info-bg: #f2f8fd;
+  --shadow-container: 0 1px 1px 1px #e9ebed, 0 6px 36px rgb(0 7 22 / 0.1);
+}
+:root.dark {
+  --c-page: #0f1b2a;
+  --c-surface: #192534;
+  --c-surface-alt: #1a2c40;
+  --c-topnav: #0f141a;
+  --c-ink: #d1d5db;
+  --c-ink-muted: #9ba7b6;
+  --c-ink-heading: #e9ebed;
+  --c-line: #354150;
+  --c-line-strong: #6f7b8a;
+  --c-accent: #539fe5;
+  --c-accent-hover: #89bdee;
+  --c-on-accent: #0f1b2a;
+  --c-success: #29ad32;
+  --c-success-bg: #0d2b12;
+  --c-error: #ff7a7a;
+  --c-error-bg: #35151a;
+  --c-warning: #ffe347;
+  --c-warning-bg: #2e2705;
+  --c-info: #539fe5;
+  --c-info-bg: #0f2a45;
+  --shadow-container: 0 0 0 1px #354150;
+}
+
+@theme inline {
+  --font-sans:
+    'Open Sans Variable', 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --color-page: var(--c-page);
+  --color-surface: var(--c-surface);
+  --color-surface-alt: var(--c-surface-alt);
+  --color-topnav: var(--c-topnav);
+  --color-ink: var(--c-ink);
+  --color-ink-muted: var(--c-ink-muted);
+  --color-ink-heading: var(--c-ink-heading);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-accent: var(--c-accent);
+  --color-accent-hover: var(--c-accent-hover);
+  --color-on-accent: var(--c-on-accent);
+  --color-success: var(--c-success);
+  --color-success-bg: var(--c-success-bg);
+  --color-error: var(--c-error);
+  --color-error-bg: var(--c-error-bg);
+  --color-warning: var(--c-warning);
+  --color-warning-bg: var(--c-warning-bg);
+  --color-info: var(--c-info);
+  --color-info-bg: var(--c-info-bg);
+  --shadow-container: var(--shadow-container);
+}
+
 @layer base {
   html {
-    @apply bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+    @apply bg-page text-ink font-sans antialiased;
+    font-size: 14px;
   }
 
   html.dark {
     color-scheme: dark;
   }
 
+  h1,
+  h2,
+  h3 {
+    @apply text-ink-heading;
+  }
+
   :focus-visible {
-    outline: 2px solid var(--color-amber-500);
+    outline: 2px solid var(--c-accent);
     outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
@@ -31,7 +115,7 @@
 
 @layer components {
   .lesson {
-    @apply leading-7;
+    @apply text-base leading-7;
   }
   .lesson h1 {
     @apply text-3xl leading-tight font-bold;
@@ -59,16 +143,16 @@
     @apply mt-1;
   }
   .lesson a {
-    @apply font-medium text-amber-700 underline underline-offset-2 dark:text-amber-400;
+    @apply font-medium text-accent underline underline-offset-2 hover:text-accent-hover;
   }
   .lesson strong {
     @apply font-semibold;
   }
   .lesson code {
-    @apply rounded bg-slate-100 px-1 py-0.5 text-sm dark:bg-slate-800;
+    @apply rounded bg-surface-alt px-1 py-0.5 text-sm;
   }
   .lesson pre {
-    @apply overflow-x-auto rounded bg-slate-100 p-4 dark:bg-slate-800;
+    @apply overflow-x-auto rounded-lg bg-surface-alt p-4;
   }
   .lesson pre code {
     @apply bg-transparent p-0;
@@ -81,10 +165,10 @@
   }
   .lesson th,
   .lesson td {
-    @apply border border-slate-300 px-3 py-2 align-top dark:border-slate-700;
+    @apply border border-line-strong px-3 py-2 align-top;
   }
   .lesson th {
-    @apply bg-slate-100 font-semibold dark:bg-slate-800;
+    @apply bg-surface-alt font-semibold;
   }
   .mermaid-diagram svg {
     @apply mx-auto h-auto max-w-full;

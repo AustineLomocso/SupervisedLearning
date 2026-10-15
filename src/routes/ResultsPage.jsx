@@ -28,10 +28,8 @@ export default function ResultsPage() {
   if (state.status === 'error') {
     return (
       <div role="alert">
-        <h1 className="text-3xl font-bold">Couldn’t load these results</h1>
-        <p className="mt-2 text-slate-600 dark:text-slate-300">
-          Check your connection and reload the page.
-        </p>
+        <h1 className="text-[28px] leading-tight font-bold">Couldn’t load these results</h1>
+        <p className="mt-2 text-ink-muted">Check your connection and reload the page.</p>
       </div>
     )
   }
@@ -70,37 +68,39 @@ function Results({ attempt, result, items }) {
 
   return (
     <>
-      <h1 className="text-3xl font-bold">{TEST_KIND_LABELS[attempt.kind]} results</h1>
-      <p className="mt-1 text-slate-600 dark:text-slate-300">
+      <h1 className="text-[28px] leading-tight font-bold">
+        {TEST_KIND_LABELS[attempt.kind]} results
+      </h1>
+      <p className="mt-1 text-ink-muted">
         {cert?.code} · {attempt.mode === 'exam' ? 'Exam mode' : 'Study mode'}
         {attempt.submittedAt !== null &&
           ` · Time used: ${formatDuration(attempt.submittedAt - attempt.startedAt)}`}
       </p>
 
       <section aria-labelledby="score-heading" className="mt-6">
-        <h2 id="score-heading" className="text-xl font-semibold">
+        <h2 id="score-heading" className="text-lg font-bold">
           Your score
         </h2>
         <p className="mt-2 text-lg">
           You answered {result.correct} of {result.total} correctly ({formatPct(result.pct)}).
         </p>
         {exam && cert && (
-          <div className="mt-3 rounded-lg border border-slate-300 p-4 dark:border-slate-700">
+          <div className="mt-3 rounded-2xl bg-surface p-4 shadow-container">
             <p className="text-lg">
               Estimated scaled score:{' '}
               <strong className="tabular-nums">{result.scaledEstimate}</strong> out of 1000
             </p>
             <p className="mt-1 flex items-center gap-2 font-semibold">
               {result.passed ? (
-                <CheckCircleIcon className="size-5 text-emerald-700 dark:text-emerald-400" />
+                <CheckCircleIcon className="size-5 text-success" />
               ) : (
-                <AlertCircleIcon className="size-5 text-amber-700 dark:text-amber-300" />
+                <AlertCircleIcon className="size-5 text-accent" />
               )}
               {result.passed
                 ? `At or above the estimated pass mark of ${cert.exam.passScaled}`
                 : `Below the estimated pass mark of ${cert.exam.passScaled}`}
             </p>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            <p className="mt-2 text-sm text-ink-muted">
               This is an estimate. AWS doesn’t publish how raw scores become scaled scores, so the
               real exam may differ.
             </p>
@@ -117,7 +117,7 @@ function Results({ attempt, result, items }) {
       </section>
 
       <section aria-labelledby="domains-heading" className="mt-8">
-        <h2 id="domains-heading" className="text-xl font-semibold">
+        <h2 id="domains-heading" className="text-lg font-bold">
           By domain
         </h2>
         <ul aria-label="Score by domain" className="mt-3 space-y-3">
@@ -131,11 +131,8 @@ function Results({ attempt, result, items }) {
                   Domain {domain.no}: {domain.title}
                 </p>
                 <p className="text-sm">{describeTally(tally)}</p>
-                <div aria-hidden="true" className="mt-1 h-2 rounded bg-slate-200 dark:bg-slate-800">
-                  <div
-                    className="h-2 rounded bg-slate-700 dark:bg-slate-300"
-                    style={{ width: `${pct}%` }}
-                  />
+                <div aria-hidden="true" className="mt-1 h-2 rounded bg-line">
+                  <div className="h-2 rounded bg-accent" style={{ width: `${pct}%` }} />
                 </div>
               </li>,
             ]
@@ -144,13 +141,13 @@ function Results({ attempt, result, items }) {
       </section>
 
       <section aria-labelledby="tasks-heading" className="mt-8">
-        <h2 id="tasks-heading" className="text-xl font-semibold">
+        <h2 id="tasks-heading" className="text-lg font-bold">
           By task
         </h2>
         <div className="mt-3 overflow-x-auto">
           <table aria-label="Score by task" className="w-full text-left text-sm">
             <thead>
-              <tr className="border-b border-slate-300 dark:border-slate-700">
+              <tr className="border-b border-line-strong">
                 <th scope="col" className="py-2 pr-4">
                   Task
                 </th>
@@ -167,7 +164,7 @@ function Results({ attempt, result, items }) {
                 const code = id.split('/')[1]
                 const sub = getSubdomain(attempt.certId, code)
                 return (
-                  <tr key={id} className="border-b border-slate-200 dark:border-slate-800">
+                  <tr key={id} className="border-b border-line">
                     <th scope="row" className="py-2 pr-4 font-normal">
                       <Link
                         to={`/${attempt.certId}/s/${code}`}
@@ -196,7 +193,7 @@ function Results({ attempt, result, items }) {
       </section>
 
       <section aria-labelledby="review-heading" className="mt-8">
-        <h2 id="review-heading" className="text-xl font-semibold">
+        <h2 id="review-heading" className="text-lg font-bold">
           Review your answers
         </h2>
         <fieldset className="mt-3">

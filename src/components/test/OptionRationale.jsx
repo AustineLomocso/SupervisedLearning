@@ -19,7 +19,7 @@ export default function OptionRationale({ item, order, selected }) {
         return (
           <li
             key={option.id}
-            className={`rounded-lg border p-3 ${option.correct ? 'border-emerald-300 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/50' : 'border-slate-200 dark:border-slate-800'}`}
+            className={`rounded-lg border-2 p-3 ${option.correct ? 'border-success bg-success-bg' : 'border-line'}`}
           >
             <p className="flex flex-wrap items-center gap-x-2 font-medium">
               <span aria-hidden="true" className="font-semibold">
@@ -30,15 +30,13 @@ export default function OptionRationale({ item, order, selected }) {
             <p className="mt-1 flex flex-wrap gap-x-4 text-sm font-semibold">
               {option.correct && (
                 <span className="inline-flex items-center gap-1">
-                  <CheckCircleIcon className="size-4 text-emerald-700 dark:text-emerald-400" />
+                  <CheckCircleIcon className="size-4 text-success" />
                   Correct answer
                 </span>
               )}
               {chosen && (
                 <span className="inline-flex items-center gap-1">
-                  {!option.correct && (
-                    <AlertCircleIcon className="size-4 text-red-700 dark:text-red-400" />
-                  )}
+                  {!option.correct && <AlertCircleIcon className="size-4 text-error" />}
                   Your answer
                 </span>
               )}

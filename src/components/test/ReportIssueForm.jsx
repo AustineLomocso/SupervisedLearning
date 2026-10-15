@@ -59,7 +59,7 @@ export default function ReportIssueForm({ item }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-4 space-y-3 rounded-lg border border-slate-300 p-4 dark:border-slate-700"
+      className="mt-4 space-y-3 rounded-2xl bg-surface p-4 shadow-container"
     >
       <fieldset>
         <legend className="font-semibold">What’s wrong with this question?</legend>
@@ -84,7 +84,7 @@ export default function ReportIssueForm({ item }) {
           value={note}
           onChange={(event) => setNote(event.target.value)}
           rows={3}
-          className="mt-1 w-full rounded border border-slate-300 bg-transparent p-2 dark:border-slate-700"
+          className="mt-1 w-full rounded-lg border-2 border-line-strong bg-surface p-2 text-ink focus:border-accent"
         />
       </label>
       <div className="flex flex-wrap gap-3">
@@ -100,7 +100,7 @@ export default function ReportIssueForm({ item }) {
         </button>
       </div>
       {status === 'error' && (
-        <p role="alert" className="text-red-700 dark:text-red-400">
+        <p role="alert" className="text-error">
           Couldn’t save your report. Your browser may be blocking storage.
         </p>
       )}

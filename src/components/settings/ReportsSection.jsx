@@ -17,10 +17,10 @@ export default function ReportsSection() {
 
   return (
     <section aria-labelledby="reports-heading" className="mt-8">
-      <h2 id="reports-heading" className="text-xl font-semibold">
+      <h2 id="reports-heading" className="text-lg font-bold">
         My reports
       </h2>
-      <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-300">
+      <p className="mt-2 max-w-2xl text-ink-muted">
         Questions you flagged with “Report issue”. Reports stay in this browser. Export them to
         share with the app’s maintainer.
       </p>
@@ -39,7 +39,7 @@ export default function ReportsSection() {
           >
             Export reports
           </button>
-          <ul aria-label="Reports" className="mt-4 divide-y divide-slate-200 dark:divide-slate-800">
+          <ul aria-label="Reports" className="mt-4 divide-y divide-line">
             {flags.map((flag) => (
               <li key={flag.id} className="flex flex-wrap items-start justify-between gap-3 py-3">
                 <div className="min-w-0">
@@ -48,7 +48,7 @@ export default function ReportsSection() {
                     {FLAG_REASON_LABELS[flag.reason]}
                   </p>
                   {flag.note && <p className="mt-1 text-sm break-words">{flag.note}</p>}
-                  <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  <p className="mt-1 text-xs text-ink-muted">
                     Reported {formatDate(flag.createdAt)} · question version {flag.itemVersion}
                   </p>
                 </div>

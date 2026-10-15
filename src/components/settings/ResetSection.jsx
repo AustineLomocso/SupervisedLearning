@@ -24,10 +24,10 @@ export default function ResetSection() {
 
   return (
     <section aria-labelledby="reset-heading" className="mt-8">
-      <h2 id="reset-heading" className="text-xl font-semibold">
+      <h2 id="reset-heading" className="text-lg font-bold">
         Reset progress
       </h2>
-      <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-300">
+      <p className="mt-2 max-w-2xl text-ink-muted">
         Deletes all test attempts, answer history and review checkmarks. Your reports and theme are
         kept. Download a backup first if you might want them back.
       </p>
@@ -36,7 +36,7 @@ export default function ResetSection() {
       </button>
       <output className="mt-2 block">{status}</output>
       {error && (
-        <p role="alert" className="mt-2 text-red-700 dark:text-red-400">
+        <p role="alert" className="mt-2 text-error">
           {error}
         </p>
       )}

@@ -32,9 +32,7 @@ export default function MasteryBadge({ mastery }) {
       <BandIcon band={mastery.band} className={`size-4 shrink-0 ${style.icon}`} />
       <span>{style.label}</span>
       {mastery.pct !== null && <span className="tabular-nums">{mastery.pct}%</span>}
-      {mastery.lowConfidence && (
-        <span className="text-slate-600 dark:text-slate-300">(few answers)</span>
-      )}
+      {mastery.lowConfidence && <span className="text-ink-muted">(few answers)</span>}
     </span>
   )
 }

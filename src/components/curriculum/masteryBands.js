@@ -8,22 +8,22 @@
 export const BAND_STYLES = {
   'not-started': {
     label: 'Not started',
-    cell: 'border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900',
-    icon: 'text-slate-500 dark:text-slate-400',
+    cell: 'border-line-strong bg-surface',
+    icon: 'text-ink-muted',
   },
   weak: {
     label: 'Weak',
-    cell: 'border-red-300 bg-red-50 dark:border-red-800 dark:bg-red-950/50',
-    icon: 'text-red-700 dark:text-red-400',
+    cell: 'border-error bg-error-bg',
+    icon: 'text-error',
   },
   developing: {
     label: 'Developing',
-    cell: 'border-amber-300 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/50',
-    icon: 'text-amber-700 dark:text-amber-300',
+    cell: 'border-warning bg-warning-bg',
+    icon: 'text-warning',
   },
   strong: {
     label: 'Strong',
-    cell: 'border-emerald-300 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/50',
-    icon: 'text-emerald-700 dark:text-emerald-400',
+    cell: 'border-success bg-success-bg',
+    icon: 'text-success',
   },
 }

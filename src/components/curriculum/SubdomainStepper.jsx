@@ -46,25 +46,21 @@ export default function SubdomainStepper({ certId, taskCode, status }) {
         return (
           <li
             key={step.key}
-            className={`flex flex-wrap items-center gap-4 rounded-lg border p-4 ${recommended ? 'border-slate-900 dark:border-slate-100' : 'border-slate-200 dark:border-slate-800'}`}
+            className={`flex flex-wrap items-center gap-4 rounded-lg border p-4 ${recommended ? 'border-accent' : 'border-line'}`}
           >
             <span
               aria-hidden="true"
-              className="flex size-8 shrink-0 items-center justify-center rounded-full bg-slate-200 font-semibold dark:bg-slate-800"
+              className="flex size-8 shrink-0 items-center justify-center rounded-full bg-line font-semibold"
             >
-              {done ? (
-                <CheckCircleIcon className="size-5 text-emerald-700 dark:text-emerald-400" />
-              ) : (
-                index + 1
-              )}
+              {done ? <CheckCircleIcon className="size-5 text-success" /> : index + 1}
             </span>
             <div className="min-w-48 flex-1">
               {recommended && (
-                <p className="text-xs font-semibold tracking-wide text-amber-700 uppercase dark:text-amber-400">
+                <p className="text-xs font-semibold tracking-wide text-accent uppercase">
                   Recommended next
                 </p>
               )}
-              <p className="text-slate-600 dark:text-slate-300">{step.purpose}</p>
+              <p className="text-ink-muted">{step.purpose}</p>
               <p className="mt-1 text-sm">{summary(status, step.key)}</p>
             </div>
             <Link

@@ -63,10 +63,10 @@ export default function BackupSection() {
 
   return (
     <section aria-labelledby="backup-heading" className="mt-8">
-      <h2 id="backup-heading" className="text-xl font-semibold">
+      <h2 id="backup-heading" className="text-lg font-bold">
         Backup
       </h2>
-      <p className="mt-2 max-w-2xl text-slate-600 dark:text-slate-300">
+      <p className="mt-2 max-w-2xl text-ink-muted">
         Your progress lives only in this browser. Download a backup to keep it safe or to move it to
         another device. Restoring a backup replaces everything stored here.
       </p>
@@ -83,14 +83,14 @@ export default function BackupSection() {
         />
         <label
           htmlFor={inputId}
-          className={`${buttonClass('secondary')} cursor-pointer peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-amber-500`}
+          className={`${buttonClass('secondary')} cursor-pointer peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent`}
         >
           Restore from backup
         </label>
       </div>
       <output className="mt-2 block">{status}</output>
       {error && (
-        <p role="alert" className="mt-2 text-red-700 dark:text-red-400">
+        <p role="alert" className="mt-2 text-error">
           {error}
         </p>
       )}
