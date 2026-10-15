@@ -8,7 +8,8 @@ A 100% frontend React + Vite study app for the AWS CLF-C02 and AIF-C01 exams, de
 
 - The design spec is `docs/superpowers/specs/2026-10-13-aws-cert-review-design.md`. Read it before changing anything user-facing.
 - Phase plans are in `docs/superpowers/plans/`.
-- Phases 1 (app shell, data layer), 2 (content engine, seed content), 3 (curriculum UI) and 4 (exam engine) are done. Phase 5 (deploy) and 6 (bulk content) are not built yet.
+- Phases 1 (app shell, data layer), 2 (content engine, seed content), 3 (curriculum UI), 4 (exam engine) and 5 (build and deploy) are done. Phase 6 (bulk content) is not built yet.
+- The app is deployed at https://austinelomocso.github.io/SupervisedLearning/. The default branch is `main`; pushing to it deploys.
 
 ## Commands
 
@@ -24,6 +25,7 @@ A 100% frontend React + Vite study app for the AWS CLF-C02 and AIF-C01 exams, de
 | `npm run validate:content`              | Prints content errors and warnings. Add `-- --strict` to fail on warnings.          |
 | `npm run content:stats`                 | Items and lessons per task, against the targets                                     |
 | `npm run check:links`                   | Fetches every curated reference URL. Needs network; not for CI.                     |
+| `npm run check:size`                    | After `npm run build`: fails if a size budget is broken (see Deployment).           |
 | `npm run build:index`                   | Regenerates `src/generated/`                                                        |
 
 **Vitest only works from PowerShell on this Windows machine.** From Git Bash it fails with "Vitest failed to find the current suite" and collects 0 tests. Run `npm test`, `npx vitest` and `npm run test:e2e` through the PowerShell tool; Bash is fine for everything else.
@@ -111,6 +113,14 @@ Theme logic is duplicated on purpose in the inline script in `index.html` (it ru
 - `useCert()` assumes `CertGuard` already ran.
 - Query-string validation, such as `TestSetupPage`'s `kind`, happens inside the component.
 - `AppShell` moves focus to `<main>` on every pathname change. The skip link calls `focus()` instead of navigating, because `#main` would be read as a hash route.
+
+**Deployment (Phase 5).**
+
+- `.github/workflows/ci.yml` runs on pull requests and is reused by `deploy.yml`. It runs, in order: `validate:content -- --strict`, lint, typecheck, format check, `npm test`, build, `check:size`, Playwright. A push to `main` runs `deploy.yml`: the same CI, then upload `dist/` and deploy to GitHub Pages (Pages source is "GitHub Actions").
+- Size budgets (gzipped), enforced by `npm run check:size` after a build: initial JS 150 KB (the entry script plus its `modulepreload` files), manifest 10 KB, each cert index 20 KB, each question shard 25 KB.
+- `check:size` finds content chunks by name. `vite.config.js` names them `assets/content/<cert>-<task>-<NNN>-[hash].js` (shards), `...-lesson-...` and `<cert>-index-...` through `tools/lib/chunkNames.mjs`. If you change that naming, change `tools/check-size.mjs` too; it fails when it finds no shards or indexes.
+- Vite 8 bundles with Rolldown: vendor chunks are set with `build.rolldownOptions.output.codeSplitting.groups`, not `manualChunks`. Mermaid is deliberately not in a group (it is lazy and splits by diagram type).
+- A tab left open across a deploy requests chunk files that no longer exist. `lib/staleChunks.js` turns Vite’s `vite:preloadError` into `useUiStore.updateAvailable`, and `UpdateBanner` offers a reload. `RouteError` still shows for the page that failed.
 
 ## Gotchas
 

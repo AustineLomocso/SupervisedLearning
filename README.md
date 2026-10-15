@@ -6,25 +6,33 @@ GitHub Pages. All progress is stored locally in the browser (IndexedDB).
 
 Not affiliated with or endorsed by Amazon Web Services.
 
+**Live site:** https://austinelomocso.github.io/SupervisedLearning/
+
 ## Requirements
 
 - Node 24 (see `.nvmrc`)
 
 ## Scripts
 
-| Command                    | What it does                                                                     |
-| -------------------------- | -------------------------------------------------------------------------------- |
-| `npm run dev`              | Dev server at http://localhost:5173/SupervisedLearning/                          |
-| `npm test`                 | Unit and component tests (Vitest)                                                |
-| `npm run test:e2e`         | Builds, serves and runs Playwright tests                                         |
-| `npm run lint`             | oxlint (warnings fail)                                                           |
-| `npm run typecheck`        | JSDoc type-check with `tsc --checkJs`                                            |
-| `npm run format`           | Prettier                                                                         |
-| `npm run build`            | Production build to `dist/`                                                      |
-| `npm run validate:content` | Validate `content/` (add `-- --strict` to fail on warnings)                      |
-| `npm run content:stats`    | Item and lesson progress per task                                                |
-| `npm run check:links`      | Check every curated reference URL (needs network)                                |
-| `npm run build:index`      | Regenerate `src/generated/` (runs automatically before dev/build/test/typecheck) |
+| Command                    | What it does                                                                       |
+| -------------------------- | ---------------------------------------------------------------------------------- |
+| `npm run dev`              | Dev server at http://localhost:5173/SupervisedLearning/                            |
+| `npm test`                 | Unit and component tests (Vitest)                                                  |
+| `npm run test:e2e`         | Builds, serves and runs Playwright tests                                           |
+| `npm run lint`             | oxlint (warnings fail)                                                             |
+| `npm run typecheck`        | JSDoc type-check with `tsc --checkJs`                                              |
+| `npm run format`           | Prettier                                                                           |
+| `npm run build`            | Production build to `dist/`                                                        |
+| `npm run check:size`       | After a build, check the size budgets (initial JS, manifest, cert indexes, shards) |
+| `npm run validate:content` | Validate `content/` (add `-- --strict` to fail on warnings)                        |
+| `npm run content:stats`    | Item and lesson progress per task                                                  |
+| `npm run check:links`      | Check every curated reference URL (needs network)                                  |
+| `npm run build:index`      | Regenerate `src/generated/` (runs automatically before dev/build/test/typecheck)   |
+
+## Deployment
+
+Pull requests run `.github/workflows/ci.yml`. Every push to `main` runs `.github/workflows/deploy.yml`,
+which repeats the same checks and then publishes `dist/` to GitHub Pages.
 
 ## Content
 
