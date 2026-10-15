@@ -1,0 +1,1148 @@
+{
+  "schemaVersion": 1,
+  "subdomain": "1.1",
+  "items": [
+    {
+      "id": "aif-c01-1.1-0026",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 0,
+      "stem": "A law firm wants software that automatically finds the names of people, companies, and places mentioned in thousands of contracts. Which NLP technique does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Part-of-speech (POS) tagging",
+          "correct": false,
+          "rationale": "Part-of-speech tagging labels each word as a noun, verb, adjective and so on. It does not specifically pull out names of entities."
+        },
+        {
+          "id": "b",
+          "text": "Sentiment analysis",
+          "correct": false,
+          "rationale": "Sentiment analysis detects emotion or opinion in text, such as satisfaction or frustration, not names of people and companies."
+        },
+        {
+          "id": "c",
+          "text": "Named entity recognition",
+          "correct": true,
+          "rationale": "Named entity recognition finds names of people, places, organizations and events in text."
+        },
+        {
+          "id": "d",
+          "text": "Image segmentation",
+          "correct": false,
+          "rationale": "Image segmentation is a computer vision task that classifies pixels in an image. Contracts here are processed as text."
+        }
+      ],
+      "explanation": "Natural language processing (NLP) lets computers interpret and work with human language. It includes several distinct techniques. Tokenization splits text into smaller units. Part-of-speech tagging labels the grammatical role of each word. Named entity recognition (NER) identifies names of people, places, organizations and events, which is useful for extracting key facts from documents such as contracts or news articles. Sentiment analysis detects the emotion or opinion expressed in text. Machine translation converts text between languages. Exam questions often describe the desired output, so match \"extract names\" to NER and \"positive or negative\" to sentiment analysis.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/nlp/",
+          "title": "What is Natural Language Processing? - NLP Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0027",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 0,
+      "stem": "A user asks a large language model (LLM) to write a short product description. How does the LLM produce its response?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It predicts one token at a time, based on the prompt and the tokens so far.",
+          "correct": true,
+          "rationale": "LLMs generate text by repeatedly predicting the next token, using parameters learned during training."
+        },
+        {
+          "id": "b",
+          "text": "It retrieves a complete, prewritten description from a database of approved answers.",
+          "correct": false,
+          "rationale": "A lookup of stored answers is a retrieval system. An LLM composes new text rather than returning fixed records."
+        },
+        {
+          "id": "c",
+          "text": "It matches keywords in the prompt against a fixed list of hand-written templates.",
+          "correct": false,
+          "rationale": "Keyword-to-template matching is a rule-based approach. LLMs learn language patterns from data instead of following templates."
+        },
+        {
+          "id": "d",
+          "text": "It retrains itself on the prompt and then returns the training error as text.",
+          "correct": false,
+          "rationale": "An LLM does not retrain on each prompt. Answering a prompt is inference with an already trained model."
+        }
+      ],
+      "explanation": "A large language model is a very large deep learning model, usually based on the transformer architecture, that is pre-trained on vast amounts of text. Text is split into tokens, which are words or pieces of words. During training, the model adjusts its billions of parameters to get better at predicting the next token in a sequence. At inference time it uses the same skill to generate output: it predicts a likely next token, appends it, and repeats until the response is complete. This is why LLM output is newly composed text, and also why it can sound fluent while being wrong.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/large-language-model/",
+          "title": "What is LLM? - Large Language Models Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0028",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 1,
+      "stem": "A marketing team wants a system that writes new product descriptions and social media posts from a short prompt. Which type of AI does this describe?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Rule-based automation",
+          "correct": false,
+          "rationale": "Rule-based automation follows fixed instructions written in advance. It does not compose new, original text from a prompt."
+        },
+        {
+          "id": "b",
+          "text": "Unsupervised clustering",
+          "correct": false,
+          "rationale": "Clustering groups existing data points by similarity. It does not create new content."
+        },
+        {
+          "id": "c",
+          "text": "Computer vision",
+          "correct": false,
+          "rationale": "Computer vision interprets images and video. The task here is writing text."
+        },
+        {
+          "id": "d",
+          "text": "Generative AI",
+          "correct": true,
+          "rationale": "Generative AI creates new content, such as text, images or code, in response to a prompt."
+        }
+      ],
+      "explanation": "Generative AI is a type of AI that can create new content and ideas, including text, images, video, music and code. It runs on very large machine learning models, called foundation models, that are pre-trained on broad data. A user gives the model a prompt, and the model produces original output instead of choosing from stored answers. Other AI techniques analyze existing data: clustering groups records, classification assigns labels, and computer vision interprets images. Words such as generate, draft, write, summarize or create in a scenario usually point to generative AI.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0029",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 1,
+      "stem": "Which statement best describes how a generative model differs from a traditional discriminative machine learning model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A generative model can only process image data, while a discriminative model can only process text data.",
+          "correct": false,
+          "rationale": "Both kinds of models can work with many data types. The difference is what they learn, not the input format."
+        },
+        {
+          "id": "b",
+          "text": "A generative model learns data patterns to create new samples; a discriminative model predicts labels.",
+          "correct": true,
+          "rationale": "Discriminative models predict a label from features. Generative models learn the patterns of the data itself, which lets them produce new samples."
+        },
+        {
+          "id": "c",
+          "text": "A generative model never needs training data, while a discriminative model must always be trained on data.",
+          "correct": false,
+          "rationale": "Generative models are trained on very large datasets. They are not exempt from training."
+        },
+        {
+          "id": "d",
+          "text": "A generative model follows hand-written rules, while a discriminative model learns its patterns from data.",
+          "correct": false,
+          "rationale": "Modern generative models learn from data, typically with deep neural networks. They are not rule-based."
+        }
+      ],
+      "explanation": "Traditional predictive, or discriminative, machine learning models learn a mapping from known inputs to labels or values, for example from transaction features to \"fraud\" or \"not fraud\". Generative models turn this around. Instead of predicting a label given some features, they learn how the features of the data are distributed and related, which lets them create new examples that resemble the training data. Generative AI families include transformers, diffusion models, generative adversarial networks (GANs) and variational autoencoders (VAEs). Both approaches are machine learning, and both learn from data during training.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0030",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 1,
+      "stem": "A company maintains separate models for sentiment analysis, topic classification, and text summarization. It wants a single model that can perform all these tasks and others from different prompts. Which type of model fits this goal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A new task-specific classifier trained for each use case",
+          "correct": false,
+          "rationale": "Training one narrow model per task is the current situation the company wants to replace."
+        },
+        {
+          "id": "b",
+          "text": "A k-means model that groups documents by similarity",
+          "correct": false,
+          "rationale": "K-means clustering only groups data. It cannot summarize text or follow different prompts."
+        },
+        {
+          "id": "c",
+          "text": "A foundation model that can be adapted to many tasks",
+          "correct": true,
+          "rationale": "Foundation models are general-purpose models trained on broad data, and one model can perform many tasks based on the prompt."
+        },
+        {
+          "id": "d",
+          "text": "A rule-based expert system with a rule set for each task",
+          "correct": false,
+          "rationale": "Hand-written rules would need to be built and maintained separately for every task, and they do not generalize like a foundation model."
+        }
+      ],
+      "explanation": "Traditional machine learning models are usually built for one narrow task, such as sentiment analysis, image classification or forecasting. Foundation models (FMs) are large deep learning models trained on massive, broad datasets. Because they learn general patterns, a single FM can perform many different tasks, such as answering questions, summarizing, classifying and writing, depending on the prompt it receives. Developers can also use an FM as the starting point for a more specialized application. Large language models are one class of foundation model, and FMs power most generative AI applications.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0031",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "objective": 1,
+      "stem": "A team is comparing a generative AI chatbot with an agentic AI system for IT support. Which statement best describes how agentic AI relates to generative AI?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Agentic AI often uses LLMs to reason and plan, then acts in external systems toward a goal.",
+          "correct": true,
+          "rationale": "AWS describes agents that use LLMs to interpret goals and plan, then carry out tasks in other systems with limited human oversight."
+        },
+        {
+          "id": "b",
+          "text": "Agentic AI replaces large language models with fixed rules so that every one of its actions is predictable.",
+          "correct": false,
+          "rationale": "Agentic AI relies on LLM-based reasoning to adapt to new situations. Following only fixed rules describes traditional software."
+        },
+        {
+          "id": "c",
+          "text": "Generative AI and agentic AI are two different names for the same single-turn chatbot technology.",
+          "correct": false,
+          "rationale": "A single-turn chatbot answers each prompt. Agentic AI pursues goals over multiple steps and takes actions, so the terms are not the same."
+        },
+        {
+          "id": "d",
+          "text": "Agentic AI can only return text answers, while generative AI chatbots can update tickets and run tools.",
+          "correct": false,
+          "rationale": "This reverses the roles. Taking actions such as updating tickets and calling tools is what distinguishes agentic AI."
+        }
+      ],
+      "explanation": "Generative AI produces new content, such as an answer or a draft, in response to a prompt. Agentic AI builds on that capability. An agentic system uses large language models to interpret a goal, build a plan and adjust it as new information arrives. It then acts: it calls APIs, updates records and coordinates with other agents, with limited human oversight and with some actions sent for human approval. Traditional AI needs step-by-step prompting, while agentic AI is proactive and goal-driven. In an IT support scenario, a chatbot explains how to reset a password, while an agent can perform the reset and close the ticket.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0032",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 1,
+      "stem": "Which statement correctly compares deep learning with traditional machine learning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deep learning usually needs less training data and less compute than traditional machine learning.",
+          "correct": false,
+          "rationale": "Deep learning models have many layers and parameters, so they typically need more data and compute, not less."
+        },
+        {
+          "id": "b",
+          "text": "Deep learning is a separate field of AI that does not belong to machine learning at all.",
+          "correct": false,
+          "rationale": "Deep learning is a subset of machine learning, which is itself a subset of AI."
+        },
+        {
+          "id": "c",
+          "text": "Traditional machine learning algorithms cannot be used with structured tabular data.",
+          "correct": false,
+          "rationale": "Traditional algorithms such as XGBoost and linear regression are widely used on structured tabular data."
+        },
+        {
+          "id": "d",
+          "text": "Deep learning uses many-layered neural networks that learn features from data such as images.",
+          "correct": true,
+          "rationale": "Deep neural networks learn layers of features automatically, which makes them strong on unstructured data like images, audio and text."
+        }
+      ],
+      "explanation": "Deep learning is a subset of machine learning that uses neural networks with many layers. Each layer learns increasingly complex features; in an image model, early layers detect edges and textures and later layers recognize shapes and objects. Because the network learns these features itself, deep learning performs well on unstructured data such as images, audio and text, where hand-crafting features is difficult. The trade-off is that deep models usually need large datasets and significant compute, often GPUs. Traditional machine learning algorithms remain a good choice for many structured, tabular problems.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/computer-vision/",
+          "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0033",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 3,
+      "difficulty": 3,
+      "objective": 1,
+      "stem": "A training session covers how AI, machine learning, deep learning, generative AI, and agentic AI relate. Which THREE statements are correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Generative AI models are typically built with deep learning, such as transformer neural networks.",
+          "correct": true,
+          "rationale": "Modern generative AI builds on deep learning, including neural networks and transformers."
+        },
+        {
+          "id": "b",
+          "text": "All AI systems are machine learning systems, because AI cannot exist without training data.",
+          "correct": false,
+          "rationale": "Machine learning is a subset of AI. Rule-based systems are also a form of AI, so not every AI system learns from data."
+        },
+        {
+          "id": "c",
+          "text": "A foundation model can be adapted to many tasks; a traditional ML model usually handles one task.",
+          "correct": true,
+          "rationale": "Foundation models are general-purpose, whereas traditional models typically handle one narrow task such as sentiment analysis."
+        },
+        {
+          "id": "d",
+          "text": "Deep learning is a branch of AI that is separate from machine learning and needs no training data.",
+          "correct": false,
+          "rationale": "Deep learning is a subset of machine learning and needs large amounts of training data."
+        },
+        {
+          "id": "e",
+          "text": "Agentic AI systems can use large language models to plan steps and then act on external systems.",
+          "correct": true,
+          "rationale": "Agents use LLM-based reasoning to plan and then carry out tasks in other systems toward a goal."
+        },
+        {
+          "id": "f",
+          "text": "Generative AI can produce text, but it cannot produce images, audio, or video of any kind.",
+          "correct": false,
+          "rationale": "Generative AI can create many content types, including images, video and music, not only text."
+        }
+      ],
+      "explanation": "These terms nest and build on one another. Artificial intelligence is the broad field. Machine learning is the subset of AI that learns from data instead of following hand-written rules. Deep learning is the subset of machine learning that uses many-layered neural networks. Generative AI applies deep learning, often transformers and diffusion models, to create new text, images, audio, video and code, and foundation models are the large general-purpose models behind it. Agentic AI uses these models to reason and plan, then takes actions in other systems to reach a goal with limited human oversight.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/generative-ai/",
+          "title": "What is Generative AI? - Gen AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/agentic-ai/",
+          "title": "What is Agentic AI? - Agentic AI Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0034",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 2,
+      "stem": "A company wants to use an Amazon Bedrock model to summarize 200,000 archived support tickets. Nobody is waiting for the results. How does Amazon Bedrock batch inference handle the input and output?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The application streams each ticket to the model and waits for each response in turn.",
+          "correct": false,
+          "rationale": "Sending prompts one at a time and waiting for each answer is on-demand, real-time invocation, not batch inference."
+        },
+        {
+          "id": "b",
+          "text": "An administrator pastes groups of tickets into the console playground and copies each answer.",
+          "correct": false,
+          "rationale": "The playground is for interactive testing. It is not how batch inference jobs are submitted."
+        },
+        {
+          "id": "c",
+          "text": "Input files go to Amazon S3, a job is submitted, and output files are written to S3.",
+          "correct": true,
+          "rationale": "Bedrock batch inference reads prompts from files in an S3 bucket and writes the generated responses to S3 when the job completes."
+        },
+        {
+          "id": "d",
+          "text": "Each ticket is sent to an Amazon SQS queue, and the answers are returned over a WebSocket.",
+          "correct": false,
+          "rationale": "Bedrock batch inference does not use SQS queues or WebSocket responses. Inputs and outputs are files in Amazon S3."
+        }
+      ],
+      "explanation": "Batch inference processes many inputs together when no user is waiting for an immediate response. In Amazon Bedrock, you put your prompts in input files, upload them to an Amazon S3 bucket, and submit a batch inference job that points to that bucket. Bedrock generates the responses asynchronously and writes output files to S3, where you retrieve them after the job finishes. You can be notified of job state changes instead of polling. This approach suits large datasets such as archived documents, while interactive applications use on-demand invocation for an immediate response.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html",
+          "title": "Process multiple prompts with batch inference - Amazon Bedrock"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0035",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 2,
+      "stem": "A team moves a model that is used only a few times each day to Amazon SageMaker Serverless Inference. Which behavior should the team expect?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The first request after an idle period can take longer while capacity starts up.",
+          "correct": true,
+          "rationale": "Serverless Inference suits workloads with idle periods that can tolerate cold starts, so the first request after idle time can be slower."
+        },
+        {
+          "id": "b",
+          "text": "The team must choose, patch, and manage the instances that host the model.",
+          "correct": false,
+          "rationale": "Serverless Inference removes the need to configure or manage the underlying infrastructure."
+        },
+        {
+          "id": "c",
+          "text": "Every request is queued, and results are written to Amazon S3 for later pickup.",
+          "correct": false,
+          "rationale": "Queuing requests and storing results for later describes asynchronous inference, not Serverless Inference."
+        },
+        {
+          "id": "d",
+          "text": "The endpoint keeps dedicated instances running at all times for constant latency.",
+          "correct": false,
+          "rationale": "Always-on instances describe a real-time endpoint. Serverless Inference does not keep dedicated capacity running during idle periods."
+        }
+      ],
+      "explanation": "Amazon SageMaker AI offers several inference options. Serverless Inference lets you deploy a model without configuring or managing any underlying infrastructure, and capacity scales with traffic. AWS recommends it for workloads that have idle periods between traffic spurts and can tolerate cold starts. A cold start is the extra delay on a request that arrives when no capacity is warm, typically after an idle period. Real-time endpoints keep instances running for consistent low latency, and asynchronous inference queues requests for large payloads and long processing. Choosing between them depends on traffic pattern, latency needs and payload size.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0036",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 3,
+      "objective": 2,
+      "stem": "A retailer has two ML workloads. Workload 1 must return a product recommendation while a shopper browses the website. Workload 2 scores the entire customer table stored in Amazon S3 once a week, and nobody waits for the results. Which TWO choices are the MOST appropriate and cost-effective?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use real-time inference for workload 1.",
+          "correct": true,
+          "rationale": "A shopper is waiting on the page, so workload 1 needs the low-latency responses of real-time inference."
+        },
+        {
+          "id": "b",
+          "text": "Use batch inference for workload 1.",
+          "correct": false,
+          "rationale": "Batch inference produces results later for a whole dataset. It cannot answer a shopper during a live browsing session."
+        },
+        {
+          "id": "c",
+          "text": "Use asynchronous inference for workload 1.",
+          "correct": false,
+          "rationale": "Asynchronous inference queues requests for large payloads and long processing. That delay does not suit an interactive web page."
+        },
+        {
+          "id": "d",
+          "text": "Use batch inference for workload 2.",
+          "correct": true,
+          "rationale": "Scoring a full stored dataset on a schedule with no one waiting is the classic batch inference use case."
+        },
+        {
+          "id": "e",
+          "text": "Use an always-on real-time endpoint for workload 2.",
+          "correct": false,
+          "rationale": "Keeping an always-on endpoint for a weekly offline job pays for idle capacity. Batch processing is more cost-effective."
+        }
+      ],
+      "explanation": "Pick an inference type by asking who is waiting and how much data arrives at once. Real-time inference keeps a fully managed endpoint ready to return predictions with low latency, which suits interactive applications such as recommendations while a user browses. Batch inference processes a whole stored dataset in one job and writes the results for later use, so it suits scheduled, offline scoring where latency per record does not matter. Asynchronous inference sits between them for large payloads and long processing, and serverless inference fits intermittent traffic. Many companies run more than one type for different workloads.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html",
+          "title": "Real-time inference - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0037",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 2,
+      "stem": "Which description matches Amazon SageMaker Asynchronous Inference?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It returns each prediction synchronously within milliseconds to a waiting user.",
+          "correct": false,
+          "rationale": "Immediate, low-latency responses describe real-time inference."
+        },
+        {
+          "id": "b",
+          "text": "It trains a new version of the model each time a request arrives.",
+          "correct": false,
+          "rationale": "Asynchronous Inference serves predictions from an already trained model. It does not retrain per request."
+        },
+        {
+          "id": "c",
+          "text": "It runs the model only on the user's mobile device, with no endpoint.",
+          "correct": false,
+          "rationale": "On-device inference is a different deployment approach. Asynchronous Inference uses a SageMaker AI endpoint."
+        },
+        {
+          "id": "d",
+          "text": "It queues incoming requests and suits large payloads and long processing.",
+          "correct": true,
+          "rationale": "Asynchronous Inference queues requests and suits large payloads, long processing times and near real-time latency needs."
+        }
+      ],
+      "explanation": "Amazon SageMaker Asynchronous Inference queues incoming requests and processes them asynchronously. AWS recommends it for requests with large payload sizes, long processing times, and near real-time latency requirements, for example analyzing large documents, images or video files where a result is needed soon but not instantly. The caller does not hold a connection open while the model works. This contrasts with real-time inference, which returns a response immediately for interactive use, with batch processing of a whole stored dataset, and with serverless inference, which removes infrastructure management for intermittent traffic.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0038",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "objective": 2,
+      "stem": "A startup deploys a model with unpredictable, spiky traffic. Every request, including the first one after a quiet period, must get a consistently low-latency response. Which inference option fits BEST?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Serverless inference with no instances to manage",
+          "correct": false,
+          "rationale": "Serverless inference can add cold-start delay to the first request after an idle period, which breaks the requirement for consistent latency."
+        },
+        {
+          "id": "b",
+          "text": "Asynchronous inference with a request queue",
+          "correct": false,
+          "rationale": "Asynchronous inference queues requests for large payloads and long jobs. It does not give consistent low-latency responses."
+        },
+        {
+          "id": "c",
+          "text": "Batch inference on a nightly schedule",
+          "correct": false,
+          "rationale": "Batch inference processes stored datasets offline. It cannot respond to individual requests as they arrive."
+        },
+        {
+          "id": "d",
+          "text": "Real-time inference with autoscaling",
+          "correct": true,
+          "rationale": "Real-time endpoints keep capacity running for low latency, and autoscaling adds capacity during traffic spikes."
+        }
+      ],
+      "explanation": "Real-time and serverless inference both answer individual requests, but they differ in how they handle idle time. Serverless inference removes infrastructure management and suits workloads with idle periods that can tolerate cold starts, so the first request after a quiet period may be slower. A real-time endpoint keeps instances running, so every request gets low latency, and it supports autoscaling to add capacity during spikes. When a scenario says latency must be consistently low, even after idle periods, choose real-time inference. When it stresses cost during long idle gaps and accepts occasional delay, choose serverless.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html",
+          "title": "Real-time inference - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+          "title": "Deploy models for inference - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0039",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 3,
+      "stem": "Which statement best defines structured data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Data that has no predefined format, such as photos and audio recordings",
+          "correct": false,
+          "rationale": "Photos and audio have no fixed schema, so they are unstructured data."
+        },
+        {
+          "id": "b",
+          "text": "Data organized in a predefined schema, such as rows and columns in a table",
+          "correct": true,
+          "rationale": "Structured data follows a fixed schema with defined fields, as in relational tables and spreadsheets."
+        },
+        {
+          "id": "c",
+          "text": "Data that a model generated rather than data gathered from real-world sources",
+          "correct": false,
+          "rationale": "Generated or synthetic data can be structured or unstructured. How data was created does not define its structure."
+        },
+        {
+          "id": "d",
+          "text": "Data that always includes a label with the correct answer for training",
+          "correct": false,
+          "rationale": "Whether data has labels is a separate property. Structured data can be labeled or unlabeled."
+        }
+      ],
+      "explanation": "Data is often described along two separate dimensions. Structure describes format: structured data follows a predefined schema with fixed fields, such as a relational table of orders or a spreadsheet of employees. Tabular data, in rows and columns, is the most common form of structured data. Unstructured data, such as free text, images, audio and video, has no fixed schema. Labeling describes whether each example includes the correct answer, which matters for supervised learning. A dataset can be structured and labeled, structured and unlabeled, and so on, so do not confuse the two dimensions.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0040",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 3,
+      "stem": "A CSV file has the columns customer_id, signup_date, plan_type, and agent_notes. The agent_notes column holds free-form sentences written by support agents. A team wants to find common complaint themes in the notes. Which statement BEST describes the data the team must analyze?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Structured tabular data that simple column totals can summarize",
+          "correct": false,
+          "rationale": "The file has a tabular layout, but the themes are inside free-form sentences, which column totals cannot interpret."
+        },
+        {
+          "id": "b",
+          "text": "Time-series data, because the file includes a signup_date column of dates",
+          "correct": false,
+          "rationale": "One date column does not make the notes time-series data. The task is about the meaning of the text, not trends over time."
+        },
+        {
+          "id": "c",
+          "text": "Unstructured text, even though it is stored inside a structured file",
+          "correct": true,
+          "rationale": "Free-form sentences have no fixed schema, so the notes are unstructured text that needs NLP techniques, whatever file holds them."
+        },
+        {
+          "id": "d",
+          "text": "Labeled data, because each note already has a theme assigned to it",
+          "correct": false,
+          "rationale": "The scenario says nothing about theme labels. Finding themes is the goal, so the notes are not labeled with them."
+        }
+      ],
+      "explanation": "Structure is a property of the content, not only of the container. A table with fixed columns such as IDs, dates and plan types is structured. But a column that holds free-form sentences contains unstructured text: its meaning cannot be read from a schema, and analyzing it needs natural language processing, for example topic or sentiment analysis. Many real datasets mix both kinds. When you classify data in an exam question, look at the specific part the model must learn from or analyze, and check whether labels are actually described before calling data labeled.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/nlp/",
+          "title": "What is Natural Language Processing? - NLP Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0041",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 3,
+      "stem": "A company collected millions of web articles. No one has tagged them with topics, sentiment, or any other target value. How is this data best described for machine learning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unlabeled data",
+          "correct": true,
+          "rationale": "The articles have no target values or tags attached, so they are unlabeled data."
+        },
+        {
+          "id": "b",
+          "text": "Labeled data",
+          "correct": false,
+          "rationale": "Labeled data includes the correct output for each example. These articles have no tags or targets."
+        },
+        {
+          "id": "c",
+          "text": "Structured data",
+          "correct": false,
+          "rationale": "Web articles are free-form text without a fixed schema, so they are not structured data."
+        },
+        {
+          "id": "d",
+          "text": "Time-series data",
+          "correct": false,
+          "rationale": "Time-series data is a sequence of observations ordered by time. A collection of articles is not described that way here."
+        }
+      ],
+      "explanation": "Labeled data pairs each input with its correct output, such as an email marked spam or a photo tagged with the animal it shows. Unlabeled data is raw input with no such target, such as scraped articles, untagged images or sensor logs. Labeling is often the most expensive part of building a supervised model, so much of the data a company holds is unlabeled. Unlabeled data is still very useful: unsupervised learning finds groupings and anomalies in it, and foundation models are pre-trained on huge amounts of unlabeled data using self-supervised learning.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/unsupervised-learning/",
+          "title": "What Is Unsupervised Learning? - Unsupervised Machine Learning Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0042",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "objective": 3,
+      "stem": "A data team is reviewing datasets for a new supervised learning project. Which TWO datasets are examples of labeled data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Raw call recordings with no transcripts or tags attached",
+          "correct": false,
+          "rationale": "The recordings have no target values attached, so they are unlabeled."
+        },
+        {
+          "id": "b",
+          "text": "Past loan records that each show whether the loan defaulted",
+          "correct": true,
+          "rationale": "Each record includes the known outcome, default or not, which is the label a supervised model learns to predict."
+        },
+        {
+          "id": "c",
+          "text": "Web pages collected by a crawler without any annotations",
+          "correct": false,
+          "rationale": "Crawled pages with no annotations have no target values, so they are unlabeled."
+        },
+        {
+          "id": "d",
+          "text": "Server logs gathered without marking which entries were incidents",
+          "correct": false,
+          "rationale": "Without incident markers, the logs have no target values and are unlabeled."
+        },
+        {
+          "id": "e",
+          "text": "Product photos that are each tagged with their product category",
+          "correct": true,
+          "rationale": "Each photo is paired with its correct category, which makes it labeled image data."
+        }
+      ],
+      "explanation": "Labeled data includes, for each example, the correct output that a model should learn to predict. The label can be a category, such as a product type or \"defaulted\", or a number, such as a sale price. Labels can come from business records, such as loan outcomes, or from human annotators, such as people tagging photos. Supervised learning requires labeled data, because the algorithm compares its predictions with the known answers and adjusts its parameters. Raw recordings, crawled pages and logs without annotations are unlabeled, although they could be labeled later or used with unsupervised methods.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0043",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "objective": 3,
+      "stem": "A retailer stores five years of monthly sales for each store in a table with columns for store, month, and total sales. It wants to forecast sales for the next quarter. Which description of this data matters MOST when choosing a modeling approach?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It is static tabular data in which the order of the rows carries no information.",
+          "correct": false,
+          "rationale": "The rows are monthly observations, so their order in time is exactly what the forecast depends on."
+        },
+        {
+          "id": "b",
+          "text": "It is time-series data, because the observations are ordered in time.",
+          "correct": true,
+          "rationale": "Sales recorded month after month form a time series, and trends and seasonality over time drive the forecast."
+        },
+        {
+          "id": "c",
+          "text": "It is unstructured data, because sales figures do not follow any fixed schema or format.",
+          "correct": false,
+          "rationale": "The data has fixed columns, so it is structured, not unstructured."
+        },
+        {
+          "id": "d",
+          "text": "It is unlabeled text data, because no one has written descriptions of the monthly sales.",
+          "correct": false,
+          "rationale": "The data is numeric, not text, and past sales values themselves serve as the targets for forecasting."
+        }
+      ],
+      "explanation": "Time-series data is a sequence of observations recorded over time, such as monthly sales, hourly sensor readings or daily stock prices. It is often stored in rows and columns, so it is also structured, tabular data. What sets it apart is that the order of the observations carries information: trends, seasonality and recent values help predict the future. Forecasting approaches are designed to use that order, while models for static tabular data treat each row as independent. When a scenario asks you to predict future values from a history of measurements, identify the data as time series.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0044",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 3,
+      "stem": "An energy company wants to train a model on high-resolution photos of power lines to spot damaged equipment. Which type of data will the model learn from?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Image data",
+          "correct": true,
+          "rationale": "Photos are image data, a form of unstructured data analyzed with computer vision."
+        },
+        {
+          "id": "b",
+          "text": "Structured tabular data",
+          "correct": false,
+          "rationale": "Photos are not rows and columns with a fixed schema, so they are not tabular data."
+        },
+        {
+          "id": "c",
+          "text": "Time-series data",
+          "correct": false,
+          "rationale": "Time-series data is a sequence of observations ordered in time. Individual photos are analyzed for visual content."
+        },
+        {
+          "id": "d",
+          "text": "Text data",
+          "correct": false,
+          "rationale": "Text data is written language. The inputs here are images."
+        }
+      ],
+      "explanation": "AI models work with many kinds of data. Image data, such as photos, scans and video frames, is unstructured: it is a grid of pixel values without a schema that names the meaning of each value. Computer vision models, often deep neural networks, learn to recognize visual patterns such as damage, defects or objects in these images. Text data is written language processed with NLP. Tabular data is structured rows and columns, and time-series data is observations ordered in time. Identifying the data type first helps you choose the right field of AI and the right model.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/computer-vision/",
+          "title": "What is Computer Vision? - Image recognition AI/ML Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0045",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 4,
+      "stem": "A real estate company wants to predict the sale price of a house from features such as square footage and number of bedrooms. It has records of past sales with their final prices. Which type of machine learning problem is this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Supervised classification",
+          "correct": false,
+          "rationale": "Classification predicts a discrete category. A sale price is a continuous number."
+        },
+        {
+          "id": "b",
+          "text": "Unsupervised clustering",
+          "correct": false,
+          "rationale": "Clustering groups unlabeled data. Here the past prices are known labels to learn from."
+        },
+        {
+          "id": "c",
+          "text": "Reinforcement learning",
+          "correct": false,
+          "rationale": "Reinforcement learning trains an agent through rewards from interacting with an environment, not from a table of past sales."
+        },
+        {
+          "id": "d",
+          "text": "Supervised regression",
+          "correct": true,
+          "rationale": "The training data includes known prices, and the target is a continuous value, so this is supervised regression."
+        }
+      ],
+      "explanation": "Supervised learning uses examples that include the correct output, called the target or label. The type of target decides the kind of supervised problem. If the target is categorical, such as fraud or not fraud, it is a classification problem; with two classes it is binary classification, and with more it is multiclass. If the target is a continuous number, such as a house price or a delivery time, it is a regression problem. Regression estimates the target from the other features that correlate with it. Past sales with final prices are labeled data for exactly this purpose.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0046",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 3,
+      "objective": 4,
+      "stem": "A company has 2 million product images. Its budget allows people to tag only 20,000 of them with the correct category. The team wants to use the remaining untagged images to improve a classifier. Which learning approach fits BEST?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Supervised learning on only the 20,000 tagged images",
+          "correct": false,
+          "rationale": "This works but ignores the untagged images, which the team specifically wants to use to improve the classifier."
+        },
+        {
+          "id": "b",
+          "text": "Semi-supervised learning on tagged and untagged images",
+          "correct": true,
+          "rationale": "Semi-supervised learning combines a small labeled set with a large unlabeled set, for example by pseudo-labeling the unlabeled data."
+        },
+        {
+          "id": "c",
+          "text": "Reinforcement learning with rewards for correct guesses",
+          "correct": false,
+          "rationale": "Reinforcement learning trains an agent through interaction with an environment. It is not a way to use a mix of tagged and untagged images."
+        },
+        {
+          "id": "d",
+          "text": "Unsupervised clustering of all 2 million product images",
+          "correct": false,
+          "rationale": "Clustering alone ignores the known categories and does not produce a classifier that predicts those categories."
+        }
+      ],
+      "explanation": "Semi-supervised learning is used when only a small part of the data is labeled, which is common because labeling is expensive. The model first learns from the small labeled set. It then labels the large unlabeled set itself, a step called pseudo-labeling, and those examples are used to train it further. This lets the team benefit from all its data while paying to label only a fraction. Pure supervised learning would use only the labeled examples, and pure unsupervised learning would ignore the known categories. Look for \"a few labeled, many unlabeled\" in a scenario.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/machine-learning/",
+          "title": "What is Machine Learning? - ML Technology Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/unsupervised-learning/",
+          "title": "What Is Unsupervised Learning? - Unsupervised Machine Learning Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0047",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 2,
+      "objective": 4,
+      "stem": "A grocery chain wants to learn which products customers often buy together, using millions of past receipts that have no labels. Which type of learning fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Unsupervised learning, using association rules",
+          "correct": true,
+          "rationale": "Association rule mining is an unsupervised technique that finds items often purchased together in unlabeled data."
+        },
+        {
+          "id": "b",
+          "text": "Supervised learning, using binary classification",
+          "correct": false,
+          "rationale": "Binary classification needs labeled examples with a known target. The receipts have no labels."
+        },
+        {
+          "id": "c",
+          "text": "Reinforcement learning, using reward signals",
+          "correct": false,
+          "rationale": "Reinforcement learning trains an agent through rewards from an environment. Finding co-purchased items in receipts needs no agent or rewards."
+        },
+        {
+          "id": "d",
+          "text": "Supervised learning, using linear regression",
+          "correct": false,
+          "rationale": "Regression predicts a continuous labeled target. There is no target value to predict here."
+        }
+      ],
+      "explanation": "Unsupervised learning finds patterns in unlabeled data without human-provided answers. Several techniques fall under it. Clustering groups similar data points, such as customer segments. Association rule mining finds relationships between variables, such as products that are frequently bought together, which supports market basket analysis and product placement. Anomaly detection flags records that differ from normal patterns. Dimensionality reduction removes unnecessary variables and is often used before other techniques. Supervised methods such as classification and regression need a labeled target, which raw receipts do not have.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/unsupervised-learning/",
+          "title": "What Is Unsupervised Learning? - Unsupervised Machine Learning Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0048",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "objective": 4,
+      "stem": "A team has labeled historical data for several prediction problems. Which TWO problems are classification problems?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Predicting next month's revenue in dollars for each store",
+          "correct": false,
+          "rationale": "Revenue is a continuous number, so this is a regression problem."
+        },
+        {
+          "id": "b",
+          "text": "Predicting whether a card transaction is fraudulent",
+          "correct": true,
+          "rationale": "The target has two discrete classes, fraud or not fraud, so this is binary classification."
+        },
+        {
+          "id": "c",
+          "text": "Estimating the delivery time in minutes for each order",
+          "correct": false,
+          "rationale": "Delivery time is a continuous value, so this is regression."
+        },
+        {
+          "id": "d",
+          "text": "Grouping unlabeled website visitors by browsing behavior",
+          "correct": false,
+          "rationale": "Grouping without labels is clustering, an unsupervised task, not classification."
+        },
+        {
+          "id": "e",
+          "text": "Assigning each support ticket to one of five categories",
+          "correct": true,
+          "rationale": "The target is one of several discrete classes, so this is multiclass classification."
+        }
+      ],
+      "explanation": "Classification and regression are both supervised learning problems, and the difference lies in the target. Classification predicts a discrete category: binary classification picks one of two classes, such as fraud or not fraud, and multiclass classification picks one of several, such as a ticket category. Regression predicts a continuous number, such as revenue, a price or a duration. Clustering is different again: it is unsupervised and groups data that has no labels. On the exam, ask what the output looks like. A category means classification, and a quantity means regression.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0049",
+      "version": 1,
+      "type": "single",
+      "selectCount": 1,
+      "difficulty": 1,
+      "objective": 4,
+      "stem": "Foundation models are pre-trained on massive amounts of unlabeled data. Which learning approach lets them learn from this data without human-labeled examples?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Supervised learning on manually labeled examples",
+          "correct": false,
+          "rationale": "Foundation models are trained on broad unlabeled data. They do not depend on manually labeled training sets for pre-training."
+        },
+        {
+          "id": "b",
+          "text": "Reinforcement learning in a physical environment",
+          "correct": false,
+          "rationale": "Pre-training a foundation model does not involve an agent acting in a physical environment."
+        },
+        {
+          "id": "c",
+          "text": "Self-supervised learning that derives labels from data",
+          "correct": true,
+          "rationale": "Foundation models use self-supervised learning, deriving labels from the data itself, for example by predicting the next token."
+        },
+        {
+          "id": "d",
+          "text": "Rule-based learning from hand-written grammar rule sets",
+          "correct": false,
+          "rationale": "Foundation models learn patterns from data. They are not built from hand-written rules."
+        }
+      ],
+      "explanation": "Self-supervised learning is a way to train on unlabeled data by creating the labels from the input itself. A language model, for example, withholds part of a text and learns to predict it, such as the next token in a sentence, so every sentence provides its own training signal. AWS describes foundation models as using self-supervised learning to create labels from input data, which is what lets them learn from huge, broad datasets that no one has labeled. This sets them apart from earlier models that relied on supervised learning with labeled data or on unsupervised methods.",
+      "references": [
+        {
+          "url": "https://aws.amazon.com/what-is/foundation-models/",
+          "title": "What are Foundation Models? - Foundation Models in Generative AI Explained - AWS"
+        },
+        {
+          "url": "https://aws.amazon.com/what-is/large-language-model/",
+          "title": "What is LLM? - Large Language Models Explained - AWS"
+        }
+      ]
+    },
+    {
+      "id": "aif-c01-1.1-0050",
+      "version": 1,
+      "type": "multiple",
+      "selectCount": 2,
+      "difficulty": 2,
+      "objective": 4,
+      "stem": "A robotics team is evaluating reinforcement learning for a warehouse picking robot. Which TWO statements correctly describe reinforcement learning?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It needs a labeled dataset that lists the correct action for every possible situation.",
+          "correct": false,
+          "rationale": "Reinforcement learning does not require labeled correct actions. The agent learns from rewards instead."
+        },
+        {
+          "id": "b",
+          "text": "It groups unlabeled observations into clusters of situations that look similar.",
+          "correct": false,
+          "rationale": "Grouping unlabeled data into clusters is unsupervised learning, not reinforcement learning."
+        },
+        {
+          "id": "c",
+          "text": "An agent learns by trial and error in its environment to maximize long-term reward.",
+          "correct": true,
+          "rationale": "Reinforcement learning is based on interaction with an environment, where an agent learns behavior that maximizes long-term rewards."
+        },
+        {
+          "id": "d",
+          "text": "It learns once from a static file and never interacts with any environment.",
+          "correct": false,
+          "rationale": "Interaction with the environment is central to reinforcement learning. Learning from a fixed file describes other paradigms."
+        },
+        {
+          "id": "e",
+          "text": "The agent balances exploring uncertain actions with exploiting rewarding ones.",
+          "correct": true,
+          "rationale": "Reinforcement learning trades off exploration of actions with uncertain rewards against exploitation of actions with known rewards."
+        }
+      ],
+      "explanation": "Reinforcement learning is one of the three basic machine learning paradigms, along with supervised and unsupervised learning. An agent takes actions in a dynamic environment and receives rewards or penalties based on the results. Through trial and error, it learns a behavior, often called a policy, that maximizes its long-term reward. A key challenge is the balance between exploration, trying actions whose rewards are uncertain, and exploitation, repeating actions that are known to pay off. It suits robotics, games and other sequential decision problems, and it does not need a labeled dataset of correct actions.",
+      "references": [
+        {
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/algorithms-choose.html",
+          "title": "Types of Algorithms - Amazon SageMaker AI"
+        }
+      ]
+    }
+  ]
+}
