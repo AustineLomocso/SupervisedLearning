@@ -77,6 +77,13 @@ describe('AppShell', () => {
     expect(screen.queryByRole('navigation', { name: 'Breadcrumb' })).not.toBeInTheDocument()
   })
 
+  it('offers a reload when a new version has been deployed', () => {
+    useUiStore.setState({ updateAvailable: true })
+    renderShell()
+    expect(screen.getByRole('status')).toHaveTextContent(/new version/i)
+    expect(screen.getByRole('button', { name: 'Reload' })).toBeInTheDocument()
+  })
+
   it('warns when progress cannot be saved', () => {
     useUiStore.setState({ storageError: true })
     renderShell()
