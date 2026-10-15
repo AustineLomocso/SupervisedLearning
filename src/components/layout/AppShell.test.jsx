@@ -49,6 +49,11 @@ describe('AppShell', () => {
     expect(footer).toHaveTextContent(/AI-generated/i)
   })
 
+  it('keeps the footer below the first screen, so pages loading in don’t shift it', () => {
+    renderShell()
+    expect(screen.getByRole('main')).toHaveClass('min-h-screen')
+  })
+
   it('skip link focuses the main content without changing the route', async () => {
     const user = userEvent.setup()
     const router = renderShell()
