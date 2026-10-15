@@ -86,6 +86,7 @@ Theme logic is duplicated on purpose in the inline script in `index.html` (it ru
 - Lessons render through `components/markdown/Markdown.jsx` (react-markdown + remark-gfm + rehype-slug; raw HTML is dropped).
   - `MermaidBlock` imports `mermaid` only when a diagram mounts, and redraws on theme change via `useIsDark`.
   - Any Vitest file that renders a lesson must `vi.mock('mermaid')`.
+  - Diagrams draw only once they are within 200 px of the viewport (`IntersectionObserver`; it draws at once where that API is missing, as in jsdom). Playwright tests must scroll `.mermaid-diagram` into view before expecting its `svg`.
 - Table-of-contents links use `focus()` + `scrollIntoView()`, never `#id` navigation (the HashRouter reason as the skip link).
 - Confirmations use `window.confirm`, because jsdom has no `<dialog>.showModal`. Tests spy on it.
 - `e2e/a11y.spec.js` runs axe (WCAG 2.1 A/AA) on every page in both themes. Fix violations at the source; don’t exclude elements.
