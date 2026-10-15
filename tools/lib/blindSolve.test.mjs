@@ -56,7 +56,7 @@ describe('compareAnswers', () => {
       [single.id]: { answer: ['a'], note: 'clear' },
       [multiple.id]: { answer: ['c', 'a'] },
     })
-    expect(result).toEqual({ disagreements: [], missing: [], invalid: [] })
+    expect(result).toEqual({ disagreements: [], missing: [], invalid: [], ambiguous: [] })
   })
 
   it('reports a different answer with the key, the answer and the reviewer’s note', () => {
@@ -82,18 +82,29 @@ describe('compareAnswers', () => {
     expect(result.disagreements).toEqual([])
   })
 
+  it('flags a matching answer whose note says the question is ambiguous', () => {
+    const result = compareAnswers([single, multiple], {
+      [single.id]: { answer: ['a'], note: 'Ambiguous: B is also defensible' },
+      [multiple.id]: { answer: ['a', 'c'], note: 'Clear.' },
+    })
+    expect(result.disagreements).toEqual([])
+    expect(result.ambiguous).toEqual([{ id: single.id, note: 'Ambiguous: B is also defensible' }])
+  })
+
   it('ignores answers for questions that are not in the batch', () => {
     const result = compareAnswers([single], {
       [single.id]: { answer: ['a'] },
       unrelated: { answer: ['a'] },
     })
-    expect(result).toEqual({ disagreements: [], missing: [], invalid: [] })
+    expect(result).toEqual({ disagreements: [], missing: [], invalid: [], ambiguous: [] })
   })
 })
 
 describe('formatComparison', () => {
   it('passes quietly when everything agrees', () => {
-    expect(formatComparison({ disagreements: [], missing: [], invalid: [] }, 12)).toEqual({
+    expect(
+      formatComparison({ disagreements: [], missing: [], invalid: [], ambiguous: [] }, 12),
+    ).toEqual({
       lines: ['12 of 12 answers match the key.'],
       exitCode: 0,
     })
@@ -105,6 +116,7 @@ describe('formatComparison', () => {
         disagreements: [{ id: 'a-1', key: ['a'], answer: ['b'], note: 'B also works' }],
         missing: ['a-2'],
         invalid: ['a-3'],
+        ambiguous: [{ id: 'a-4', note: 'AMBIGUOUS: B also fits' }],
       },
       10,
     )
@@ -113,7 +125,8 @@ describe('formatComparison', () => {
       '✗ a-1: key a, reviewer b. Reviewer: B also works',
       '✗ a-2: no answer',
       '✗ a-3: answer must be a list of option ids',
-      '1 disagreement, 1 missing, 1 invalid out of 10.',
+      '✗ a-4: reviewer flagged it ambiguous. Reviewer: AMBIGUOUS: B also fits',
+      '1 disagreement, 1 missing, 1 invalid, 1 flagged ambiguous out of 10.',
     ])
   })
 })

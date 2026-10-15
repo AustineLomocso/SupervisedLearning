@@ -11,7 +11,11 @@
  * @property {Disagreement[]} disagreements
  * @property {string[]} missing question ids with no answer at all
  * @property {string[]} invalid question ids whose answer is not a list of option ids
+ * @property {{ id: string, note: string }[]} ambiguous answers that match the key but whose
+ *   note starts with "ambiguous": the reviewer found a second defensible answer
  */
+
+const AMBIGUOUS_NOTE = /^\s*ambiguous/i
 
 /**
  * The questions as a reviewer sees them: no key, rationales or explanation.
@@ -67,7 +71,7 @@ export function itemsFrom(items, fromId) {
  */
 export function compareAnswers(items, answers) {
   /** @type {Comparison} */
-  const result = { disagreements: [], missing: [], invalid: [] }
+  const result = { disagreements: [], missing: [], invalid: [], ambiguous: [] }
   for (const item of items) {
     const given = answers[item.id]
     if (given === undefined) {
@@ -85,8 +89,9 @@ export function compareAnswers(items, answers) {
       .sort()
     const chosen = [...new Set(answer)].sort()
     const same = key.length === chosen.length && key.every((id, i) => id === chosen[i])
-    if (!same)
-      result.disagreements.push({ id: item.id, key, answer: chosen, note: given.note ?? '' })
+    const note = given.note ?? ''
+    if (!same) result.disagreements.push({ id: item.id, key, answer: chosen, note })
+    else if (AMBIGUOUS_NOTE.test(note)) result.ambiguous.push({ id: item.id, note })
   }
   return result
 }
@@ -97,8 +102,8 @@ export function compareAnswers(items, answers) {
  * @returns {{ lines: string[], exitCode: number }}
  */
 export function formatComparison(comparison, total) {
-  const { disagreements, missing, invalid } = comparison
-  const problems = disagreements.length + missing.length + invalid.length
+  const { disagreements, missing, invalid, ambiguous } = comparison
+  const problems = disagreements.length + missing.length + invalid.length + ambiguous.length
   if (problems === 0) return { lines: [`${total} of ${total} answers match the key.`], exitCode: 0 }
   const lines = [
     ...disagreements.map((d) => {
@@ -107,7 +112,8 @@ export function formatComparison(comparison, total) {
     }),
     ...missing.map((id) => `✗ ${id}: no answer`),
     ...invalid.map((id) => `✗ ${id}: answer must be a list of option ids`),
-    `${disagreements.length} disagreement${disagreements.length === 1 ? '' : 's'}, ${missing.length} missing, ${invalid.length} invalid out of ${total}.`,
+    ...ambiguous.map((a) => `✗ ${a.id}: reviewer flagged it ambiguous. Reviewer: ${a.note}`),
+    `${disagreements.length} disagreement${disagreements.length === 1 ? '' : 's'}, ${missing.length} missing, ${invalid.length} invalid, ${ambiguous.length} flagged ambiguous out of ${total}.`,
   ]
   return { lines, exitCode: 1 }
 }

@@ -200,8 +200,9 @@ questions, written by one generator and then checked by a separate blind reviewe
 <file>`. The export has no answer key, rationales or explanations.
 2. A separate reviewer who has not seen the shard files answers every question from the
    export, the lesson and `references.json` only, writing
-   `{ "<id>": { "answer": ["a"], "note": "…" } }`. The note matters for any question that felt
-   ambiguous or where two options looked defensible.
+   `{ "<id>": { "answer": ["a"], "note": "…" } }`. Start the note with `AMBIGUOUS:` for any
+   question where two options looked defensible, even if the reviewer picked one; `blind:compare`
+   fails on those too.
 3. `npm run blind:compare -- <cert> <task> <answers.json> --from <first new id>` must exit 0.
    For each disagreement the generator decides:
    - the key is wrong → fix the key and its rationales;
